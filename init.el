@@ -3,7 +3,7 @@
 (require 'cl)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Add support file directory to the load path.
+;; Local config directory support.
 
 (defun davep:user-path (path)
   "Given `file', return a path for it in the local config."
