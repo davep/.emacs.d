@@ -16,3 +16,4 @@
 ;; Load various startup things.
 (load "env-tests")
 (require 'uptimes)
+(require 'csrclr)
