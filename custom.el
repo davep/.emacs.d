@@ -5,6 +5,14 @@
  ;; If there is more than one, they won't work right.
  '(case-fold-search t)
  '(column-number-mode t)
+ '(eshell-prompt-function
+   (lambda nil
+     (concat
+      (user-login-name)
+      ":"
+      (eshell/pwd)
+      (if rootp "#" "$")
+      " ")))
  '(inhibit-startup-screen t)
  '(tool-bar-mode nil)
  '(truncate-lines t))
