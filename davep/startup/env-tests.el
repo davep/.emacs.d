@@ -33,3 +33,11 @@
 (defconst osx-window-p
   (and osx-p (not osx-terminal-p))
   "Are we running in an OS X window?")
+
+(defconst unixp
+  (or linuxp osx-p)
+  "Are we on some form of Unix?")
+
+(defconst rootp
+  (and unixp (zerop (user-uid)))
+  "Are we running as root?")
