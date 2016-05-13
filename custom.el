@@ -14,6 +14,7 @@
       (if rootp "#" "$")
       " ")))
  '(inhibit-startup-screen t)
+ '(scroll-error-top-bottom t)
  '(tool-bar-mode nil)
  '(truncate-lines t))
 (custom-set-faces
