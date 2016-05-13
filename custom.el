@@ -15,6 +15,7 @@
       " ")))
  '(inhibit-startup-screen t)
  '(scroll-error-top-bottom t)
+ '(show-paren-mode t)
  '(tool-bar-mode nil)
  '(truncate-lines t))
 (custom-set-faces
