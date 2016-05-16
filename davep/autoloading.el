@@ -23,3 +23,12 @@
   "Update my local autoloads file."
   (interactive)
   (update-davep-autoloads-core davep:autoload-file davep:lib))
+
+(defun load-davep-autoloads ()
+  "Load (after optionally creating) local autoloads."
+  (unless (or rootp (file-exists-p davep:autoload-file))
+    (update-davep-autoloads))
+  (unless rootp
+    (load (file-name-sans-extension davep:autoload-file))))
+
+(provide 'autoloading)

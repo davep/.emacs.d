@@ -32,3 +32,9 @@
 (load "env-tests")
 (require 'uptimes)
 (require 'csrclr)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Local autoloading.
+(require 'autoloading)
+(load-davep-autoloads)
+
