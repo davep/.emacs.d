@@ -3,4 +3,6 @@ auto-save-list
 eshell
 davep/autoloads.el
 davep/autoloads.elc
+davep/autoloads-3rd-party.el
+davep/autoloads-3rd-party.elc
 
