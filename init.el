@@ -9,6 +9,7 @@
   "Given `file', return a path for it in the local config."
   (concat user-emacs-directory path))
 
+(push (davep:user-path "davep/")         load-path)
 (push (davep:user-path "davep/startup/") load-path)
 (push (davep:user-path "davep/lib/")     load-path)
 
