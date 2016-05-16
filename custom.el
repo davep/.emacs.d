@@ -13,6 +13,7 @@
       (eshell/pwd)
       (if rootp "#" "$")
       " ")))
+ '(eshell-prompt-regexp "^[^#$\\n]*[#$] ")
  '(inhibit-startup-screen t)
  '(scroll-error-top-bottom t)
  '(show-paren-mode t)
