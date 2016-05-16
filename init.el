@@ -37,6 +37,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Load various startup things.
 (load "env-tests")
+(require 'davep-keys)
 (require 'uptimes)
 (require 'csrclr)
 
