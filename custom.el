@@ -18,6 +18,7 @@
  '(scroll-error-top-bottom t)
  '(show-paren-mode t)
  '(tool-bar-mode nil)
+ '(tramp-default-method "ssh")
  '(truncate-lines t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
