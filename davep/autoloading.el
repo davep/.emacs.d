@@ -4,6 +4,9 @@
 (defvar davep:autoload-file (davep:user-path "davep/autoloads.el")
   "My local autoloads file.")
 
+(defvar davep:autoload-3rd-party-file (davep:user-path "davep/autoloads-3rd-party.el")
+  "My local third party library autoloads file.")
+
 (defun update-davep-autoloads-core (file dir)
   "Core function for updating local autoload files."
   (let ((generated-autoload-file file))
@@ -24,11 +27,20 @@
   (interactive)
   (update-davep-autoloads-core davep:autoload-file davep:lib))
 
+(defun update-davep-3rd-party-autoloads ()
+  "Update my local 3rd party lisp autoloads file."
+  (interactive)
+  (update-davep-autoloads-core davep:autoload-3rd-party-file davep:lib-3rd-party))
+
 (defun load-davep-autoloads ()
   "Load (after optionally creating) local autoloads."
-  (unless (or rootp (file-exists-p davep:autoload-file))
-    (update-davep-autoloads))
   (unless rootp
-    (load (file-name-sans-extension davep:autoload-file))))
+    (unless (file-exists-p davep:autoload-file)
+      (update-davep-autoloads))
+    (unless (file-exists-p davep:autoload-3rd-party-file)
+      (update-davep-3rd-party-autoloads))
+  (unless rootp
+    (load (file-name-sans-extension davep:autoload-file))
+    (load (file-name-sans-extension davep:autoload-3rd-party-file)))))
 
 (provide 'autoloading)

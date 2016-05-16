@@ -18,6 +18,9 @@
 (defvar davep:lib (davep:user-path "davep/lib")
   "My local library code.")
 
+(defvar davep:lib-3rd-party (davep:user-path "davep/lib-3rd-party")
+  "My local third party code.")
+
 (push davep:local   load-path)
 (push davep:startup load-path)
 (push davep:lib     load-path)
