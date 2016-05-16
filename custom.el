@@ -3,7 +3,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(blink-cursor-blinks 1)
+ '(blink-cursor-mode nil)
  '(case-fold-search t)
  '(column-number-mode t)
  '(eshell-prompt-function
