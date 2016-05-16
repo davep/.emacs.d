@@ -25,6 +25,10 @@
 (push davep:startup load-path)
 (push davep:lib     load-path)
 
+(defun have-own-package-p (package)
+  "Does a package of my own exist in this environment?"
+  (locate-library package nil (list davep:lib)))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Ensure custom values go in their own file.
 (setq custom-file (davep:user-path "custom.el"))
