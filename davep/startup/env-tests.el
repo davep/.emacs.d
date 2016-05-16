@@ -1,6 +1,14 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; For testing our environment...
 
+(defconst gnu-emacs-p
+  (not (null (string-match "GNU Emacs" (emacs-version))))
+  "Are we running under GNU emacs?")
+
+(defconst x-emacs-p
+  (not (null (string-match "Lucid\\|XEmacs" (emacs-version))))
+  "Are we running under XEmacs?")
+
 (defconst win32p
   (eq system-type 'windows-nt)
   "Are we running on a WinTel system?")
