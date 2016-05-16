@@ -41,3 +41,14 @@
 (require 'autoloading)
 (load-davep-autoloads)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Language styles.
+
+(add-hook 'c-mode-hook			; C
+          #'(lambda ()
+              (c-set-style "BSD")
+              (setq c-basic-offset 4)
+              (c-set-offset 'case-label '+)
+              (setup-compile "gcc -Wall -O2")
+              (define-key c-mode-map "\C-m" #'newline-and-indent)))
+
