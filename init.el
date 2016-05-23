@@ -48,3 +48,8 @@
 (require 'autoloading)
 (load-davep-autoloads)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Visual tweaks.
+(when window-system
+  (set-frame-size (selected-frame) 90 50)
+  (set-frame-position (selected-frame) 300 200))
