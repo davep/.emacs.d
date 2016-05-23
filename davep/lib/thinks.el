@@ -1,9 +1,10 @@
 ;;; thinks.el --- Insert text in a think bubble.
-;; Copyright 2000,2001 by Dave Pearson <davep@davep.org>
-;; $Revision: 1.6 $
+;; Copyright 2000-2008 by Dave Pearson <davep@davep.org>
+;; $Revision: 1.9 $
 
-;; thinks is free software distributed under the terms of the GNU General
-;; Public Licence, version 2. For details see the file COPYING.
+;; thinks.el is free software distributed under the terms of the GNU General
+;; Public Licence, version 2 or (at your option) any later version. For
+;; details see the file COPYING.
 
 ;;; Commentary:
 
