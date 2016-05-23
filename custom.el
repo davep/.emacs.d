@@ -16,6 +16,10 @@
       " ")))
  '(eshell-prompt-regexp "^[^#$\\n]*[#$] ")
  '(inhibit-startup-screen t)
+ '(package-archives
+   (quote
+    (("gnu" . "http://elpa.gnu.org/packages/")
+     ("melpa" . "https://melpa.org/packages/"))))
  '(scroll-error-top-bottom t)
  '(show-paren-mode t)
  '(tool-bar-mode nil)
