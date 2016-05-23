@@ -1,8 +1,9 @@
-;;; connection.el -- handling a tcp based connection
+;;; connection.el --- TCP-based client connection
 
-;; Author: Torsten Hilbrich <dictionary@myrkr.in-berlin.de>
+;; Author: Torsten Hilbrich <torsten.hilbrich@gmx.net>
 ;; Keywords: network
-;; $Id: connection.el,v 1.9 2001/11/24 12:18:26 torsten Exp $
+;; Package-Version: 20140717.2029
+;; Version: 1.10
 
 ;; This file is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -18,6 +19,15 @@
 ;; along with GNU Emacs; see the file COPYING.  If not, write to
 ;; the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
 ;; Boston, MA 02111-1307, USA.
+
+;;; Commentary:
+
+;; connection allows to handle TCP-based connections in client mode
+;; where text-based information are exchanged. There is special
+;; support for handling CR LF (and the usual CR LF . CR LF
+;; terminater).
+
+;;; Code:
 
 (eval-when-compile
   (require 'cl))
@@ -67,8 +77,7 @@ A data structure identifing the connection is returned"
 						     server
 						     port)))
 	(process))
-    (save-excursion
-      (set-buffer process-buffer)
+    (with-current-buffer process-buffer
       (setq process (open-network-stream "connection" process-buffer
 					 server port))
       (connection-create-data process-buffer process (point-min)))))
@@ -111,8 +120,7 @@ nil: argument is no connection object
   "Send `data' to the process."
   (unless (eq (connection-status connection) 'up)
     (error "Connection is not up"))
-  (save-excursion
-    (set-buffer (connection-buffer connection))
+  (with-current-buffer (connection-buffer connection)
     (goto-char (point-max))
     (connection-set-read-point connection (point))
     (process-send-string (connection-process connection) data)))
@@ -127,8 +135,7 @@ nil: argument is no connection object
     (error "Connection is not up"))
   (let ((case-fold-search nil)
 	match-end)
-    (save-excursion
-      (set-buffer (connection-buffer connection))
+    (with-current-buffer (connection-buffer connection)
       (goto-char (connection-read-point connection))
       ;; Wait until there is enough data 
       (while (not (search-forward-regexp delimiter nil t))
@@ -150,3 +157,4 @@ nil: argument is no connection object
   (connection-read connection "\015?\012[.]\015?\012"))
 
 (provide 'connection)
+;;; connection.el ends here

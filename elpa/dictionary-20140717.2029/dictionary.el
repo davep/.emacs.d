@@ -1,86 +1,114 @@
- ;; dictionary.el -- an interface to RFC 2229 dictionary server
+;;; dictionary.el --- Client for rfc2229 dictionary servers
 
- ;; Author: Torsten Hilbrich <dictionary@myrkr.in-berlin.de>
- ;; Keywords: interface, dictionary
- ;; $Id: dictionary.el,v 1.38 2002/04/29 18:38:03 torsten Exp $
+;; Author: Torsten Hilbrich <torsten.hilbrich@gmx.net>
+;; Keywords: interface, dictionary
+;; Package-Version: 20140717.2029
+;; Version: 1.10
+;; Package-Requires: ((connection "1.10") (link "1.10"))
 
- ;; This file is free software; you can redistribute it and/or modify
- ;; it under the terms of the GNU General Public License as published by
- ;; the Free Software Foundation; either version 2, or (at your option)
- ;; any later version.
+;; This file is free software; you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation; either version 2, or (at your option)
+;; any later version.
 
- ;; This file is distributed in the hope that it will be useful,
- ;; but WITHOUT ANY WARRANTY; without even the implied warranty of
- ;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- ;; GNU General Public License for more details.
+;; This file is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
 
- ;; You should have received a copy of the GNU General Public License
- ;; along with GNU Emacs; see the file COPYING.  If not, write to
- ;; the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
- ;; Boston, MA 02111-1307, USA.
+;; You should have received a copy of the GNU General Public License
+;; along with GNU Emacs; see the file COPYING.  If not, write to
+;; the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+;; Boston, MA 02111-1307, USA.
 
- (eval-when-compile
-   (require 'cl))
+;;; Commentary:
 
- (require 'easymenu)
- (require 'custom)
- (require 'connection)
- (require 'link)
+;; dictionary allows you to interact with dictionary servers. Use M-x
+;; customize-group dictioanry to modify all user settings.
+;;
+;; Main functions for interaction are:
+;; dictionary        - opens a new dictionary buffer
+;; dictionary-search - search for the definition of a word
+;;
+;; You can find more information in the README file of the gibhub
+;; repository https://github.com/myrkr/dictionary-el
 
- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
- ;; Stuff for customizing.
- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Code:
 
- (eval-when-compile
-   (unless (fboundp 'defface)
-	   (message "Please update your custom.el file: %s"
-		    "http://www.dina.kvl.dk/~abraham/custom/"))
+(eval-when-compile
+  (require 'cl))
 
-   (unless (fboundp 'defgroup)
-	   (defmacro defgroup (&rest ignored))
-	   (defmacro defcustom (var value doc &rest ignored)
-	     (list 'defvar var value doc))))
+(require 'easymenu)
+(require 'custom)
+(require 'connection)
+(require 'link)
 
- (defgroup dictionary nil
-   "Client for accessing the dictd server based dictionaries"
-   :group 'hypermedia)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Stuff for customizing.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
- (defgroup dictionary-proxy nil
-   "Proxy configuration options for the dictionary client"
-   :group 'dictionary)
+(eval-when-compile
+  (unless (fboundp 'defface)
+    (message "Please update your custom.el file: %s"
+	     "http://www.dina.kvl.dk/~abraham/custom/"))
+  
+  (unless (fboundp 'defgroup)
+    (defmacro defgroup (&rest ignored))
+    (defmacro defcustom (var value doc &rest ignored)
+      (list 'defvar var value doc))))
 
- (defcustom dictionary-server
-   "dict.org"
-   "This server is contacted for searching the dictionary"
-   :group 'dictionary
-   :type 'string)
+(defvar dictionary-server)
+(defun dictionary-set-server-var (name value)
+  (if (and (boundp 'dictionary-connection)
+	   dictionary-connection
+	   (eq (connection-status dictionary-connection) 'up)
+	   (y-or-n-p
+	    (concat "Close existing connection to " dictionary-server "? ")))
+      (connection-close dictionary-connection))
+  (set-default name value))
 
- (defcustom dictionary-port
-   2628
-   "The port of the dictionary server.
+(defgroup dictionary nil
+  "Client for accessing the dictd server based dictionaries"
+  :group 'hypermedia)
+
+(defgroup dictionary-proxy nil
+  "Proxy configuration options for the dictionary client"
+  :group 'dictionary)
+
+(defcustom dictionary-server
+  "dict.org"
+  "This server is contacted for searching the dictionary"
+  :group 'dictionary
+  :set 'dictionary-set-server-var
+  :type 'string)
+
+(defcustom dictionary-port
+  2628
+  "The port of the dictionary server.
  This port is propably always 2628 so there should be no need to modify it."
-   :group 'dictionary
-   :type 'number)
+  :group 'dictionary
+  :set 'dictionary-set-server-var
+  :type 'number)
 
- (defcustom dictionary-identification
-   "dictionary.el emacs lisp dictionary client"
-   "This is the identification string that will be sent to the server."
-   :group 'dictionary
-   :type 'string)
+(defcustom dictionary-identification
+  "dictionary.el emacs lisp dictionary client"
+  "This is the identification string that will be sent to the server."
+  :group 'dictionary
+  :type 'string)
 
- (defcustom dictionary-default-dictionary
-   "*"
-   "The dictionary which is used for searching definitions and matching.
+(defcustom dictionary-default-dictionary
+  "*"
+  "The dictionary which is used for searching definitions and matching.
  * and ! have a special meaning, * search all dictionaries, ! search until
  one dictionary yields matches."
-   :group 'dictionary
-   :type 'string)
+  :group 'dictionary
+  :type 'string)
 
- (defcustom dictionary-default-strategy
-   "."
-   "The default strategy for listing matching words."
-   :group 'dictionary
-   :type 'string)
+(defcustom dictionary-default-strategy
+  "."
+  "The default strategy for listing matching words."
+  :group 'dictionary
+  :type 'string)
 
 (defcustom dictionary-default-popup-strategy
   "exact"
@@ -119,35 +147,56 @@ by the choice value:
 		 (const :tag "Levenshtein distance one" "lev")
 		 (string :tag "User choice")))
 
- (defcustom dictionary-create-buttons
-   t
-   "Create some clickable buttons on top of the window if non-nil."
-   :group 'dictionary
-   :type 'boolean)
+(defcustom dictionary-create-buttons
+  t
+  "Create some clickable buttons on top of the window if non-nil."
+  :group 'dictionary
+  :type 'boolean)
 
- (defcustom dictionary-mode-hook
-   nil
-   "Hook run in dictionary mode buffers."
-   :group 'dictionary
-   :type 'hook)
+(defcustom dictionary-mode-hook
+  nil
+  "Hook run in dictionary mode buffers."
+  :group 'dictionary
+  :type 'hook)
 
- (defcustom dictionary-use-http-proxy
-   nil
-   "Connects via a HTTP proxy using the CONNECT command when not nil."
-   :group 'dictionary-proxy
-   :type 'boolean)
+(defcustom dictionary-use-http-proxy
+  nil
+  "Connects via a HTTP proxy using the CONNECT command when not nil."
+  :group 'dictionary-proxy
+  :set 'dictionary-set-server-var
+  :type 'boolean)
 
- (defcustom dictionary-proxy-server
-   "proxy"
-   "The name of the HTTP proxy to use when dictionary-use-http-proxy is set."
-   :group 'dictionary-proxy
-   :type 'string)
+(defcustom dictionary-proxy-server
+  "proxy"
+  "The name of the HTTP proxy to use when dictionary-use-http-proxy is set."
+  :group 'dictionary-proxy
+  :set 'dictionary-set-server-var
+  :type 'string)
 
- (defcustom dictionary-proxy-port
-   3128
-   "The port of the proxy server, used only when dictionary-use-http-proxy is set."
-   :group 'dictionary-proxy
-   :type 'number)
+(defcustom dictionary-proxy-port
+  3128
+  "The port of the proxy server, used only when dictionary-use-http-proxy is set."
+  :group 'dictionary-proxy
+  :set 'dictionary-set-server-var
+  :type 'number)
+
+(defcustom dictionary-use-single-buffer
+  nil
+  "Should the dictionary command reuse previous dictionary buffers?"
+  :group 'dictionary
+  :type 'boolean)
+
+(defcustom dictionary-description-open-delimiter
+  ""
+  "The delimiter to display in front of the dictionaries description"
+  :group 'dictionary
+  :type 'string)
+
+(defcustom dictionary-description-close-delimiter
+  ""
+  "The delimiter to display after of the dictionaries description"
+  :group 'dictionary
+  :type 'string)
 
 ;; Define only when coding-system-list is available
 (when (fboundp 'coding-system-list)
@@ -165,114 +214,114 @@ by the choice value:
 				 ,@(mapcar (lambda (x) (list 'const x))
 					   (coding-system-list))
 				 ))))
+  
+  )
 
-)
+(if (fboundp 'defface)
+    (progn
+      
+      (defface dictionary-word-entry-face
+	'((((type x))
+	   (:italic t))
+	  (((type tty) (class color))
+	   (:foreground "green"))
+	  (t
+	   (:inverse t)))
+	"The face that is used for displaying the initial word entry line."
+	:group 'dictionary)
+      
+      (defface dictionary-button-face
+	'((t
+	   (:bold t)))
+	"The face that is used for displaying buttons."
+	:group 'dictionary)
+      
+      (defface dictionary-reference-face
+	'((((type x)
+	    (class color)
+	    (background dark))
+	   (:foreground "yellow"))
+	  (((type tty)
+	    (class color)
+	    (background dark))
+	   (:foreground "cyan"))
+	  (((class color)
+	    (background light))
+	   (:foreground "blue"))
+	  (t
+	   (:underline t)))
+	
+	"The face that is used for displaying a reference word."
+	:group 'dictionary)
+      
+      )
+  
+  ;; else
+  (copy-face 'italic 'dictionary-word-entry-face)
+  (copy-face 'bold 'dictionary-button-face)
+  (copy-face 'default 'dictionary-reference-face)
+  (set-face-foreground 'dictionary-reference-face "blue"))
 
- (if (fboundp 'defface)
-     (progn
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Buffer local variables for storing the current state
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
- (defface dictionary-word-entry-face
-   '((((type x))
-      (:italic t))
-     (((type tty) (class color))
-      (:foreground "green"))
-     (t
-      (:inverse t)))
-   "The face that is used for displaying the initial word entry line."
-   :group 'dictionary)
+(defvar dictionary-window-configuration
+  nil
+  "The window configuration to be restored upon closing the buffer")
 
- (defface dictionary-button-face
-   '((t
-      (:bold t)))
-   "The face that is used for displaying buttons."
-   :group 'dictionary)
+(defvar dictionary-selected-window
+  nil
+  "The currently selected window")
 
- (defface dictionary-reference-face
-   '((((type x)
-       (class color)
-       (background dark))
-      (:foreground "yellow"))
-     (((type tty)
-       (class color)
-       (background dark))
-      (:foreground "cyan"))
-     (((class color)
-       (background light))
-      (:foreground "blue"))
-     (t
-      (:underline t)))
+(defvar dictionary-position-stack
+  nil
+  "The history buffer for point and window position")
 
-   "The face that is used for displaying a reference word."
-   :group 'dictionary)
+(defvar dictionary-data-stack
+  nil
+  "The history buffer for functions and arguments")
 
- )
+(defvar dictionary-positions
+  nil
+  "The current positions")
 
- ;; else
- (copy-face 'italic 'dictionary-word-entry-face)
- (copy-face 'bold 'dictionary-button-face)
- (copy-face 'default 'dictionary-reference-face)
- (set-face-foreground 'dictionary-reference-face "blue"))
+(defvar dictionary-current-data
+  nil
+  "The item that will be placed on stack next time")
 
- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
- ;; Buffer local variables for storing the current state
- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Global variables
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defvar dictionary-mode-map
+  nil
+  "Keymap for dictionary mode")
 
- (defvar dictionary-window-configuration
-   nil
-   "The window configuration to be restored upon closing the buffer")
+(defvar dictionary-connection 
+  nil
+  "The current network connection")
 
- (defvar dictionary-selected-window
-   nil
-   "The currently selected window")
+(defvar dictionary-instances
+  0
+  "The number of open dictionary buffers")
 
- (defvar dictionary-position-stack
-   nil
-   "The history buffer for point and window position")
+(defvar dictionary-marker 
+  nil
+  "Stores the point position while buffer display.")
 
- (defvar dictionary-data-stack
-   nil
-   "The history buffer for functions and arguments")
+(defvar dictionary-color-support 
+  (condition-case nil
+      (x-display-color-p)
+    (error nil))
+  "Determines if the Emacs has support to display color")
 
- (defvar dictionary-positions
-   nil
-   "The current positions")
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Basic function providing startup actions
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
- (defvar dictionary-current-data
-   nil
-   "The item that will be placed on stack next time")
-
- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
- ;; Global variables
- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
- (defvar dictionary-mode-map
-   nil
-   "Keymap for dictionary mode")
-
- (defvar dictionary-connection 
-   nil
-   "The current network connection")
-
- (defvar dictionary-instances
-   0
-   "The number of open dictionary buffers")
-
- (defvar dictionary-marker 
-   nil
-   "Stores the point position while buffer display.")
-
- (defvar dictionary-color-support 
-   (condition-case nil
-       (x-display-color-p)
-     (error nil))
-   "Stores the point position while buffer display.")
-
- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
- ;; Basic function providing startup actions
- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
- ;;;###autoload
- (defun dictionary-mode ()
-   "This is a mode for searching a dictionary server implementing
+;;;###autoload
+(defun dictionary-mode ()
+  "This is a mode for searching a dictionary server implementing
  the protocol defined in RFC 2229.
 
  This is a quick reference to this mode describing the default key bindings:
@@ -291,54 +340,57 @@ by the choice value:
  * Return or Button2 visit that link
  * M-Return or M-Button2 search the word beneath link in all dictionaries
  "
+  
+  (unless (eq major-mode 'dictionary-mode)
+    (incf dictionary-instances))
+  
+  (kill-all-local-variables)
+  (buffer-disable-undo)
+  (use-local-map dictionary-mode-map)
+  (setq major-mode 'dictionary-mode)
+  (setq mode-name "Dictionary")
+  
+  (make-local-variable 'dictionary-data-stack)
+  (setq dictionary-data-stack nil)
+  (make-local-variable 'dictionary-position-stack)
+  (setq dictionary-position-stack nil)
+  
+  (make-local-variable 'dictionary-current-data)
+  (make-local-variable 'dictionary-positions)
+  
+  (make-local-variable 'dictionary-default-dictionary)
+  (make-local-variable 'dictionary-default-strategy)
+  
+  (if (featurep 'xemacs)
+      (make-local-hook 'kill-buffer-hook))
+  (add-hook 'kill-buffer-hook 'dictionary-close t t)
+  (run-hooks 'dictionary-mode-hook))
 
-   (unless (eq major-mode 'dictionary-mode)
-     (incf dictionary-instances))
-
-   (kill-all-local-variables)
-   (buffer-disable-undo)
-   (use-local-map dictionary-mode-map)
-   (setq major-mode 'dictionary-mode)
-   (setq mode-name "Dictionary")
-
-   (make-local-variable 'dictionary-data-stack)
-   (setq dictionary-data-stack nil)
-   (make-local-variable 'dictionary-position-stack)
-   (setq dictionary-position-stack nil)
-
-   (make-local-variable 'dictionary-current-data)
-   (make-local-variable 'dictionary-positions)
-
-   (make-local-variable 'dictionary-default-dictionary)
-   (make-local-variable 'dictionary-default-strategy)
-
-   (make-local-hook 'kill-buffer-hook)
-   (add-hook 'kill-buffer-hook 'dictionary-close t t)
-   (run-hooks 'dictionary-mode-hook))
-
- ;;;###autoload
- (defun dictionary ()
-   "Create a new dictonary buffer and install dictionary-mode"
-   (interactive)
-   (let ((buffer (generate-new-buffer "*Dictionary buffer*"))
-	 (window-configuration (current-window-configuration))
-	 (selected-window (frame-selected-window)))
-     
-     (switch-to-buffer-other-window buffer)
-     (dictionary-mode)
-     
-     (make-local-variable 'dictionary-window-configuration)
-     (make-local-variable 'dictionary-selected-window)
-     (setq dictionary-window-configuration window-configuration)
-     (setq dictionary-selected-window selected-window)
-     (dictionary-check-connection)
-     (dictionary-new-buffer)
-     (dictionary-store-positions)
-     (dictionary-store-state 'dictionary-new-buffer nil)))
+;;;###autoload
+(defun dictionary ()
+  "Create a new dictonary buffer and install dictionary-mode"
+  (interactive)
+  (let ((buffer (or (and dictionary-use-single-buffer 
+                         (get-buffer "*Dictionary*"))
+                    (generate-new-buffer "*Dictionary*")))
+        (window-configuration (current-window-configuration))
+        (selected-window (frame-selected-window)))
+    
+    (switch-to-buffer-other-window buffer)
+    (dictionary-mode)
+    
+    (make-local-variable 'dictionary-window-configuration)
+    (make-local-variable 'dictionary-selected-window)
+    (setq dictionary-window-configuration window-configuration)
+    (setq dictionary-selected-window selected-window)
+    (dictionary-check-connection)
+    (dictionary-new-buffer)
+    (dictionary-store-positions)
+    (dictionary-store-state 'dictionary-new-buffer nil)))
 
 (defun dictionary-new-buffer (&rest ignore)
   "Create a new and clean buffer"
-
+  
   (dictionary-pre-buffer)
   (dictionary-post-buffer))
 
@@ -346,7 +398,7 @@ by the choice value:
 (unless dictionary-mode-map
   (setq dictionary-mode-map (make-sparse-keymap))
   (suppress-keymap dictionary-mode-map)
-
+  
   (define-key dictionary-mode-map "q" 'dictionary-close)
   (define-key dictionary-mode-map "h" 'dictionary-help)
   (define-key dictionary-mode-map "s" 'dictionary-search)
@@ -355,24 +407,26 @@ by the choice value:
   (define-key dictionary-mode-map "M" 'dictionary-select-strategy)
   (define-key dictionary-mode-map "m" 'dictionary-match-words)
   (define-key dictionary-mode-map "l" 'dictionary-previous)
-
+  
   (if (and (string-match "GNU" (emacs-version))
 	   (not window-system))
       (define-key dictionary-mode-map [9] 'dictionary-next-link)
     (define-key dictionary-mode-map [tab] 'dictionary-next-link))
-
+  
   ;; shift-tabs normally is supported on window systems only, but
   ;; I do not enforce it
   (define-key dictionary-mode-map [(shift tab)] 'dictionary-prev-link)
+  (define-key dictionary-mode-map "\e\t" 'dictionary-prev-link)
+  (define-key dictionary-mode-map [backtab] 'dictionary-prev-link)
   
   (define-key dictionary-mode-map "n" 'dictionary-next-link)
   (define-key dictionary-mode-map "p" 'dictionary-prev-link)
-
+  
   (define-key dictionary-mode-map " " 'scroll-up)
   (define-key dictionary-mode-map [(meta space)] 'scroll-down)
-
-  (link-initialize-keymap dictionary-mode-map))
   
+  (link-initialize-keymap dictionary-mode-map))
+
 (defun dictionary-check-connection ()
   "Check if there is already a connection open"
   (if (not (and dictionary-connection
@@ -392,7 +446,10 @@ by the choice value:
 		    (connection-open dictionary-proxy-server 
 				     dictionary-proxy-port)
 		  (connection-open dictionary-server dictionary-port)))
-
+	  (set-process-query-on-exit-flag
+	   (connection-process dictionary-connection)
+	   nil)
+	  
 	  (when dictionary-use-http-proxy
 	    (message "Proxy CONNECT to %s:%d" 
 		     dictionary-proxy-server
@@ -402,7 +459,7 @@ by the choice value:
 					     dictionary-port))
 	    ;; just a \r\n combination
 	    (dictionary-send-command "")
-
+	    
 	    ;; read first line of reply
 	    (let* ((reply (dictionary-read-reply))
 		   (reply-list (dictionary-split-string reply)))
@@ -413,7 +470,7 @@ by the choice value:
 	      ;; skip the following header lines until empty found
 	      (while (not (equal reply ""))
 		(setq reply (dictionary-read-reply)))))
-
+	  
 	  (dictionary-check-initial-reply)
 	  (dictionary-send-command (concat "client " dictionary-identification))
 	  (let ((reply (dictionary-read-reply-and-split)))
@@ -476,12 +533,12 @@ This function knows about the special meaning of quotes (\")"
 	(if (= (aref string 0) ?\")
 	    (setq search "\\(\"\\)\\s-*"
 		  start 1))
-      (if (string-match search string start)
-	  (progn
-	    (setq list (cons (substring string start (- (match-end 1) 1)) list)
-		  string (substring string (match-end 0))))
-	(setq list (cons string list)
-	      string nil))))
+	(if (string-match search string start)
+	    (progn
+	      (setq list (cons (substring string start (- (match-end 1) 1)) list)
+		    string (substring string (match-end 0))))
+	  (setq list (cons string list)
+		string nil))))
     (nreverse list)))
 
 (defun dictionary-read-reply-and-split ()
@@ -515,7 +572,7 @@ This function knows about the special meaning of quotes (\")"
       (setq start (1- (match-end 0))))
     (setq start 0)
     (if (string-match "\n\\.\n.*" answer start)
-      (setq answer (replace-match "" t t answer)))
+	(setq answer (replace-match "" t t answer)))
     answer))
 
 (defun dictionary-check-reply (reply code)
@@ -577,7 +634,7 @@ This function knows about the special meaning of quotes (\")"
   "Stores the current positions for later restore."
   
   (setq dictionary-positions (cons (point) (window-start))))
-  
+
 ;; Restore the previous state
 (defun dictionary-restore-state (&rest ignored)
   "Restore the state just before the last operation"
@@ -589,7 +646,7 @@ This function knows about the special meaning of quotes (\")"
     (set-window-start (selected-window) (cdr position))
     (goto-char (car position))
     (setq dictionary-current-data data)))
-      
+
 ;; The normal search
 
 (defun dictionary-new-search (args &optional all)
@@ -598,7 +655,7 @@ This function knows about the special meaning of quotes (\")"
   (dictionary-store-positions)
   (let ((word (car args))
 	(dictionary (cdr args)))
-
+    
     (if all
 	(setq dictionary dictionary-default-dictionary))
     (dictionary-ensure-buffer)
@@ -613,19 +670,21 @@ This function knows about the special meaning of quotes (\")"
 
 (defun dictionary-do-search (word dictionary function &optional nomatching)
   "The workhorse for doing the search"
-
+  
   (message "Searching for %s in %s" word dictionary)
-  (dictionary-send-command (concat "define " dictionary " \""
+  (dictionary-send-command (concat "define "
+				   (dictionary-encode-charset dictionary "")
+				   " \""
 				   (dictionary-encode-charset word dictionary)
 				   "\""))
-
+  
   (message nil)
   (let ((reply (dictionary-read-reply-and-split)))
     (if (dictionary-check-reply reply 552)
 	(progn
 	  (unless nomatching
 	    (beep)
-	    (insert "Word not found, maybe you look "
+	    (insert "Word not found, maybe you are looking "
 		    "for one of these words\n\n")
 	    (dictionary-do-matching word
 				    dictionary
@@ -641,7 +700,7 @@ This function knows about the special meaning of quotes (\")"
 
 (defun dictionary-pre-buffer ()
   "These commands are executed at the begin of a new buffer"
-  (toggle-read-only 0)
+  (setq buffer-read-only nil)
   (erase-buffer)
   (if dictionary-create-buttons
       (progn
@@ -654,19 +713,19 @@ This function knows about the special meaning of quotes (\")"
 			  'dictionary-search nil
 			  "Mouse-2 to look up a new word")
 	(insert "         ")
-
+	
 	(link-insert-link "[Matching words]"
 			  'dictionary-button-face
 			  'dictionary-match-words nil
 			  "Mouse-2 to find matches for a pattern")
 	(insert "        ")
-
+	
 	(link-insert-link "[Quit]" 'dictionary-button-face 
 			  'dictionary-close nil
 			  "Mouse-2 to close this window")
-
+	
 	(insert "\n       ")
-
+	
 	(link-insert-link "[Select Dictionary]"
 			  'dictionary-button-face
 			  'dictionary-select-dictionary nil
@@ -684,7 +743,7 @@ This function knows about the special meaning of quotes (\")"
   (goto-char dictionary-marker)
   
   (set-buffer-modified-p nil)
-  (toggle-read-only 1))
+  (setq buffer-read-only t))
 
 (defun dictionary-display-search-result (reply)
   "This function starts displaying the result starting with the `reply'."
@@ -709,7 +768,12 @@ This function knows about the special meaning of quotes (\")"
 (defun dictionary-display-word-entry (word dictionary description)
   "Insert an explanation for the current definition."
   (let ((start (point)))
-    (insert "From " description "[" dictionary "]:\n\n")
+    (insert "From " 
+	    dictionary-description-open-delimiter
+	    (dictionary-decode-charset description dictionary) 
+	    dictionary-description-close-delimiter
+	    " [" (dictionary-decode-charset dictionary dictionary) "]:"
+	    "\n\n")
     (put-text-property start (point) 'face 'dictionary-word-entry-face)))
 
 (defun dictionary-display-word-definition (reply word dictionary)
@@ -721,18 +785,17 @@ This function knows about the special meaning of quotes (\")"
       (goto-char start)
       (while (< (point) (point-max))
 	(if (search-forward-regexp regexp nil t)
-	    (let ((match-start (match-beginning 1))
+	    (let ((match-start (match-beginning 2))
 		  (match-end (match-end 2)))
 	      (if dictionary-color-support
-		  (progn
-		    (replace-match "\\2")
-		    ;; Compensate for the replacement
-		    (let ((brace-match-length (- (match-end 1)
-						 (match-beginning 1))))
-		      (setq match-start (- (match-beginning 2)
-					   brace-match-length))
-		      (setq match-end (- (match-end 2)
-					 brace-match-length)))))
+		  ;; Compensate for the replacement
+		  (let ((brace-match-length (- (match-end 1)
+					       (match-beginning 1))))
+		    (setq match-start (- (match-beginning 2)
+					 brace-match-length))
+		    (setq match-end (- (match-end 2)
+				       brace-match-length))
+		    (replace-match "\\2")))
 	      (dictionary-mark-reference match-start match-end
 					 'dictionary-new-search
 					 word dictionary))
@@ -763,10 +826,10 @@ The word is taken from the buffer, the `dictionary' is given as argument."
 
 (defun dictionary-do-select-dictionary (&rest ignored)
   "The workhorse for doing the dictionary selection."
-
+  
   (message "Looking up databases and descriptions")
   (dictionary-send-command "show db")
-
+  
   (let ((reply (dictionary-read-reply-and-split)))
     (message nil)
     (if (dictionary-check-reply reply 554)
@@ -797,32 +860,35 @@ If PATTERN is omitted, it defaults to \"[ \\f\\t\\n\\r\\v]+\"."
   (dictionary-display-dictionary-line "! \"The first matching dictionary\"")
   (let* ((reply (dictionary-read-answer))
 	 (list (dictionary-simple-split-string reply "\n+")))
-    (mapcar 'dictionary-display-dictionary-line list))
+    (mapc 'dictionary-display-dictionary-line list))
   (dictionary-post-buffer))
 
 (defun dictionary-display-dictionary-line (string)
   "Display a single dictionary"
   (let* ((list (dictionary-split-string string))
 	 (dictionary (car list))
-	 (description (cadr list)))
+	 (description (cadr list))
+	 (translated (dictionary-decode-charset description dictionary)))
     (if dictionary
-	(progn
-	  (link-insert-link description 'dictionary-reference-face
+	(if (equal dictionary "--exit--")
+	    (insert "(end of default search list)\n")
+	  (link-insert-link (concat dictionary ": " translated)
+			    'dictionary-reference-face
 			    'dictionary-set-dictionary 
 			    (cons dictionary description)
 			    "Mouse-2 to select this dictionary")
 	  (insert "\n")))))
-    
+
 (defun dictionary-set-dictionary (param &optional more)
   "Select this dictionary as new default"
-
+  
   (if more
       (dictionary-display-more-info param)
     (let ((dictionary (car param)))
       (setq dictionary-default-dictionary dictionary)
       (dictionary-restore-state)
       (message "Dictionary %s has been selected" dictionary))))
-    
+
 (defun dictionary-display-more-info (param)
   "Display the available information on the dictionary"
   
@@ -832,7 +898,8 @@ If PATTERN is omitted, it defaults to \"[ \\f\\t\\n\\r\\v]+\"."
 		(equal dictionary "!"))
       (dictionary-store-positions)
       (message "Requesting more information on %s" dictionary)
-      (dictionary-send-command (concat "show info " dictionary))
+      (dictionary-send-command
+       (concat "show info " (dictionary-encode-charset dictionary "")))
       (let ((reply (dictionary-read-reply-and-split)))
 	(message nil)
 	(if (dictionary-check-reply reply 550)
@@ -862,10 +929,10 @@ If PATTERN is omitted, it defaults to \"[ \\f\\t\\n\\r\\v]+\"."
 
 (defun dictionary-do-select-strategy ()
   "The workhorse for doing the strategy selection."
-
+  
   (message "Request existing matching algorithm")
   (dictionary-send-command "show strat")
-
+  
   (let ((reply (dictionary-read-reply-and-split)))
     (message nil)
     (if (dictionary-check-reply reply 555)
@@ -882,7 +949,7 @@ If PATTERN is omitted, it defaults to \"[ \\f\\t\\n\\r\\v]+\"."
   (dictionary-display-strategy-line ". \"The servers default\"")
   (let* ((reply (dictionary-read-answer))
 	 (list (dictionary-simple-split-string reply "\n+")))
-    (mapcar 'dictionary-display-strategy-line list))
+    (mapc 'dictionary-display-strategy-line list))
   (dictionary-post-buffer))
 
 (defun dictionary-display-strategy-line (string)
@@ -896,13 +963,13 @@ If PATTERN is omitted, it defaults to \"[ \\f\\t\\n\\r\\v]+\"."
 			    'dictionary-set-strategy strategy
 			    "Mouse-2 to select this matching algorithm")
 	  (insert "\n")))))
-    
+
 (defun dictionary-set-strategy (strategy &rest ignored)
   "Select this strategy as new default"
   (setq dictionary-default-strategy strategy)
   (dictionary-restore-state)
   (message "Strategy %s has been selected" strategy))
-    
+
 (defun dictionary-new-matching (word)
   "Run a new matching search on `word'."
   (dictionary-ensure-buffer)
@@ -921,8 +988,9 @@ If PATTERN is omitted, it defaults to \"[ \\f\\t\\n\\r\\v]+\"."
   (message "Lookup matching words for %s in %s using %s"
 	   word dictionary strategy)
   (dictionary-send-command 
-   (concat "match " dictionary " "
-	   strategy " \"" (dictionary-encode-charset word "") "\""))
+   (concat "match " (dictionary-encode-charset dictionary "") " "
+	   (dictionary-encode-charset strategy "") " \""
+	   (dictionary-encode-charset word "") "\""))
   (let ((reply (dictionary-read-reply-and-split)))
     (message nil)
     (if (dictionary-check-reply reply 550)
@@ -938,76 +1006,70 @@ If PATTERN is omitted, it defaults to \"[ \\f\\t\\n\\r\\v]+\"."
       (error "Unknown server answer: %s" (dictionary-reply reply)))
     (funcall function reply)))
 
-(defun dictionary-display-match-result (reply)
-  "Display the results from the current matches."
-  (dictionary-pre-buffer)
-  (dictionary-display-only-match-result reply)
-  (dictionary-post-buffer))
-
 (defun dictionary-display-only-match-result (reply)
   "Display the results from the current matches without the headers."
-
+  
   (let ((number (nth 1 (dictionary-reply-list reply)))
 	(list (dictionary-simple-split-string (dictionary-read-answer) "\n+")))
     (insert number " matching word" (if (equal number "1") "" "s")
 	    " found\n\n")
     (let ((result nil))
-      (mapcar (lambda (item)
-		(let* ((list (dictionary-split-string item))
-		       (dictionary (car list))
-		       (word (cadr list))
-		       (hash (assoc dictionary result)))
-		  (if dictionary
-		      (if hash
-			  (setcdr hash (cons word (cdr hash)))
-		    (setq result (cons 
-				  (cons dictionary (list word)) 
-				  result))))))
-	      list)
+      (mapc (lambda (item)
+	      (let* ((list (dictionary-split-string item))
+		     (dictionary (car list))
+		     (word (cadr list))
+		     (hash (assoc dictionary result)))
+		(if dictionary
+		    (if hash
+			(setcdr hash (cons word (cdr hash)))
+		      (setq result (cons 
+				    (cons dictionary (list word)) 
+				    result))))))
+	    list)
       (dictionary-display-match-lines (reverse result)))))
 
 (defun dictionary-display-match-result (reply)
   "Display the results from the current matches."
   (dictionary-pre-buffer)
-
+  
   (let ((number (nth 1 (dictionary-reply-list reply)))
 	(list (dictionary-simple-split-string (dictionary-read-answer) "\n+")))
     (insert number " matching word" (if (equal number "1") "" "s")
 	    " found\n\n")
     (let ((result nil))
-      (mapcar (lambda (item)
-		(let* ((list (dictionary-split-string item))
-		       (dictionary (car list))
-		       (word (cadr list))
-		       (hash (assoc dictionary result)))
-		  (if dictionary
-		      (if hash
-			  (setcdr hash (cons word (cdr hash)))
-		    (setq result (cons 
-				  (cons dictionary (list word)) 
-				  result))))))
-	      list)
+      (mapc (lambda (item)
+	      (let* ((list (dictionary-split-string item))
+		     (dictionary (car list))
+		     (word (cadr list))
+		     (hash (assoc dictionary result)))
+		(if dictionary
+		    (if hash
+			(setcdr hash (cons word (cdr hash)))
+		      (setq result (cons 
+				    (cons dictionary (list word)) 
+				    result))))))
+	    list)
       (dictionary-display-match-lines (reverse result))))
   (dictionary-post-buffer))
 
 (defun dictionary-display-match-lines (list)
   "Display the match lines."
-  (mapcar (lambda (item)
-	    (let ((dictionary (car item))
-		  (word-list (cdr item)))
-	      (insert "Matches from " dictionary ":\n")
-	      (mapcar (lambda (word)
-			(setq word (dictionary-decode-charset word dictionary))
-			(insert "  ")
-			(link-insert-link word
-					  'dictionary-reference-face
-					  'dictionary-new-search
-					  (cons word dictionary)
-					  "Mouse-2 to lookup word")
-			(insert "\n")) (reverse word-list))
-	      (insert "\n")))
-	    list))
-	   
+  (mapc (lambda (item)
+	  (let ((dictionary (car item))
+		(word-list (cdr item)))
+	    (insert "Matches from " dictionary ":\n")
+	    (mapc (lambda (word)
+		    (setq word (dictionary-decode-charset word dictionary))
+		    (insert "  ")
+		    (link-insert-link word
+				      'dictionary-reference-face
+				      'dictionary-new-search
+				      (cons word dictionary)
+				      "Mouse-2 to lookup word")
+		    (insert "\n")) (reverse word-list))
+	    (insert "\n")))
+	list))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; User callable commands
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -1017,11 +1079,18 @@ If PATTERN is omitted, it defaults to \"[ \\f\\t\\n\\r\\v]+\"."
   "Search the `word' in `dictionary' if given or in all if nil.  
 It presents the word at point as default input and allows editing it."
   (interactive
-   (list (read-string "Search word: " (current-word))
+   (list (let ((default (current-word t)))
+           (read-string (if default
+                            (format "Search word (%s): " default)
+                          "Search word: ")
+                        nil nil default))
 	 (if current-prefix-arg
-	     (read-string "Dictionary: " dictionary-default-dictionary)
+	     (read-string (if dictionary-default-dictionary
+			      (format "Dictionary (%s): " dictionary-default-dictionary)
+			    "Dictionary: ")
+			  nil nil dictionary-default-dictionary)
 	   dictionary-default-dictionary)))
-
+  
   ;; if called by pressing the button
   (unless word
     (setq word (read-string "Search word: ")))
@@ -1098,7 +1167,7 @@ It presents the word at point as default input and allows editing it."
 (defun dictionary-process-popup-replies (reply)
   (let ((number (nth 1 (dictionary-reply-list reply)))
 	(list (dictionary-simple-split-string (dictionary-read-answer) "\n+")))
-
+    
     (let ((result (mapcar (lambda (item)
 			    (let* ((list (dictionary-split-string item))
 				   (dictionary (car list))
@@ -1111,7 +1180,7 @@ It presents the word at point as default input and allows editing it."
 					`(dictionary-new-search 
 					  '(,word . ,dictionary))
 					t ))))
-				
+			  
 			  list)))
       (let ((menu (make-sparse-keymap 'dictionary-popup)))
 	
@@ -1122,6 +1191,20 @@ It presents the word at point as default input and allows editing it."
 	(popup-menu dictionary-mode-map-menu)))))
 
 ;;; Tooltip support
+
+;; Common to GNU Emacs and XEmacs
+
+;; Add a mode indicater named "Dict"
+(defvar dictionary-tooltip-mode
+  nil
+  "Indicates wheather the dictionary tooltip mode is active")
+(nconc minor-mode-alist '((dictionary-tooltip-mode " Dict")))
+
+(defcustom dictionary-tooltip-dictionary
+  nil
+  "This dictionary to lookup words for tooltips"
+  :group 'dictionary
+  :type '(choice (const :tag "None" nil) string))
 
 (defun dictionary-definition (word &optional dictionary)
   (interactive)
@@ -1134,54 +1217,133 @@ It presents the word at point as default input and allows editing it."
   (let ((list (dictionary-simple-split-string (dictionary-read-answer) "\n+")))
     (mapconcat 'identity (cdr list) "\n")))
 
-(defcustom dictionary-tooltip-dictionary
-  nil
-  "This dictionary to lookup words for tooltips"
-  :group 'dictionary
-  :type 'string)
+(defconst dictionary-use-balloon-help 
+  (eval-when-compile
+    (condition-case nil
+	(require 'balloon-help)
+      (error nil))))
 
+(if dictionary-use-balloon-help
+    (progn
+
+;; The following definition are only valid for XEmacs with balloon-help 
+
+(defvar dictionary-balloon-help-position nil
+  "Current position to lookup word")
+
+(defun dictionary-balloon-help-store-position (event)
+  (setq dictionary-balloon-help-position (event-point event)))
+
+(defun dictionary-balloon-help-description (&rest extent)
+  "Get the word from the cursor and lookup it"
+  (if dictionary-balloon-help-position
+      (let ((word (save-window-excursion
+		    (save-excursion
+		      (goto-char dictionary-balloon-help-position)
+		      (current-word)))))
+	(let ((definition
+		(dictionary-definition word dictionary-tooltip-dictionary)))
+	  (if definition
+	      (dictionary-decode-charset definition
+					 dictionary-tooltip-dictionary)
+	    nil)))))
+
+(defvar dictionary-balloon-help-extent nil
+  "The extent for activating the balloon help")
+
+(make-variable-buffer-local 'dictionary-balloon-help-extent)
+
+;;;###autoload
+(defun dictionary-tooltip-mode (&optional arg)
+   "Display tooltips for the current word"
+   (interactive "P")
+   (let* ((on (if arg
+		  (> (prefix-numeric-value arg) 0)
+		(not dictionary-tooltip-mode))))
+     (make-local-variable 'dictionary-tooltip-mode)
+     (if on
+	 ;; active mode
+	 (progn
+	   ;; remove old extend
+	   (if dictionary-balloon-help-extent
+	       (delete-extent dictionary-balloon-help-extent))
+	   ;; create new one
+	   (setq dictionary-balloon-help-extent (make-extent (point-min)
+							     (point-max)))
+	   (set-extent-property dictionary-balloon-help-extent
+				'balloon-help 
+				'dictionary-balloon-help-description)
+	   (set-extent-property dictionary-balloon-help-extent
+				'start-open nil)
+	   (set-extent-property dictionary-balloon-help-extent
+				'end-open nil)
+	   (add-hook 'mouse-motion-hook
+		     'dictionary-balloon-help-store-position))
+
+       ;; deactivate mode
+       (if dictionary-balloon-help-extent
+	   (delete-extent dictionary-balloon-help-extent))
+       (remove-hook 'mouse-motion-hook
+		     'dictionary-balloon-help-store-position))
+     (setq dictionary-tooltip-mode on)
+     (balloon-help-minor-mode on)))
+
+) ;; end of XEmacs part
+
+(defvar global-dictionary-tooltip-mode
+  nil)
+
+;;; Tooltip support for GNU Emacs
 (defun dictionary-display-tooltip (event)
   "Search the current word in the `dictionary-tooltip-dictionary'."
   (interactive "e")
   (if dictionary-tooltip-dictionary
       (let ((word (save-window-excursion
-		    (save-excursion
-		      (mouse-set-point event)
-		      (current-word)))))
-	(let ((definition 
-		(dictionary-definition word dictionary-tooltip-dictionary)))
-	  (if definition 
-	      (tooltip-show 
-	       (dictionary-decode-charset definition 
-					  dictionary-tooltip-dictionary)))
-	  t))
+ 		    (save-excursion
+ 		      (mouse-set-point event)
+ 		      (current-word)))))
+ 	(let ((definition 
+ 		(dictionary-definition word dictionary-tooltip-dictionary)))
+ 	  (if definition 
+ 	      (tooltip-show 
+ 	       (dictionary-decode-charset definition 
+ 					  dictionary-tooltip-dictionary)))
+ 	  t))
     nil))
-
-(defvar dictionary-tooltip-mode
-  nil)
 
 ;;;###autoload
 (defun dictionary-tooltip-mode (&optional arg)
   "Display tooltips for the current word"
   (interactive "P")
   (require 'tooltip)
-  (let* ((on (if arg
-		 (> (prefix-numeric-value arg) 0)
-	       (not dictionary-tooltip-mode)))
-	 (hook-fn (if on 'add-hook 'remove-hook)))
-    (tooltip-mode on)
-    (funcall hook-fn 'tooltip-hook 'dictionary-display-tooltip)
-    (tooltip-activate-mouse-motions on)))
+  (let ((on (if arg
+		(> (prefix-numeric-value arg) 0)
+	      (not dictionary-tooltip-mode))))
+    (make-local-variable 'dictionary-tooltip-mode)
+    (setq dictionary-tooltip-mode on)
+    ;; make sure that tooltip is still (global available) even is on
+    ;; if nil
+    (tooltip-mode 1)
+    (add-hook 'tooltip-hook 'dictionary-display-tooltip)
+    (make-local-variable 'track-mouse)
+    (setq track-mouse on)))
 
 ;;;###autoload
 (defun global-dictionary-tooltip-mode (&optional arg)
   "Enable/disable dictionary-tooltip-mode for all buffers"
   (interactive "P")
-  (let ((on (if arg (> (prefix-numeric-value arg) 0)
-	      (not dictionary-tooltip-mode))))
-    (dictionary-tooltip-mode on)
-    (tooltip-activate-mouse-motions on)
+  (require 'tooltip)
+  (let* ((on (if arg (> (prefix-numeric-value arg) 0)
+ 	      (not global-dictionary-tooltip-mode)))
+ 	 (hook-fn (if on 'add-hook 'remove-hook)))
+    (setq global-dictionary-tooltip-mode on)
+    (tooltip-mode 1)
+    (funcall hook-fn 'tooltip-hook 'dictionary-display-tooltip)
+    (setq-default dictionary-tooltip-mode on)
     (setq-default track-mouse on)))
+
+) ;; end of GNU Emacs part
 
 (provide 'dictionary)
 
+;;; dictionary.el ends here
