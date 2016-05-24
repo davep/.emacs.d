@@ -73,5 +73,7 @@
 (define-key global-map [(control c) (v)]         #'quickurl)
 (define-key global-map [(control c) (control u)] #'quickurl-add-url)
 (define-key global-map [(f12)]                   #'quickurl-list)
+(when osx-window-p
+  (define-key global-map [(super tab)] #'completion-at-point))
 
 (provide 'davep-keys)
