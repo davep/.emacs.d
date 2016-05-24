@@ -16,6 +16,8 @@
       " ")))
  '(eshell-prompt-regexp "^[^#$\\n]*[#$] ")
  '(inhibit-startup-screen t)
+ '(ns-alternate-modifier (quote super))
+ '(ns-command-modifier (quote meta))
  '(package-archives
    (quote
     (("gnu" . "http://elpa.gnu.org/packages/")
