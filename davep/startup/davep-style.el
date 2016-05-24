@@ -1,12 +1,16 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Visual tweaks.
-(when window-system
-  (cond
-    ((string= (system-name) "Bellerophon")
-     (set-frame-size (selected-frame) 90 50)
-     (set-frame-position (selected-frame) 230 60))
-    ((string= (system-name) "Ariel")
-     (set-frame-size (selected-frame) 90 50)
-     (set-frame-position (selected-frame) 300 200))))
+(let ((styles
+       '(
+	 ("Bellerophon" .
+	  (lambda ()
+	      (set-frame-size (selected-frame) 90 50)
+	      (set-frame-position (selected-frame) 230 60)))
+	 ("Ariel" .
+	  (lambda ()
+	      (set-frame-size (selected-frame) 90 50)
+	      (set-frame-position (selected-frame) 300 200))))))
+  (funcall (or (cdr (assoc (system-name) styles))
+	       (lambda () nil))))
 
 (provide 'davep-style)
