@@ -16,6 +16,7 @@
       " ")))
  '(eshell-prompt-regexp "^[^#$\\n]*[#$] ")
  '(inhibit-startup-screen t)
+ '(ispell-program-name "aspell")
  '(ns-alternate-modifier (quote super))
  '(ns-command-modifier (quote meta))
  '(package-archives
