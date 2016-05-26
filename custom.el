@@ -6,6 +6,7 @@
  '(blink-cursor-mode nil)
  '(case-fold-search t)
  '(column-number-mode t)
+ '(electric-pair-mode t)
  '(eshell-prompt-function
    (lambda nil
      (concat
