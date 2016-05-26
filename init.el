@@ -37,7 +37,7 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Load various startup things.
-(load "env-tests")
+(require 'davep-env-tests)
 (require 'davep-keys)
 (require 'davep-languages)
 (require 'davep-style)

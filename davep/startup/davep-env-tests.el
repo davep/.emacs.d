@@ -49,3 +49,5 @@
 (defconst rootp
   (and unixp (zerop (user-uid)))
   "Are we running as root?")
+
+(provide 'davep-env-tests)
