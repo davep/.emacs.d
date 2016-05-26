@@ -33,9 +33,6 @@
               (setq delphi-tab-always-indents t)
               (define-key delphi-mode-map "\C-m" #'newline-and-indent)))
 
-;; Smalltalk.
-(push (cons "\\.st$" 'smalltalk-mode) auto-mode-alist)
-
 ;; Javascript.
 (add-hook 'javascript-mode-hook
           #'(lambda ()
