@@ -33,9 +33,6 @@
               (setq delphi-tab-always-indents t)
               (define-key delphi-mode-map "\C-m" #'newline-and-indent)))
 
-;; COBOL support. Because.... why not?
-(push (cons "\\.\\(cob\\|cobol\\)$" 'cobol-mode) auto-mode-alist)
-
 ;; Smalltalk.
 (push (cons "\\.st$" 'smalltalk-mode) auto-mode-alist)
 
