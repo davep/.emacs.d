@@ -17,7 +17,7 @@
               (c-set-offset 'inline-open 0)
               (c-set-offset 'access-label '-)
               (c-set-offset 'inclass '++)
-              (setup-compile (concat (if dosp "gxx" "g++") " -Wall -O2"))
+              (setup-compile "g++ -Wall -O2")
               (define-key c++-mode-map "\C-m" #'newline-and-indent)))
 
 (add-hook 'pascal-mode-hook		; Generic Pascal.
