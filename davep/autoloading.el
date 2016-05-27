@@ -22,7 +22,7 @@
     (update-directory-autoloads dir))
   (byte-compile-file file))
 
-(defun update-davep-autoloads ()	
+(defun update-davep-autoloads ()        
   "Update my local autoloads file."
   (interactive)
   (update-davep-autoloads-core davep:autoload-file davep:lib))

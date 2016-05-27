@@ -1,7 +1,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Language styles and modes.
 
-(add-hook 'c-mode-hook			; C
+(add-hook 'c-mode-hook                  ; C
           #'(lambda ()
               (c-set-style "BSD")
               (setq c-basic-offset 4)
@@ -9,7 +9,7 @@
               (setup-compile "gcc -Wall -O2")
               (define-key c-mode-map "\C-m" #'newline-and-indent)))
 
-(add-hook 'c++-mode-hook		; C++
+(add-hook 'c++-mode-hook                ; C++
           #'(lambda ()
               (c-set-style "BSD")
               (setq c-basic-offset 4)
@@ -20,14 +20,14 @@
               (setup-compile "g++ -Wall -O2")
               (define-key c++-mode-map "\C-m" #'newline-and-indent)))
 
-(add-hook 'pascal-mode-hook		; Generic Pascal.
+(add-hook 'pascal-mode-hook             ; Generic Pascal.
           #'(lambda ()
               (setq pascal-indent-level 2)
               (setq pascal-auto-newline t)
               (setq pascal-tab-always-indent t)
               (define-key pascal-mode-map "\C-m" #'newline-and-indent)))
 
-(add-hook 'delphi-mode-hook		; Delphi.
+(add-hook 'delphi-mode-hook             ; Delphi.
           #'(lambda ()
               (setq delphi-indent-level 2)
               (setq delphi-tab-always-indents t)
