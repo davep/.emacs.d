@@ -16,6 +16,7 @@
       (if rootp "#" "$")
       " ")))
  '(eshell-prompt-regexp "^[^#$\\n]*[#$] ")
+ '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(ispell-program-name "aspell")
  '(ns-alternate-modifier (quote super))
