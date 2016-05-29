@@ -20,6 +20,7 @@
       " ")))
  '(eshell-prompt-regexp "^[^#$\\n]*[#$] ")
  '(fill-column 76)
+ '(ibuffer-expert t)
  '(indent-tabs-mode nil)
  '(indicate-empty-lines t)
  '(inhibit-startup-screen t)
