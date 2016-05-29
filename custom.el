@@ -20,6 +20,7 @@
  '(eshell-prompt-regexp "^[^#$\\n]*[#$] ")
  '(fill-column 76)
  '(indent-tabs-mode nil)
+ '(indicate-empty-lines t)
  '(inhibit-startup-screen t)
  '(ispell-program-name "aspell")
  '(mouse-avoidance-mode (quote jump) nil (avoid))
