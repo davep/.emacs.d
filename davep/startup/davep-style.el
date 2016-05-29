@@ -1,5 +1,5 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Visual tweaks.
+;; Window position and size.
 (let ((styles
        '(
          ("bellerophon" .
@@ -13,5 +13,11 @@
   (when window-system
     (funcall (or (cdr (assoc (car (split-string (downcase (system-name)) "\\.")) styles))
                  (lambda () nil)))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Window titles.
+(let ((format (concat invocation-name "@" (system-name) " - [%b]")))
+  (setq frame-title-format format
+        icon-title-format  format))
 
 (provide 'davep-style)
