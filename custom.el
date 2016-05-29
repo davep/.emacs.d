@@ -6,6 +6,7 @@
  '(blink-cursor-mode nil)
  '(case-fold-search t)
  '(column-number-mode t)
+ '(cursor-in-non-selected-windows nil)
  '(diff-switches "-u")
  '(electric-pair-mode t)
  '(eshell-prompt-function
