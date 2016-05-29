@@ -22,6 +22,7 @@
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(ispell-program-name "aspell")
+ '(mouse-avoidance-mode (quote jump) nil (avoid))
  '(ns-alternate-modifier (quote super))
  '(ns-command-modifier (quote meta))
  '(package-archives
