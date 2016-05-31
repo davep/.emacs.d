@@ -32,6 +32,7 @@
    (quote
     (("gnu" . "http://elpa.gnu.org/packages/")
      ("melpa" . "https://melpa.org/packages/"))))
+ '(savehist-mode t)
  '(scroll-error-top-bottom t)
  '(show-paren-mode t)
  '(tool-bar-mode nil)
