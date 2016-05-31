@@ -41,6 +41,7 @@
 (require 'davep-keys)
 (require 'davep-languages)
 (require 'davep-style)
+(require 'davep-misc)
 (require 'uptimes)
 (require 'csrclr)
 
