@@ -24,7 +24,7 @@
  '(indent-tabs-mode nil)
  '(indicate-empty-lines t)
  '(inhibit-startup-screen t)
- '(ispell-program-name "aspell")
+ '(ispell-program-name "/usr/local/bin/aspell")
  '(mouse-avoidance-mode (quote jump) nil (avoid))
  '(ns-alternate-modifier (quote super))
  '(ns-command-modifier (quote meta))
