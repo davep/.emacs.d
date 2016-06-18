@@ -1,3 +1,6 @@
+(eval-when-compile
+  (load-library "dp-lib"))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; personal keyboard bindings
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -27,8 +30,6 @@
 (define-key global-map [(control c) (e)] #'eshell)
 (define-key global-map [(control c) (f)] #'insert-filename)
 (define-key global-map [(control c) (l)] #'lbdb-maybe-region)
-(define-key global-map [(control c) (u)] #'insert-url)
-(define-key global-map [(control c) (n)] #'insert-navigator-url)
 (define-key global-map [(control c) (k)] #'browse-kill-ring)
 (define-key global-map [(control c) (r)] #'comment-region)
 (define-key global-map [(control c)
@@ -47,7 +48,7 @@
 (define-key global-map [(meta i)]        #'(lambda (name)
                                              (interactive
                                               (list (read-file-name "File: " "~/lib/boilerplate/" nil t)))
-                                             (insert-file name)))
+                                             (insert-file-contents name)))
 (define-key global-map [(control c)
                         (control f)]     #'view-file)
 (when (featurep 'uptimes)
