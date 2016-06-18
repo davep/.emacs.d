@@ -93,6 +93,9 @@
 (add-hook 'text-mode-hook #'(lambda()
                               (flyspell-mode 1)
                               (footnote-mode 1)))
+(add-hook 'markdown-mode-hook #'(lambda ()
+                                  (auto-fill-mode)
+                                  (flyspell-mode 1)))
 
 (defun daves-generic-keys ()
   "davep: Set up my generic key mappings"
