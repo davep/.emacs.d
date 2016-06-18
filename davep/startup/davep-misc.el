@@ -5,6 +5,8 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Footnote management.
+(eval-when-compile
+  (require 'footnote))
 (add-hook 'footnote-mode-hook
           #'(lambda ()
               (setq footnote-style 'numeric-latin
