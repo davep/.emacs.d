@@ -25,6 +25,7 @@
  '(indicate-empty-lines t)
  '(inhibit-startup-screen t)
  '(ispell-program-name "/usr/local/bin/aspell")
+ '(load-prefer-newer t)
  '(mouse-avoidance-mode (quote jump) nil (avoid))
  '(ns-alternate-modifier (quote super))
  '(ns-command-modifier (quote meta))
