@@ -90,7 +90,9 @@
 (when linux-x-p
   (add-hook 'vc-log-mode-hook #'(lambda () (flyspell-mode 1))))
 (add-hook 'message-mode-hook #'(lambda() (flyspell-mode 1)))
-(add-hook 'text-mode-hook #'(lambda() (flyspell-mode 1)))
+(add-hook 'text-mode-hook #'(lambda()
+                              (flyspell-mode 1)
+                              (footnote-mode 1)))
 
 (defun daves-generic-keys ()
   "davep: Set up my generic key mappings"
