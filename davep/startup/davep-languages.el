@@ -68,7 +68,7 @@
   ;; Handle any other indents.
   (lisp-modes-indents)
   ;; Think for me...
-  (turn-on-eldoc-mode))
+  (eldoc-mode))
 
 (add-hook 'emacs-lisp-mode-hook       #'dp-emacs-lisp-hook)
 (add-hook 'lisp-interaction-mode-hook #'dp-emacs-lisp-hook)
