@@ -1,3 +1,9 @@
+(eval-when-compile
+  (require 'cc-mode)
+  (require 'pascal)
+  (require 'opascal)
+  (require 'js))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Language styles and modes.
 
@@ -27,16 +33,15 @@
               (setq pascal-tab-always-indent t)
               (define-key pascal-mode-map "\C-m" #'newline-and-indent)))
 
-(add-hook 'delphi-mode-hook             ; Delphi.
+(add-hook 'opascal-mode-hook            ; Delphi.
           #'(lambda ()
-              (setq delphi-indent-level 2)
-              (setq delphi-tab-always-indents t)
-              (define-key delphi-mode-map "\C-m" #'newline-and-indent)))
+              (setq opascal-indent-level 2)
+              (define-key opascal-mode-map "\C-m" #'newline-and-indent)))
 
 ;; Javascript.
-(add-hook 'javascript-mode-hook
+(add-hook 'js-mode-hook
           #'(lambda ()
-              (define-key javascript-mode-map "\C-m" #'newline-and-indent)))
+              (define-key js-mode-map "\C-m" #'newline-and-indent)))
 
 ;; .asd files are lisp files.
 (push (cons "\\.asd$" 'lisp-mode) auto-mode-alist)
@@ -68,7 +73,7 @@
   ;; Handle any other indents.
   (lisp-modes-indents)
   ;; Think for me...
-  (turn-on-eldoc-mode))
+  (eldoc-mode))
 
 (add-hook 'emacs-lisp-mode-hook       #'dp-emacs-lisp-hook)
 (add-hook 'lisp-interaction-mode-hook #'dp-emacs-lisp-hook)
@@ -87,10 +92,15 @@
 (add-hook 'python-mode-hook #'daves-generic-keys)
 (add-hook 'perl-mode-hook   #'daves-generic-keys)
 (add-hook 'cperl-mode-hook  #'daves-generic-keys)
-(when linux-x-p
+(when davep:linux-x-p
   (add-hook 'vc-log-mode-hook #'(lambda () (flyspell-mode 1))))
 (add-hook 'message-mode-hook #'(lambda() (flyspell-mode 1)))
-(add-hook 'text-mode-hook #'(lambda() (flyspell-mode 1)))
+(add-hook 'text-mode-hook #'(lambda()
+                              (flyspell-mode 1)
+                              (footnote-mode 1)))
+(add-hook 'markdown-mode-hook #'(lambda ()
+                                  (auto-fill-mode)
+                                  (flyspell-mode 1)))
 
 (defun daves-generic-keys ()
   "davep: Set up my generic key mappings"

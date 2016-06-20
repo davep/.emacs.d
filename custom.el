@@ -9,6 +9,7 @@
  '(column-number-mode t)
  '(cursor-in-non-selected-windows nil)
  '(diff-switches "-u")
+ '(dired-use-ls-dired nil)
  '(electric-pair-mode t)
  '(eshell-prompt-function
    (lambda nil
@@ -16,7 +17,7 @@
       (user-login-name)
       ":"
       (eshell/pwd)
-      (if rootp "#" "$")
+      (if davep:rootp "#" "$")
       " ")))
  '(eshell-prompt-regexp "^[^#$\\n]*[#$] ")
  '(fill-column 76)
@@ -24,7 +25,8 @@
  '(indent-tabs-mode nil)
  '(indicate-empty-lines t)
  '(inhibit-startup-screen t)
- '(ispell-program-name "aspell")
+ '(ispell-program-name "/usr/local/bin/aspell")
+ '(load-prefer-newer t)
  '(mouse-avoidance-mode (quote jump) nil (avoid))
  '(ns-alternate-modifier (quote super))
  '(ns-command-modifier (quote meta))

@@ -15,8 +15,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (eval-when-compile
-  (defvar linux-x-p)
-  (defvar win32p))
+  (defvar davep:linux-x-p)
+  (defvar davep:win32p))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Are we running on a given machine?
@@ -102,7 +102,7 @@ any other value means insert the name without the directory."
 (defun run-in-new-frame (exp)
   "davep: Create another frame (or split window when frames are not
 avaialble) and funcall exp."
-  (if (or linux-x-p win32p)
+  (if (or davep:linux-x-p davep:win32p)
       (select-frame (make-frame '((minibuffer . nil))))
     (split-window)
     (other-window 1))
@@ -122,7 +122,7 @@ avaialble) and funcall exp."
 
 (defun string-reverse (str)
   "davep: Reverse a string"
-  (coerce (reverse (coerce str 'list)) 'string))
+  (cl-coerce (reverse (cl-coerce str 'list)) 'string))
 
 (defun string-padl (str width &optional char)
   "davep: Left pad a string to a specified length"
@@ -154,7 +154,7 @@ avaialble) and funcall exp."
 (defun to-binary (num &optional pad)
   "davep: Convert a decimal value to a binary string"
   (interactive "nValue: \nnBits: ")
-  (let ((binary (coerce
+  (let ((binary (cl-coerce
                  (nreverse
                   (loop for bit = 1 then (ash bit 1)
                         until (> bit num)
@@ -162,7 +162,7 @@ avaialble) and funcall exp."
                  'string)))
     (when pad
       (setq binary (string-padl binary pad ?0)))
-    (when (interactive-p)
+    (when (called-interactively-p 'any)
       (message "%dd == %sb" num binary))
     binary))
 
@@ -174,11 +174,11 @@ avaialble) and funcall exp."
   "davep: Convert a binary string to a decimal value"
   (interactive "sBinary: ")
   (let ((decimal
-         (let ((binary (nreverse (coerce binary 'list))))
+         (let ((binary (nreverse (cl-coerce binary 'list))))
            (loop for bit in binary
                  for bitv = 1 then (ash bitv 1)
                  when (= bit ?1) sum bitv))))
-    (when (interactive-p)
+    (when (called-interactively-p 'any)
       (message "%sb == %dd" binary decimal))
     decimal))
 
@@ -206,7 +206,7 @@ avaialble) and funcall exp."
   "davep: Convert from hex to decimal."
   (interactive "sHex: ")
   (let ((n (read (concat "?\\x" hex))))
-    (when (interactive-p)
+    (when (called-interactively-p 'any)
       (message "Hex: %s Decimal: %d" hex n))
     n))
 
@@ -218,7 +218,7 @@ avaialble) and funcall exp."
   "davep: Convert from decimal to hex."
   (interactive "nDecimal: ")
   (let ((hex (format "%x" n)))
-    (when (interactive-p)
+    (when (called-interactively-p 'any)
       (message "Decimal: %d Hex: %s" n hex))
     hex))
 
@@ -230,74 +230,6 @@ avaialble) and funcall exp."
   "davep: Return emacs version number as a float value"
   (string-match "\\([0-9]+\\.[0-9]+\\)" (emacs-version))
   (string-to-number (match-string 0 (emacs-version))))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Provide a wrapper around my sndplay utility
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(defvar sndplay-library "/usr/local/lib/sounds"
-  "*Location of the sound library.")
-
-(defun sndplay-sounds ()
-  "davep: Compile a list of sounds for use with `completing-read'."
-  (loop for sound in (directory-files sndplay-library nil "[^.].*")
-        collect (cons (file-name-sans-extension sound) sound)))
-  
-(defun sndplay (sound)
-  "davep: elisp wrapper for sndplay"
-  (interactive (list (completing-read "Sound: " (sndplay-sounds))))
-  (call-process "sndplay" nil 0 nil sound))
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Some simple functions for dealing with time.
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(defun* dp-time (h &optional (m 0) (s 0))
-  "davep: Convert hrs/min/sec to seconds"
-  (+ (* h 60 60) (* m 60) s))
-
-(defun dp-time-between-p (t1 t2 time)
-  "davep: Is a time between two times (inclusive)?"
-  (cond ((< t1 t2)
-         (and (>= time t1) (<= time t2)))
-        ((> t1 t2)
-         (not (and (> time t2) (< time t1))))
-        (t
-         (and (= t1 time) (= t2 time)))))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Only beep between reasonable hours
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(defvar tad-start-dinging (dp-time 8 30)
-  "*davep: Time to start dinging")
-
-(defvar tad-stop-dinging  (dp-time 21 00)
-  "*davep: Time to stop dinging")
-
-(defmacro tad-visible-bell (&rest body)
-  "davep: Macro for setting the visible bell depending on time of day"
-  `(let* ((now    (decode-time))
-          (hour   (caddr now))
-          (minute (cadr now))
-          (second (car now))
-          (visible-bell (not (dp-time-between-p tad-start-dinging
-                                                tad-stop-dinging
-                                                (dp-time hour minute second)))))
-    ,@body))
-
-(defadvice ding (around time-aware-ding activate)
-  "davep: Only ding between \"sociable\" hours"
-  (tad-visible-bell
-   ad-do-it))
-
-;; This doesn't work for some reason.
-(defadvice keyboard-quit (around time-aware-ding activate)
-  "davep: Only ding between \"sociable\" hours"
-  (tad-visible-bell
-   (unwind-protect
-        ad-do-it)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Find out who called us (and who called them, and who...)
