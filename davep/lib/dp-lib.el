@@ -250,56 +250,6 @@ avaialble) and funcall exp."
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Some simple functions for dealing with time.
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(defun* dp-time (h &optional (m 0) (s 0))
-  "davep: Convert hrs/min/sec to seconds"
-  (+ (* h 60 60) (* m 60) s))
-
-(defun dp-time-between-p (t1 t2 time)
-  "davep: Is a time between two times (inclusive)?"
-  (cond ((< t1 t2)
-         (and (>= time t1) (<= time t2)))
-        ((> t1 t2)
-         (not (and (> time t2) (< time t1))))
-        (t
-         (and (= t1 time) (= t2 time)))))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Only beep between reasonable hours
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(defvar tad-start-dinging (dp-time 8 30)
-  "*davep: Time to start dinging")
-
-(defvar tad-stop-dinging  (dp-time 21 00)
-  "*davep: Time to stop dinging")
-
-(defmacro tad-visible-bell (&rest body)
-  "davep: Macro for setting the visible bell depending on time of day"
-  `(let* ((now    (decode-time))
-          (hour   (caddr now))
-          (minute (cadr now))
-          (second (car now))
-          (visible-bell (not (dp-time-between-p tad-start-dinging
-                                                tad-stop-dinging
-                                                (dp-time hour minute second)))))
-    ,@body))
-
-(defadvice ding (around time-aware-ding activate)
-  "davep: Only ding between \"sociable\" hours"
-  (tad-visible-bell
-   ad-do-it))
-
-;; This doesn't work for some reason.
-(defadvice keyboard-quit (around time-aware-ding activate)
-  "davep: Only ding between \"sociable\" hours"
-  (tad-visible-bell
-   (unwind-protect
-        ad-do-it)))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Find out who called us (and who called them, and who...)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
