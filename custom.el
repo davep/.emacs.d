@@ -9,6 +9,7 @@
  '(column-number-mode t)
  '(cursor-in-non-selected-windows nil)
  '(diff-switches "-u")
+ '(dired-use-ls-dired nil)
  '(electric-pair-mode t)
  '(eshell-prompt-function
    (lambda nil
