@@ -122,7 +122,7 @@ avaialble) and funcall exp."
 
 (defun string-reverse (str)
   "davep: Reverse a string"
-  (coerce (reverse (coerce str 'list)) 'string))
+  (cl-coerce (reverse (cl-coerce str 'list)) 'string))
 
 (defun string-padl (str width &optional char)
   "davep: Left pad a string to a specified length"
@@ -154,7 +154,7 @@ avaialble) and funcall exp."
 (defun to-binary (num &optional pad)
   "davep: Convert a decimal value to a binary string"
   (interactive "nValue: \nnBits: ")
-  (let ((binary (coerce
+  (let ((binary (cl-coerce
                  (nreverse
                   (loop for bit = 1 then (ash bit 1)
                         until (> bit num)
@@ -174,7 +174,7 @@ avaialble) and funcall exp."
   "davep: Convert a binary string to a decimal value"
   (interactive "sBinary: ")
   (let ((decimal
-         (let ((binary (nreverse (coerce binary 'list))))
+         (let ((binary (nreverse (cl-coerce binary 'list))))
            (loop for bit in binary
                  for bitv = 1 then (ash bitv 1)
                  when (= bit ?1) sum bitv))))
