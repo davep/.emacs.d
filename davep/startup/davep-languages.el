@@ -1,3 +1,8 @@
+(eval-when-compile
+  (require 'cc-mode)
+  (require 'pascal)
+  (require 'js))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Language styles and modes.
 
@@ -27,16 +32,15 @@
               (setq pascal-tab-always-indent t)
               (define-key pascal-mode-map "\C-m" #'newline-and-indent)))
 
-(add-hook 'delphi-mode-hook             ; Delphi.
+(add-hook 'opascal-mode-hook            ; Delphi.
           #'(lambda ()
-              (setq delphi-indent-level 2)
-              (setq delphi-tab-always-indents t)
-              (define-key delphi-mode-map "\C-m" #'newline-and-indent)))
+              (setq opascal-indent-level 2)
+              (define-key opascal-mode-map "\C-m" #'newline-and-indent)))
 
 ;; Javascript.
-(add-hook 'javascript-mode-hook
+(add-hook 'js-mode-hook
           #'(lambda ()
-              (define-key javascript-mode-map "\C-m" #'newline-and-indent)))
+              (define-key js-mode-map "\C-m" #'newline-and-indent)))
 
 ;; .asd files are lisp files.
 (push (cons "\\.asd$" 'lisp-mode) auto-mode-alist)
