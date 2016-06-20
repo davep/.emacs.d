@@ -232,24 +232,6 @@ avaialble) and funcall exp."
   (string-to-number (match-string 0 (emacs-version))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Provide a wrapper around my sndplay utility
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(defvar sndplay-library "/usr/local/lib/sounds"
-  "*Location of the sound library.")
-
-(defun sndplay-sounds ()
-  "davep: Compile a list of sounds for use with `completing-read'."
-  (loop for sound in (directory-files sndplay-library nil "[^.].*")
-        collect (cons (file-name-sans-extension sound) sound)))
-  
-(defun sndplay (sound)
-  "davep: elisp wrapper for sndplay"
-  (interactive (list (completing-read "Sound: " (sndplay-sounds))))
-  (call-process "sndplay" nil 0 nil sound))
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Find out who called us (and who called them, and who...)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
