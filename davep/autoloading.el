@@ -34,12 +34,12 @@
 
 (defun load-davep-autoloads ()
   "Load (after optionally creating) local autoloads."
-  (unless rootp
+  (unless davep:rootp
     (unless (file-exists-p davep:autoload-file)
       (update-davep-autoloads))
     (unless (file-exists-p davep:autoload-3rd-party-file)
       (update-davep-3rd-party-autoloads))
-  (unless rootp
+  (unless davep:rootp
     (load (file-name-sans-extension davep:autoload-file))
     (load (file-name-sans-extension davep:autoload-3rd-party-file)))))
 

@@ -16,7 +16,7 @@
       (user-login-name)
       ":"
       (eshell/pwd)
-      (if rootp "#" "$")
+      (if davep:rootp "#" "$")
       " ")))
  '(eshell-prompt-regexp "^[^#$\\n]*[#$] ")
  '(fill-column 76)

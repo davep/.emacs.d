@@ -1,53 +1,53 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; For testing our environment...
 
-(defconst gnu-emacs-p
+(defconst davep:gnu-emacs-p
   (not (null (string-match "GNU Emacs" (emacs-version))))
   "Are we running under GNU emacs?")
 
-(defconst x-emacs-p
+(defconst davep:x-emacs-p
   (not (null (string-match "Lucid\\|XEmacs" (emacs-version))))
   "Are we running under XEmacs?")
 
-(defconst win32p
+(defconst davep:win32p
   (eq system-type 'windows-nt)
   "Are we running on a WinTel system?")
 
-(defconst linuxp
+(defconst davep:linuxp
   (or (eq system-type 'gnu/linux)
       (eq system-type 'linux))
   "Are we running on a GNU/Linux system?")
 
-(defconst linux-x-p
-  (and window-system linuxp)
+(defconst davep:linux-x-p
+  (and window-system davep:linuxp)
   "Are we running under X on a GNU/Linux system?")
 
-(defconst linux-terminal-p
-  (and (not window-system) linuxp)
+(defconst davep:linux-terminal-p
+  (and (not window-system) davep:linuxp)
   "Are we running on GNU/Linux, in a terminal?")
 
-(defconst linux-console-p
-  (and linux-terminal-p (string= (getenv "TERM") "linux"))
+(defconst davep:linux-console-p
+  (and davep:linux-terminal-p (string= (getenv "TERM") "linux"))
   "Does it look like we're on a Linux console?")
 
-(defconst osx-p
+(defconst davep:osx-p
   (eq system-type 'darwin)
   "Are we running on some form of OS X?")
 
-(defconst osx-terminal-p
-  (and osx-p (not window-system))
+(defconst davep:osx-terminal-p
+  (and davep:osx-p (not window-system))
   "Are we running in an OS X terminal?")
 
-(defconst osx-window-p
-  (and osx-p (not osx-terminal-p))
+(defconst davep:osx-window-p
+  (and davep:osx-p (not davep:osx-terminal-p))
   "Are we running in an OS X window?")
 
-(defconst unixp
-  (or linuxp osx-p)
+(defconst davep:unixp
+  (or davep:linuxp davep:osx-p)
   "Are we on some form of Unix?")
 
-(defconst rootp
-  (and unixp (zerop (user-uid)))
+(defconst davep:rootp
+  (and davep:unixp (zerop (user-uid)))
   "Are we running as root?")
 
 (provide 'davep-env-tests)

@@ -15,8 +15,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (eval-when-compile
-  (defvar linux-x-p)
-  (defvar win32p))
+  (defvar davep:linux-x-p)
+  (defvar davep:win32p))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Are we running on a given machine?
@@ -102,7 +102,7 @@ any other value means insert the name without the directory."
 (defun run-in-new-frame (exp)
   "davep: Create another frame (or split window when frames are not
 avaialble) and funcall exp."
-  (if (or linux-x-p win32p)
+  (if (or davep:linux-x-p davep:win32p)
       (select-frame (make-frame '((minibuffer . nil))))
     (split-window)
     (other-window 1))
