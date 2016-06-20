@@ -162,7 +162,7 @@ avaialble) and funcall exp."
                  'string)))
     (when pad
       (setq binary (string-padl binary pad ?0)))
-    (when (interactive-p)
+    (when (called-interactively-p 'any)
       (message "%dd == %sb" num binary))
     binary))
 
@@ -178,7 +178,7 @@ avaialble) and funcall exp."
            (loop for bit in binary
                  for bitv = 1 then (ash bitv 1)
                  when (= bit ?1) sum bitv))))
-    (when (interactive-p)
+    (when (called-interactively-p 'any)
       (message "%sb == %dd" binary decimal))
     decimal))
 
@@ -206,7 +206,7 @@ avaialble) and funcall exp."
   "davep: Convert from hex to decimal."
   (interactive "sHex: ")
   (let ((n (read (concat "?\\x" hex))))
-    (when (interactive-p)
+    (when (called-interactively-p 'any)
       (message "Hex: %s Decimal: %d" hex n))
     n))
 
@@ -218,7 +218,7 @@ avaialble) and funcall exp."
   "davep: Convert from decimal to hex."
   (interactive "nDecimal: ")
   (let ((hex (format "%x" n)))
-    (when (interactive-p)
+    (when (called-interactively-p 'any)
       (message "Decimal: %d Hex: %s" n hex))
     hex))
 
