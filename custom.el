@@ -21,6 +21,7 @@
       " ")))
  '(eshell-prompt-regexp "^[^#$\\n]*[#$] ")
  '(fill-column 76)
+ '(global-linum-mode t)
  '(ibuffer-expert t)
  '(indent-tabs-mode nil)
  '(indicate-empty-lines t)
