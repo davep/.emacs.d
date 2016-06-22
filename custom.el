@@ -26,7 +26,6 @@
  '(indent-tabs-mode nil)
  '(indicate-empty-lines t)
  '(inhibit-startup-screen t)
- '(ispell-program-name "/usr/local/bin/aspell")
  '(line-number-mode t)
  '(load-prefer-newer t)
  '(mouse-avoidance-mode (quote jump) nil (avoid))
