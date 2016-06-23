@@ -106,4 +106,7 @@
   "davep: Set up my generic key mappings"
   (define-key (current-local-map) "\C-m" #'newline-and-indent))
 
+(add-hook 'slime-inferior-process-start-hook #'(lambda ()
+                                                 (require 'slime-fancy)))
+
 (provide 'davep-languages)
