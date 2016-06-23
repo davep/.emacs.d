@@ -10,6 +10,10 @@
  '(cursor-in-non-selected-windows nil)
  '(diff-switches "-u")
  '(dired-use-ls-dired nil)
+ '(display-time-24hr-format t)
+ '(display-time-day-and-date t)
+ '(display-time-format "%F %H:%M")
+ '(display-time-mode t)
  '(electric-pair-mode t)
  '(eshell-prompt-function
    (lambda nil
