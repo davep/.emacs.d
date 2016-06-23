@@ -19,4 +19,9 @@
 ;; Autoload things that don't correctly do autoload.
 (autoload 'hyde "hyde" "hyde" t)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; If we're on a Unix of some sort, add a local bin (if it's there).
+(when (and davep:unixp (file-exists-p "~/bin"))
+  (push "~/bin/" exec-path))
+
 (provide 'davep-misc)
