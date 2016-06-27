@@ -46,6 +46,7 @@
                          backspace)]     #'backward-kill-word)
 (define-key global-map [(meta
                          backspace)]     #'undo)
+(define-key global-map [(control z)]     #'undo)
 (define-key global-map [(meta i)]        #'(lambda (name)
                                              (interactive
                                               (list (read-file-name "File: " "~/lib/boilerplate/" nil t)))
