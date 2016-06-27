@@ -1,7 +1,6 @@
-(eval-when-compile
-  (load-library "dp-lib"))
+(eval-and-compile
+  (require 'dp-lib))
 
-(require 'dp-lib)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; personal keyboard bindings
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
