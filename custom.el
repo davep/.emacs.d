@@ -44,7 +44,8 @@
  '(show-paren-mode t)
  '(tool-bar-mode nil)
  '(tramp-default-method "ssh")
- '(truncate-lines t))
+ '(truncate-lines t)
+ '(uptimes-database "~/.emacs.d/uptimes"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
