@@ -75,5 +75,6 @@
 (define-key global-map [(f12)]                   #'quickurl-list)
 (when davep:osx-window-p
   (define-key global-map [(super tab)] #'completion-at-point))
-
+(when davep:win32p
+  (setq w32-lwindow-modifier 'meta))
 (provide 'davep-keys)
