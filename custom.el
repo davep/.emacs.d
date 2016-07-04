@@ -41,6 +41,7 @@
      ("melpa" . "https://melpa.org/packages/"))))
  '(savehist-mode t)
  '(scroll-error-top-bottom t)
+ '(sentence-end-double-space nil)
  '(show-paren-mode t)
  '(tool-bar-mode nil)
  '(tramp-default-method "ssh")
