@@ -1,13 +1,13 @@
 ;;; xray.el --- Display internal object structures in a temporary buffer.
 
-;; Copyright (C) 2001 Vinicius Jose Latorre
+;; Copyright (C) 2001, 2002, 2003, 2004, 2006 Vinicius Jose Latorre
 
-;; Author:	Vinicius Jose Latorre <vinicius@cpqd.com.br>
-;; Maintainer:	Vinicius Jose Latorre <vinicius@cpqd.com.br>
+;; Author:	Vinicius Jose Latorre <viniciusjl@ig.com.br>
+;; Maintainer:	Vinicius Jose Latorre <viniciusjl@ig.com.br>
 ;; Keywords:	help, internal, maintenance, debug
-;; Time-stamp:	<2001/02/22 08:39:39 Vinicius>
-;; Version:	2.3
-;; X-URL:	http://www.cpqd.com.br/~vinicius/emacs/
+;; Time-stamp:	<2006/09/14 12:09:14 vinicius>
+;; Version:	3.0
+;; X-URL:	http://www.emacswiki.org/cgi-bin/wiki/ViniciusJoseLatorre
 
 ;; This file is *NOT* (yet?) part of GNU Emacs.
 
@@ -21,10 +21,9 @@
 ;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 ;; GNU General Public License for more details.
 
-;; You should have received a copy of the GNU General Public License
-;; along with GNU Emacs; see the file COPYING.  If not, write to the
-;; Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-;; Boston, MA 02111-1307, USA.
+;; You should have received a copy of the GNU General Public License along with
+;; GNU Emacs; see the file COPYING.  If not, write to the Free Software
+;; Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 
 ;;; Commentary:
 
@@ -43,9 +42,9 @@
 ;;
 ;; This will generate xray.elc, which will be loaded instead of xray.el.
 ;;
-;; xray was tested with GNU Emacs 20.6.1.
+;; xray was tested with GNU Emacs 21.3.50.1.
 ;;
-;; So far, there isn't any compatibility with XEmacs.
+;; I don't know if still is compatible with XEmacs.
 ;;
 ;;
 ;; Usage
@@ -297,13 +296,13 @@
 ;;    out the current Emacs session.
 ;;
 ;;
-;; Acknowledgements
-;; ----------------
+;; Acknowledgments
+;; ---------------
 ;;
 ;; Thanks to Juanma Barranquero <lektu@uol.com.br> for ehelp.el suggestion and
 ;; for `line-number-display-limit' meaning in Emacs 21.
 ;;
-;; Thanks to Drew Adams <dadams@objectstream.com> for key bindings suggestions
+;; Thanks to Drew Adams <drew.adams@openwave.com> for key bindings suggestions
 ;; and for sending help+.el package which inspired `xray-click/key',
 ;; `xray-display-click/key', `xray-on-click' and `xray-on-mode-line-click'
 ;; functions.
@@ -317,6 +316,7 @@
 
 
 (eval-and-compile
+  (require 'help-mode)
   (require 'ehelp)
   (require 'info)
   (require 'apropos))
@@ -373,8 +373,8 @@ DISPLAY-FUNCTION	function symbol that it'll be called to display
 
 If you don't want to display recursively, set to 0 or a negative integer.
 
-Circularity is checked.  So, it's avoided a redisplay of a symbol property
-already displayed."
+Circularity is checked.  So, a redisplay of a symbol property already displayed
+is avoided."
   :type 'integer
   :group 'xray)
 
@@ -580,7 +580,7 @@ You can do any of the following:
     click anywhere else in a buffer: `xray-buffer' is called
 
 Help is generally provided using `describe-key' and the Emacs online manual
-(via `Info-goto-emacs-key-command-node').  If no entry is found in the index of
+\(via `Info-goto-emacs-key-command-node').  If no entry is found in the index of
 the Emacs manual, then the manual is searched from the beginning for literal
 occurrences of KEY.
 
@@ -620,7 +620,7 @@ is searched.  (Once an occurrence is found, you can repeatedly type `s' in
 
 
 ;;;###autoload
-(defun xray-symbol (symbol)
+(defun xray-symbol (symbol &optional buffer)
   "Display SYMBOL internal cells in a temporary buffer.
 
 That is, displays the symbol name cell, the symbol function cell, the symbol
@@ -634,9 +634,10 @@ or `xray-help-symbol' (nil).
 See `xray-customize' for customization."
   (interactive (xray-interactive-prompt-symbol))
   (xray-help-setup-xref (interactive-p))
+  (or buffer (setq buffer (current-buffer)))
   (if xray-electric-p
-      (xray-ehelp-symbol symbol)
-    (xray-help-symbol symbol)))
+      (xray-ehelp-symbol symbol buffer)
+    (xray-help-symbol symbol buffer)))
 
 
 ;;;###autoload
@@ -652,7 +653,7 @@ POSITION, the charset, the text property list, the default text property list
 and the overlay list.
 
 It uses `xray-electric-p' to decide if it invokes `xray-ehelp-position'
-(non-nil) or `xray-help-position' (nil).
+\(non-nil) or `xray-help-position' (nil).
 
 See `xray-customize' for customization."
   (interactive)
@@ -676,7 +677,7 @@ display table, active modes, window list, buffer list, hooks related to
 buffers, mark ring, overlay list and local variables.
 
 It uses `xray-electric-p' to decide if it invokes `xray-ehelp-buffer'
-(non-nil) or `xray-help-buffer' (nil).
+\(non-nil) or `xray-help-buffer' (nil).
 
 See `xray-customize' for customization."
   (interactive)
@@ -699,7 +700,7 @@ scrolling amount, display table, some window related variables, the hooks, the
 window least recently selected, the largest window area and the window list.
 
 It uses `xray-electric-p' to decide if it invokes `xray-ehelp-window'
-(non-nil) or `xray-help-window' (nil).
+\(non-nil) or `xray-help-window' (nil).
 
 See `xray-customize' for customization."
   (interactive)
@@ -722,7 +723,7 @@ window, some variables related to frame, the frame parameters, the hooks, the
 frame list, the visible frame list and display list.
 
 It uses `xray-electric-p' to decide if it invokes `xray-ehelp-frame'
-(non-nil) or `xray-help-frame' (nil).
+\(non-nil) or `xray-help-frame' (nil).
 
 See `xray-customize' for customization."
   (interactive)
@@ -743,7 +744,7 @@ mark, the beginning of region, the end of region, some variable related to
 marker, hooks and the mark ring.
 
 It uses `xray-electric-p' to decide if it invokes `xray-ehelp-marker'
-(non-nil) or `xray-help-marker' (nil).
+\(non-nil) or `xray-help-marker' (nil).
 
 See `xray-customize' for customization."
   (interactive)
@@ -763,7 +764,7 @@ That is, displays the buffer associated, the start position, the end position,
 the overlay list and the property list.
 
 It uses `xray-electric-p' to decide if it invokes `xray-ehelp-overlay'
-(non-nil) or `xray-help-overlay' (nil).
+\(non-nil) or `xray-help-overlay' (nil).
 
 See `xray-customize' for customization."
   (interactive)
@@ -783,7 +784,7 @@ That's, displays SCREEN capabilities, some variables and hooks related to
 screen, and the display list.
 
 It uses `xray-electric-p' to decide if it invokes `xray-ehelp-screen'
-(non-nil) or `xray-help-screen' (nil).
+\(non-nil) or `xray-help-screen' (nil).
 
 See `xray-customize' for customization."
   (interactive)
@@ -798,7 +799,7 @@ See `xray-customize' for customization."
   "Display all defined faces.
 
 It uses `xray-electric-p' to decide if it invokes `xray-ehelp-faces'
-(non-nil) or `xray-help-faces' (nil).
+\(non-nil) or `xray-help-faces' (nil).
 
 See `xray-customize' for customization."
   (interactive)
@@ -813,7 +814,7 @@ See `xray-customize' for customization."
   "Display all standard hooks and other defined hooks.
 
 It uses `xray-electric-p' to decide if it invokes `xray-ehelp-hooks'
-(non-nil) or `xray-help-hooks' (nil).
+\(non-nil) or `xray-help-hooks' (nil).
 
 See `xray-customize' for customization."
   (interactive)
@@ -828,7 +829,7 @@ See `xray-customize' for customization."
   "Display all features loaded.
 
 It uses `xray-electric-p' to decide if it invokes `xray-ehelp-features'
-(non-nil) or `xray-help-features' (nil).
+\(non-nil) or `xray-help-features' (nil).
 
 See `xray-customize' for customization."
   (interactive)
@@ -841,7 +842,7 @@ See `xray-customize' for customization."
 ;; Help Interface
 
 
-(defun xray-help-symbol (symbol)
+(defun xray-help-symbol (symbol &optional buffer)
   "Display SYMBOL internal cells in a temporary buffer.
 
 That is, displays the symbol name cell, the symbol function cell, the symbol
@@ -853,7 +854,7 @@ See `xray-customize' for customization."
   (interactive (xray-interactive-prompt-symbol))
   (or (symbolp symbol)
       (error "It's not a symbol: %S" symbol))
-  (help-setup-xref (list 'xray-symbol symbol) (interactive-p))
+  (help-setup-xref (list 'xray-symbol symbol buffer) (interactive-p))
   (xray-excursion
    "*Symbol X-Ray*"
    (let ((current (list symbol))
@@ -863,14 +864,15 @@ See `xray-customize' for customization."
 	 visited)
      (insert "\nSYMBOL\n")
      (while (let (new)
-	      (mapcar #'(lambda (sym)
-			  (and sym (not (memq sym visited))
-			       (progn
-				 (xray-display-symbol sym)
-				 (setq visited (cons sym visited)
-				       new (append (xray-property-in-list sym)
-						   new)))))
-		      current)
+	      (mapcar
+	       #'(lambda (sym)
+		   (and sym (not (memq sym visited))
+			(progn
+			  (xray-display-symbol sym buffer)
+			  (setq visited (cons sym visited)
+				new (append (xray-property-in-list sym)
+					    new)))))
+	       current)
 	      (and (>= (setq depth (1- depth)) 0)
 		   (setq current new)))))))
 
@@ -1181,12 +1183,12 @@ screen, and the display list."
 ;; Ehelp Interface
 
 
-(defun xray-ehelp-symbol (symbol)
+(defun xray-ehelp-symbol (symbol &optional buffer)
   "See `xray-help-symbol' for documentation."
   (interactive (xray-interactive-prompt-symbol))
   (xray-electric
    "*Symbol X-Ray*"
-   (xray-help-symbol symbol)))
+   (xray-help-symbol symbol buffer)))
 
 
 (defun xray-ehelp-position (&optional position buffer)
@@ -1293,7 +1295,10 @@ screen, and the display list."
   (interactive (xray-interactive-prompt-variable))
   (xray-electric-option
    "*Help*"
-   (describe-variable variable buffer)))
+   (save-excursion
+     (and buffer
+	  (set-buffer buffer))
+     (describe-variable variable))))
 
 
 (defun xray-apropos-documentation (apropos-regexp)
@@ -1326,6 +1331,110 @@ screen, and the display list."
   (xray-electric-option
    "*Minor Mode X-Ray*"
    (xray-minor-mode minor-mode indicator)))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Internal buttons -- hacked from help-mode.el
+
+
+;;(define-button-type 'help-xref
+;;  'action #'help-button-action)
+;;
+;;(defun help-button-action (button)
+;;  "Call BUTTON's help function."
+;;  (help-do-xref (button-start button)
+;;		(button-get button 'help-function)
+;;		(button-get button 'help-args)))
+
+(define-button-type 'xray-button-describe-function
+  :supertype 'help-xref
+  'help-function 'xray-describe-function
+  'help-echo (purecopy "mouse-2, RET: describe this function"))
+
+(define-button-type 'xray-button-describe-variable
+  :supertype 'help-xref
+  'help-function 'xray-describe-variable
+  'help-echo (purecopy "mouse-2, RET: describe this variable"))
+
+(define-button-type 'xray-button-describe-major-mode
+  :supertype 'help-xref
+  'help-function 'xray-describe-major-mode
+  'help-echo (purecopy "mouse-2, RET: describe this major mode"))
+
+(define-button-type 'xray-button-describe-minor-mode
+  :supertype 'help-xref
+  'help-function 'xray-describe-minor-mode
+  'help-echo (purecopy "mouse-2, RET: describe this minor mode"))
+
+(define-button-type 'xray-button-position
+  :supertype 'help-xref
+  'help-function 'xray-position
+  'help-echo (purecopy "mouse-2, RET: describe this position"))
+
+(define-button-type 'xray-button-frame
+  :supertype 'help-xref
+  'help-function 'xray-frame
+  'help-echo (purecopy "mouse-2, RET: describe this frame"))
+
+(define-button-type 'xray-button-screen
+  :supertype 'help-xref
+  'help-function 'xray-screen
+  'help-echo (purecopy "mouse-2, RET: describe this screen"))
+
+(define-button-type 'xray-button-window
+  :supertype 'help-xref
+  'help-function 'xray-window
+  'help-echo (purecopy "mouse-2, RET: describe this window"))
+
+(define-button-type 'xray-button-buffer
+  :supertype 'help-xref
+  'help-function 'xray-buffer
+  'help-echo (purecopy "mouse-2, RET: describe this buffer"))
+
+(define-button-type 'xray-button-marker
+  :supertype 'help-xref
+  'help-function 'xray-marker
+  'help-echo (purecopy "mouse-2, RET: describe this marker"))
+
+(define-button-type 'xray-button-overlay
+  :supertype 'help-xref
+  'help-function 'xray-overlay
+  'help-echo (purecopy "mouse-2, RET: describe this overlay"))
+
+(define-button-type 'xray-button-symbol
+  :supertype 'help-xref
+  'help-function 'xray-symbol
+  'help-echo (purecopy "mouse-2, RET: describe this symbol"))
+
+(define-button-type 'xray-button-describe-key
+  :supertype 'help-xref
+  'help-function 'xray-describe-key
+  'help-echo (purecopy "mouse-2, RET: describe this key"))
+
+(define-button-type 'xray-button-locate-file
+  :supertype 'help-xref
+  'help-function 'xray-locate-file
+  'help-echo (purecopy "mouse-2, RET: describe this file"))
+
+(define-button-type 'xray-button-info-key-command
+  :supertype 'help-xref
+  'help-function 'xray-info-key-command
+  'help-echo (purecopy "mouse-2, RET: describe this info key"))
+
+(define-button-type 'xray-button-apropos-documentation
+  :supertype 'help-xref
+  'help-function 'xray-apropos-documentation
+  'help-echo (purecopy "mouse-2, RET: describe this apropos"))
+
+(define-button-type 'xray-button-apropos
+  :supertype 'help-xref
+  'help-function 'xray-apropos
+  'help-echo (purecopy "mouse-2, RET: describe this apropos"))
+
+(define-button-type 'xray-button-info-command
+  :supertype 'help-xref
+  'help-function 'xray-info-command
+  'help-echo (purecopy "mouse-2, RET: describe this info"))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -1455,27 +1564,30 @@ screen, and the display list."
 	       (xray-key-description key))
 	     ":\n\n   ")
      (if described-p
-	 (xray-string-button "Describe Key" key #'xray-describe-key)
+	 (xray-string-button "Describe Key" key 'xray-button-describe-key)
        (insert "*No Describe Key*"))
      (insert "\n   ")
      (if documented-p
-	 (xray-string-button "Info" key #'xray-info-key-command)
+	 (xray-string-button "Info" key 'xray-button-info-key-command)
        (insert "*No Info*"))
      (insert "\n"))))
 
 
-(defun xray-display-symbol (symbol)
+(defun xray-display-symbol (symbol buffer)
   (insert "\n" (symbol-name symbol))
   (xray-label-line "  apropos" 17) (xray-apropos-info-button symbol)
   (xray-label-line "  key bindings" 17) (xray-binding-button symbol)
   (xray-label-line "  file" 17) (xray-file-button symbol)
   (xray-insert-line "  function cell" 17 (xray-cell-function symbol))
   (xray-xref-button "^\\s-+function cell\\s-+: \\*\\(.+\\)\\*$"
-		    #'xray-describe-function symbol)
+		    'xray-button-describe-function symbol)
   (xray-label-line "  value cell" 17)
-  (xray-cell-value symbol)
-  (xray-xref-button "^\\s-+value cell\\s-+: \\*\\(.+\\)\\*  "
-		    #'xray-describe-variable symbol)
+  (xray-cell-value symbol buffer)
+  (let ((args (list symbol buffer)))
+    (xray-xref-button "^\\s-+\\*\\(.+\\)\\*  "
+		      'xray-button-describe-variable args)
+    (xray-xref-button "^\\s-+value cell\\s-+: \\*\\(.+\\)\\*  "
+		      'xray-button-describe-variable args))
   (xray-property-list "  property list cell" 5 (symbol-plist symbol)))
 
 
@@ -1816,7 +1928,7 @@ screen, and the display list."
 	       (setq minor-list (cons minor minor-list))))))
     (insert (car major))
     (xray-xref-button (concat "\\(" (regexp-quote (car major)) "\\)")
-		      #'xray-describe-major-mode major)
+		      'xray-button-describe-major-mode major)
     (setq minor-list (nreverse minor-list))
     (while minor-list
       (let* ((minor-mode (nth 0 (car minor-list)))
@@ -1825,13 +1937,14 @@ screen, and the display list."
 	(setq minor-list (cdr minor-list))
 	(insert indent name)
 	(xray-xref-button (concat "\\(" (regexp-quote name) "\\)")
-			  #'xray-describe-minor-mode
+			  'xray-button-describe-minor-mode
 			  (list minor-mode indicator))))))
 
 
 (defun xray-label-line (label column)
   (insert "\n " label)
-  (move-to-column column t)
+  (let (indent-tabs-mode)		; force spaces instead of tabs
+    (move-to-column column t))
   (insert ": "))
 
 
@@ -1901,38 +2014,39 @@ screen, and the display list."
 	(insert "*No Apropos Or Info*")
       (when doc
 	(xray-string-button "Documentation" str
-			    #'xray-apropos-documentation)
+			    'xray-button-apropos-documentation)
 	(and (or sym inf) (insert "   ")))
       (when sym
-	(xray-string-button "Apropos" str #'xray-apropos)
+	(xray-string-button "Apropos" str 'xray-button-apropos)
 	(and inf (insert "   ")))
       (and inf
-	   (xray-string-button "Info" (intern-soft str) #'xray-info-command))))
+	   (xray-string-button "Info" (intern-soft str)
+			       'xray-button-info-command))))
   (message " "))			; clear minibuffer
 
 
 (defun xray-frame-button (frame)
-  (xray-object-button frame #'xray-frame "Frame"))
+  (xray-object-button frame 'xray-button-frame "Frame"))
 
 
 (defun xray-screen-button (screen)
-  (xray-object-button screen #'xray-screen "Screen"))
+  (xray-object-button screen 'xray-button-screen "Screen"))
 
 
 (defun xray-window-button (window)
-  (xray-object-button window #'xray-window "Window"))
+  (xray-object-button window 'xray-button-window "Window"))
 
 
 (defun xray-buffer-button (buffer)
-  (xray-object-button buffer #'xray-buffer "Buffer"))
+  (xray-object-button buffer 'xray-button-buffer "Buffer"))
 
 
 (defun xray-marker-button (the-mark)
-  (xray-object-button the-mark #'xray-marker "Marker"))
+  (xray-object-button the-mark 'xray-button-marker "Marker"))
 
 
 (defun xray-overlay-button (overlay)
-  (xray-object-button overlay #'xray-overlay "Overlay"))
+  (xray-object-button overlay 'xray-button-overlay "Overlay"))
 
 
 (defun xray-object-button (object function no-object)
@@ -1946,20 +2060,22 @@ screen, and the display list."
   (if (not (integer-or-marker-p point))
       (insert "*No Position*")
     (insert (number-to-string point))
-    (xray-xref-button " \\([0-9]+\\)$" #'xray-position (list point buffer))))
+    (xray-xref-button " \\([0-9]+\\)$"
+		      'xray-button-position (list point buffer))))
 
 
 (defun xray-symbol-button (symbol)
-  (xray-xref-string-button (symbol-name symbol) symbol #'xray-symbol))
+  (xray-xref-string-button (symbol-name symbol) symbol 'xray-button-symbol))
 
 
-(defun xray-variable-button (variable)
-  (xray-xref-string-button (symbol-name variable) variable
-			   #'xray-describe-variable))
+(defun xray-variable-button (variable &optional buffer)
+  (xray-xref-string-button (symbol-name variable) (list variable buffer)
+			   'xray-button-describe-variable))
 
 
 (defun xray-function-button (func)
-  (xray-xref-string-button (symbol-name func) func #'xray-describe-function))
+  (xray-xref-string-button (symbol-name func) func
+			   'xray-button-describe-function))
 
 
 (defun xray-binding-button (symbol)
@@ -1973,7 +2089,8 @@ screen, and the display list."
 
 
 (defun xray-key-button (key)
-  (xray-xref-string-button (xray-key-description key) key #'xray-describe-key))
+  (xray-xref-string-button (xray-key-description key) key
+			   'xray-button-describe-key))
 
 
 ;; part of describe-function-1 - hacked from help.el
@@ -1981,7 +2098,7 @@ screen, and the display list."
   (let ((file (symbol-file symbol)))
     (if (not file)
 	(insert "*No File*")
-      (xray-xref-string-button file symbol #'xray-locate-file))))
+      (xray-xref-string-button file symbol 'xray-button-locate-file))))
 
 
 (defun xray-string-button (str symbol func)
@@ -2136,17 +2253,38 @@ screen, and the display list."
 	      "*"))))
 
 
-(defun xray-cell-value (symbol)
-  (if (not (boundp symbol))
-      (insert "void")
-    (insert (if (local-variable-p symbol)
-		"*Local-"
-	      "*")
-	    (if (user-variable-p symbol)
-		"Option"
-	      "Variable")
-	    "*  ")
-    (xray-pp-value (symbol-value symbol) t)))
+(defun xray-cell-value (symbol buffer)
+  (let ((col (current-column))
+	sym-boundp sym-localp sym-userp sym-value sym-defaultp sym-default)
+    (save-excursion
+      (set-buffer buffer)
+      (setq sym-boundp   (boundp symbol)
+	    sym-defaultp (default-boundp symbol)
+	    sym-localp   (local-variable-p symbol)
+	    sym-userp    (user-variable-p symbol)
+	    sym-value    (and sym-boundp
+			      (symbol-value symbol))
+	    sym-default  (and sym-defaultp
+			      (default-value symbol))))
+    (if (not sym-boundp)
+	(insert "void")
+      (and sym-localp sym-defaultp
+	   (progn
+	     (insert "*Default*  ")
+	     (xray-pp-value sym-default t)
+	     (insert "\n" (make-string col ?\ ))))
+      (insert (if sym-localp
+		  "*Local-"
+		"*")
+	      (if sym-userp
+		  "Option"
+		"Variable")
+	      "*  ")
+      (when sym-localp
+	(insert "in ")
+	(xray-buffer-button buffer)
+	(insert "\n" (make-string col ?\ )))
+      (xray-pp-value sym-value t))))
 
 
 (defun xray-cell-plist (plist)
@@ -2242,9 +2380,15 @@ screen, and the display list."
 		     (xray-value-threshold value)
 		   (insert (format "(%S  " (car value)))
 		   (setq value (cdr value))
-		   (or (listp value)
-		       (insert ".  "))
-		   (xray-value-threshold value)
+		   (cond ((not (boundp 'value))
+			  (insert ".  VOID"))
+			 ((null value)
+			  (insert ".  nil"))
+			 (t
+			  (or (listp value)
+			      (insert ".  "))
+			  (xray-value-threshold value))
+			 )
 		   (insert ")"))
 		 (setq alist (cdr alist)))
 	  (insert indent)))))
@@ -2447,5 +2591,3 @@ CHARACTER is a string with character information."
 
 
 ;;; xray.el ends here
-
-
