@@ -20,6 +20,13 @@
 (autoload 'hyde "hyde" "hyde" t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; On the Mac local bin doesn't seem to be in the path if I run from
+;; the dock. Fix this.
+(let ((local "/usr/local/bin"))
+  (when (and davep:osx-p (not (member local exec-path)))
+    (push local exec-path)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; If we're on a Unix of some sort, add a local bin (if it's there).
 (when (and davep:unixp (file-exists-p "~/bin"))
   (push "~/bin/" exec-path))
