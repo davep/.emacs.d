@@ -6,26 +6,6 @@
   (require 'cl))
 
 ;;;###autoload
-(defalias 'de-dosify 'un-dosify)
-
-;;;###autoload
-(defun un-dosify ()
-  "Turn DOS text files into UNIX text files"
-  (interactive)
-  (save-excursion
-    (setf (point) (point-min))
-    (replace-string "\015" "")
-    (replace-string "\032" "")
-    (when (interactive-p)
-      (message "Buffer is now sane"))))
-
-;;;###autoload
-(defun rot13-region (start end)
-  "rot13 a region of text"
-  (interactive "r")
-  (shell-command-on-region start end "rot13" t t))
-
-;;;###autoload
 (defun strip-trailing-whitespace ()
   "Remove all trailing whitespace from all lines.
 
@@ -109,12 +89,6 @@ from a signature seperator line."
         (save-excursion
           (insert (format "\n\n%s%s" fill-prefix (make-string spaces ? ))))
       (error "Can't split within the fill prefix"))))
-
-;;;###autoload
-(defun unhtmlify-region (start end)
-  "Strip HTML tags from a region using w3m."
-  (interactive "r")
-  (shell-command-on-region start end "w3m -T text/html -dump" t t))
 
 ;;;###autoload
 (defun tagify (tag start end)
