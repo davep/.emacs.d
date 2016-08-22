@@ -30,6 +30,7 @@
  '(indent-tabs-mode nil)
  '(indicate-empty-lines t)
  '(inhibit-startup-screen t)
+ '(js-switch-indent-offset 4)
  '(line-number-mode t)
  '(load-prefer-newer t)
  '(mouse-avoidance-mode (quote jump) nil (avoid))
