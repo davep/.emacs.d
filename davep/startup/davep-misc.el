@@ -4,6 +4,12 @@
 (auto-compile-on-save-mode)             ; Compile on save.
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Have ibuffer auto-update the list.
+(add-hook 'ibuffer-mode-hooks
+	  '(lambda ()
+	     (ibuffer-auto-mode 1)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Footnote management.
 (eval-when-compile
   (require 'footnote))
