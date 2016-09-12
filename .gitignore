@@ -11,4 +11,5 @@ davep/autoloads-3rd-party.elc
 history
 archive-contents
 url/
+.DS_Store
 
