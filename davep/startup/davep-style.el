@@ -20,4 +20,9 @@
   (setq frame-title-format format
         icon-title-format  format))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Ensure trailing whitespace and tabs get highlighted.
+(hc-toggle-highlight-trailing-whitespace)
+(hc-toggle-highlight-tabs)
+
 (provide 'davep-style)
