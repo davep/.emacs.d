@@ -6,8 +6,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Have ibuffer auto-update the list.
 (add-hook 'ibuffer-mode-hooks
-	  '(lambda ()
-	     (ibuffer-auto-mode 1)))
+          '(lambda ()
+            (ibuffer-auto-mode 1)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Footnote management.
