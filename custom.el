@@ -40,6 +40,7 @@
    (quote
     (("gnu" . "http://elpa.gnu.org/packages/")
      ("melpa" . "https://melpa.org/packages/"))))
+ '(sass-indent-offset 4)
  '(savehist-mode t)
  '(scroll-error-top-bottom t)
  '(sentence-end-double-space nil)
