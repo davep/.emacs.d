@@ -50,4 +50,8 @@ This involves disabling C-x C-c and also calling `server-start'."
         (interactive)
         (message "C-x C-c is disabled"))))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Ensure trailing whitespace is killed.
+(add-hook 'before-save-hook 'strip-trailing-whitespace)
+
 (provide 'davep-misc)
