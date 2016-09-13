@@ -37,6 +37,8 @@
 (when (and davep:unixp (file-exists-p "~/bin"))
   (push "~/bin/" exec-path))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Make it harder to kill an emacs server instance.
 (defun long-term-emacs ()
   "Turn this emacs sesssion into a long term emacs.
 
