@@ -1,6 +1,6 @@
 (eval-when-compile
   (require 'cc-mode)
-  (require 'pascal)
+  (require 'pascal nil t)               ; Might be missing.
   (require 'opascal)
   (require 'js))
 
