@@ -1,9 +1,9 @@
 ;;; csharp-mode-autoloads.el --- automatically extracted autoloads
 ;;
 ;;; Code:
-(add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
+(add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "csharp-mode" "csharp-mode.el" (22673 61166
+;;;### (autoloads nil "csharp-mode" "csharp-mode.el" (22693 45165
 ;;;;;;  0 0))
 ;;; Generated autoloads from csharp-mode.el
 
@@ -16,7 +16,7 @@ The mode provides fontification and indent for C# syntax, as well
 as some other handy features.
 
 At mode startup, there are two interesting hooks that run:
-`c-mode-common-hook' is run with no args, then `csharp-mode-hook' is run after
+`prog-mode-hook' is run with no args, then `csharp-mode-hook' is run after
 that, also with no args.
 
 To run your own logic after csharp-mode starts, do this:

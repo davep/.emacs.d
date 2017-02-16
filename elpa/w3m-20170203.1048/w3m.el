@@ -213,7 +213,7 @@
 
 (defconst emacs-w3m-version
   (eval-when-compile
-    (let ((rev "$Revision: 1.1655 $"))
+    (let ((rev "$Revision: 1.1656 $"))
       (and (string-match "\\.\\([0-9]+\\) \\$\\'" rev)
 	   (setq rev (- (string-to-number (match-string 1 rev)) 1136))
 	   (format "1.4.%d" (+ rev 50)))))
@@ -376,7 +376,8 @@ common part of the host names, not a regexp."
 	 (if (eq w3m-type 'w3mmee)
 	     (cons "W3MLANG" "ja_JP.kterm"))
 	 (if (eq system-type 'windows-nt)
-	     (cons "CYGWIN" "binmode"))))
+	     (cons "CYGWIN" "binmode"))
+	 (cons "LC_ALL" "C")))
   "*Alist of environment variables for subprocesses to inherit."
   :group 'w3m
   :type '(repeat
