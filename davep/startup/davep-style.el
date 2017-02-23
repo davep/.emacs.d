@@ -22,7 +22,11 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Ensure trailing whitespace and tabs get highlighted.
-(hc-toggle-highlight-trailing-whitespace)
-(hc-toggle-highlight-tabs)
+(require 'highlight-chars)
+(add-hook 'change-major-mode-hook
+          (lambda ()
+            (when (buffer-file-name)
+              (add-hook 'font-lock-mode-hook 'hc-highlight-trailing-whitespace)
+              (add-hook 'font-lock-mode-hook 'hc-highlight-tabs))))
 
 (provide 'davep-style)
