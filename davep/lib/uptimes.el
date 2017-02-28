@@ -187,7 +187,8 @@ The result is returned as the following `values':
   "Read the uptimes database into `uptimes-last-n' and `uptimes-top-n'."
   (when (file-exists-p uptimes-database)
     (with-temp-buffer
-      (let ((inhibit-clash-detection t))  ; For the benefit of XEmacs.
+      (let ((inhibit-clash-detection t)  ; For the benefit of XEmacs.
+            (create-lockfiles nil))      ; For the benefit of GNU emacs.
         (insert-file-contents uptimes-database t))
       (setq uptimes-last-n (read (current-buffer)))
       (setq uptimes-top-n  (read (current-buffer))))))
@@ -227,7 +228,8 @@ The result is returned as the following `values':
       (pp uptimes-top-n)
       ;; TODO: What is the correct method of ignoring a lock error (IOW,
       ;; don't bother trying to write if there is a locking problem)?
-      (let ((inhibit-clash-detection t)) ; For the benefit of XEmacs.
+      (let ((inhibit-clash-detection t) ; For the benefit of XEmacs.
+            (create-lockfiles nil))     ; For the benefit of GNU emacs.
         (write-region (point-min) (point-max) uptimes-database nil 0)))))
 
 (defun uptimes-print-uptimes (list)
