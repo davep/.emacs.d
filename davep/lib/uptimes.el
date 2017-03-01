@@ -1,7 +1,7 @@
 ;;; uptimes.el --- Track and display emacs session uptimes.
-;; Copyright 1999-2016 by Dave Pearson <davep@davep.org>
+;; Copyright 1999-2017 by Dave Pearson <davep@davep.org>
 ;; Author: Dave Pearson <davep@davep.org>
-;; Version: 2.3
+;; Version: 2.4
 ;; URL: https://github.com/davep/uptimes.el
 
 ;; uptimes is free software distributed under the terms of the GNU General
