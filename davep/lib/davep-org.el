@@ -1,6 +1,5 @@
 ;;; davep-org.el --- Tools for managing my web site.
-;; Copyright 2001-2005 by Dave Pearson <davep@davep.org>
-;; $Revision: 1.9 $
+;; Copyright 2001-2017 by Dave Pearson <davep@davep.org>
 
 (eval-when-compile
   (require 'cl))
