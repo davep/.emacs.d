@@ -4,7 +4,7 @@
 (eval-when-compile
   (require 'cl))
 
-(defvar davep-org-root "~/Sites/davep.org/"
+(defvar davep-org-root "~/Sites/www.davep.org/"
   "Root directory of www.davep.org sources.")
 
 (defun davep-org-path (path)
