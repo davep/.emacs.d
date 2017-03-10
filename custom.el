@@ -31,6 +31,7 @@
  '(indent-tabs-mode nil)
  '(indicate-empty-lines t)
  '(inhibit-startup-screen t)
+ '(initial-scratch-message nil)
  '(ispell-dictionary "british")
  '(ispell-highlight-face (quote flyspell-incorrect))
  '(js-switch-indent-offset 4)
