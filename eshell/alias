@@ -1,1 +1,3 @@
+alias c clear
+alias d ls
 alias v ls -l
