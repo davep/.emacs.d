@@ -1,6 +1,7 @@
 *~
 auto-save-list
-eshell
+eshell/history
+eshell/lastdir
 tramp
 uptimes
 *.elc
