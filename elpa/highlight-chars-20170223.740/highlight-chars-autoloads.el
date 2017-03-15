@@ -1,10 +1,10 @@
 ;;; highlight-chars-autoloads.el --- automatically extracted autoloads
 ;;
 ;;; Code:
-(add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
+(add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "highlight-chars" "highlight-chars.el" (22673
-;;;;;;  61164 0 0))
+;;;### (autoloads nil "highlight-chars" "highlight-chars.el" (22729
+;;;;;;  19730 0 0))
 ;;; Generated autoloads from highlight-chars.el
 
 (let ((loads (get 'Highlight-Characters 'custom-loads))) (if (member '"highlight-chars" loads) nil (put 'Highlight-Characters 'custom-loads (cons '"highlight-chars" loads))))
