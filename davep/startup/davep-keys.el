@@ -43,10 +43,6 @@
 (define-key global-map [(meta
                          backspace)]     #'undo)
 (define-key global-map [(control z)]     #'undo)
-(define-key global-map [(meta i)]        #'(lambda (name)
-                                             (interactive
-                                              (list (read-file-name "File: " "~/lib/boilerplate/" nil t)))
-                                             (insert-file-contents name)))
 (define-key global-map [(control c)
                         (control f)]     #'view-file)
 (define-key global-map [(control c) (t)] #'uptimes)
