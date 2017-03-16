@@ -6,6 +6,10 @@
  '(auto-image-file-mode t)
  '(blink-cursor-mode nil)
  '(case-fold-search t)
+ '(clean-buffer-list-delay-special 60)
+ '(clean-buffer-list-kill-buffer-names
+   (quote
+    ("*Help*" "*Apropos*" "*Buffer List*" "*Compile-Log*" "*info*" "*vc*" "*vc-diff*" "*diff*" "*uptimes*")))
  '(column-number-mode t)
  '(cursor-in-non-selected-windows nil)
  '(diff-switches "-u")
