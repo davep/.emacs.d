@@ -10,7 +10,7 @@
  '(clean-buffer-list-delay-special 1)
  '(clean-buffer-list-kill-buffer-names
    (quote
-    ("*Help*" "*Apropos*" "*Buffer List*" "*Compile-Log*" "*info*" "*vc*" "*vc-diff*" "*diff*" "*uptimes*" "*markdown-output*")))
+    ("*Help*" "*Apropos*" "*Buffer List*" "*Compile-Log*" "*info*" "*vc*" "*vc-diff*" "*diff*" "*uptimes*" "*markdown-output*" "*Checkdoc Status*" "*Compile-Log*")))
  '(column-number-mode t)
  '(cursor-in-non-selected-windows nil)
  '(diff-switches "-u")
