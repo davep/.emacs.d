@@ -1,6 +1,10 @@
 ;;; thinks.el --- Insert text in a think bubble.
-;; Copyright 2000-2008 by Dave Pearson <davep@davep.org>
-;; $Revision: 1.9 $
+;; Copyright 2000-2017 by Dave Pearson <davep@davep.org>
+
+;; Author: Dave Pearson <davep@davep.org>
+;; Version: 1.9
+;; Keywords: quoting
+;; URL: https://github.com/davep/thinks.el
 
 ;; thinks.el is free software distributed under the terms of the GNU General
 ;; Public Licence, version 2 or (at your option) any later version. For
@@ -51,7 +55,7 @@
 ;;
 ;; The latest thinks.el is always available from:
 ;;
-;;   <URL:http://www.davep.org/emacs/#thinks.el>
+;;   <URL:https://github.com/davep/thinks.el>
 
 ;;; Thanks:
 
@@ -75,13 +79,13 @@
 ;; Attempt to handle older/other emacs.
 
 (eval-and-compile
-  
+
   ;; If customize isn't available just use defvar instead.
   (unless (fboundp 'defgroup)
     (defmacro defgroup  (&rest rest) nil)
     (defmacro defcustom (symbol init docstring &rest rest)
       `(defvar ,symbol ,init ,docstring)))
-  
+
   ;; If `line-beginning-position' isn't available provide one.
   (unless (fboundp 'line-beginning-position)
     (defun line-beginning-position (&optional n)
@@ -268,4 +272,4 @@ If not, query for text to insert in bubble."
 
 (provide 'thinks)
 
-;;; thinks.el ends here.
+;;; thinks.el ends here
