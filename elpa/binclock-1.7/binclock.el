@@ -1,12 +1,16 @@
 ;;; binclock.el --- Display the current time using a binary clock.
 ;; Copyright 1999,2000 by Dave Pearson <davep@davep.org>
-;; $Revision: 1.7 $
+
+;; Author: Dave Pearson <davep@davep.org>
+;; Version: 1.7
+;; Keywords: time display
+;; URL: https://github.com/davep/binclock.el
 
 ;; binclock is free software distributed under the terms of the GNU General
 ;; Public Licence, version 2. For details see the file COPYING.
 
 ;;; Commentary:
-;; 
+;;
 ;; binclock displays the current time using a binary display.
 
 ;;; Code:
@@ -208,7 +212,7 @@ The key bindings for `binclock-mode' are:
         (insert "  ")))
 
 (defun binclock-display-lisp-list (time-list)
-  "Display TIME-LIST as lisp lists."
+  "Display TIME-LIST as Lisp lists."
   (loop for value in time-list
         do (insert (prin1-to-string value))
         (insert "  ")))
