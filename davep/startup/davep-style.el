@@ -28,4 +28,8 @@
             (when (buffer-file-name)
               (hc-highlight-trailing-whitespace))))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Ensure global parenface is on.
+(global-paren-face-mode t)
+
 (provide 'davep-style)
