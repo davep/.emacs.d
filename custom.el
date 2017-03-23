@@ -32,6 +32,7 @@
  '(fill-column 76)
  '(global-emojify-mode t)
  '(global-linum-mode t)
+ '(global-paren-face-mode t)
  '(ibuffer-expert t)
  '(indent-tabs-mode nil)
  '(indicate-empty-lines t)
