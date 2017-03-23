@@ -32,7 +32,6 @@
  '(fill-column 76)
  '(global-emojify-mode t)
  '(global-linum-mode t)
- '(global-paren-face-mode t)
  '(ibuffer-expert t)
  '(indent-tabs-mode nil)
  '(indicate-empty-lines t)
@@ -54,7 +53,7 @@
      ("melpa" . "https://melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (paren-face parenface binclock uptimes thinks package-lint w3m slime sass-mode restclient powershell markdown-mode hyde highlight-chars emojify dictionary csharp-mode browse-kill-ring boxquote auto-compile)))
+    (obfusurl paren-face parenface binclock uptimes thinks package-lint w3m slime sass-mode restclient powershell markdown-mode hyde highlight-chars emojify dictionary csharp-mode browse-kill-ring boxquote auto-compile)))
  '(safe-local-variable-values
    (quote
     ((eval when

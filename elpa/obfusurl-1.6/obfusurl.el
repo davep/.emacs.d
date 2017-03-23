@@ -1,6 +1,10 @@
 ;;; obfusurl.el --- Obfuscate URLs so they aren't spoilers
 ;; Copyright 2001,2002 by Dave Pearson <davep@davep.org>
-;; $Revision: 1.6 $
+
+;; Author: Dave Pearson <davep@davep.org>
+;; Version: 1.6
+;; Keywords: web text
+;; URL: https://github.com/davep/obfusurl.el
 
 ;; obfusurl.el is free software distributed under the terms of the GNU
 ;; General Public Licence, version 2. For details see the file COPYING.
@@ -34,15 +38,6 @@
 ;;
 ;; Toby Speight <streapadair@gmx.net> for pointing out that I needed to
 ;; cater for reserved characters.
-
-;;; INSTALLATION:
-;;
-;; o Drop obfusurl.el somwehere into your `load-path'. Try your site-lisp
-;;   directory for example (you might also want to byte-compile the file).
-;;
-;; o Add the following autoload statement to your ~/.emacs file:
-;;
-;;   (autoload 'obfuscate-url "obfusurl" "Obfuscate URL under point" t)
 
 ;;; Code:
 
