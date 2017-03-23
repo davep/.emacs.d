@@ -3,7 +3,7 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "uptimes" "uptimes.el" (22738 41629 0 0))
+;;;### (autoloads nil "uptimes" "uptimes.el" (22739 57310 0 0))
 ;;; Generated autoloads from uptimes.el
 
 (autoload 'uptimes "uptimes" "\

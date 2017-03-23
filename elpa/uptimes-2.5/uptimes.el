@@ -1,10 +1,10 @@
 ;;; uptimes.el --- Track and display emacs session uptimes.
-;; Copyright 1999-2018 by Dave Pearson <davep@davep.org>
+;; Copyright 1999-2017 by Dave Pearson <davep@davep.org>
 
 ;; Author: Dave Pearson <davep@davep.org>
-;; Version: 2.4
+;; Version: 2.5
 ;; Keywords: uptime
-;; URL: https://github.com/davep/thinks.el
+;; URL: https://github.com/davep/uptimes.el
 
 ;; uptimes.el is free software distributed under the terms of the GNU
 ;; General Public Licence, version 2. For details see the file COPYING.
@@ -167,8 +167,8 @@ The result is returned as the following `values':
   "Return `uptimes-uptime-values' as a \"wordy\" string."
   (multiple-value-bind (days hours mins secs)
       (uptimes-uptime-values boottime endtime)
-    (flet ((mul (n word) (concat word (unless (= n 1) "s")))
-           (say (n word) (format "%d %s" n (mul n word))))
+    (cl-flet* ((mul (n word) (concat word (unless (= n 1) "s")))
+               (say (n word) (format "%d %s" n (mul n word))))
       (concat (say days "day")
               ", "
               (say hours "hour")
@@ -190,19 +190,19 @@ The result is returned as the following `values':
 (defun uptimes-update ()
   "Update `uptimes-last-n' and `uptimes-top-n'."
   (uptimes-read-uptimes)
-  (flet ((trunc (list &optional (where uptimes-keep-count))
-           (let ((trunc-point (nthcdr (1- where) list)))
-             (when (consp trunc-point)
-               (setf (cdr trunc-point) nil)))
-           list)
-         (update (list now sort-pred)
-           (let* ((key  (uptimes-key))
-                  (this (cdr (assoc key list))))
-             (unless this
-               (setq this (cons uptimes-boottime nil))
-               (push (cons key this) list))
-             (setf (cdr this) now)
-             (trunc (sort list sort-pred)))))
+  (cl-flet* ((trunc (list &optional (where uptimes-keep-count))
+                    (let ((trunc-point (nthcdr (1- where) list)))
+                      (when (consp trunc-point)
+                        (setf (cdr trunc-point) nil)))
+                    list)
+             (update (list now sort-pred)
+                     (let* ((key  (uptimes-key))
+                            (this (cdr (assoc key list))))
+                       (unless this
+                         (setq this (cons uptimes-boottime nil))
+                         (push (cons key this) list))
+                       (setf (cdr this) now)
+                       (trunc (sort list sort-pred)))))
     (let ((now (uptimes-float-time)))
       (setq uptimes-last-n
             (update uptimes-last-n now
@@ -230,17 +230,17 @@ The result is returned as the following `values':
   "Print uptimes list LIST to `standard-output'."
   (princ "Boot                Endtime             Uptime       This emacs\n")
   (princ "=================== =================== ============ ==========\n")
-  (flet ((format-time (time)
-           (format-time-string "%Y-%m-%d %T" (uptimes-time-float time))))
+  (cl-flet ((format-time (time)
+              (format-time-string "%Y-%m-%d %T" (uptimes-time-float time))))
     (loop for uptime in list
-          for bootsig  = (car  uptime)
-          for booted   = (cadr uptime)
-          for snapshot = (cddr uptime)
-          do (princ (format "%19s %19s %12s %s\n"
-                            (format-time booted)
-                            (format-time snapshot)
-                            (uptimes-uptime-string booted snapshot)
-                            (if (string= bootsig (uptimes-key)) "<--" ""))))))
+       for bootsig  = (car  uptime)
+       for booted   = (cadr uptime)
+       for snapshot = (cddr uptime)
+       do (princ (format "%19s %19s %12s %s\n"
+                         (format-time booted)
+                         (format-time snapshot)
+                         (uptimes-uptime-string booted snapshot)
+                         (if (string= bootsig (uptimes-key)) "<--" ""))))))
 
 ;;;###autoload
 (defun uptimes ()
