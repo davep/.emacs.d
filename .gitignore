@@ -9,6 +9,7 @@ davep/autoloads.el
 davep/autoloads.elc
 davep/autoloads-3rd-party.el
 davep/autoloads-3rd-party.elc
+elpa/*.txt
 history
 archive-contents
 url/
