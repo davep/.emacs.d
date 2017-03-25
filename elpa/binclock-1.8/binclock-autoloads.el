@@ -3,7 +3,7 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "binclock" "binclock.el" (22739 35470 0 0))
+;;;### (autoloads nil "binclock" "binclock.el" (22742 46002 0 0))
 ;;; Generated autoloads from binclock.el
 
 (autoload 'binclock "binclock" "\

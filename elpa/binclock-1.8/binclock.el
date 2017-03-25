@@ -1,10 +1,11 @@
 ;;; binclock.el --- Display the current time using a binary clock.
-;; Copyright 1999,2000 by Dave Pearson <davep@davep.org>
+;; Copyright 1999-2017 by Dave Pearson <davep@davep.org>
 
 ;; Author: Dave Pearson <davep@davep.org>
-;; Version: 1.7
-;; Keywords: time display
+;; Version: 1.8
+;; Keywords: games, time, display
 ;; URL: https://github.com/davep/binclock.el
+;; Package-Requires: ((cl-lib "0.5"))
 
 ;; binclock is free software distributed under the terms of the GNU General
 ;; Public Licence, version 2. For details see the file COPYING.
@@ -17,20 +18,8 @@
 
 ;; Bits that we need.
 
-(require 'cl)
+(require 'cl-lib)
 (require 'easymenu)
-
-;; Attempt to handle older/other emacs.
-(eval-and-compile
-  ;; If customize isn't available just use defvar instead.
-  (unless (fboundp 'defgroup)
-    (defmacro defgroup  (&rest rest) nil)
-    (defmacro defcustom (symbol init docstring &rest rest)
-      `(defvar ,symbol ,init ,docstring)))
-  ;; Seems pre-20 emacs doesn't have with-current-buffer.
-  (unless (fboundp 'with-current-buffer)
-    (defmacro with-current-buffer (buffer &rest body)
-      `(save-current-buffer (set-buffer ,buffer) ,@body))))
 
 ;; Customize options.
 
@@ -207,34 +196,34 @@ The key bindings for `binclock-mode' are:
 
 (defun binclock-display-zero-and-one (time-list)
   "Display TIME-LIST using 0s and 1s."
-  (loop for value in time-list
-        do (insert (binclock-boollist-as-string value ?1 ?0))
-        (insert "  ")))
+  (cl-loop for value in time-list
+     do (insert (binclock-boollist-as-string value ?1 ?0))
+       (insert "  ")))
 
 (defun binclock-display-lisp-list (time-list)
   "Display TIME-LIST as Lisp lists."
-  (loop for value in time-list
-        do (insert (prin1-to-string value))
-        (insert "  ")))
+  (cl-loop for value in time-list
+     do (insert (prin1-to-string value))
+       (insert "  ")))
 
 (defun binclock-display-hash-string (time-list)
   "Display TIME-LIST using '#' and '.'."
-  (loop for value in time-list
-        do (insert (binclock-boollist-as-string value ?# ?.))
-        (insert "  ")))
+  (cl-loop for value in time-list
+     do (insert (binclock-boollist-as-string value ?# ?.))
+       (insert "  ")))
 
 ;; Support functions.
 
 (defun* binclock-to-binary (num &optional (bits 8))
   "Convert a positive integer NUM into a binary list. Pad the list out to
 BITS bits. BITS is optional and if not supplied defaults to 8."
-  (loop for bit downfrom (1- bits) to 0
-        collect (not (zerop (logand num (expt 2 bit))))))
+  (cl-loop for bit downfrom (1- bits) to 0
+     collect (not (zerop (logand num (expt 2 bit))))))
 
 (defun binclock-boollist-as-string (list on off)
   "Convert LIST (a list of logical values) to a string.
 Use ON for true values and OFF for false values."
-  (coerce (loop for bit in list collect (if bit on off)) 'string))
+  (cl-coerce (cl-loop for bit in list collect (if bit on off)) 'string))
 
 (defun binclock-hour-fixup (hour)
   "Fixup HOUR depending on the setting of `binclock-24hour'."
