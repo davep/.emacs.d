@@ -1,7 +1,11 @@
 ;;; boxquote.el --- Quote text with a semi-box.
-;; Package-Version: 20081011.1326
-;; Copyright 1999-2008 by Dave Pearson <davep@davep.org>
-;; $Revision: 1.22 $
+;; Copyright 1999-2017 by Dave Pearson <davep@davep.org>
+
+;; Author: Dave Pearson <davep@davep.org>
+;; Version: 1.24
+;; Keywords: quoting
+;; URL: https://github.com/davep/boxquote.el
+;; Package-Requires: ((cl-lib "0.5"))
 
 ;; boxquote.el is free software distributed under the terms of the GNU
 ;; General Public Licence, version 2 or (at your option) any later version.
@@ -24,7 +28,7 @@
 ;;
 ;; The latest version of boxquote.el can be found at:
 ;;
-;;   <URL:http://www.davep.org/emacs/#boxquote.el>
+;;   <URL:https://github.com/davep/boxquote.el>
 
 ;;; Thanks:
 
@@ -47,33 +51,8 @@
 ;; Things we need:
 
 (eval-when-compile
-  (require 'cl))
+  (require 'cl-lib))
 (require 'rect)
-
-;; Attempt to handle older/other emacs.
-(eval-and-compile
-  
-  ;; If customize isn't available just use defvar instead.
-  (unless (fboundp 'defgroup)
-    (defmacro defgroup  (&rest rest) nil)
-    (defmacro defcustom (symbol init docstring &rest rest)
-      `(defvar ,symbol ,init ,docstring)))
-  
-  ;; If `line-beginning-position' isn't available provide one.
-  (unless (fboundp 'line-beginning-position)
-    (defun line-beginning-position (&optional n)
-      "Return the `point' of the beginning of the current line."
-      (save-excursion
-        (beginning-of-line n)
-        (point))))
-
-  ;; If `line-end-position' isn't available provide one.
-  (unless (fboundp 'line-end-position)
-    (defun line-end-position (&optional n)
-      "Return the `point' of the end of the current line."
-      (save-excursion
-        (end-of-line n)
-        (point)))))
 
 ;; Customize options.
 
@@ -171,22 +150,22 @@ the article you'd copied the text from."
   :group 'boxquote)
 
 (defcustom boxquote-describe-function-title-format "C-h f %s RET"
-  "*Format string to use when formatting a function description box title"
+  "*Format string to use when formatting a function description box title."
   :type  'string
   :group 'boxquote)
 
 (defcustom boxquote-describe-variable-title-format "C-h v %s RET"
-  "*Format string to use when formatting a variable description box title"
+  "*Format string to use when formatting a variable description box title."
   :type  'string
   :group 'boxquote)
 
 (defcustom boxquote-describe-key-title-format "C-h k %s"
-  "*Format string to use when formatting a key description box title"
+  "*Format string to use when formatting a key description box title."
   :type  'string
   :group 'boxquote)
 
 (defcustom boxquote-where-is-title-format "C-h w %s RET"
-  "*Format string to use when formatting a `where-is' description box title"
+  "*Format string to use when formatting a `where-is' description box title."
   :type  'string
   :group 'boxquote)
 
@@ -194,7 +173,7 @@ the article you'd copied the text from."
   "*Format string to use when formatting a `where-is' description."
   :type  'string
   :group 'boxquote)
-  
+
 ;; Main code:
 
 (defun boxquote-xemacs-p ()
@@ -215,12 +194,12 @@ boxquote is found."
            (re-bottom (concat "^" (regexp-quote boxquote-bottom-corner)
                               (regexp-quote boxquote-top-and-tail)))
            (points
-            (flet ((find-box-end (re &optional back)
-                     (save-excursion
-                       (when (if back
-                                 (search-backward-regexp re nil t)
-                               (search-forward-regexp re nil t))
-                         (point)))))
+            (cl-flet ((find-box-end (re &optional back)
+                        (save-excursion
+                          (when (if back
+                                    (search-backward-regexp re nil t)
+                                  (search-forward-regexp re nil t))
+                            (point)))))
               (cond ((looking-at re-top)
                      (cons (point) (find-box-end re-bottom)))
                     ((looking-at re-left)
@@ -249,7 +228,7 @@ boxquote is found."
 
 (defun boxquote-get-title ()
   "Get the title for the current boxquote."
-  (multiple-value-bind (prefix-len suffix-len)
+  (cl-multiple-value-bind (prefix-len suffix-len)
       (with-temp-buffer
         (let ((look-for "%s"))
           (insert boxquote-title-format)
@@ -291,12 +270,12 @@ be formatted using `boxquote-title-format'."
   (interactive "r")
   (save-excursion
     (save-restriction
-      (flet ((bol-at-p (n)
-               (setf (point) n)
-               (bolp))
-             (insert-corner (corner pre-break)
-               (insert (concat (if pre-break "\n" "")
-                               corner boxquote-top-and-tail "\n"))))
+      (cl-flet ((bol-at-p (n)
+                  (setf (point) n)
+                  (bolp))
+                (insert-corner (corner pre-break)
+                  (insert (concat (if pre-break "\n" "")
+                                  corner boxquote-top-and-tail "\n"))))
         (let ((break-start (not (bol-at-p start)))
               (break-end   (not (bol-at-p end))))
           (narrow-to-region start end)
@@ -429,11 +408,11 @@ ITEM is a function for retrieving the item to get help on."
      (save-window-excursion
        (funcall help-call)
        (with-current-buffer (boxquote-help-buffer-name (funcall item))
-         (buffer-string))))
+         (buffer-substring-no-properties (point-min) (point-max)))))
     (boxquote-title (format title-format (funcall item)))
     (when one-window-p
       (delete-other-windows))))
-  
+
 ;;;###autoload
 (defun boxquote-describe-function ()
   "Call `describe-function' and boxquote the output into the current buffer."
@@ -462,7 +441,7 @@ ITEM is a function for retrieving the item to get help on."
 
 ;;;###autoload
 (defun boxquote-describe-key (key)
-  "Call `describe-key' and boxquote the output into the current buffer.
+  "Call `describe-key' on KEY and boxquote the output into the current buffer.
 
 If the call to this command is prefixed with \\[universal-argument] you will also be
 prompted for a buffer. The key defintion used will be taken from that buffer."
@@ -515,7 +494,7 @@ prompted for a buffer. The key defintion used will be taken from that buffer."
        (insert text)
        (boxquote-buffer)
        (buffer-string)))))
-  
+
 ;;;###autoload
 (defun boxquote-narrow-to-boxquote ()
   "Narrow the buffer to the current boxquote."
@@ -553,7 +532,7 @@ prompted for a buffer. The key defintion used will be taken from that buffer."
         (let ((fill-prefix boxquote-side))
           (fill-paragraph arg)))
     (fill-paragraph arg)))
-  
+
 ;;;###autoload
 (defun boxquote-unbox-region (start end)
   "Remove a box created with `boxquote-region'."
@@ -583,4 +562,4 @@ prompted for a buffer. The key defintion used will be taken from that buffer."
 
 (provide 'boxquote)
 
-;;; boxquote.el ends here.
+;;; boxquote.el ends here

@@ -1,9 +1,9 @@
 ;;; boxquote-autoloads.el --- automatically extracted autoloads
 ;;
 ;;; Code:
-(add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
+(add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "boxquote" "boxquote.el" (22339 2216 0 0))
+;;;### (autoloads nil "boxquote" "boxquote.el" (22742 24453 0 0))
 ;;; Generated autoloads from boxquote.el
 
 (autoload 'boxquote-title "boxquote" "\
@@ -83,7 +83,7 @@ Call `describe-variable' and boxquote the output into the current buffer.
 \(fn)" t nil)
 
 (autoload 'boxquote-describe-key "boxquote" "\
-Call `describe-key' and boxquote the output into the current buffer.
+Call `describe-key' on KEY and boxquote the output into the current buffer.
 
 If the call to this command is prefixed with \\[universal-argument] you will also be
 prompted for a buffer. The key defintion used will be taken from that buffer.
