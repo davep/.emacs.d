@@ -31,6 +31,9 @@
  '(indent-tabs-mode nil)
  '(indicate-empty-lines t)
  '(inhibit-startup-screen t)
+ '(initial-scratch-message ";; Get shit done!
+
+")
  '(ispell-dictionary "british")
  '(ispell-highlight-face (quote flyspell-incorrect))
  '(js-switch-indent-offset 4)
