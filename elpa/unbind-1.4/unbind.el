@@ -1,12 +1,24 @@
 ;;; unbind.el --- Commands for unbinding things
-;; Copyright 2002 by Dave Pearson <davep@davep.org>
-;; $Revision: 1.3 $
+;; Copyright 2002-2017 by Dave Pearson <davep@davep.org>
+
+;; Author: Dave Pearson <davep@davep.org>
+;; Version: 1.4
+;; Keywords: lisp, unbind
+;; URL: https://github.com/davep/unbind.el
+;; Package-Requires: ((cl-lib "0.5"))
 
 ;; unbind.el is free software distributed under the terms of the GNU General
 ;; Public Licence, version 2. For details see the file COPYING.
 
+;;; Commentary:
+;;
+;; unbind.el provides some simple commands for unbinding values in Emacs
+;; Lisp. I find this handy when working on code.
+
+;;; Code:
+
 (eval-when-compile
-  (require 'cl))
+  (require 'cl-lib))
 
 ;;;###autoload
 (defun unbind-defun ()
@@ -44,10 +56,10 @@ property list."
 (defun unbind-variable (symbol)
   "Remove the variable binding of SYMBOL."
   (interactive (list (completing-read "Variable: "
-                                      (loop for s being the symbols
+                                      (cl-loop for s being the symbols
                                             when (boundp s) collect (list (symbol-name s))))))
   (makunbound (if (stringp symbol) (intern symbol) symbol)))
 
 (provide 'unbind)
 
-;;; unbind.el ends here.
+;;; unbind.el ends here
