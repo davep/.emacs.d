@@ -5,6 +5,7 @@
 ;; Version: 2.5
 ;; Keywords: uptime
 ;; URL: https://github.com/davep/uptimes.el
+;; Package-Requires: ((cl-lib "0.5"))
 
 ;; uptimes.el is free software distributed under the terms of the GNU
 ;; General Public Licence, version 2. For details see the file COPYING.
@@ -42,23 +43,9 @@
 ;; Bits that we need.
 
 (eval-when-compile
-  (require 'cl))
+  (require 'cl-lib))
 (require 'pp)
 (require 'timer)
-
-;; Attempt to handle older/other emacs.
-(eval-and-compile
-  ;; If customize isn't available just use defvar instead.
-  (unless (fboundp 'defgroup)
-    (defmacro defgroup  (&rest rest) nil)
-    (defmacro defcustom (symbol init docstring &rest rest)
-      `(defvar ,symbol ,init ,docstring))))
-
-;; Because cl is only required at compile time we'll do the alias for
-;; `values' ourself during run-time.
-(eval-when (load eval)
-  (unless (fboundp 'values)
-    (defalias 'values 'list)))
 
 ;; Customize options.
 
@@ -67,7 +54,7 @@
   :group 'games
   :prefix "uptimes-")
 
-(defcustom uptimes-database "~/.emacs-uptimes"
+(defcustom uptimes-database (locate-user-emacs-file ".uptimes.el" "~/.emacs-uptimes")
   "*Database of uptimes."
   :type  'file
   :group 'uptimes)
@@ -153,7 +140,7 @@ The result is returned as the following `values':
          (hours (progn (decf now (* days  86400)) (floor (/ now 3600))))
          (mins  (progn (decf now (* hours 3600))  (floor (/ now 60))))
          (secs  (progn (decf now (* mins  60))    (floor now))))
-    (values days hours mins secs)))
+    (list days hours mins secs)))
 
 (defun* uptimes-uptime-string (&optional (boottime uptimes-boottime)
                                          (endtime (uptimes-float-time)))
@@ -213,8 +200,10 @@ The result is returned as the following `values':
                       (> (uptimes-uptime (cadr x) (cddr x))
                          (uptimes-uptime (cadr y) (cddr y)))))))))
 
-(defun uptimes-save-uptimes ()
+;;;###autoload
+(defun uptimes-save ()
   "Write the uptimes to `uptimes-database'."
+  (interactive)
   (uptimes-update)
   (with-temp-buffer
     (let ((standard-output (current-buffer)))
@@ -246,7 +235,7 @@ The result is returned as the following `values':
 (defun uptimes ()
   "Display the last and top `uptimes-keep-count' uptimes."
   (interactive)
-  (uptimes-save-uptimes)
+  (uptimes-save)
   (with-output-to-temp-buffer "*uptimes*"
     (princ (format "Last %d uptimes\n\n" uptimes-keep-count))
     (uptimes-print-uptimes uptimes-last-n)
@@ -254,21 +243,20 @@ The result is returned as the following `values':
     (uptimes-print-uptimes uptimes-top-n)))
 
 ;;;###autoload
-(defun uptimes-this ()
+(defun uptimes-current ()
   "Display the uptime for the current Emacs session."
   (interactive)
-  (uptimes-save-uptimes)
+  (uptimes-save)
   (message "emacs has been up and running for %s" (uptimes-wordy-uptime)))
 
 ;; Register our presence and, if `uptimes-auto-save' is true, kick off the
 ;; auto-save process.
-
-(eval-when (load eval)
-  (uptimes-save-uptimes)
+(progn
+  (uptimes-save)
   (when uptimes-auto-save
     (setq uptimes-auto-save-timer
-          (run-at-time nil uptimes-auto-save-interval #'uptimes-save-uptimes)))
-  (add-hook 'kill-emacs-hook #'uptimes-save-uptimes))
+          (run-at-time nil uptimes-auto-save-interval #'uptimes-save)))
+  (add-hook 'kill-emacs-hook #'uptimes-save))
 
 (provide 'uptimes)
 

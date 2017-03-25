@@ -3,18 +3,27 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "uptimes" "uptimes.el" (22739 57310 0 0))
+;;;### (autoloads nil "uptimes" "uptimes.el" (22742 18050 0 0))
 ;;; Generated autoloads from uptimes.el
+
+(autoload 'uptimes-save "uptimes" "\
+Write the uptimes to `uptimes-database'.
+
+\(fn)" t nil)
 
 (autoload 'uptimes "uptimes" "\
 Display the last and top `uptimes-keep-count' uptimes.
 
 \(fn)" t nil)
 
-(autoload 'uptimes-this "uptimes" "\
+(autoload 'uptimes-current "uptimes" "\
 Display the uptime for the current Emacs session.
 
 \(fn)" t nil)
+
+;;;***
+
+;;;### (autoloads nil nil ("uptimes-pkg.el") (22739 59622 0 0))
 
 ;;;***
 
