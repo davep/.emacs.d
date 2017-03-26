@@ -2,7 +2,7 @@
 ;; Copyright 1999-2017 by Dave Pearson <davep@davep.org>
 
 ;; Author: Dave Pearson <davep@davep.org>
-;; Version: 3.0
+;; Version: 3.1
 ;; Keywords: uptime
 ;; URL: https://github.com/davep/uptimes.el
 ;; Package-Requires: ((cl-lib "0.5"))
@@ -83,7 +83,7 @@
 
 (defun uptimes-float-time (&optional tm)
   "Convert `current-time' (or TM) to a float number of seconds."
-  (multiple-value-bind (s0 s1 s2) (or tm (current-time))
+  (cl-multiple-value-bind (s0 s1 s2) (or tm (current-time))
     (+ (* (float (ash 1 16)) s0) (float s1) (* 0.0000001 s2))))
 
 (defun uptimes-time-float (num)
@@ -95,8 +95,10 @@
 
 ;; Non-customize variables.
 
-(defvar uptimes-boottime (uptimes-float-time)
-  "The time that uptimes.el came into existance.")
+(defvar uptimes-boottime (uptimes-float-time before-init-time)
+  "The time that uptimes.el came into existance.
+
+Normaly populated from `before-init-time'.")
 
 (defvar uptimes-last-n nil
   "Last `uptimes-keep-count' uptimes.")
@@ -132,7 +134,7 @@ default is the boot-time of the current process. ENDTIME is the optional
 time at which the emacs process closed down, if not supplied the default is
 the current time.
 
-The result is returned as the following `values':
+The result is returned as the following `list':
 
   (DAYS HOURS MINS SECS)"
   (let* ((now   (uptimes-uptime boottime endtime))
@@ -145,14 +147,14 @@ The result is returned as the following `values':
 (defun* uptimes-uptime-string (&optional (boottime uptimes-boottime)
                                          (endtime (uptimes-float-time)))
   "Return `uptimes-uptime-values' as a human readable string."
-  (multiple-value-bind (days hours mins secs)
+  (cl-multiple-value-bind (days hours mins secs)
       (uptimes-uptime-values boottime endtime)
     (format "%d.%02d:%02d:%02d" days hours mins secs)))
 
 (defun* uptimes-wordy-uptime (&optional (boottime uptimes-boottime)
                                         (endtime (uptimes-float-time)))
   "Return `uptimes-uptime-values' as a \"wordy\" string."
-  (multiple-value-bind (days hours mins secs)
+  (cl-multiple-value-bind (days hours mins secs)
       (uptimes-uptime-values boottime endtime)
     (cl-flet* ((mul (n word) (concat word (unless (= n 1) "s")))
                (say (n word) (format "%d %s" n (mul n word))))
