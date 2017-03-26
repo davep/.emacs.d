@@ -48,6 +48,7 @@
  '(ns-alternate-modifier (quote super))
  '(ns-command-modifier (quote meta))
  '(org-agenda-files (quote ("~/Dropbox/Sync/Org/elisp.org")))
+ '(org-directory "~/Dropbox/Sync/Org")
  '(package-archives
    (quote
     (("gnu" . "http://elpa.gnu.org/packages/")
