@@ -42,6 +42,7 @@
  '(mouse-avoidance-mode (quote jump) nil (avoid))
  '(ns-alternate-modifier (quote super))
  '(ns-command-modifier (quote meta))
+ '(org-directory "~/Dropbox/Sync/Org")
  '(org-log-done (quote time))
  '(package-archives
    (quote
