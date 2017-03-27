@@ -62,6 +62,7 @@
 (define-key global-map [(control c) (!)] #'boxquote-shell-command)
 (define-key global-map [(control c)
                         (control h) (w)] #'boxquote-where-is)
+(define-key global-map [(control c) (a)]   #'org-agenda)
 (when davep:osx-window-p
   (define-key global-map [(super tab)] #'completion-at-point))
 (when davep:win32p
