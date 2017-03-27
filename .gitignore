@@ -4,6 +4,7 @@ eshell/history
 eshell/lastdir
 tramp
 uptimes
+bookmarks
 *.elc
 davep/autoloads.el
 davep/autoloads.elc
