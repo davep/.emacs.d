@@ -2,7 +2,7 @@
 ;; Copyright 2000-2017 by Dave Pearson <davep@davep.org>
 
 ;; Author: Dave Pearson <davep@davep.org>
-;; Version: 1.5
+;; Version: 1.6
 ;; Keywords: convenience, net, protocols
 ;; URL: https://github.com/davep/protocols.el
 ;; Package-Requires: ((cl-lib "0.5"))
@@ -31,7 +31,7 @@
 ;; Things we need:
 
 (eval-when-compile
-  (require 'cl))
+  (require 'cl-lib))
 
 ;; Customisable variables.
 
