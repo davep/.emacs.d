@@ -12,7 +12,6 @@
 (define-key global-map [f6]              #'bury-buffer)
 (define-key global-map [f9]              #'compile)
 (define-key global-map [(meta g)]        #'goto-line)
-(define-key global-map [(alt s)]         #'scratch-buffer)
 (define-key global-map [(meta s)]        #'scratch-buffer)
 (define-key global-map [(alt l)]         #'ispell-word)
 (define-key global-map [(meta left)]     #'backward-sexp)
