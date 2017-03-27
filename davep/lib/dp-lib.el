@@ -63,10 +63,15 @@
 ;; Quickly switch to the scratch buffer
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(defun scratch-buffer ()
-  "davep: Quickly switch to the *scratch* buffer"
-  (interactive)
+(defun scratch-buffer (arg)
+  "davep: Quickly switch to the *scratch* buffer.
+
+If ARG is non-nil reset the content of the buffer."
+  (interactive "P")
   (switch-to-buffer "*scratch*")
+  (when arg
+    (erase-buffer)
+    (insert initial-scratch-message))
   (lisp-interaction-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
