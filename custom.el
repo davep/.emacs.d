@@ -48,6 +48,7 @@
  '(ns-alternate-modifier (quote super))
  '(ns-command-modifier (quote meta))
  '(org-agenda-files (quote ("~/Dropbox/Sync/Org/elisp.org")))
+ '(org-default-notes-file "~/Dropbox/Sync/Org/inbox.org")
  '(org-directory "~/Dropbox/Sync/Org")
  '(package-archives
    (quote
@@ -70,7 +71,7 @@
                 (quote package-build))
              (let
                  ((load-path
-                   (cons "../package-build" load-path)))
+                    (cons "../package-build" load-path)))
                (require
                 (quote package-build))))
            (package-build-minor-mode)
