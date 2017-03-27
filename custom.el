@@ -52,6 +52,7 @@
     ("~/Dropbox/Sync/Org/elisp.org" "~/Dropbox/Sync/Org/inbox.org")))
  '(org-default-notes-file "~/Dropbox/Sync/Org/inbox.org")
  '(org-directory "~/Dropbox/Sync/Org")
+ '(org-log-done (quote time))
  '(package-archives
    (quote
     (("gnu" . "http://elpa.gnu.org/packages/")
