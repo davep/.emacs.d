@@ -32,7 +32,7 @@
 (define-key global-map [(control c) (r)] #'comment-region)
 (define-key global-map [(control c)
                         (control t)]     #'thinks-maybe-region)
-(define-key global-map [(f11)]           #'uptimes-this)
+(define-key global-map [(f11)]           #'uptimes-current)
 (define-key global-map [(control f11)]   #'clean-buffer-list)
 (define-key global-map [home]            #'smart-home)
 (define-key global-map [end]             #'smart-end)
