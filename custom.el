@@ -94,6 +94,7 @@
  '(savehist-mode t)
  '(scroll-error-top-bottom t)
  '(sentence-end-double-space nil)
+ '(shift-select-mode nil)
  '(show-paren-mode t)
  '(tool-bar-mode nil)
  '(tramp-default-method "ssh")
