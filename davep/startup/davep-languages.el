@@ -4,6 +4,25 @@
   (require 'opascal nil t)              ; Might be missing.
   (require 'js))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Setup a default compile command for a buffer
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(eval-when-compile
+  (defvar compile-command))
+
+(defun davep-languages-setup-compile (default-command)
+  "Setup the compile command for a buffer"
+  (interactive "sDefault compile command: \n")
+  (or (file-exists-p "GNUmakefile")
+      (file-exists-p "makefile")
+      (file-exists-p "Makefile")
+      (progn (make-local-variable 'compile-command)
+             (setq compile-command
+                   (concat default-command " " buffer-file-name
+                           " -o " (file-name-sans-extension
+                                   (file-name-nondirectory (buffer-file-name))))))))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Language styles and modes.
 
@@ -12,7 +31,7 @@
               (c-set-style "BSD")
               (setq c-basic-offset 4)
               (c-set-offset 'case-label '+)
-              (setup-compile "gcc -Wall -O2")
+              (davep-languages-setup-compile "gcc -Wall -O2")
               (define-key c-mode-map "\C-m" #'newline-and-indent)))
 
 (add-hook 'c++-mode-hook                ; C++
@@ -23,7 +42,7 @@
               (c-set-offset 'inline-open 0)
               (c-set-offset 'access-label '-)
               (c-set-offset 'inclass '++)
-              (setup-compile "g++ -Wall -O2")
+              (davep-languages-setup-compile "g++ -Wall -O2")
               (define-key c++-mode-map "\C-m" #'newline-and-indent)))
 
 (add-hook 'pascal-mode-hook             ; Generic Pascal.
