@@ -47,7 +47,9 @@
  '(mouse-avoidance-mode (quote jump) nil (avoid))
  '(ns-alternate-modifier (quote super))
  '(ns-command-modifier (quote meta))
- '(org-agenda-files (quote ("~/Dropbox/Sync/Org/elisp.org")))
+ '(org-agenda-files
+   (quote
+    ("~/Dropbox/Sync/Org/elisp.org" "~/Dropbox/Sync/Org/inbox.org")))
  '(org-default-notes-file "~/Dropbox/Sync/Org/inbox.org")
  '(org-directory "~/Dropbox/Sync/Org")
  '(package-archives
