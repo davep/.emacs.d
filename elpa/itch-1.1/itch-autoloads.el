@@ -3,7 +3,7 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "itch" "itch.el" (22745 33412 0 0))
+;;;### (autoloads nil "itch" "itch.el" (22746 10047 0 0))
 ;;; Generated autoloads from itch.el
 
 (autoload 'itch-scratch-buffer "itch" "\
@@ -11,7 +11,7 @@ Quickly switch to the *scratch* buffer.
 
 If ERASE is non-nil reset the content of the buffer.
 
-\(fn ERASE)" t nil)
+\(fn &optional ERASE)" t nil)
 
 ;;;***
 
