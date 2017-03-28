@@ -40,8 +40,8 @@
                         (control t)]     #'thinks-maybe-region)
 (define-key global-map [(f11)]           #'uptimes-current)
 (define-key global-map [(control f11)]   #'clean-buffer-list)
-(define-key global-map [home]            #'smart-home)
-(define-key global-map [end]             #'smart-end)
+(define-key global-map [home]            #'moving-home)
+(define-key global-map [end]             #'moving-end)
 (define-key global-map [delete]          #'delete-char)
 (define-key global-map [(control
                          backspace)]     #'backward-kill-word)

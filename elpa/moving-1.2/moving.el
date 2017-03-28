@@ -1,18 +1,27 @@
 ;;; moving.el --- Extra commands for moving about a buffer.
-;; By Dave Pearson <davep@davep.org>
-;; $Revision: 1.1 $
+;; Copyright 2000-2017 by Dave Pearson <davep@davep.org>
 
-(eval-when-compile
-  (require 'cl))
+;; Author: Dave Pearson <davep@davep.org>
+;; Version: 1.2
+;; Keywords: convenience
+;; URL: https://github.com/davep/moving.el
 
 ;;;###autoload
-(defun next-repeated-word ()
+
+;;; Commentary:
+;;
+;; moving.el provides some extra commands for moving around a buffer.
+
+;;; Code:
+
+;;;###autoload
+(defun moving-to-next-repeated-word ()
   "Find the the next repeated word."
   (interactive)
   (search-forward-regexp "\\(\\<\\w+\\>\\)\\(\\s-\\|\t\\|\n\\)+\\<\\1\\>"))
 
 ;;;###autoload
-(defun smart-home ()
+(defun moving-home ()
   "Move `point' towards \"home\" depending on context."
   (interactive)
   (cond ((bolp)
@@ -23,7 +32,7 @@
          (back-to-indentation))))
 
 ;;;###autoload
-(defun smart-end ()
+(defun moving-end ()
   "Move `point' towards \"end\" depending on context."
   (interactive)
   (cond ((eolp)
@@ -35,4 +44,4 @@
 
 (provide 'moving)
 
-;; moving.el ends here
+;;; moving.el ends here
