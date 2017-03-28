@@ -28,10 +28,12 @@
 (define-key global-map [(control c) (k)] #'browse-kill-ring)
 (define-key global-map [(control c) (o)] #'(lambda ()
                                              (interactive)
+                                             (require 'org)
                                              (find-file (concat org-directory "/inbox.org"))))
 (define-key global-map [(control c)
                         (control o)]     #'(lambda ()
                                              (interactive)
+                                             (require 'org)
                                              (find-file org-directory)))
 (define-key global-map [(control c) (r)] #'comment-region)
 (define-key global-map [(control c)
@@ -70,4 +72,5 @@
   (define-key global-map [(super tab)] #'completion-at-point))
 (when davep:win32p
   (setq w32-lwindow-modifier 'meta))
+
 (provide 'davep-keys)
