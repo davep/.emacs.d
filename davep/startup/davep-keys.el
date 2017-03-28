@@ -17,9 +17,9 @@
                                              (interactive)
                                              (other-window -1)))
 (define-key global-map [(meta n)]        #'other-window)
-(define-key global-map [(control c) (c)] #'cut-here)
+(define-key global-map [(control c) (c)] #'insert-cut-here)
 (define-key global-map [(control c)
-                        (control i)]     #'cut-file-here)
+                        (control i)]     #'insert-file-cut-here)
 (define-key global-map [(control
                          return)]        #'insert-line-split-keeping-fill-prefix)
 (define-key global-map (kbd "C-c RET")   #'insert-line-split-keeping-fill-prefix)
