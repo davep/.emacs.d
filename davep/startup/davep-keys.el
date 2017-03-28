@@ -21,8 +21,8 @@
 (define-key global-map [(control c)
                         (control i)]     #'cut-file-here)
 (define-key global-map [(control
-                         return)]        #'split-line-keeping-fill-prefix)
-(define-key global-map (kbd "C-c RET")   #'split-line-keeping-fill-prefix)
+                         return)]        #'insert-line-split-keeping-fill-prefix)
+(define-key global-map (kbd "C-c RET")   #'insert-line-split-keeping-fill-prefix)
 (define-key global-map [(control c) (e)] #'eshell)
 (define-key global-map [(control c) (f)] #'insert-filename)
 (define-key global-map [(control c) (k)] #'browse-kill-ring)
