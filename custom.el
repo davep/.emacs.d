@@ -59,7 +59,7 @@
      ("melpa" . "https://melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (moving insert become itch services protocols nukneval unbind fscroll webinfo obfusurl paren-face parenface binclock uptimes thinks package-lint w3m slime sass-mode restclient powershell markdown-mode hyde highlight-chars emojify dictionary csharp-mode browse-kill-ring boxquote auto-compile)))
+    (csrclr moving insert become itch services protocols nukneval unbind fscroll webinfo obfusurl paren-face parenface binclock uptimes thinks package-lint w3m slime sass-mode restclient powershell markdown-mode hyde highlight-chars emojify dictionary csharp-mode browse-kill-ring boxquote auto-compile)))
  '(safe-local-variable-values
    (quote
     ((eval when
