@@ -2,8 +2,7 @@
 ;; Copyright 1999-2017 by Dave Pearson <davep@davep.org>
 
 ;; Author: Dave Pearson <davep@davep.org>
-;; Version: 1.24
-;; Package-Version: 20170325.515
+;; Version: 2.0
 ;; Keywords: quoting
 ;; URL: https://github.com/davep/boxquote.el
 ;; Package-Requires: ((cl-lib "0.5"))
@@ -38,7 +37,8 @@
 ;; hassled him for his code but it was far more fun to write it myself.
 ;;
 ;; Mark Milhollan for providing a patch that helped me get the help quoting
-;; functions working with XEmacs.
+;; functions working with XEmacs. (which, for other reasons, I've neded to
+;; remove as of v2.0 -- hopefully I can get things working on XEmacs again).
 ;;
 ;; Oliver Much for suggesting the idea of having a `boxquote-kill-ring-save'
 ;; function.
@@ -176,10 +176,6 @@ the article you'd copied the text from."
   :group 'boxquote)
 
 ;; Main code:
-
-(defun boxquote-xemacs-p ()
-  "Are we running in XEmacs?"
-  (and (boundp 'running-xemacs) (symbol-value 'running-xemacs)))
 
 (defun boxquote-points ()
   "Find the start and end points of a boxquote.
@@ -388,57 +384,37 @@ whatever `boxquote-kill-ring-save-title' returned at the time."
   (let ((box (boxquote-points-with-check)))
     (boxquote-region (car box) (1+ (cdr box)))))
 
-(defun boxquote-help-buffer-name (item)
-  "Return the name of the help buffer associated with ITEM."
-  (if (boxquote-xemacs-p)
-      (loop for buffer in (symbol-value 'help-buffer-list)
-            when (string-match (concat "^*Help:.*`" item "'") buffer)
-            return buffer)
-    "*Help*"))
+;;;###autoload
+(defun boxquote-describe-function (function)
+  "Call `describe-function' and boxquote the output into the current buffer.
 
-(defun boxquote-quote-help-buffer (help-call title-format item)
-  "Perform a help command and boxquote the output.
-
-HELP-CALL is a function that calls the help command.
-
-TITLE-FORMAT is the `format' string to use to product the boxquote title.
-
-ITEM is a function for retrieving the item to get help on."
-  (let ((one-window-p (one-window-p)))
-    (boxquote-text
-     (save-window-excursion
-       (funcall help-call)
-       (with-current-buffer (boxquote-help-buffer-name (funcall item))
-         (buffer-substring-no-properties (point-min) (point-max)))))
-    (boxquote-title (format title-format (funcall item)))
-    (when one-window-p
-      (delete-other-windows))))
+FUNCTION is the function to describe."
+  (interactive
+   (list
+    (completing-read "Describe function: " obarray 'fboundp t nil nil)))
+  (boxquote-text
+   (save-window-excursion
+     (substring-no-properties
+      (describe-function (intern function)))))
+  (boxquote-title (format boxquote-describe-function-title-format function)))
 
 ;;;###autoload
-(defun boxquote-describe-function ()
-  "Call `describe-function' and boxquote the output into the current buffer."
-  (interactive)
-  (boxquote-quote-help-buffer
-   #'(lambda ()
-       (call-interactively #'describe-function))
-   boxquote-describe-function-title-format
-   #'(lambda ()
-       (car (if (boxquote-xemacs-p)
-                (symbol-value 'function-history)
-              minibuffer-history)))))
+(defun boxquote-describe-variable (variable)
+  "Call `describe-variable' and boxquote the output into the current buffer.
 
-;;;###autoload
-(defun boxquote-describe-variable ()
-  "Call `describe-variable' and boxquote the output into the current buffer."
-  (interactive)
-  (boxquote-quote-help-buffer
-   #'(lambda ()
-       (call-interactively #'describe-variable))
-   boxquote-describe-variable-title-format
-   #'(lambda ()
-       (car (if (boxquote-xemacs-p)
-                (symbol-value 'variable-history)
-              minibuffer-history)))))
+VARIABLE is the variable to describe."
+  (interactive
+   (list
+    (completing-read "Describe variable: " obarray
+                     #'(lambda (v)
+                         (or (get v 'variable-documentation)
+                             (and (boundp v) (not (keywordp v)))))
+                     t nil nil)))
+  (boxquote-text
+   (save-window-excursion
+     (substring-no-properties
+      (describe-variable (intern variable)))))
+  (boxquote-title (format boxquote-describe-variable-title-format variable)))
 
 ;;;###autoload
 (defun boxquote-describe-key (key)
@@ -456,14 +432,12 @@ prompted for a buffer. The key defintion used will be taken from that buffer."
       (if (or (null binding) (integerp binding))
           (message "%s is undefined" (with-current-buffer from-buffer
                                        (key-description key)))
-        (boxquote-quote-help-buffer
-         #'(lambda ()
-             (with-current-buffer from-buffer
-               (describe-key key)))
-         boxquote-describe-key-title-format
-         #'(lambda ()
-             (with-current-buffer from-buffer
-               (key-description key))))))))
+        (boxquote-text
+         (save-window-excursion
+           (describe-key key)
+           (with-current-buffer (help-buffer)
+             (buffer-substring-no-properties (point-min) (point-max)))))
+         (boxquote-title (format boxquote-describe-key-title-format (key-description key)))))))
 
 ;;;###autoload
 (defun boxquote-shell-command (command)

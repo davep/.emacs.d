@@ -3,7 +3,7 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "boxquote" "boxquote.el" (22744 52626 0 0))
+;;;### (autoloads nil "boxquote" "boxquote.el" (22747 38564 0 0))
 ;;; Generated autoloads from boxquote.el
 
 (autoload 'boxquote-title "boxquote" "\
@@ -75,12 +75,16 @@ Apply `boxquote-region' to the current boxquote.
 (autoload 'boxquote-describe-function "boxquote" "\
 Call `describe-function' and boxquote the output into the current buffer.
 
-\(fn)" t nil)
+FUNCTION is the function to describe.
+
+\(fn FUNCTION)" t nil)
 
 (autoload 'boxquote-describe-variable "boxquote" "\
 Call `describe-variable' and boxquote the output into the current buffer.
 
-\(fn)" t nil)
+VARIABLE is the variable to describe.
+
+\(fn VARIABLE)" t nil)
 
 (autoload 'boxquote-describe-key "boxquote" "\
 Call `describe-key' on KEY and boxquote the output into the current buffer.
