@@ -90,7 +90,8 @@
 (use-package emojify
     :ensure t)
 (use-package hyde
-    :ensure t :commands hyde)
+    :ensure t
+    :commands hyde)
 (use-package markdown-mode
     :ensure t)
 (use-package package-lint
