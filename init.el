@@ -24,20 +24,12 @@
 (defvar davep:startup (davep:user-path "davep/startup")
   "My local startup code.")
 
-(defvar davep:lib (davep:user-path "davep/lib")
-  "My local library code.")
-
 (defvar davep:lib-3rd-party (davep:user-path "davep/lib-3rd-party")
   "My local third party code.")
 
 (push davep:local         load-path)
 (push davep:startup       load-path)
-(push davep:lib           load-path)
 (push davep:lib-3rd-party load-path)
-
-(defun have-own-package-p (package)
-  "Does a package of my own exist in this environment?"
-  (locate-library package nil (list davep:lib)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Ensure custom values go in their own file.
