@@ -59,12 +59,18 @@
 (use-package hyde            :ensure t :commands hyde)
 (use-package markdown-mode   :ensure t)
 (use-package package-lint    :ensure t)
-(use-package paren-face      :ensure t)
+(use-package paren-face      :ensure t :demand :config (global-paren-face-mode t))
 (use-package powershell      :ensure t)
 (use-package restclient      :ensure t)
 (use-package sass-mode       :ensure t)
 (use-package slime           :ensure t)
 (use-package w3m             :ensure t)
-(use-package highlight-chars :ensure t)
+(use-package highlight-chars :ensure t
+             :demand
+             :config
+             (add-hook 'after-change-major-mode-hook
+                       (lambda ()
+                         (when (buffer-file-name)
+                           (hc-highlight-trailing-whitespace)))))
 
 (provide 'davep-packages)

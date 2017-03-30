@@ -20,16 +20,4 @@
   (setq frame-title-format format
         icon-title-format  format))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Ensure trailing whitespace and tabs get highlighted.
-(require 'highlight-chars)
-(add-hook 'after-change-major-mode-hook
-          (lambda ()
-            (when (buffer-file-name)
-              (hc-highlight-trailing-whitespace))))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Ensure global parenface is on.
-(global-paren-face-mode t)
-
 (provide 'davep-style)
