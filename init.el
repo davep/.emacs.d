@@ -43,7 +43,6 @@
   (require 'davep-languages)
   (require 'davep-style)
   (require 'davep-misc))
-  ;(require 'uptimes))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Local autoloading.
