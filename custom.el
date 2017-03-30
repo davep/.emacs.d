@@ -61,7 +61,7 @@
      ("delpa" . "http://blog.davep.org/delpa/"))))
  '(package-selected-packages
    (quote
-    (webinfo unbind nukneval moving fscroll binclock csrclr use-package handyurl services protocols obfusurl paren-face parenface uptimes thinks package-lint w3m slime sass-mode restclient powershell markdown-mode hyde highlight-chars emojify dictionary csharp-mode browse-kill-ring boxquote auto-compile)))
+    (webinfo unbind nukneval moving fscroll binclock csrclr use-package handyurl services protocols obfusurl paren-face parenface uptimes thinks package-lint w3m slime sass-mode restclient powershell markdown-mode hyde highlight-chars emojify dictionary csharp-mode browse-kill-ring auto-compile)))
  '(safe-local-variable-values
    (quote
     ((eval when
