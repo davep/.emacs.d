@@ -3,7 +3,7 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "moving" "moving.el" (22746 20467 0 0))
+;;;### (autoloads nil "moving" "moving.el" (22748 52083 0 0))
 ;;; Generated autoloads from moving.el
 
 (autoload 'moving-to-next-repeated-word "moving" "\

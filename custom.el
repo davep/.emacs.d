@@ -56,7 +56,8 @@
  '(package-archives
    (quote
     (("gnu" . "http://elpa.gnu.org/packages/")
-     ("melpa" . "https://melpa.org/packages/"))))
+     ("melpa" . "https://melpa.org/packages/")
+     ("delpa" . "http://blog.davep.org/delpa/"))))
  '(package-selected-packages
    (quote
     (use-package handyurl csrclr moving insert become itch services protocols nukneval unbind fscroll webinfo obfusurl paren-face parenface binclock uptimes thinks package-lint w3m slime sass-mode restclient powershell markdown-mode hyde highlight-chars emojify dictionary csharp-mode browse-kill-ring boxquote auto-compile)))
