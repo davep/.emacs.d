@@ -54,8 +54,8 @@
 ;; Enable some disabled commands
 (mapc #'(lambda (command)
           (put command 'disabled nil))
-      '(upcase-region
-        downcase-region
-        narrow-to-region
+      '(downcase-region
+        erase-buffer
         narrow-to-page
-        erase-buffer))
+        narrow-to-region
+        upcase-region))
