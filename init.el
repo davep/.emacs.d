@@ -24,12 +24,8 @@
 (defvar davep:startup (davep:user-path "davep/startup")
   "My local startup code.")
 
-(defvar davep:lib-3rd-party (davep:user-path "davep/lib-3rd-party")
-  "My local third party code.")
-
 (push davep:local         load-path)
 (push davep:startup       load-path)
-(push davep:lib-3rd-party load-path)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Ensure custom values go in their own file.
@@ -59,11 +55,6 @@
   (require 'davep-languages)
   (require 'davep-style)
   (require 'davep-misc))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Local autoloading.
-(require 'autoloading)
-(load-davep-autoloads)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Enable some disabled commands
