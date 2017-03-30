@@ -38,12 +38,12 @@
 ;; Load various startup things.
 (require 'davep-env-tests)
 (unless noninteractive
+  (require 'davep-packages)
   (require 'davep-keys)
   (require 'davep-languages)
   (require 'davep-style)
   (require 'davep-misc)
-  (require 'uptimes)
-  (require 'csrclr))
+  (require 'uptimes))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Local autoloading.
