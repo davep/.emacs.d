@@ -54,11 +54,6 @@
  '(org-directory "~/Dropbox/Sync/Org")
  '(org-log-done (quote time))
  '(package-archive-upload-base "~/develop/elisp/delpa/")
- '(package-archives
-   (quote
-    (("gnu" . "http://elpa.gnu.org/packages/")
-     ("melpa" . "https://melpa.org/packages/")
-     ("delpa" . "http://blog.davep.org/delpa/"))))
  '(package-selected-packages
    (quote
     (webinfo unbind nukneval moving fscroll binclock csrclr use-package handyurl services protocols obfusurl paren-face parenface uptimes thinks package-lint w3m slime sass-mode restclient powershell markdown-mode hyde highlight-chars emojify dictionary csharp-mode browse-kill-ring auto-compile)))
