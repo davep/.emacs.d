@@ -67,6 +67,7 @@
 (use-package w3m             :ensure t)
 (use-package highlight-chars :ensure t
              :demand
+             :commands hc-highlight-trailing-whitespace
              :config
              (add-hook 'after-change-major-mode-hook
                        (lambda ()
