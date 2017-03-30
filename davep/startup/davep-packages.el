@@ -109,6 +109,7 @@
 (use-package slime
     :ensure t)
 (use-package w3m
+    :if davep:osx-p
     :ensure t)
 (use-package highlight-chars
     :ensure t
