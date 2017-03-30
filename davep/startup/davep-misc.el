@@ -17,10 +17,6 @@
                     footnote-narrow-to-footnotes-when-editing t)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Autoload things that don't correctly do autoload.
-(autoload 'hyde "hyde" "hyde" t)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Make it harder to kill an emacs server instance.
 (defun long-term-emacs ()
   "Turn this emacs sesssion into a long term emacs.

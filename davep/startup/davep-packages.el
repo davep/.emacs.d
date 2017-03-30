@@ -56,7 +56,7 @@
 (use-package csharp-mode     :ensure t)
 (use-package dictionary      :ensure t)
 (use-package emojify         :ensure t)
-(use-package hyde            :ensure t)
+(use-package hyde            :ensure t :commands hyde)
 (use-package markdown-mode   :ensure t)
 (use-package package-lint    :ensure t)
 (use-package paren-face      :ensure t)
