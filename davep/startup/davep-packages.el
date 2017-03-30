@@ -43,6 +43,7 @@
     :mode ("\\.\\(prg\\|ch\\|ppo\\)$" . xbase-mode)
     :ensure t)
 (use-package xray
+    :disabled
     :ensure t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
