@@ -1,9 +1,4 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Set up auto-compile.
-(require 'auto-compile)
-(auto-compile-on-save-mode)             ; Compile on save.
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Have ibuffer auto-update the list.
 (add-hook 'ibuffer-mode-hooks
           '(lambda ()

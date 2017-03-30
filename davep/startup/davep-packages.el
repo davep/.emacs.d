@@ -50,7 +50,9 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Third-party packages from melpa
-(use-package auto-compile    :ensure t)
+(use-package auto-compile    :ensure t
+             :config
+             (auto-compile-on-save-mode))
 (use-package csharp-mode     :ensure t)
 (use-package dictionary      :ensure t)
 (use-package emojify         :ensure t)
