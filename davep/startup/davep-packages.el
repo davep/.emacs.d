@@ -45,4 +45,8 @@
              :bind
              ([f11] . uptimes-current) ("C-c t" . uptimes))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Third-party packages from melpa
+(use-package highlight-chars)
+
 (provide 'davep-packages)
