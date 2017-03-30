@@ -4,7 +4,10 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; My personal packages. Normally loaded in from delpa.
-(use-package become   :ensure t)
+(use-package become :ensure t
+             :config
+             (unless noninteractive
+               (add-hook 'before-save-hook 'become-free-of-trailing-whitespace)))
 (use-package binclock :ensure t)
 (use-package csrclr   :ensure t)
 (use-package fscroll  :ensure t)
