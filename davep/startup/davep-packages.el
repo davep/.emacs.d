@@ -39,6 +39,9 @@
     :ensure t)
 (use-package webinfo
     :ensure t)
+(use-package xbase
+    :mode ("\\.\\(prg\\|ch\\|ppo\\)$" . xbase-mode)
+    :ensure t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Packages I've written, that are in melpa.
