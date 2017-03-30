@@ -3,7 +3,7 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "become" "become.el" (22746 24524 0 0))
+;;;### (autoloads nil "become" "become.el" (22748 55062 0 0))
 ;;; Generated autoloads from become.el
 
 (autoload 'become-dos-buffer "become" "\
@@ -43,6 +43,10 @@ Note that this function makes a point of not stripping the trailing space
 from a signature seperator line.
 
 \(fn)" t nil)
+
+;;;***
+
+;;;### (autoloads nil nil ("become-pkg.el") (22746 24524 0 0))
 
 ;;;***
 
