@@ -10,6 +10,8 @@
               (add-hook 'before-save-hook 'become-free-of-trailing-whitespace)))
 (use-package binclock
     :ensure t)
+(use-package constellations
+    :ensure t)
 (use-package csrclr
     :ensure t)
 (use-package fscroll
