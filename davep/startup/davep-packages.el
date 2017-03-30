@@ -47,6 +47,18 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Third-party packages from melpa
+(use-package csharp-mode     :ensure t)
+(use-package dictionary      :ensure t)
+(use-package emojify         :ensure t)
+(use-package hyde            :ensure t)
+(use-package markdown-mode   :ensure t)
+(use-package package-lint    :ensure t)
+(use-package paren-face      :ensure t)
+(use-package powershell      :ensure t)
+(use-package restclient      :ensure t)
+(use-package sass-mode       :ensure t)
+(use-package slime           :ensure t)
+(use-package w3m             :ensure t)
 (use-package highlight-chars :ensure t)
 
 (provide 'davep-packages)
