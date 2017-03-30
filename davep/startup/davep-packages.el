@@ -47,6 +47,6 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Third-party packages from melpa
-(use-package highlight-chars)
+(use-package highlight-chars :ensure t)
 
 (provide 'davep-packages)
