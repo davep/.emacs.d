@@ -6,10 +6,6 @@ tramp
 uptimes
 bookmarks
 *.elc
-davep/autoloads.el
-davep/autoloads.elc
-davep/autoloads-3rd-party.el
-davep/autoloads-3rd-party.elc
 elpa/
 history
 url/
