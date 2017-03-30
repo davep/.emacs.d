@@ -53,6 +53,7 @@
 (use-package auto-compile    :ensure t
              :config
              (auto-compile-on-save-mode))
+(use-package browse-kill-ring :ensure t)
 (use-package csharp-mode     :ensure t)
 (use-package dictionary      :ensure t)
 (use-package emojify         :ensure t)
