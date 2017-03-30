@@ -3,7 +3,7 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "services" "services.el" (22745 12535 0 0))
+;;;### (autoloads nil "services" "services.el" (22748 56130 0 0))
 ;;; Generated autoloads from services.el
 
 (autoload 'services-lookup "services" "\

@@ -3,6 +3,7 @@
 
 ;; Author: Dave Pearson <davep@davep.org>
 ;; Version: 1.7
+;; Package-Version: 20170327.835
 ;; Keywords: convenience, net, services
 ;; URL: https://github.com/davep/services.el
 ;; Package-Requires: ((cl-lib "0.5"))

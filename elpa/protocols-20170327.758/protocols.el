@@ -3,6 +3,7 @@
 
 ;; Author: Dave Pearson <davep@davep.org>
 ;; Version: 1.6
+;; Package-Version: 20170327.758
 ;; Keywords: convenience, net, protocols
 ;; URL: https://github.com/davep/protocols.el
 ;; Package-Requires: ((cl-lib "0.5"))

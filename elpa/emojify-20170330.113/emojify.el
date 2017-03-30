@@ -149,7 +149,7 @@ functions work."
       (jit-lock-debug-mode -1))))
 
 (defmacro emojify-execute-ignoring-errors-unless-debug (&rest forms)
-  "Execute FORMS ignoring errors unless `emojify-debug-mode' is non-nil."
+  "Execute FORMS ignoring errors unless variable `emojify-debug-mode' is non-nil."
   (declare (debug t) (indent 0))
   `(if emojify-debug-mode
        (progn
@@ -327,9 +327,9 @@ Possible values are
   '(emojify-minibuffer-p emojify-helm-buffer-p)
   "Functions used inhibit emojify-mode in a buffer.
 
-These functions are called with one argument, the buffer where emojify-mode
-is about to be enabled, emojify is not enabled if any of the functions return
-a non-nil value."
+These functions are called with one argument, the buffer where command
+‘emojify-mode’ is about to be enabled, emojify is not enabled if any of the
+functions return a non-nil value."
   :type 'hook
   :group 'emojify)
 
@@ -935,11 +935,12 @@ selection, but for some reason it does not work well."
       (emojify--face-background-at-point beg)
       (face-background 'default)))
 
-(defun emojify--get-image-display (data beg end)
+(defun emojify--get-image-display (data buffer beg end &optional target-buffer)
   "Get the display text property to display the emoji as an image.
 
-DATA holds the emoji data, BEG and END delimit the region where emoji will
-be displayed."
+DATA holds the emoji data, _BUFFER is the target buffer where the emoji is to be
+displayed, BEG and END delimit the region where emoji will be displayed.  If The
+display is adjusted to match the TARGET-BUFFER, if provided, falling back BUFFER."
   (when (ht-get data "image")
     (let* ((image-file (expand-file-name (ht-get data "image")
                                          (emojify-image-dir)))
@@ -955,56 +956,65 @@ be displayed."
                       :ascent 'center
                       :heuristic-mask t
                       :background (emojify--get-image-background beg end)
-                      ;; no-op if imagemagick is not available
-                      :height (emojify-default-font-height))))))
+                      ;; no-op if imagemagick is  not available
+                      :height (with-current-buffer (or target-buffer buffer)
+                                (emojify-default-font-height)))))))
 
-(defun emojify--get-unicode-display (data _beg _end)
+(defun emojify--get-unicode-display (data &rest ignored)
   "Get the display text property to display the emoji as an unicode character.
 
-DATA holds the emoji data, _BEG and _END delimit the region where emoji will
-be displayed."
+DATA holds the emoji data, rest of the arguments IGNORED are ignored"
   (let* ((unicode (ht-get data "unicode"))
          (characters (when unicode
                        (string-to-vector unicode))))
     (when (seq-every-p #'char-displayable-p characters)
       unicode)))
 
-(defun emojify--get-ascii-display (data _beg _end)
+(defun emojify--get-ascii-display (data &rest ignored)
   "Get the display text property to display the emoji as an ascii characters.
 
-DATA holds the emoji data, _BEG and _END delimit the region where emoji will
-be displayed."
+DATA holds the emoji data, rest of the arguments IGNORED are ignored."
   (ht-get data "ascii"))
 
-(defun emojify--get-text-display-props (emoji beg end)
+(defun emojify--get-text-display-props (emoji buffer beg end &optional target-buffer)
   "Get the display property for an EMOJI.
 
-TEXT is the text to be displayed as emoji, BEG and END delimit the
-region containing the emoji."
+TEXT is the text to be displayed as emoji, BUFFER is the target buffer where
+emoji will be displayed, BEG and END delimit the region containing the emoji.
+The display is adjusted to match the TARGET-BUFFER, if provided, falling back
+BUFFER."
   (funcall (pcase emojify-display-style
              (`image #'emojify--get-image-display)
              (`unicode #'emojify--get-unicode-display)
              (`ascii #'emojify--get-ascii-display))
            emoji
+           buffer
            beg
-           end))
+           end
+           target-buffer))
 
-(defun emojify--display-emoji (emoji text buffer start end)
-  "Display EMOJI for TEXT in BUFFER between START and END."
-  (let ((display-prop (emojify--get-text-display-props emoji start end)))
+(defun emojify--propertize-text-for-emoji (emoji text buffer start end &optional target-buffer)
+  "Display EMOJI for TEXT in BUFFER between START and END.
+
+TARGET-BUFFER if provided should be buffer where the string would be displayed,
+when TARGET-BUFFER is provided it is assumed that text would not be part of
+buffer so text properties that are relevant only in buffers are not added."
+  (let ((display-prop (emojify--get-text-display-props emoji buffer start end target-buffer))
+        (buffer-props (unless target-buffer
+                        (list 'emojify-buffer buffer
+                              'emojify-beginning (copy-marker start)
+                              'emojify-end (copy-marker end)
+                              'yank-handler (list nil text)
+                              'keymap emojify-emoji-keymap
+                              'help-echo #'emojify-help-function))))
     (when display-prop
       (add-text-properties start
                            end
-                           (list 'emojified t
-                                 'emojify-display display-prop
-                                 'display display-prop
-                                 'emojify-buffer buffer
-                                 'emojify-text text
-                                 'emojify-beginning (copy-marker start)
-                                 'emojify-end (copy-marker end)
-                                 'yank-handler (list nil text)
-                                 'keymap emojify-emoji-keymap
-                                 'help-echo #'emojify-help-function)))))
+                           (append (list 'emojified t
+                                         'emojify-display display-prop
+                                         'display display-prop
+                                         'emojify-text text)
+                                   buffer-props)))))
 
 (defun emojify-display-emojis-in-region (beg end)
   "Display emojis in region.
@@ -1074,9 +1084,9 @@ should not be a problem 🤞."
                                        (emojify-looking-at-end-of-list-maybe match-end))))
 
                          (not (run-hook-with-args-until-success 'emojify-inhibit-functions match match-beginning match-end)))
-                (emojify--display-emoji emoji match buffer match-beginning match-end))))
-          ;; Stop a bit to let `with-timeout' kick in
-          (sit-for 0 t)))
+                (emojify--propertize-text-for-emoji emoji match buffer match-beginning match-end)))
+            ;; Stop a bit to let `with-timeout' kick in
+            (sit-for 0 t))))
 
       ;; Loop to emojify composed text
       (when (and emojify-composed-text-p
@@ -1108,7 +1118,7 @@ should not be a problem 🤞."
               ;; Display only composed text that is unicode char
               (when (and emoji
                          (string= (ht-get emoji "style") "unicode"))
-                (emojify--display-emoji emoji match (current-buffer) compose-start compose-end))
+                (emojify--propertize-text-for-emoji emoji match (current-buffer) compose-start compose-end))
               ;; Setup the next loop
               (setq compose-start (and compose-end (next-single-property-change compose-end
                                                                                 'composition
@@ -1192,6 +1202,49 @@ lines ensures that all the possibly affected emojis are redisplayed."
     (setq jit-lock-end (if jit-lock-end
                            (max jit-lock-end emojify-jit-lock-end)
                          emojify-jit-lock-end))))
+
+
+
+;; Emojify standalone strings
+
+(defun emojify-string (string &optional styles target-buffer)
+  "Create a propertized version of STRING, to display emojis belonging STYLES.
+
+TARGET-BUFFER is the buffer where STRING would be displayed, properties like
+font-height are inherited from that buffer."
+  (emojify-create-emojify-emojis)
+  (let ((target-buffer (or target-buffer (current-buffer))))
+    (with-temp-buffer
+      (insert string)
+      (let ((beg (point-min))
+            (end (point-max))
+            (styles (or styles '(unicode))))
+        (seq-doseq (regexp (apply #'append
+                                  (when emojify--user-emojis-regexp
+                                    (list emojify--user-emojis-regexp))
+                                  (list emojify-regexps)))
+          (goto-char beg)
+          (while (and (> end (point))
+                      (search-forward-regexp regexp end t))
+            (let* ((match-beginning (match-beginning 0))
+                   (match-end (match-end 0))
+                   (match (match-string-no-properties 0))
+                   (buffer (current-buffer))
+                   (emoji (emojify-get-emoji match)))
+              (when (and emoji
+                         (not (or (get-text-property match-beginning 'emojify-inhibit)
+                                  (get-text-property match-end 'emojify-inhibit)))
+                         (memql (intern (ht-get emoji "style")) styles)
+                         ;; Skip displaying this emoji if the its bounds are
+                         ;; already part of an existing emoji. Since the emojis
+                         ;; are searched in descending order of length (see
+                         ;; construction of emojify-regexp in `emojify-set-emoji-data'),
+                         ;; this means larger emojis get precedence over smaller
+                         ;; ones
+                         (not (or (get-text-property match-beginning 'emojified)
+                                  (get-text-property (1- match-end) 'emojified))))
+                (emojify--propertize-text-for-emoji emoji match buffer match-beginning match-end target-buffer))))))
+      (buffer-string))))
 
 
 
@@ -1600,7 +1653,22 @@ This ensures `emojify' is enabled in helm buffer displaying completion even when
 
 PROMPT is a string to prompt with, PREDICATE, REQUIRE-MATCH, INITIAL-INPUT,
 HIST, DEF, INHERIT-INPUT-METHOD correspond to the arguments for
-`completing-read' and are passed to completing-read without any interpretation."
+`completing-read' and are passed to ‘completing-read’ without any
+interpretation.
+
+For each possible emoji PREDICATE is called with emoji text and data about the
+emoji as a hash-table, the predate should return nil if it the emoji should
+not be displayed for selection.
+
+For example the following can be used to display only github style emojis for
+selection
+
+\(emojify-completing-read \"Select a Github style emoji: \"
+                         (lambda (emoji data)
+                           (equal (gethash \"style\" data) \"github\")))
+
+This function sets up `ido', `icicles', `helm', `ivy' and vanilla Emacs
+completion UI to display properly emojis."
   (emojify-create-emojify-emojis)
   (let* ((emojify-minibuffer-reading-emojis-p t)
          (line-spacing 7)
@@ -1709,18 +1777,29 @@ This respects the `emojify-emoji-styles' variable."
                 ": "
                 (if (ht-get emoji "custom") "Yes" "No")
                 "\n")
-        (insert (propertize "Emojipedia" 'face 'font-lock-keyword-face)
-                ": "
-                (let* ((tone-stripped (replace-regexp-in-string "- *[Tt]one *\\([0-9]+\\)$"
-                                                                "- type \\1"
-                                                                (ht-get emoji "name")))
-                       (non-alphanumeric-stripped (replace-regexp-in-string "[^0-9a-zA-Z]"
-                                                                            " "
-                                                                            tone-stripped))
-                       (words (split-string non-alphanumeric-stripped " " t " ")))
-                  (concat "http://emojipedia.org/"
-                          (downcase (emojify--string-join words "-"))))
-                "\n")))
+        (unless (ht-get emoji "custom")
+          (when (or (ht-get emoji "unicode")
+                    (string= (ht-get emoji "style") "unicode"))
+            (insert (propertize "Unicode Consortium" 'face 'font-lock-keyword-face)
+                    ": "
+                    (concat "http://www.unicode.org/emoji/charts-beta/full-emoji-list.html#"
+                            (string-join (mapcar (apply-partially #'format "%x")
+                                                 (string-to-list (or (ht-get emoji "unicode")
+                                                                     (ht-get emoji "emoji"))))
+                                         "_"))
+                    "\n"))
+          (insert (propertize "Emojipedia" 'face 'font-lock-keyword-face)
+                  ": "
+                  (let* ((tone-stripped (replace-regexp-in-string "- *[Tt]one *\\([0-9]+\\)$"
+                                                                  "- type \\1"
+                                                                  (ht-get emoji "name")))
+                         (non-alphanumeric-stripped (replace-regexp-in-string "[^0-9a-zA-Z]"
+                                                                              " "
+                                                                              tone-stripped))
+                         (words (split-string non-alphanumeric-stripped " " t " ")))
+                    (concat "http://emojipedia.org/"
+                            (downcase (emojify--string-join words "-"))))
+                  "\n"))))
     (emojify-description-mode)
     (setq emojify-described-emoji (ht-get emoji "emoji")))
   (display-buffer (get-buffer emojify-help-buffer-name))
@@ -1829,6 +1908,8 @@ See `tabulated-list-print-entry' to understand the arguments ID and COLS."
 
 (defun emojify-list-entries ()
   "Return entries to display in tabulated list."
+  (emojify-create-emojify-emojis)
+
   (let (entries count)
     (emojify-emojis-each (lambda (emoji data)
                            (push (list emoji (vector (ht-get data "name")

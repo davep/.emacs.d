@@ -3,7 +3,7 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "protocols" "protocols.el" (22745 10367 0 0))
+;;;### (autoloads nil "protocols" "protocols.el" (22748 56131 0 0))
 ;;; Generated autoloads from protocols.el
 
 (autoload 'protocols-lookup "protocols" "\
