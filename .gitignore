@@ -10,10 +10,8 @@ davep/autoloads.el
 davep/autoloads.elc
 davep/autoloads-3rd-party.el
 davep/autoloads-3rd-party.elc
-elpa/*.txt
+elpa/
 history
-archive-contents
-archive-contents.signed
 url/
 emojis/
 .DS_Store
