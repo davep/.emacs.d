@@ -14,6 +14,8 @@
     :ensure t)
 (use-package csrclr
     :ensure t)
+(use-package davep-org
+    :ensure t)
 (use-package fscroll
     :ensure t)
 (use-package insert
