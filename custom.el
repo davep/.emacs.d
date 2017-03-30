@@ -53,7 +53,7 @@
  '(org-default-notes-file "~/Dropbox/Sync/Org/inbox.org")
  '(org-directory "~/Dropbox/Sync/Org")
  '(org-log-done (quote time))
- '(package-archive-upload-base "~/elisp/delpa/")
+ '(package-archive-upload-base "~/develop/elisp/delpa/")
  '(package-archives
    (quote
     (("gnu" . "http://elpa.gnu.org/packages/")
