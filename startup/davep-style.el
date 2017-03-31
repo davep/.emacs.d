@@ -20,4 +20,9 @@
   (setq frame-title-format format
         icon-title-format  format))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Really don't need menus in a terminal.
+(unless window-system
+  (menu-bar-mode -1))
+
 (provide 'davep-style)
