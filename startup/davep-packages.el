@@ -14,6 +14,12 @@
                         footnote-section-tag "-----"
                         footnote-section-tag-regexp (regexp-quote footnote-section-tag)
                         footnote-narrow-to-footnotes-when-editing t))))
+(use-package ibuffer
+    :ensure t
+    :config
+    (add-hook 'ibuffer-mode-hooks
+              '(lambda ()
+                (ibuffer-auto-mode 1))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; My personal packages. Normally loaded in from delpa.

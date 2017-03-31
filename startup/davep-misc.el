@@ -1,10 +1,4 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Have ibuffer auto-update the list.
-(add-hook 'ibuffer-mode-hooks
-          '(lambda ()
-            (ibuffer-auto-mode 1)))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Make it harder to kill an emacs server instance.
 (defun long-term-emacs ()
   "Turn this emacs sesssion into a long term emacs.
