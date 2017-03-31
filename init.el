@@ -52,3 +52,5 @@
         narrow-to-page
         narrow-to-region
         upcase-region))
+
+;;; init.el ends here
