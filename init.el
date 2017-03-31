@@ -31,7 +31,7 @@
     (push local exec-path)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; If we're on a Unix of some sort, add a local bin (if it's there).
+;; If we're on a Unix of some sort, add a personal bin (if it's there).
 (when (and davep:unixp (file-exists-p "~/bin"))
   (push "~/bin/" exec-path))
 
