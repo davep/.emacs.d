@@ -41,8 +41,7 @@
   (require 'davep-packages)
   (require 'davep-keys)
   (require 'davep-languages)
-  (require 'davep-style)
-  (require 'davep-misc))
+  (require 'davep-style))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Enable some disabled commands
