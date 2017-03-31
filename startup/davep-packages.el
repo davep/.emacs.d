@@ -3,11 +3,25 @@
 (require 'use-package)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Emacs builtin packages, that aren't normally loaded.
+(use-package footnote
+    :ensure t
+    :config
+    (add-hook 'footnote-mode-hook
+              #'(lambda ()
+                  (setq footnote-style 'numeric-latin
+                        footnote-spaced-footnotes nil
+                        footnote-section-tag "-----"
+                        footnote-section-tag-regexp (regexp-quote footnote-section-tag)
+                        footnote-narrow-to-footnotes-when-editing t))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; My personal packages. Normally loaded in from delpa.
 (use-package become
     :ensure t
-    :config (unless noninteractive
-              (add-hook 'before-save-hook 'become-free-of-trailing-whitespace)))
+    :config
+    (unless noninteractive
+      (add-hook 'before-save-hook 'become-free-of-trailing-whitespace)))
 (use-package binclock
     :ensure t)
 (use-package constellations
