@@ -24,8 +24,8 @@
 (defvar davep:startup (davep:user-path "davep/startup")
   "My local startup code.")
 
-(push davep:local         load-path)
-(push davep:startup       load-path)
+(push davep:local   load-path)
+(push davep:startup load-path)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Ensure custom values go in their own file.
