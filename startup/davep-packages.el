@@ -48,6 +48,8 @@
     :ensure t
     :bind
     ("M-s" . itch-scratch-buffer))
+(use-package longmacs
+    :ensure t)
 (use-package moving
     :ensure t
     :bind
