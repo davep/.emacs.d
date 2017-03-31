@@ -29,7 +29,7 @@
 (bind-key "C-c a"               #'org-agenda)
 
 ;; Things specific to macOS.
-(when davep:osx-window-p
+(when davep:macOS-window-p
   (define-key global-map [(super tab)] #'completion-at-point))
 
 ;; Things specific to Windows.

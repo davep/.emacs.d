@@ -30,20 +30,20 @@
   (and davep:linux-terminal-p (string= (getenv "TERM") "linux"))
   "Does it look like we're on a Linux console?")
 
-(defconst davep:osx-p
+(defconst davep:macOS-p
   (eq system-type 'darwin)
-  "Are we running on some form of OS X?")
+  "Are we running on some form of macOS?")
 
-(defconst davep:osx-terminal-p
-  (and davep:osx-p (not window-system))
-  "Are we running in an OS X terminal?")
+(defconst davep:macOS-terminal-p
+  (and davep:macOS-p (not window-system))
+  "Are we running in an macOS terminal?")
 
-(defconst davep:osx-window-p
-  (and davep:osx-p (not davep:osx-terminal-p))
-  "Are we running in an OS X window?")
+(defconst davep:macOS-window-p
+  (and davep:macOS-p (not davep:macOS-terminal-p))
+  "Are we running in an macOS window?")
 
 (defconst davep:unixp
-  (or davep:linuxp davep:osx-p)
+  (or davep:linuxp davep:macOS-p)
   "Are we on some form of Unix?")
 
 (defconst davep:rootp
