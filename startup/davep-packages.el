@@ -18,8 +18,8 @@
     :ensure t
     :config
     (add-hook 'ibuffer-mode-hooks
-              '(lambda ()
-                (ibuffer-auto-mode 1))))
+              #'(lambda ()
+                  (ibuffer-auto-mode 1))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; My personal packages. Normally loaded in from delpa.
@@ -91,11 +91,13 @@
     :ensure t)
 (use-package thinks
     :ensure t
-    :bind ("C-c C-t" . thinks-maybe-region))
+    :bind
+    ("C-c C-t" . thinks-maybe-region))
 (use-package uptimes
     :ensure t
     :bind
-    ([f11] . uptimes-current) ("C-c t" . uptimes))
+    ([f11]   . uptimes-current)
+    ("C-c t" . uptimes))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Third-party packages from melpa
@@ -123,7 +125,8 @@
 (use-package paren-face
     :ensure t
     :demand
-    :config (global-paren-face-mode t))
+    :config
+    (global-paren-face-mode t))
 (use-package powershell
     :ensure t)
 (use-package restclient
