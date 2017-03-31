@@ -110,6 +110,7 @@
 (use-package dictionary
     :ensure t)
 (use-package emojify
+    :if (and davep:unixp window-system)
     :ensure t)
 (use-package hyde
     :ensure t
