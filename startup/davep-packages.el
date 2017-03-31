@@ -102,7 +102,8 @@
 (use-package auto-compile
     :ensure t
     :config
-    (auto-compile-on-save-mode))
+    (auto-compile-on-save-mode)
+    (auto-compile-on-load-mode))
 (use-package browse-kill-ring
     :ensure t)
 (use-package csharp-mode
