@@ -12,24 +12,12 @@
   (package-install 'use-package))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Local config/lib directory support.
-
-(defun davep:user-path (path)
-  "Given `file', return a path for it in the local config."
-  (concat user-emacs-directory path))
-
-(defvar davep:local (davep:user-path "davep/")
-  "My local config and code directory.")
-
-(defvar davep:startup (davep:user-path "davep/startup")
-  "My local startup code.")
-
-(push davep:local   load-path)
-(push davep:startup load-path)
+;; Add my local startup directory to the load path.
+(push (concat user-emacs-directory "startup/") load-path)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Ensure custom values go in their own file.
-(load (setq custom-file (davep:user-path "custom.el")))
+(load (setq custom-file (concat user-emacs-directory "custom.el")))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Load up the env tests.
