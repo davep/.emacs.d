@@ -119,7 +119,11 @@
     :ensure t
     :commands hyde)
 (use-package markdown-mode
-    :ensure t)
+    :ensure t
+    :config
+    (add-hook 'markdown-mode-hook #'(lambda ()
+                                      (auto-fill-mode)
+                                      (flyspell-mode 1))))
 (use-package package-lint
     :ensure t)
 (use-package paren-face
