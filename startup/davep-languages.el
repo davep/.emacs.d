@@ -119,7 +119,6 @@
 (add-hook 'python-mode-hook #'daves-generic-keys)
 (when davep:linux-x-p
   (add-hook 'vc-log-mode-hook #'(lambda () (flyspell-mode 1))))
-(add-hook 'message-mode-hook #'(lambda() (flyspell-mode 1)))
 (add-hook 'text-mode-hook #'(lambda()
                               (flyspell-mode 1)
                               (footnote-mode 1)))
