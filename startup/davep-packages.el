@@ -65,6 +65,11 @@
     :mode ("\\.\\(prg\\|ch\\|ppo\\)$" . xbase-mode)
     :ensure t)
 (use-package xray
+    ; From https://www.emacswiki.org/emacs/XrayPackage -- this doens't seem
+    ; to be in any package archive so I'm packing my own copy of this for
+    ; now. Problem is though, it's not building well and needs some
+    ; attention for more modern emacs; hence the reason loading of it is
+    ; disabled. I'll enable it again once I've got it building fine.
     :disabled
     :ensure t)
 
