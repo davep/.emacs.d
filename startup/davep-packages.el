@@ -132,7 +132,8 @@
 (use-package restclient
     :ensure t)
 (use-package sass-mode
-    :ensure t)
+    :ensure t
+    :mode "\\.scss$")
 (use-package slime
     :ensure t)
 (use-package w3m
