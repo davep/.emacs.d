@@ -27,7 +27,7 @@
     :ensure t
     :config
     (unless noninteractive
-      (add-hook 'before-save-hook 'become-free-of-trailing-whitespace)))
+      (add-hook 'before-save-hook #'become-free-of-trailing-whitespace)))
 (use-package binclock
     :ensure t)
 (use-package constellations
@@ -154,8 +154,8 @@
     :commands hc-highlight-trailing-whitespace
     :config
     (add-hook 'after-change-major-mode-hook
-              (lambda ()
-                (when (buffer-file-name)
-                  (hc-highlight-trailing-whitespace)))))
+              #'(lambda ()
+                  (when (buffer-file-name)
+                    (hc-highlight-trailing-whitespace)))))
 
 (provide 'davep-packages)
