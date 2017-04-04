@@ -124,7 +124,7 @@
 (use-package dictionary
     :ensure t)
 (use-package emojify
-    :if (and davep:unixp window-system)
+    :if davep:unix-window-p
     :ensure t)
 (use-package hyde
     :ensure t
