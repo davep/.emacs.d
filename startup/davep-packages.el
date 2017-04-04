@@ -163,5 +163,11 @@
               #'(lambda ()
                   (when (buffer-file-name)
                     (hc-highlight-trailing-whitespace)))))
+(use-package multiple-cursors
+    :ensure t
+    :bind
+    ("C->"     . mc/mark-next-like-this)
+    ("C-<"     . mc/mark-previous-like-this)
+    ("C-c C-<" . mc/mark-all-like-this))
 
 (provide 'davep-packages)
