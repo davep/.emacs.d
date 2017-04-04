@@ -50,6 +50,10 @@
   (and davep:unixp window-system)
   "Are we on some form of Unix and in a graphical environment?")
 
+(defconst davep:unix-terminal-p
+  (and davep:unixp (not window-system))
+  "Are we on some form of Unix but not running as a graphical app?")
+
 (defconst davep:rootp
   (and davep:unixp (zerop (user-uid)))
   "Are we running as root?")
