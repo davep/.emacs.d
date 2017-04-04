@@ -46,6 +46,10 @@
   (or davep:linuxp davep:macOS-p)
   "Are we on some form of Unix?")
 
+(defconst davep:unix-window-p
+  (and davep:unixp window-system)
+  "Are we on some form of Unix and in a graphical environment?")
+
 (defconst davep:rootp
   (and davep:unixp (zerop (user-uid)))
   "Are we running as root?")
