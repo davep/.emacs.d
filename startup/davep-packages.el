@@ -20,6 +20,12 @@
     (add-hook 'ibuffer-mode-hooks
               #'(lambda ()
                   (ibuffer-auto-mode 1))))
+(use-package quickurl
+    :ensure t
+    :bind
+    ("C-c u" . quickurl)
+    :config
+    (setq quickurl-url-file (locate-user-emacs-file ".quickurls.el")))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; My personal packages. Normally loaded in from delpa.
