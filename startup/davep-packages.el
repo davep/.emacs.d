@@ -44,6 +44,8 @@
     :ensure t)
 (use-package fscroll
     :ensure t)
+(use-package icmp-info
+    :ensure t)
 (use-package insert
     :ensure t
     :bind
