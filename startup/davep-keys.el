@@ -5,8 +5,6 @@
 (require 'bind-key)
 
 ;; General bindinds
-(bind-key "C-x C-b"             #'ibuffer)
-(bind-key [(meta f6)]           #'ibuffer)
 (bind-key [(control f6)]        #'list-processes)
 (bind-key [f6]                  #'bury-buffer)
 (bind-key [f9]                  #'compile)

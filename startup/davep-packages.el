@@ -16,6 +16,8 @@
                         footnote-narrow-to-footnotes-when-editing t))))
 (use-package ibuffer
     :ensure t
+    :bind
+    ([(meta f6)] . ibuffer)
     :config
     (add-hook 'ibuffer-mode-hooks
               #'(lambda ()
