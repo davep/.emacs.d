@@ -21,6 +21,10 @@
 (bind-key [(control backspace)] #'backward-kill-word)
 (bind-key [(meta backspace)]    #'undo)
 (bind-key "C-z"                 #'undo)
+(bind-key [(control c) (right)] #'split-window-horizontally)
+(bind-key [(control c) (left)]  #'split-window-horizontally)
+(bind-key [(control c) (up)]    #'split-window-vertically)
+(bind-key [(control c) (down)]  #'split-window-vertically)
 
 ;; Things specific to macOS.
 (when davep:macOS-window-p
