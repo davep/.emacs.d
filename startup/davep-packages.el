@@ -111,8 +111,8 @@
 (use-package uptimes
     :ensure t
     :bind
-    ([f11]   . uptimes-current)
-    ("C-c t" . uptimes))
+    ([f11]        . uptimes-current)
+    ([(meta f11)] . uptimes))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Third-party packages from melpa
