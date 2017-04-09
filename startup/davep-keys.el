@@ -21,9 +21,6 @@
 (bind-key [(control backspace)] #'backward-kill-word)
 (bind-key [(meta backspace)]    #'undo)
 (bind-key "C-z"                 #'undo)
-(bind-key "C-c o"               #'(lambda () (interactive) (require 'org) (find-file (concat org-directory "/inbox.org"))))
-(bind-key "C-c C-o"             #'(lambda () (interactive) (require 'org) (find-file org-directory)))
-(bind-key "C-c a"               #'org-agenda)
 
 ;; Things specific to macOS.
 (when davep:macOS-window-p

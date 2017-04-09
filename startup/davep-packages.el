@@ -67,6 +67,12 @@
     ([end]  . moving-end))
 (use-package nukneval
     :ensure t)
+(use-package org-davep
+    :ensure t
+    :bind
+    ("C-c o"   . org-davep-open-inbox)
+    ("C-c C-o" . org-davep-open-dir)
+    ("C-c a"   . org-agenda))
 (use-package unbind
     :ensure t)
 (use-package webinfo
