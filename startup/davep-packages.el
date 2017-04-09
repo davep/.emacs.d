@@ -115,7 +115,7 @@
     ([(meta f11)] . uptimes))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Third-party packages from melpa
+;; Third-party packages from elpa/melpa
 (use-package auto-compile
     :ensure t
     :config
