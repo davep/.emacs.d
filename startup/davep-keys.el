@@ -17,7 +17,6 @@
 (bind-key "C-c C-f"             #'view-file)
 (bind-key "M-p"                 #'(lambda () (interactive) (other-window -1)))
 (bind-key "M-n"                 #'other-window)
-(bind-key "C-c k"               #'browse-kill-ring)
 (bind-key [delete]              #'delete-char)
 (bind-key [(control backspace)] #'backward-kill-word)
 (bind-key [(meta backspace)]    #'undo)

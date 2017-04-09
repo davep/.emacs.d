@@ -122,7 +122,9 @@
     (auto-compile-on-save-mode)
     (auto-compile-on-load-mode))
 (use-package browse-kill-ring
-    :ensure t)
+    :ensure t
+    :bind
+    ("C-c k" . browse-kill-ring))
 (use-package csharp-mode
     :ensure t)
 (use-package dictionary
