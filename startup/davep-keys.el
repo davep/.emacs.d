@@ -31,6 +31,6 @@
 
 ;; Things specific to Windows.
 (when davep:win32p
-  (set 'w32-lwindow-modifier 'meta))
+  (set (intern "w32-lwindow-modifier") 'meta))
 
 (provide 'davep-keys)
