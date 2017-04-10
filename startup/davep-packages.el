@@ -77,6 +77,13 @@
     :ensure t)
 (use-package webinfo
     :ensure t)
+(use-package winsplit
+    :ensure t
+    :bind
+    ([(control c) (right)] . winsplit-right)
+    ([(control c) (left)]  . winsplit-left)
+    ([(control c) (up)]    . winsplit-above)
+    ([(control c) (down)]  . winsplit-below))
 (use-package xbase
     :mode ("\\.\\(prg\\|ch\\|ppo\\)$" . xbase-mode)
     :ensure t)
