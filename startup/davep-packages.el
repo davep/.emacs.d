@@ -80,10 +80,14 @@
 (use-package winsplit
     :ensure t
     :bind
-    ([(control c) (right)] . winsplit-right)
-    ([(control c) (left)]  . winsplit-left)
-    ([(control c) (up)]    . winsplit-above)
-    ([(control c) (down)]  . winsplit-below))
+    ([(control c) (right)]         . winsplit-right)
+    ([(control c) (left)]          . winsplit-left)
+    ([(control c) (up)]            . winsplit-above)
+    ([(control c) (down)]          . winsplit-below)
+    ([(control c) (control right)] . winsplit-right-load)
+    ([(control c) (control left)]  . winsplit-left-load)
+    ([(control c) (control up)]    . winsplit-above-load)
+    ([(control c) (control down)]  . winsplit-below-load))
 (use-package xbase
     :mode ("\\.\\(prg\\|ch\\|ppo\\)$" . xbase-mode)
     :ensure t)
