@@ -56,7 +56,7 @@
  '(package-archive-upload-base "~/develop/elisp/delpa/")
  '(package-selected-packages
    (quote
-    (multiple-cursors winsplit org-davep icmp-info longmacs xray xbase davep-org constellations boxquote itch insert become webinfo unbind nukneval moving fscroll binclock csrclr use-package handyurl services protocols obfusurl paren-face parenface uptimes thinks package-lint w3m slime sass-mode restclient powershell markdown-mode hyde highlight-chars emojify dictionary csharp-mode browse-kill-ring auto-compile)))
+    (winsplit org-davep icmp-info multiple-cursors longmacs xray xbase davep-org constellations boxquote itch insert become webinfo unbind nukneval moving fscroll binclock csrclr use-package handyurl services protocols obfusurl paren-face parenface uptimes thinks package-lint w3m slime sass-mode restclient powershell markdown-mode hyde highlight-chars emojify dictionary csharp-mode browse-kill-ring auto-compile)))
  '(safe-local-variable-values
    (quote
     ((eval when
@@ -89,6 +89,7 @@
             default-directory)))))
  '(sass-indent-offset 4)
  '(savehist-mode t)
+ '(scroll-conservatively 101)
  '(scroll-error-top-bottom t)
  '(sentence-end-double-space nil)
  '(shift-select-mode nil)
