@@ -105,14 +105,6 @@
 (add-hook 'emacs-lisp-mode-hook       #'dp-emacs-lisp-hook)
 (add-hook 'lisp-interaction-mode-hook #'dp-emacs-lisp-hook)
 
-(defun scheme-modes-indents ()
-  ;; For bigloo
-  (put 'module 'lisp-indent-function 1)
-  ;; For chicken
-  (put 'let-values 'scheme-indent-function 1))
-
-(add-hook 'scheme-mode-hook #'scheme-modes-indents)
-
 (add-hook 'lisp-mode-hook   #'daves-generic-keys)
 (add-hook 'lisp-mode-hook   #'lisp-modes-indents)
 (add-hook 'scheme-mode-hook #'daves-generic-keys)
