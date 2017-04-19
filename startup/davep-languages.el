@@ -52,11 +52,6 @@
               (davep-languages-setup-compile "g++ -Wall -O2")
               (define-key c++-mode-map "\C-m" #'newline-and-indent)))
 
-;; Javascript.
-(add-hook 'js-mode-hook
-          #'(lambda ()
-              (define-key js-mode-map "\C-m" #'newline-and-indent)))
-
 ;; .asd files are lisp files.
 (push (cons "\\.asd$" 'lisp-mode) auto-mode-alist)
 

@@ -36,6 +36,10 @@
     :ensure t
     :bind
     (:map opascal-mode-map ("RET" . newline-and-indent)))
+(use-package js
+    :ensure t
+    :bind
+    (:map js-mode-map ("RET" . newline-and-indent)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; My personal packages. Normally loaded in from delpa.
