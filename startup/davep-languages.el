@@ -9,7 +9,6 @@
 (eval-when-compile
   (require 'cc-mode)
   (require 'pascal)
-  (require 'opascal nil t)              ; Might be missing.
   (require 'js))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -59,11 +58,6 @@
               (setq pascal-auto-newline t)
               (setq pascal-tab-always-indent t)
               (define-key pascal-mode-map "\C-m" #'newline-and-indent)))
-
-(add-hook 'opascal-mode-hook            ; Delphi.
-          #'(lambda ()
-              (setq opascal-indent-level 2)
-              (define-key opascal-mode-map "\C-m" #'newline-and-indent)))
 
 ;; Javascript.
 (add-hook 'js-mode-hook

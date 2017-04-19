@@ -28,6 +28,10 @@
     ("C-c u" . quickurl)
     :config
     (setq quickurl-url-file (locate-user-emacs-file ".quickurls.el")))
+(use-package opascal
+    :ensure t
+    :bind
+    (:map opascal-mode-map ("RET" . newline-and-indent)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; My personal packages. Normally loaded in from delpa.
