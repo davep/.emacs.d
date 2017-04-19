@@ -57,6 +57,9 @@
  '(package-selected-packages
    (quote
     (winsplit org-davep icmp-info multiple-cursors longmacs xbase davep-org constellations boxquote itch insert become webinfo unbind nukneval moving fscroll binclock csrclr use-package handyurl services protocols obfusurl paren-face parenface uptimes thinks package-lint w3m slime sass-mode restclient powershell markdown-mode hyde highlight-chars emojify dictionary csharp-mode browse-kill-ring auto-compile)))
+ '(pascal-auto-newline t)
+ '(pascal-indent-level 2)
+ '(pascal-tab-always-indent t)
  '(safe-local-variable-values
    (quote
     ((eval when

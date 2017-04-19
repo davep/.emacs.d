@@ -28,6 +28,10 @@
     ("C-c u" . quickurl)
     :config
     (setq quickurl-url-file (locate-user-emacs-file ".quickurls.el")))
+(use-package pascal
+    :ensure t
+    :bind
+    (:map pascal-mode-map ("RET" . newline-and-indent)))
 (use-package opascal
     :ensure t
     :bind

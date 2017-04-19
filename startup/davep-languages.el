@@ -52,13 +52,6 @@
               (davep-languages-setup-compile "g++ -Wall -O2")
               (define-key c++-mode-map "\C-m" #'newline-and-indent)))
 
-(add-hook 'pascal-mode-hook             ; Generic Pascal.
-          #'(lambda ()
-              (setq pascal-indent-level 2)
-              (setq pascal-auto-newline t)
-              (setq pascal-tab-always-indent t)
-              (define-key pascal-mode-map "\C-m" #'newline-and-indent)))
-
 ;; Javascript.
 (add-hook 'js-mode-hook
           #'(lambda ()
