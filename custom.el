@@ -32,6 +32,8 @@
  '(fill-column 76)
  '(global-emojify-mode t)
  '(global-linum-mode t)
+ '(gnus-default-nntp-server "news.eternal-september.org")
+ '(gnus-nntp-server "news.eternal-september.org")
  '(ibuffer-expert t)
  '(indent-tabs-mode nil)
  '(indicate-empty-lines t)
