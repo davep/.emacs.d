@@ -40,6 +40,11 @@
     :ensure t
     :bind
     (:map js-mode-map ("RET" . newline-and-indent)))
+(use-package cc-mode
+    :ensure t
+    :bind
+    (:map c-mode-map   ("RET" . newline-and-indent))
+    (:map c++-mode-map ("RET" . newline-and-indent)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; My personal packages. Normally loaded in from delpa.

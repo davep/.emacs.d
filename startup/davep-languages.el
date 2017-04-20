@@ -33,13 +33,11 @@
 
 (add-hook 'c-mode-hook                  ; C
           #'(lambda ()
-              (davep-languages-setup-compile "gcc -Wall -O2")
-              (define-key c-mode-map "\C-m" #'newline-and-indent)))
+              (davep-languages-setup-compile "gcc -Wall -O2")))
 
 (add-hook 'c++-mode-hook                ; C++
           #'(lambda ()
-              (davep-languages-setup-compile "g++ -Wall -O2")
-              (define-key c++-mode-map "\C-m" #'newline-and-indent)))
+              (davep-languages-setup-compile "g++ -Wall -O2")))
 
 (when davep:linux-x-p
   (add-hook 'vc-log-mode-hook #'(lambda () (flyspell-mode 1))))
