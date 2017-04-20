@@ -51,42 +51,6 @@
               (davep-languages-setup-compile "g++ -Wall -O2")
               (define-key c++-mode-map "\C-m" #'newline-and-indent)))
 
-(defun lisp-modes-indents ()
-  ;; The following apply to various lisp modes, do them all here and don't
-  ;; worry about it.
-  (put 'if                      'common-lisp-indent-function 2)
-  (put 'with-open-file          'lisp-indent-function 1)
-  (put 'print-unreadable-object 'lisp-indent-function 1)
-  (put 'with-output-to-string   'lisp-indent-function 1)
-  (put 'easy-menu-define        'lisp-indent-function 3)
-  (put 'eval-when-compile       'lisp-indent-function 0)
-  (put 'eval-and-compile        'lisp-indent-function 0)
-  (put 'with-temp-buffer        'lisp-indent-function 0)
-  (put 'define-derived-mode     'lisp-indent-function 3)
-  (put 'with-nntp-client        'lisp-indent-function 1)
-  (put 'with-text-face          'lisp-indent-function 1)
-  (put 'with-drawing-options    'lisp-indent-function 1)
-  (put 'with-output-as-presentation 'lisp-indent-function 1)
-  (put 'with-reconnect          'lisp-indent-function 1)
-  (put 'with-standard-page      'lisp-indent-function 1)
-  (put 'handler-case            'lisp-indent-function 1))
-
-(defun dp-emacs-lisp-hook ()
-  ;; Indent using Common Lisp rules (make things like `flet' indent
-  ;; correctly).
-  (set (make-local-variable 'lisp-indent-function) 'common-lisp-indent-function)
-  ;; Handle any other indents.
-  (lisp-modes-indents)
-  ;; Think for me...
-  (eldoc-mode))
-
-(add-hook 'emacs-lisp-mode-hook       #'dp-emacs-lisp-hook)
-(add-hook 'lisp-interaction-mode-hook #'dp-emacs-lisp-hook)
-
-(add-hook 'lisp-mode-hook   #'daves-generic-keys)
-(add-hook 'lisp-mode-hook   #'lisp-modes-indents)
-(add-hook 'scheme-mode-hook #'daves-generic-keys)
-
 (when davep:linux-x-p
   (add-hook 'vc-log-mode-hook #'(lambda () (flyspell-mode 1))))
 (add-hook 'text-mode-hook #'(lambda()
