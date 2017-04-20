@@ -9,12 +9,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Language styles and modes.
 
-(add-hook 'text-mode-hook #'(lambda()
-                              (flyspell-mode 1)
-                              (footnote-mode 1)))
-(add-hook 'org-mode-hook #'(lambda ()
-                             (auto-fill-mode)
-                             (flyspell-mode 1)))
 
 
 (provide 'davep-languages)
