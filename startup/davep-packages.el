@@ -77,6 +77,8 @@
     :bind
     ([home] . moving-home)
     ([end]  . moving-end))
+(use-package ngn
+    :ensure t)
 (use-package nukneval
     :ensure t)
 (use-package org-davep
