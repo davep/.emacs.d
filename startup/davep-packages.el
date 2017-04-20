@@ -168,6 +168,8 @@
 (use-package hyde
   :ensure t
   :commands hyde)
+(use-package magit
+  :ensure t)
 (use-package markdown-mode
   :ensure t
   :config
