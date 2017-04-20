@@ -18,7 +18,5 @@
                              (auto-fill-mode)
                              (flyspell-mode 1)))
 
-(add-hook 'slime-inferior-process-start-hook #'(lambda ()
-                                                 (require 'slime-fancy)))
 
 (provide 'davep-languages)

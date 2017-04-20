@@ -189,7 +189,9 @@
   :ensure t
   :mode "\\.scss$")
 (use-package slime
-  :ensure t)
+  :ensure t
+  :config
+  (add-hook 'slime-inferior-process-start-hook #'(lambda () (require 'slime-fancy))))
 (use-package w3m
   :if davep:macOS-p
   :ensure t)
