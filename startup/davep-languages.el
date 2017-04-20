@@ -9,8 +9,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Language styles and modes.
 
-(when davep:linux-x-p
-  (add-hook 'vc-log-mode-hook #'(lambda () (flyspell-mode 1))))
 (add-hook 'text-mode-hook #'(lambda()
                               (flyspell-mode 1)
                               (footnote-mode 1)))
