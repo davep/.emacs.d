@@ -169,7 +169,9 @@
   :ensure t
   :commands hyde)
 (use-package magit
-  :ensure t)
+  :ensure t
+  :bind
+  ("C-c g" . magit-status))
 (use-package markdown-mode
   :ensure t
   :config
