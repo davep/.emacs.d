@@ -58,6 +58,8 @@
  '(mouse-avoidance-mode (quote jump) nil (avoid))
  '(ns-alternate-modifier (quote super))
  '(ns-command-modifier (quote meta))
+ '(nsm-save-host-names t)
+ '(nsm-settings-file "~/.emacs.d/.network-security.data")
  '(org-agenda-files
    (quote
     ("~/Dropbox/Sync/Org/elisp.org" "~/Dropbox/Sync/Org/inbox.org")))
