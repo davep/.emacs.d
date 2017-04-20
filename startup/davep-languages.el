@@ -89,7 +89,7 @@
 (add-hook 'lisp-mode-hook   #'daves-generic-keys)
 (add-hook 'lisp-mode-hook   #'lisp-modes-indents)
 (add-hook 'scheme-mode-hook #'daves-generic-keys)
-(add-hook 'python-mode-hook #'daves-generic-keys)
+
 (when davep:linux-x-p
   (add-hook 'vc-log-mode-hook #'(lambda () (flyspell-mode 1))))
 (add-hook 'text-mode-hook #'(lambda()
