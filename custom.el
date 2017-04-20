@@ -6,6 +6,13 @@
  '(auto-image-file-mode t)
  '(blink-cursor-mode nil)
  '(c-basic-offset 4)
+ '(c-default-style
+   (quote
+    ((c-mode . "BSD")
+     (c++-mode . "BSD")
+     (java-mode . "java")
+     (awk-mode . "awk")
+     (other . "gnu"))))
  '(case-fold-search t)
  '(clean-buffer-list-delay-general 1)
  '(clean-buffer-list-delay-special 1)
