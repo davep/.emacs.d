@@ -41,10 +41,13 @@
     :bind
     (:map js-mode-map ("RET" . newline-and-indent)))
 (use-package cc-mode
-    :ensure t
-    :bind
-    (:map c-mode-map   ("RET" . newline-and-indent))
-    (:map c++-mode-map ("RET" . newline-and-indent)))
+  :ensure t
+  :config
+  (add-hook 'c-mode-hook   #'(lambda () (setup-compile "gcc -Wall -O2")))
+  (add-hook 'c++-mode-hook #'(lambda () (setup-compile "g++ -Wall -O2")))
+  :bind
+  (:map c-mode-map   ("RET" . newline-and-indent))
+  (:map c++-mode-map ("RET" . newline-and-indent)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; My personal packages. Normally loaded in from delpa.

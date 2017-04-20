@@ -6,38 +6,8 @@
 ;; these can be done via `custom' too.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(eval-when-compile
-  (require 'cc-mode))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Setup a default compile command for a buffer
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(eval-when-compile
-  (defvar compile-command))
-
-(defun davep-languages-setup-compile (default-command)
-  "Setup the compile command for a buffer"
-  (interactive "sDefault compile command: \n")
-  (or (file-exists-p "GNUmakefile")
-      (file-exists-p "makefile")
-      (file-exists-p "Makefile")
-      (progn (make-local-variable 'compile-command)
-             (setq compile-command
-                   (concat default-command " " buffer-file-name
-                           " -o " (file-name-sans-extension
-                                   (file-name-nondirectory (buffer-file-name))))))))
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Language styles and modes.
-
-(add-hook 'c-mode-hook                  ; C
-          #'(lambda ()
-              (davep-languages-setup-compile "gcc -Wall -O2")))
-
-(add-hook 'c++-mode-hook                ; C++
-          #'(lambda ()
-              (davep-languages-setup-compile "g++ -Wall -O2")))
 
 (when davep:linux-x-p
   (add-hook 'vc-log-mode-hook #'(lambda () (flyspell-mode 1))))
