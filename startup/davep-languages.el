@@ -51,9 +51,6 @@
               (davep-languages-setup-compile "g++ -Wall -O2")
               (define-key c++-mode-map "\C-m" #'newline-and-indent)))
 
-;; .asd files are lisp files.
-(push (cons "\\.asd$" 'lisp-mode) auto-mode-alist)
-
 (defun lisp-modes-indents ()
   ;; The following apply to various lisp modes, do them all here and don't
   ;; worry about it.
