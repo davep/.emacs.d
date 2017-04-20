@@ -5,6 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(auto-image-file-mode t)
  '(blink-cursor-mode nil)
+ '(c-basic-offset 4)
  '(case-fold-search t)
  '(clean-buffer-list-delay-general 1)
  '(clean-buffer-list-delay-special 1)

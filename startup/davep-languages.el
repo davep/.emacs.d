@@ -34,7 +34,6 @@
 (add-hook 'c-mode-hook                  ; C
           #'(lambda ()
               (c-set-style "BSD")
-              (setq c-basic-offset 4)
               (c-set-offset 'case-label '+)
               (davep-languages-setup-compile "gcc -Wall -O2")
               (define-key c-mode-map "\C-m" #'newline-and-indent)))
@@ -42,7 +41,6 @@
 (add-hook 'c++-mode-hook                ; C++
           #'(lambda ()
               (c-set-style "BSD")
-              (setq c-basic-offset 4)
               (c-set-offset 'case-label '+)
               (c-set-offset 'inline-open 0)
               (c-set-offset 'access-label '-)
