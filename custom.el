@@ -13,6 +13,7 @@
      (java-mode . "java")
      (awk-mode . "awk")
      (other . "gnu"))))
+ '(c-offsets-alist (quote ((inline-open . 0) (case-label . +) (inclass . ++))))
  '(case-fold-search t)
  '(clean-buffer-list-delay-general 1)
  '(clean-buffer-list-delay-special 1)
