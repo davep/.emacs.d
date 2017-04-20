@@ -92,6 +92,8 @@
     ("C-c o"   . org-davep-open-inbox)
     ("C-c C-o" . org-davep-open-dir)
     ("C-c a"   . org-agenda))
+(use-package setup-compile
+  :ensure t)
 (use-package unbind
     :ensure t)
 (use-package webinfo
