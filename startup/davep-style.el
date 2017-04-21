@@ -29,4 +29,9 @@
 ;; Default colour scheme.
 (load-theme (if window-system 'adwaita 'deeper-blue) t)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Ensure line numbers are off in the terminal.
+(unless window-system
+  (global-linum-mode -1))
+
 (provide 'davep-style)
