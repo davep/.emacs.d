@@ -4,8 +4,9 @@ My personal emacs config.
 
 It's based quite heavily around the use of `customize` in preference to
 setting values "by hand" in `init.el` and friends, and also around the use
-of package archived-installed packages in preference to maintaining a local
-library of code.
+of package archive-installed packages in preference to maintaining a local
+library of code (archives currently used are [elpa](https://elpa.gnu.org/)
+and [melpa](https://melpa.org/)).
 
 It heavily uses [`use-package`](https://github.com/jwiegley/use-package).
 
