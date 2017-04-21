@@ -168,6 +168,8 @@
   :ensure t)
 (use-package emojify
   :if davep:unix-window-p
+  :config
+  (global-emojify-mode)
   :ensure t)
 (use-package hyde
   :ensure t
