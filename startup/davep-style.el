@@ -25,4 +25,8 @@
 (unless window-system
   (menu-bar-mode -1))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Default colour scheme.
+(load-theme (if window-system 'adwaita 'deeper-blue) t)
+
 (provide 'davep-style)
