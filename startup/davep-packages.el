@@ -43,8 +43,8 @@
 (use-package cc-mode
   :ensure t
   :config
-  (add-hook 'c-mode-hook   #'(lambda () (setup-compile "gcc -Wall -O2")))
-  (add-hook 'c++-mode-hook #'(lambda () (setup-compile "g++ -Wall -O2")))
+  (add-hook 'c-mode-hook   #'setup-compile)
+  (add-hook 'c++-mode-hook #'setup-compile)
   :bind
   (:map c-mode-map   ("RET" . newline-and-indent))
   (:map c++-mode-map ("RET" . newline-and-indent)))
