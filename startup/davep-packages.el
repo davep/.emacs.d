@@ -87,6 +87,10 @@
   ([end]  . moving-end))
 (use-package ngn
   :ensure t)
+(use-package nuke-buffers
+  :ensure t
+  :bind
+  ([(control meta f11)] . nuke-buffers))
 (use-package nukneval
   :ensure t)
 (use-package org-davep
