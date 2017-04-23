@@ -16,7 +16,7 @@
 (bind-key [(control f11)]       #'clean-buffer-list)
 (bind-key "C-c r"               #'comment-region)
 (bind-key "C-c C-f"             #'view-file)
-(bind-key "M-p"                 #'(lambda () (interactive) (other-window -1)))
+(bind-key "M-p"                 (lambda () (interactive) (other-window -1)))
 (bind-key "M-n"                 #'other-window)
 (bind-key [delete]              #'delete-char)
 (bind-key [(control backspace)] #'backward-kill-word)
