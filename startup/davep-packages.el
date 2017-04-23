@@ -8,20 +8,20 @@
   :ensure t
   :config
   (add-hook 'footnote-mode-hook
-            #'(lambda ()
-                (setq footnote-style 'numeric-latin
-                      footnote-spaced-footnotes nil
-                      footnote-section-tag "-----"
-                      footnote-section-tag-regexp (regexp-quote footnote-section-tag)
-                      footnote-narrow-to-footnotes-when-editing t))))
+            (lambda ()
+              (setq footnote-style 'numeric-latin
+                    footnote-spaced-footnotes nil
+                    footnote-section-tag "-----"
+                    footnote-section-tag-regexp (regexp-quote footnote-section-tag)
+                    footnote-narrow-to-footnotes-when-editing t))))
 (use-package ibuffer
   :ensure t
   :bind
   ([(meta f6)] . ibuffer)
   :config
   (add-hook 'ibuffer-mode-hooks
-            #'(lambda ()
-                (ibuffer-auto-mode 1))))
+            (lambda ()
+              (ibuffer-auto-mode 1))))
 (use-package quickurl
   :ensure t
   :bind
@@ -181,9 +181,9 @@
 (use-package markdown-mode
   :ensure t
   :config
-  (add-hook 'markdown-mode-hook #'(lambda ()
-                                    (auto-fill-mode)
-                                    (flyspell-mode 1))))
+  (add-hook 'markdown-mode-hook (lambda ()
+                                  (auto-fill-mode)
+                                  (flyspell-mode 1))))
 (use-package package-lint
   :ensure t)
 (use-package paren-face
@@ -201,7 +201,7 @@
 (use-package slime
   :ensure t
   :config
-  (add-hook 'slime-inferior-process-start-hook #'(lambda () (require 'slime-fancy))))
+  (add-hook 'slime-inferior-process-start-hook (lambda () (require 'slime-fancy))))
 (use-package w3m
   :if davep:macOS-p
   :ensure t)
@@ -211,9 +211,9 @@
   :commands hc-highlight-trailing-whitespace
   :config
   (add-hook 'after-change-major-mode-hook
-            #'(lambda ()
-                (when (buffer-file-name)
-                  (hc-highlight-trailing-whitespace)))))
+            (lambda ()
+              (when (buffer-file-name)
+                (hc-highlight-trailing-whitespace)))))
 (use-package multiple-cursors
   :ensure t
   :bind
@@ -225,11 +225,11 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Catch-all hooks, etc.
 
-(add-hook 'text-mode-hook #'(lambda()
-                              (flyspell-mode 1)
-                              (footnote-mode 1)))
-(add-hook 'org-mode-hook #'(lambda ()
-                             (auto-fill-mode)
-                             (flyspell-mode 1)))
+(add-hook 'text-mode-hook (lambda()
+                            (flyspell-mode 1)
+                            (footnote-mode 1)))
+(add-hook 'org-mode-hook (lambda ()
+                           (auto-fill-mode)
+                           (flyspell-mode 1)))
 
 (provide 'davep-packages)
