@@ -56,8 +56,6 @@
   :config
   (unless noninteractive
     (add-hook 'before-save-hook #'become-free-of-trailing-whitespace)))
-(use-package binclock
-  :ensure t)
 (use-package constellations
   :ensure t)
 (use-package csrclr
@@ -122,6 +120,8 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Packages I've written, that are in melpa.
+(use-package binclock
+  :ensure t)
 (use-package boxquote
   :ensure t
   :bind
