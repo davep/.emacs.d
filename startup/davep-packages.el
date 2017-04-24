@@ -3,6 +3,10 @@
 (require 'use-package)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Given I have my own package archive, ensure I can manage that too.
+(require 'package-x)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Emacs builtin packages, that aren't normally loaded.
 (use-package footnote
   :ensure t
