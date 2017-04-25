@@ -112,7 +112,6 @@
  '(tool-bar-mode nil)
  '(tramp-default-method "ssh")
  '(truncate-lines t)
- '(uptimes-database "~/.emacs.d/uptimes")
  '(user-mail-address "davep@davep.org"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

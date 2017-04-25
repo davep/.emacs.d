@@ -3,7 +3,7 @@ auto-save-list
 eshell/history
 eshell/lastdir
 tramp
-uptimes
+.uptimes.el
 bookmarks
 *.elc
 elpa/
