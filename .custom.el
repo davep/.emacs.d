@@ -113,6 +113,7 @@
  '(show-paren-mode t)
  '(tool-bar-mode nil)
  '(tramp-default-method "ssh")
+ '(tramp-persistency-file-name "/Users/davep/.emacs.d/.tramp.el")
  '(truncate-lines t)
  '(user-mail-address "davep@davep.org"))
 (custom-set-faces

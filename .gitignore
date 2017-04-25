@@ -2,7 +2,7 @@
 auto-save-list
 eshell/history
 eshell/lastdir
-tramp
+.tramp.el
 .uptimes.el
 .bookmarks.el
 *.elc
