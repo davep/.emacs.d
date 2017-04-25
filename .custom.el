@@ -4,6 +4,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(auto-image-file-mode t)
+ '(auto-save-list-file-prefix "~/.emacs.d/.auto-save-list/saves-")
  '(blink-cursor-mode nil)
  '(bookmark-default-file "~/.emacs.d/.bookmarks.el")
  '(c-basic-offset 4)
