@@ -31,6 +31,7 @@
  '(display-time-format "%F %H:%M")
  '(display-time-mode t)
  '(electric-pair-mode t)
+ '(emojify-emojis-dir "~/.emacs.d/.emojis")
  '(eshell-prompt-function
    (lambda nil
      (concat
