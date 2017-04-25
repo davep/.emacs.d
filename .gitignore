@@ -7,7 +7,7 @@ tramp
 bookmarks
 *.elc
 elpa/
-history
+.history.el
 url/
 emojis/
 .DS_Store
