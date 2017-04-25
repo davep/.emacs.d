@@ -122,9 +122,9 @@
  '(smtpmail-smtp-service 587)
  '(tool-bar-mode nil)
  '(tramp-default-method "ssh")
- '(tramp-persistency-file-name "/Users/davep/.emacs.d/.tramp.el")
+ '(tramp-persistency-file-name "~/.emacs.d/.tramp.el")
  '(truncate-lines t)
- '(url-cache-directory "/Users/davep/.emacs.d/.url/cache")
+ '(url-cache-directory "~/.emacs.d/.url/cache")
  '(user-mail-address "davep@davep.org"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
