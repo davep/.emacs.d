@@ -5,6 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(auto-image-file-mode t)
  '(blink-cursor-mode nil)
+ '(bookmark-default-file "~/.emacs.d/.bookmarks.el")
  '(c-basic-offset 4)
  '(c-default-style
    (quote

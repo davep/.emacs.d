@@ -4,7 +4,7 @@ eshell/history
 eshell/lastdir
 tramp
 .uptimes.el
-bookmarks
+.bookmarks.el
 *.elc
 elpa/
 .history.el
