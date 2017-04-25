@@ -8,7 +8,7 @@ eshell/lastdir
 *.elc
 elpa/
 .history.el
-url/
+.url/
 emojis/
 .DS_Store
 .network-security.data
