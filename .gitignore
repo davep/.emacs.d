@@ -12,3 +12,5 @@ elpa/
 .emojis/
 .DS_Store
 .network-security.data
+.oauth2.plstore
+

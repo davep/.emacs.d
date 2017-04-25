@@ -65,6 +65,7 @@
  '(ns-command-modifier (quote meta))
  '(nsm-save-host-names t)
  '(nsm-settings-file "~/.emacs.d/.network-security.data")
+ '(oauth2-token-file "~/.emacs.d/.oauth2.plstore")
  '(org-agenda-files
    (quote
     ("~/Dropbox/Sync/Org/elisp.org" "~/Dropbox/Sync/Org/inbox.org")))
