@@ -175,6 +175,8 @@
   :config
   (global-emojify-mode)
   :ensure t)
+(use-package google-contacts
+  :ensure t)
 (use-package google-maps
   :ensure t)
 (use-package hyde
