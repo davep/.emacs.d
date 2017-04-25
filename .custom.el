@@ -120,6 +120,7 @@
  '(tramp-default-method "ssh")
  '(tramp-persistency-file-name "/Users/davep/.emacs.d/.tramp.el")
  '(truncate-lines t)
+ '(url-cache-directory "/Users/davep/.emacs.d/.url/cache")
  '(user-mail-address "davep@davep.org"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
