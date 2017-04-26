@@ -200,6 +200,10 @@
   :demand
   :config
   (global-paren-face-mode t))
+(use-package powerline
+  :ensure t
+  :config
+  (powerline-default-theme))
 (use-package powershell
   :ensure t)
 (use-package restclient

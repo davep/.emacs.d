@@ -77,7 +77,7 @@
  '(package-archive-upload-base "~/develop/elisp/delpa/")
  '(package-selected-packages
    (quote
-    (google-contacts google-maps nuke-buffers longmacs magit setup-compile ngn winsplit org-davep icmp-info multiple-cursors xbase davep-org constellations boxquote itch insert become webinfo unbind nukneval moving fscroll binclock csrclr use-package handyurl services protocols obfusurl paren-face parenface uptimes thinks package-lint w3m slime sass-mode restclient powershell markdown-mode hyde highlight-chars emojify dictionary csharp-mode browse-kill-ring auto-compile)))
+    (powerline google-contacts google-maps nuke-buffers longmacs magit setup-compile ngn winsplit org-davep icmp-info multiple-cursors xbase davep-org constellations boxquote itch insert become webinfo unbind nukneval moving fscroll binclock csrclr use-package handyurl services protocols obfusurl paren-face parenface uptimes thinks package-lint w3m slime sass-mode restclient powershell markdown-mode hyde highlight-chars emojify dictionary csharp-mode browse-kill-ring auto-compile)))
  '(package-user-dir "~/.emacs.d/.packages")
  '(pascal-auto-newline t)
  '(pascal-indent-level 2)
@@ -135,4 +135,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(eshell-prompt ((t (:foreground "indian red" :weight bold))))
- '(parenthesis ((t (:inherit shadow :foreground "gray63")))))
+ '(parenthesis ((t (:inherit shadow :foreground "gray63"))))
+ '(powerline-active1 ((t (:inherit mode-line :background "grey95"))))
+ '(powerline-active2 ((t (:inherit mode-line :background "grey85"))))
+ '(powerline-inactive1 ((t (:inherit mode-line-inactive :background "grey30"))))
+ '(powerline-inactive2 ((t (:inherit mode-line-inactive :background "grey20")))))
