@@ -6,7 +6,7 @@ eshell/lastdir
 .uptimes.el
 .bookmarks.el
 *.elc
-elpa/
+.packages/
 .history.el
 .url/
 .emojis/
