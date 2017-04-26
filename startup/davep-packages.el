@@ -203,6 +203,7 @@
 (use-package powerline
   :ensure t
   :config
+  (setq ns-use-srgb-colorspace nil)
   (powerline-default-theme))
 (use-package powershell
   :ensure t)
