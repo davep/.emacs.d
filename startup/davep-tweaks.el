@@ -12,8 +12,8 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Enable some disabled commands
-(mapc #'(lambda (command)
-          (put command 'disabled nil))
+(mapc (lambda (command)
+        (put command 'disabled nil))
       '(downcase-region
         erase-buffer
         narrow-to-page
