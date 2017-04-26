@@ -7,8 +7,9 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; If we're on a Unix of some sort, add a personal bin (if it's there).
-(when (and davep:unixp (file-exists-p "~/bin"))
-  (push "~/bin/" exec-path))
+(let ((bin "~/bin"))
+  (when (and davep:unixp (file-exists-p bin))
+    (push bin exec-path)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Enable some disabled commands
