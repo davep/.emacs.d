@@ -34,11 +34,4 @@
 (unless window-system
   (global-linum-mode -1))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Use a powerline-friendly font when running graphically on a Mac.
-(when davep:macOS-window-p
-  (let ((font "DejaVu Sans Mono for Powerline"))
-    (set-face-attribute 'default nil :font font)
-    (set-frame-font font nil t)))
-
 (provide 'davep-style)
