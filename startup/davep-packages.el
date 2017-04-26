@@ -189,9 +189,10 @@
 (use-package markdown-mode
   :ensure t
   :config
-  (add-hook 'markdown-mode-hook (lambda ()
-                                  (auto-fill-mode)
-                                  (flyspell-mode 1))))
+  (add-hook 'markdown-mode-hook
+            (lambda ()
+              (auto-fill-mode)
+              (flyspell-mode 1))))
 (use-package package-lint
   :ensure t)
 (use-package paren-face
@@ -209,7 +210,9 @@
 (use-package slime
   :ensure t
   :config
-  (add-hook 'slime-inferior-process-start-hook (lambda () (require 'slime-fancy))))
+  (add-hook 'slime-inferior-process-start-hook
+            (lambda ()
+              (require 'slime-fancy))))
 (use-package w3m
   :if davep:macOS-p
   :ensure t)
@@ -233,11 +236,13 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Catch-all hooks, etc.
 
-(add-hook 'text-mode-hook (lambda()
-                            (flyspell-mode 1)
-                            (footnote-mode 1)))
-(add-hook 'org-mode-hook (lambda ()
-                           (auto-fill-mode)
-                           (flyspell-mode 1)))
+(add-hook 'text-mode-hook
+          (lambda()
+            (flyspell-mode 1)
+            (footnote-mode 1)))
+(add-hook 'org-mode-hook
+          (lambda ()
+            (auto-fill-mode)
+            (flyspell-mode 1)))
 
 (provide 'davep-packages)
