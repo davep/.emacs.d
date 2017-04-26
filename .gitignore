@@ -1,7 +1,7 @@
 *~
 .auto-save-list/
-eshell/history
-eshell/lastdir
+.eshell/history
+.eshell/lastdir
 .tramp.el
 .uptimes.el
 .bookmarks.el
