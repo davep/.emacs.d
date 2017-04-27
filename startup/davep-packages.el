@@ -9,7 +9,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Emacs builtin packages, that aren't normally loaded.
 (use-package footnote
-  :ensure t
   :config
   (add-hook 'footnote-mode-hook
             (lambda ()
@@ -19,7 +18,6 @@
                     footnote-section-tag-regexp (regexp-quote footnote-section-tag)
                     footnote-narrow-to-footnotes-when-editing t))))
 (use-package ibuffer
-  :ensure t
   :bind
   ([(meta f6)] . ibuffer)
   :config
@@ -27,25 +25,20 @@
             (lambda ()
               (ibuffer-auto-mode 1))))
 (use-package quickurl
-  :ensure t
   :bind
   ("C-c u" . quickurl)
   :config
   (setq quickurl-url-file (locate-user-emacs-file ".quickurls.el")))
 (use-package pascal
-  :ensure t
   :bind
   (:map pascal-mode-map ("RET" . newline-and-indent)))
 (use-package opascal
-  :ensure t
   :bind
   (:map opascal-mode-map ("RET" . newline-and-indent)))
 (use-package js
-  :ensure t
   :bind
   (:map js-mode-map ("RET" . newline-and-indent)))
 (use-package cc-mode
-  :ensure t
   :config
   (add-hook 'c-mode-hook   #'setup-compile)
   (add-hook 'c++-mode-hook #'setup-compile)
