@@ -52,6 +52,10 @@
   :bind
   (:map c-mode-map   ("RET" . newline-and-indent))
   (:map c++-mode-map ("RET" . newline-and-indent)))
+(use-package dired-x
+  :config
+  (setq-default dired-omit-files-p t)
+  (setq dired-omit-files "^\\.[^.]"))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; My personal packages. Normally loaded in from delpa.
