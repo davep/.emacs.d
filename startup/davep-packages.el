@@ -56,7 +56,8 @@
               (setq smartsig-set-signature #'msig-set)
               (setq smartsig-abbrev-table  'message-mode-abbrev-table)
               (smartsig-clear)
-              (smartsig-add "emacs" "~/.sigs/emacs" "emacs" "xemacs" "elisp" "gnu"))))
+              (smartsig-add "emacs"   "~/.sigs/emacs"   "emacs" "xemacs" "elisp" "gnu" "lbdb" "uptimes" "quickurl" "smartsig" "boxquote")
+              (smartsig-add "sawfish" "~/.sigs/sawfish" "sawfish" "sawmill" "librep" "rep" "gnome"))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; My personal packages. Normally loaded in from delpa.
