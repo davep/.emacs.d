@@ -49,6 +49,16 @@
   :config
   (setq-default dired-omit-files-p t)
   (setq dired-omit-files "^\\.[^.]"))
+(use-package message
+  :config
+  (add-hook 'message-mode-hook
+            (lambda ()
+              (require 'smartsig)
+              (require 'msig)
+              (setq smartsig-set-signature #'msig-set)
+              (setq smartsig-abbrev-table  'message-mode-abbrev-table)
+              (smartsig-clear)
+              (smartsig-add "emacs" "~/.sigs/emacs" "emacs" "xemacs" "elisp" "gnu"))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; My personal packages. Normally loaded in from delpa.
@@ -102,6 +112,10 @@
   ("C-c C-o" . org-davep-open-dir)
   ("C-c a"   . org-agenda))
 (use-package setup-compile
+  :ensure t)
+(use-package msig
+  :ensure t)
+(use-package smartsig
   :ensure t)
 (use-package unbind
   :ensure t)
