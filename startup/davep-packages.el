@@ -53,8 +53,6 @@
   :config
   (add-hook 'message-mode-hook
             (lambda ()
-              (require 'smartsig)
-              (require 'msig)
               (setq smartsig-set-signature #'msig-set)
               (setq smartsig-abbrev-table  'message-mode-abbrev-table)
               (smartsig-clear)
