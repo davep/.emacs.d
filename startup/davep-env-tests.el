@@ -9,14 +9,6 @@
 
 ;;; Code:
 
-(defconst davep:gnu-emacs-p
-  (not (null (string-match "GNU Emacs" (emacs-version))))
-  "Are we running under GNU Emacs?")
-
-(defconst davep:x-emacs-p
-  (not (null (string-match "Lucid\\|XEmacs" (emacs-version))))
-  "Are we running under XEmacs?")
-
 (defconst davep:win32p
   (eq system-type 'windows-nt)
   "Are we running on a WinTel system?")
