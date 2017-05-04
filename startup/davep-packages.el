@@ -1,8 +1,19 @@
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; davep-packages.el --- Package loading
+
+;;; Commentary:
+;;
+;; davep-packages.el is reponsible for loading the packages I want. This
+;; makes very heavy use of use-package and is designed to help bootstrap a
+;; fresh Emacs installation.
+;;
+;; http://blog.davep.org/2017/04/01/another_revamp_of_my_emacs_config.html
+;; contains a bit of background.
+
+;;; Code:
+
 ;; Ensure use-package is available.
 (require 'use-package)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Given I have my own package archive, ensure I can manage that too.
 (require 'package-x)
 
@@ -265,3 +276,5 @@
 (add-hook 'emacs-lisp-mode-hook #'setup-compile)
 
 (provide 'davep-packages)
+
+;;; davep-packages.el ends here
