@@ -19,6 +19,14 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Emacs builtin packages, that aren't normally loaded.
+(use-package flyspell
+  :config
+  (mapc (lambda (hook)
+          (add-hook hook #'flyspell-prog-mode))
+        '(c-mode-hook
+          c++-mode-hook
+          emacs-lisp-mode-hook
+          js-mode-hook)))
 (use-package footnote
   :config
   (add-hook 'footnote-mode-hook
