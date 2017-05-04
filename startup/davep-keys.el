@@ -1,6 +1,10 @@
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Personal keyboard bindings
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; davep-keys.el --- Personal keyboard bindings
+
+;;; Commentary:
+;;
+;; davep-keys.el contains my personal keyboard bindings.
+
+;;; Code:
 
 (require 'bind-key)
 (require 'davep-env-tests)
@@ -32,3 +36,5 @@
   (set (intern "w32-lwindow-modifier") 'meta))
 
 (provide 'davep-keys)
+
+;;; davep-keys.el ends here
