@@ -1,9 +1,17 @@
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; For testing our environment...
+;;; davep-env-tests.el --- Tools for testing the environment we're running in
+
+;;; Commentary:
+;;
+;; davep-env-tests.el provides tools for testing the environment we're
+;; runnuing in. This would normally be loaded pretty early on in
+;; ~/.emacs.d/init.el so that other startup code can make decisions about
+;; what to load and how to configure what it loads.
+
+;;; Code:
 
 (defconst davep:gnu-emacs-p
   (not (null (string-match "GNU Emacs" (emacs-version))))
-  "Are we running under GNU emacs?")
+  "Are we running under GNU Emacs?")
 
 (defconst davep:x-emacs-p
   (not (null (string-match "Lucid\\|XEmacs" (emacs-version))))
@@ -59,3 +67,5 @@
   "Are we running as root?")
 
 (provide 'davep-env-tests)
+
+;;; davep-env-tests.el ends here
