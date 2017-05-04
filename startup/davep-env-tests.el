@@ -6,6 +6,10 @@
 ;; runnuing in. This would normally be loaded pretty early on in
 ;; ~/.emacs.d/init.el so that other startup code can make decisions about
 ;; what to load and how to configure what it loads.
+;;
+;; Note that these tests aren't intended to be comprehensive. They're just
+;; good enough to cover the range of machines and environments I own and
+;; use.
 
 ;;; Code:
 
