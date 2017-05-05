@@ -55,7 +55,7 @@
 (use-package dictionary
   :ensure t)
 (use-package emojify
-  :if davep:unix-window-p
+  :if is-a-unix-window-p
   :config
   (global-emojify-mode)
   :ensure t)
@@ -103,7 +103,7 @@
             (lambda ()
               (require 'slime-fancy))))
 (use-package w3m
-  :if davep:macOS-p
+  :if is-a-macOS-p
   :ensure t)
 (use-package highlight-chars
   :ensure t

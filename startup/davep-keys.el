@@ -7,7 +7,6 @@
 ;;; Code:
 
 (require 'bind-key)
-(require 'davep-env-tests)
 
 ;; General bindinds
 (bind-key [(control f6)]        #'list-processes)
@@ -28,11 +27,11 @@
 (bind-key "C-z"                 #'undo)
 
 ;; Things specific to macOS.
-(when davep:macOS-window-p
+(when is-a-macOS-window-p
   (define-key global-map [(super tab)] #'completion-at-point))
 
 ;; Things specific to Windows.
-(when davep:win32p
+(when is-a-win32p
   (set (intern "w32-lwindow-modifier") 'meta))
 
 (provide 'davep-keys)

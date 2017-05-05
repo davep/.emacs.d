@@ -36,7 +36,7 @@
 (use-package longmacs
   :ensure t)
 (use-package macdob
-  :if davep:macOS-p
+  :if is-a-macOS-p
   :ensure t)
 (use-package moving
   :ensure t
