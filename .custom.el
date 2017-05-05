@@ -44,7 +44,7 @@
       ":"
       (abbreviate-file-name
        (eshell/pwd))
-      (if davep:rootp "#" "$")
+      (if is-a-rootp "#" "$")
       " ")))
  '(eshell-prompt-regexp "^[^#$\\n]*[#$] ")
  '(fill-column 76)
