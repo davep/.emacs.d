@@ -25,10 +25,10 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Load various startup things.
-(require 'davep-packages)
 (unless noninteractive
   (require 'davep-tweaks)
   (require 'davep-keys)
   (require 'davep-style))
+(require 'davep-packages)
 
 ;;; init.el ends here
