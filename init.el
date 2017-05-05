@@ -25,9 +25,9 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Load various startup things.
+(require 'davep-packages)
 (unless noninteractive
   (require 'davep-tweaks)
-  (require 'davep-packages)
   (require 'davep-keys)
   (require 'davep-style))
 
