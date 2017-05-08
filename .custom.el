@@ -44,7 +44,7 @@
       ":"
       (abbreviate-file-name
        (eshell/pwd))
-      (if is-a-rootp "#" "$")
+      (if is-a-root-user-p "#" "$")
       " ")))
  '(eshell-prompt-regexp "^[^#$\\n]*[#$] ")
  '(fill-column 76)
