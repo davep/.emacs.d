@@ -6,6 +6,7 @@
 
 ;;; Code:
 
+(require 'is-a)
 (require 'bind-key)
 
 ;; General bindinds
@@ -31,7 +32,7 @@
   (define-key global-map [(super tab)] #'completion-at-point))
 
 ;; Things specific to Windows.
-(when is-a-win32p
+(when is-a-win32-p
   (set (intern "w32-lwindow-modifier") 'meta))
 
 (provide 'davep-keys)

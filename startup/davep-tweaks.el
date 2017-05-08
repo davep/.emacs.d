@@ -8,6 +8,8 @@
 
 ;;; Code:
 
+(require 'is-a)
+
 ;; On the Mac local bin doesn't seem to be in the path if I run from the
 ;; dock. Fix this.
 (let ((local "/usr/local/bin"))
@@ -16,7 +18,7 @@
 
 ;; If we're on a Unix of some sort, add a personal bin (if it's there).
 (let ((bin "~/bin"))
-  (when (and is-a-unixp (file-exists-p bin))
+  (when (and is-a-unix-p (file-exists-p bin))
     (push bin exec-path)))
 
 ;; Enable some disabled commands
