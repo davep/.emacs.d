@@ -1,9 +1,9 @@
-;;; davep-packages-melpa.el -- Load and configure packages from public
+;;; init-packages-melpa.el -- Load and configure packages from public
 ;;; repos.
 
 ;;; Commentary:
 ;;
-;; davep-packages-melpa.el loads and configures personal and third party
+;; init-packages-melpa.el loads and configures personal and third party
 ;; packages that live in public package repositories such as elpa and melpa.
 
 ;;; Code:
@@ -122,6 +122,6 @@
   ("C->"   . mc/mark-all-like-this)
   ("C-c ." . mc/mark-all-like-this-dwim))
 
-(provide 'davep-packages-melpa)
+(provide 'init-packages-melpa)
 
-;;; davep-packages-melpa.el ends here
+;;; init-packages-melpa.el ends here

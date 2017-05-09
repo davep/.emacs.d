@@ -1,8 +1,8 @@
-;;; davep-packages-builtin.el -- Load and configure some builtin packages
+;;; init-packages-builtin.el -- Load and configure some builtin packages
 
 ;;; Commentary:
 ;;
-;; davep-packages-builtin.el loads and configures various packages that are
+;; init-packages-builtin.el loads and configures various packages that are
 ;; part of GNU Emacs itself.
 
 ;;; Code:
@@ -66,6 +66,6 @@
               (smartsig-add "emacs"   "~/.sigs/emacs"   "emacs" "xemacs" "elisp" "gnu" "lbdb" "uptimes" "quickurl" "smartsig" "boxquote")
               (smartsig-add "sawfish" "~/.sigs/sawfish" "sawfish" "sawmill" "librep" "rep" "gnome"))))
 
-(provide 'davep-packages-builtin)
+(provide 'init-packages-builtin)
 
-;;; davep-packages-builtin.el ends here
+;;; init-packages-builtin.el ends here

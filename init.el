@@ -20,15 +20,15 @@
 (use-package is-a :ensure t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Add my local startup directory to the load path.
-(push (concat user-emacs-directory "startup/") load-path)
+;; Add my local init directory to the load path.
+(push (concat user-emacs-directory "init.d/") load-path)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Load various startup things.
 (unless noninteractive
-  (require 'davep-tweaks)
-  (require 'davep-keys)
-  (require 'davep-style))
-(require 'davep-packages)
+  (require 'init-tweaks)
+  (require 'init-keys)
+  (require 'init-style))
+(require 'init-packages)
 
 ;;; init.el ends here

@@ -1,8 +1,8 @@
-;;; davep-packages-delpa.el -- Load and configure my personal packages.
+;;; init-packages-delpa.el -- Load and configure my personal packages.
 
 ;;; Commentary:
 ;;
-;; davep-packages-delpa.el loads and configures my personal packages that I
+;; init-packages-delpa.el loads and configures my personal packages that I
 ;; keep in my own package repository (the sorts of packages that would not
 ;; make sense in a public repository).
 
@@ -82,6 +82,6 @@
   :mode ("\\.\\(prg\\|ch\\|ppo\\)$" . xbase-mode)
   :ensure t)
 
-(provide 'davep-packages-delpa)
+(provide 'init-packages-delpa)
 
-;;; davep-packages-delpa.el ends here
+;;; init-packages-delpa.el ends here

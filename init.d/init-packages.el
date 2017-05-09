@@ -1,8 +1,8 @@
-;;; davep-packages.el --- Package loading
+;;; init-packages.el --- Package loading
 
 ;;; Commentary:
 ;;
-;; davep-packages.el is reponsible for loading the packages I want. This
+;; init-packages.el is reponsible for loading the packages I want. This
 ;; makes very heavy use of use-package and is designed to help bootstrap a
 ;; fresh Emacs installation.
 ;;
@@ -18,16 +18,16 @@
 (require 'package-x)
 
 ;; Add the package loading directory to the load-path.
-(push (concat user-emacs-directory "startup/packages/") load-path)
+(push (concat user-emacs-directory "init.d/packages/") load-path)
 
 ;; Emacs builtin packages, that aren't normally loaded.
-(require 'davep-packages-builtin)
+(require 'init-packages-builtin)
 
 ;; My personal packages. Normally loaded in from delpa.
-(require 'davep-packages-delpa)
+(require 'init-packages-delpa)
 
 ;; Packages that live in elpa/melpa.
-(require 'davep-packages-melpa)
+(require 'init-packages-melpa)
 
 ;; Catch-all hooks, etc.
 (add-hook 'text-mode-hook
@@ -40,6 +40,6 @@
             (flyspell-mode 1)))
 (add-hook 'emacs-lisp-mode-hook #'setup-compile)
 
-(provide 'davep-packages)
+(provide 'init-packages)
 
-;;; davep-packages.el ends here
+;;; init-packages.el ends here

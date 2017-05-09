@@ -1,8 +1,8 @@
-;;; davep-style.el --- Style Emacs to my taste
+;;; init-style.el --- Style Emacs to my taste
 
 ;;; Commentary:
 ;;
-;; davep-style.el contains code that styles Emacs to my taste. It includes
+;; init-style.el contains code that styles Emacs to my taste. It includes
 ;; things like the default window size/position, theme choices, etc.
 
 ;;; Code:
@@ -38,6 +38,6 @@
 (unless window-system
   (global-linum-mode -1))
 
-(provide 'davep-style)
+(provide 'init-style)
 
-;;; davep-style.el ends here
+;;; init-style.el ends here

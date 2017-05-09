@@ -1,8 +1,8 @@
-;;; davep-tweaks.el --- Miscellaneous "tweaks" to my emacs environment
+;;; init-tweaks.el --- Miscellaneous "tweaks" to my emacs environment
 
 ;;; Commentary:
 ;;
-;; davep-tweaks.el contains miscellaneous tweaks to the Emacs environment.
+;; init-tweaks.el contains miscellaneous tweaks to the Emacs environment.
 ;; These are the sorts of changes that don't directly relate to packages,
 ;; etc, and aren't about how Emacs looks.
 
@@ -30,6 +30,6 @@
         narrow-to-region
         upcase-region))
 
-(provide 'davep-tweaks)
+(provide 'init-tweaks)
 
-;;; davep-tweaks.el ends here
+;;; init-tweaks.el ends here

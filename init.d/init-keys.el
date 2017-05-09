@@ -1,8 +1,8 @@
-;;; davep-keys.el --- Personal keyboard bindings
+;;; init-keys.el --- Personal keyboard bindings
 
 ;;; Commentary:
 ;;
-;; davep-keys.el contains my personal keyboard bindings.
+;; init-keys.el contains my personal keyboard bindings.
 
 ;;; Code:
 
@@ -36,6 +36,6 @@
 (when is-a-win32-p
   (set (intern "w32-lwindow-modifier") 'meta))
 
-(provide 'davep-keys)
+(provide 'init-keys)
 
-;;; davep-keys.el ends here
+;;; init-keys.el ends here
