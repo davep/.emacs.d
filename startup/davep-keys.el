@@ -30,7 +30,7 @@
 
 ;; Things specific to macOS.
 (when is-a-macOS-window-p
-  (define-key global-map [(super tab)] #'completion-at-point))
+  (bind-key [(super tab)] #'completion-at-point))
 
 ;; Things specific to Windows.
 (when is-a-win32-p
