@@ -26,6 +26,7 @@
 (bind-key [(control backspace)] #'backward-kill-word)
 (bind-key [(meta backspace)]    #'undo)
 (bind-key "C-z"                 #'undo)
+(bind-key "s-r"                 #'ielm)
 
 ;; Things specific to macOS.
 (when is-a-macOS-window-p
