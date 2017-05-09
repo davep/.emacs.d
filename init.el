@@ -16,7 +16,7 @@
   (package-install 'use-package))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; is-al.el is a bit special, as I use very early on. Load it now.
+;; is-a.el is a bit special, as I use very early on. Load it now.
 (use-package is-a :ensure t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
