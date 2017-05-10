@@ -26,6 +26,7 @@
 ;; Tools and "apps" and things.
 (bind-key [(control f6)]  #'list-processes)
 (bind-key [f6]            #'bury-buffer)
+(bind-key [f7]            #'describe-personal-keybindings)
 (bind-key [f9]            #'compile)
 (bind-key "C-c e"         #'eshell)
 (bind-key [(control f11)] #'clean-buffer-list)
