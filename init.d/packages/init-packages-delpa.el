@@ -19,6 +19,10 @@
   :ensure t)
 (use-package davep-org
   :ensure t)
+(use-package expando
+  :ensure t
+  :bind
+  ("C-c C-e" . expando-macro))
 (use-package fscroll
   :ensure t)
 (use-package icmp-info
