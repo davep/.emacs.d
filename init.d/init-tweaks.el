@@ -30,6 +30,13 @@
         narrow-to-region
         upcase-region))
 
+;; Some functions in elisp seem to be missing sensible indent declare forms.
+;; Let's fix them.
+(mapc (lambda (indent)
+        (put (car indent) 'lisp-indent-function (cdr indent)))
+      '((with-current-buffer-window . 4)
+        (with-temp-buffer-window    . 4)))
+
 (provide 'init-tweaks)
 
 ;;; init-tweaks.el ends here
