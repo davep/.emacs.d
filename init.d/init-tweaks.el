@@ -34,8 +34,8 @@
 ;; Let's fix them.
 (mapc (lambda (indent)
         (put (car indent) 'lisp-indent-function (cdr indent)))
-      '((with-current-buffer-window . 4)
-        (with-temp-buffer-window    . 4)))
+      '((with-current-buffer-window . 3)
+        (with-temp-buffer-window    . 3)))
 
 (provide 'init-tweaks)
 
