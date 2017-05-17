@@ -14,7 +14,7 @@
   (unless noninteractive
     (add-hook 'before-save-hook #'become-free-of-trailing-whitespace))
   :bind
-  ([(control c) (tab)] . become-freshly-indented-no-tabs))
+  ([(control c) (control tab)] . become-freshly-indented-no-tabs))
 (use-package constellations
   :ensure t)
 (use-package csrclr
