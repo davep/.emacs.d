@@ -50,6 +50,10 @@
   :ensure t
   :bind
   ("C-c k" . browse-kill-ring))
+(use-package company
+  :ensure t
+  :config
+  (add-hook 'after-init-hook #'global-company-mode))
 (use-package csharp-mode
   :ensure t)
 (use-package dictionary
