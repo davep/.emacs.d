@@ -6,6 +6,8 @@
  '(abbrev-file-name "~/.emacs.d/.abbrev_defs")
  '(auto-image-file-mode t)
  '(auto-save-list-file-prefix "~/.emacs.d/.auto-save-list/saves-")
+ '(backup-by-copying t)
+ '(backup-directory-alist (quote ((".*" . "~/.emacs.d/.backups"))))
  '(blink-cursor-mode nil)
  '(bookmark-default-file "~/.emacs.d/.bookmarks.el")
  '(c-basic-offset 4)
@@ -28,6 +30,7 @@
     ("*Help*" "*Apropos*" "*Buffer List*" "*Compile-Log*" "*info*" "*vc*" "*vc-diff*" "*diff*" "*uptimes*" "*markdown-output*" "*Checkdoc Status*" "*Compile-Log*")))
  '(column-number-mode t)
  '(cursor-in-non-selected-windows nil)
+ '(delete-old-versions t)
  '(diff-switches "-u")
  '(dired-use-ls-dired nil)
  '(display-time-24hr-format t)
@@ -61,6 +64,7 @@
  '(ispell-dictionary "british")
  '(ispell-highlight-face (quote flyspell-incorrect))
  '(js-switch-indent-offset 4)
+ '(kept-new-versions 10)
  '(line-number-mode t)
  '(load-prefer-newer t)
  '(mouse-avoidance-mode (quote jump) nil (avoid))
@@ -129,7 +133,8 @@
  '(tramp-persistency-file-name "~/.emacs.d/.tramp.el")
  '(truncate-lines t)
  '(url-cache-directory "~/.emacs.d/.url/cache")
- '(user-mail-address "davep@davep.org"))
+ '(user-mail-address "davep@davep.org")
+ '(version-control t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
