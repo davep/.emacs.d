@@ -52,6 +52,8 @@
   ("C-c k" . browse-kill-ring))
 (use-package company
   :ensure t
+  :bind
+  ("s-SPC" . company-complete)
   :config
   (add-hook 'after-init-hook #'global-company-mode))
 (use-package csharp-mode
