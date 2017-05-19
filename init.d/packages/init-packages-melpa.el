@@ -52,6 +52,7 @@
   ("C-c k" . browse-kill-ring))
 (use-package company
   :ensure t
+  :diminish "CM"
   :bind
   ("s-SPC" . company-complete)
   :config
