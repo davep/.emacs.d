@@ -18,8 +18,6 @@
 (bind-key "C-c ;"               #'comment-or-uncomment-region)
 (bind-key [delete]              #'delete-char)
 (bind-key [(control backspace)] #'backward-kill-word)
-(bind-key [(meta backspace)]    #'undo)
-(bind-key "C-z"                 #'undo)
 
 ;; Tools and "apps" and things.
 (bind-key [(control f6)]  #'list-processes)
