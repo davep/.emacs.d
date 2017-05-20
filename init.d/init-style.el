@@ -7,6 +7,9 @@
 
 ;;; Code:
 
+;; Default colour scheme.
+(load-theme (if (display-graphic-p) 'adwaita 'deeper-blue) t)
+
 ;; Window position and size.
 (let ((styles
        '(
@@ -26,9 +29,6 @@
 (let ((format (concat invocation-name "@" (system-name) " - [%b]")))
   (setq frame-title-format format
         icon-title-format  format))
-
-;; Default colour scheme.
-(load-theme (if (display-graphic-p) 'adwaita 'deeper-blue) t)
 
 ;; If we're not on a graphical display...
 (unless (display-graphic-p)
