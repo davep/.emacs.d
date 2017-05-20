@@ -18,7 +18,7 @@
           (lambda ()
             (set-frame-size (selected-frame) 90 50)
             (set-frame-position (selected-frame) 300 80))))))
-  (when window-system
+  (when (display-graphic-p)
     (funcall (or (cdr (assoc (car (split-string (downcase (system-name)) "\\.")) styles))
                  (lambda () nil)))))
 
@@ -27,15 +27,13 @@
   (setq frame-title-format format
         icon-title-format  format))
 
-;; Really don't need menus in a terminal.
-(unless window-system
-  (menu-bar-mode -1))
-
 ;; Default colour scheme.
-(load-theme (if window-system 'adwaita 'deeper-blue) t)
+(load-theme (if (display-graphic-p) 'adwaita 'deeper-blue) t)
 
-;; Ensure line numbers are off in the terminal.
+;; If we're not on a graphical display...
 (unless (display-graphic-p)
+  ;; ...get rid of the menu bar and line numbers.
+  (menu-bar-mode -1)
   (global-linum-mode -1))
 
 (provide 'init-style)
