@@ -13,8 +13,6 @@
 (bind-key "M-g"          #'goto-line)
 (bind-key [(meta left)]  #'backward-sexp)
 (bind-key [(meta right)] #'forward-sexp)
-(bind-key "M-p"          (lambda () (interactive) (other-window -1)))
-(bind-key "M-n"          #'other-window)
 
 ;; Editing
 (bind-key "C-c ;"               #'comment-or-uncomment-region)
