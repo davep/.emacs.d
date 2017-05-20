@@ -8,6 +8,7 @@
 
 ;;; Code:
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; My own packages that are in melpa.
 (use-package binclock
   :ensure t)
@@ -40,6 +41,7 @@
   ([f11]        . uptimes-current)
   ([(meta f11)] . uptimes))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Third-party packages from elpa/melpa
 (use-package auto-compile
   :ensure t
