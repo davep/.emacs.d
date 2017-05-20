@@ -24,8 +24,8 @@
 (bind-key [f6]            #'bury-buffer)
 (bind-key [f7]            #'describe-personal-keybindings)
 (bind-key [f9]            #'compile)
-(bind-key "C-c e"         #'eshell)
 (bind-key [(control f11)] #'clean-buffer-list)
+(bind-key "C-c e"         #'eshell)
 (bind-key "C-c C-f"       #'view-file)
 (bind-key "s-r"           #'ielm)
 
