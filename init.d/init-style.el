@@ -35,7 +35,7 @@
 (load-theme (if window-system 'adwaita 'deeper-blue) t)
 
 ;; Ensure line numbers are off in the terminal.
-(unless window-system
+(unless (display-graphic-p)
   (global-linum-mode -1))
 
 (provide 'init-style)
