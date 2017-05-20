@@ -55,7 +55,7 @@
   :diminish "CM"
   :bind
   ("s-SPC" . company-complete)
-  :config
+  :init
   (add-hook 'after-init-hook #'global-company-mode))
 (use-package csharp-mode
   :ensure t)
