@@ -67,6 +67,13 @@
   :config
   (global-emojify-mode)
   :ensure t)
+(use-package fill-column-indicator
+  :ensure t
+  :config
+  (add-hook 'after-change-major-mode-hook
+            (lambda ()
+              (when (buffer-file-name)
+                (fci-mode 1)))))
 (use-package google-contacts
   :ensure t)
 (use-package google-maps
