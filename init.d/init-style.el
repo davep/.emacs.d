@@ -26,7 +26,9 @@
                  (lambda () nil)))))
 
 ;; Window titles.
-(let ((format (concat invocation-name "@" (system-name) " - [%b]")))
+(let ((format (list (user-login-name) "@" (downcase (system-name))
+                    " - "
+                    "[%b" '(:eval (if (buffer-file-name) " (%f)" "")) "]")))
   (setq frame-title-format format
         icon-title-format  format))
 
