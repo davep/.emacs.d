@@ -1,5 +1,4 @@
-;;; init-packages-melpa.el -- Load and configure packages from public
-;;; repos.
+;;; init-packages-melpa.el -- Load and configure packages from public repos.
 
 ;;; Commentary:
 ;;
