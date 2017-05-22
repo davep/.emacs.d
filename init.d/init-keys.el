@@ -13,6 +13,8 @@
 (bind-key "M-g"          #'goto-line)
 (bind-key [(meta left)]  #'backward-sexp)
 (bind-key [(meta right)] #'forward-sexp)
+(bind-key [(super up)]   #'backward-page)
+(bind-key [(super down)] #'forward-page)
 
 ;; Editing
 (bind-key "C-c ;"               #'comment-or-uncomment-region)
