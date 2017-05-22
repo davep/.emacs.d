@@ -38,7 +38,6 @@
           (lambda ()
             (auto-fill-mode)
             (flyspell-mode 1)))
-(add-hook 'emacs-lisp-mode-hook #'setup-compile)
 
 (provide 'init-packages)
 

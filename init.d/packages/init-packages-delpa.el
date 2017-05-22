@@ -64,7 +64,9 @@
   ("C-c C-o" . org-davep-open-dir)
   ("C-c a"   . org-agenda))
 (use-package setup-compile
-  :ensure t)
+  :ensure t
+  :config
+  (add-hook 'emacs-lisp-mode-hook #'setup-compile))
 (use-package msig
   :ensure t)
 (use-package slstats
