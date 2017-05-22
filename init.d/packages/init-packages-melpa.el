@@ -30,6 +30,8 @@
   :ensure t)
 (use-package services
   :ensure t)
+(use-package slstats
+  :ensure t)
 (use-package thinks
   :ensure t
   :bind

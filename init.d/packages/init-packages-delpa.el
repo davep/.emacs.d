@@ -71,8 +71,6 @@
   (add-hook 'emacs-lisp-mode-hook #'setup-compile))
 (use-package msig
   :ensure t)
-(use-package slstats
-  :ensure t)
 (use-package smartsig
   :ensure t)
 (use-package unbind
