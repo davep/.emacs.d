@@ -87,6 +87,10 @@
               (flyspell-mode 1))))
 (use-package package-lint
   :ensure t)
+(use-package page-break-lines
+  :ensure t
+  :init
+  (global-page-break-lines-mode))
 (use-package paren-face
   :ensure t
   :demand
