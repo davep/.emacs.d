@@ -3,6 +3,7 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        company-complete
         dabbrev-expand
         electric-pair-delete-pair
         kill-region
