@@ -46,9 +46,6 @@
   :bind
   (:map js-mode-map ("RET" . newline-and-indent)))
 (use-package cc-mode
-  :config
-  (add-hook 'c-mode-hook   #'setup-compile)
-  (add-hook 'c++-mode-hook #'setup-compile)
   :bind
   (:map c-mode-map   ("RET" . newline-and-indent))
   (:map c++-mode-map ("RET" . newline-and-indent)))

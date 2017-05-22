@@ -66,6 +66,8 @@
 (use-package setup-compile
   :ensure t
   :config
+  (add-hook 'c-mode-hook          #'setup-compile)
+  (add-hook 'c++-mode-hook        #'setup-compile)
   (add-hook 'emacs-lisp-mode-hook #'setup-compile))
 (use-package msig
   :ensure t)
