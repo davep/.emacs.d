@@ -89,6 +89,7 @@
   :ensure t)
 (use-package page-break-lines
   :ensure t
+  :diminish 'page-break-lines-mode
   :init
   (global-page-break-lines-mode))
 (use-package paren-face
