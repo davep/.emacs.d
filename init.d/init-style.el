@@ -28,7 +28,9 @@
 ;; Window titles.
 (let ((format (list (user-login-name) "@" (downcase (system-name))
                     " - "
-                    "[%b" '(:eval (if (buffer-file-name) " (%f)" "")) "]")))
+                    "[%b" '(:eval (if (buffer-file-name)
+                                      (format " (%s)" (abbreviate-file-name (buffer-file-name)))
+                                    "")) "]")))
   (setq frame-title-format format
         icon-title-format  format))
 
