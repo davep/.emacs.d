@@ -11,19 +11,20 @@
 (load-theme (if (display-graphic-p) 'adwaita 'deeper-blue) t)
 
 ;; Window position and size.
-(let ((styles
-       '(
-         ("bellerophon" .
-          (lambda ()
-            (set-frame-size (selected-frame) 90 50)
-            (set-frame-position (selected-frame) 230 60)))
-         ("ariel" .
-          (lambda ()
-            (set-frame-size (selected-frame) 90 50)
-            (set-frame-position (selected-frame) 300 80))))))
-  (when (display-graphic-p)
-    (funcall (or (cdr (assoc (car (split-string (downcase (system-name)) "\\.")) styles))
-                 (lambda () nil)))))
+(when (display-graphic-p)
+  (let ((short-name (car (split-string (downcase (system-name)) "\\.")))
+        (gndn (lambda () nil))
+        (styles
+         '(
+           ("bellerophon" .
+            (lambda ()
+              (set-frame-size (selected-frame) 90 50)
+              (set-frame-position (selected-frame) 230 60)))
+           ("ariel" .
+            (lambda ()
+              (set-frame-size (selected-frame) 90 50)
+              (set-frame-position (selected-frame) 300 80))))))
+    (funcall (or (cdr (assoc short-name styles)) gndn))))
 
 ;; Window titles.
 (let ((format (list (user-login-name) "@" (downcase (system-name))
