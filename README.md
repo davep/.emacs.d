@@ -6,8 +6,8 @@ It's based quite heavily around the use of `customize` in preference to
 setting values "by hand" in `init.el` and friends, and also around the use
 of package archive-installed packages in preference to maintaining a local
 library of code (archives currently used are [elpa](https://elpa.gnu.org/)
-and [melpa](https://melpa.org/)). Even my own personal packages which make
-no sense being contributed to public package archives live
+and [melpa](https://melpa.org/)). Even my own personal packages (which make
+no sense being contributed to public package archives) live
 in [a personal package archive](http://blog.davep.org/delpa/).
 
 It heavily uses [`use-package`](https://github.com/jwiegley/use-package).
