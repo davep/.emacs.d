@@ -47,8 +47,10 @@
 (use-package moving
   :ensure t
   :bind
-  ([home] . moving-home)
-  ([end]  . moving-end))
+  ([home]          . moving-home)
+  ([(super left)]  . moving-home)
+  ([end]           . moving-end)
+  ([(super right)] . moving-end))
 (use-package ngn
   :ensure t)
 (use-package nuke-buffers
