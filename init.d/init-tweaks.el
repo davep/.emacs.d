@@ -10,7 +10,7 @@
 
 (require 'is-a)
 
-;; On the Mac local bin doesn't seem to be in the path if I run from the
+;; On the Mac, local bin doesn't seem to be in the path if I run from the
 ;; dock. Fix this.
 (let ((local "/usr/local/bin"))
   (when (and is-a-macOS-p (not (member local exec-path)))
