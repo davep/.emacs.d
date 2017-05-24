@@ -7,6 +7,7 @@
 
 ;;; Code:
 
+
 (use-package flyspell
   :config
   (mapc (lambda (hook)
@@ -62,6 +63,18 @@
               (smartsig-clear)
               (smartsig-add "emacs"   "~/.sigs/emacs"   "emacs" "xemacs" "elisp" "gnu" "lbdb" "uptimes" "quickurl" "smartsig" "boxquote")
               (smartsig-add "sawfish" "~/.sigs/sawfish" "sawfish" "sawmill" "librep" "rep" "gnome"))))
+
+
+;; Catch-all hooks, etc.
+(add-hook 'text-mode-hook
+          (lambda()
+            (flyspell-mode 1)
+            (footnote-mode 1)))
+(add-hook 'org-mode-hook
+          (lambda ()
+            (auto-fill-mode)
+            (flyspell-mode 1)))
+
 
 (provide 'init-packages-builtin)
 

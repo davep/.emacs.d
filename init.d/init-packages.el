@@ -20,24 +20,10 @@
 ;; Add the package loading directory to the load-path.
 (push (concat user-emacs-directory "init.d/packages/") load-path)
 
-;; Emacs builtin packages, that aren't normally loaded.
-(require 'init-packages-builtin)
-
-;; My personal packages. Normally loaded in from delpa.
-(require 'init-packages-delpa)
-
-;; Packages that live in elpa/melpa.
-(require 'init-packages-melpa)
-
-;; Catch-all hooks, etc.
-(add-hook 'text-mode-hook
-          (lambda()
-            (flyspell-mode 1)
-            (footnote-mode 1)))
-(add-hook 'org-mode-hook
-          (lambda ()
-            (auto-fill-mode)
-            (flyspell-mode 1)))
+;; Use all the packages.
+(require 'init-packages-builtin)        ; Things built into Emacs.
+(require 'init-packages-delpa)          ; My personal archive.
+(require 'init-packages-melpa)          ; Melpa.
 
 (provide 'init-packages)
 
