@@ -60,9 +60,9 @@
 (use-package org-davep
   :ensure t
   :bind
-  ("C-c o"   . org-davep-open-inbox)
-  ("C-c C-o" . org-davep-open-dir)
-  ("C-c a"   . org-agenda))
+  ("C-c o i" . org-davep-open-inbox)
+  ("C-c o d" . org-davep-open-dir)
+  ("C-c o a" . org-agenda))
 (use-package setup-compile
   :ensure t
   :config
