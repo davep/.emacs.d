@@ -21,6 +21,12 @@
   (when (and is-a-unix-p (file-exists-p bin))
     (push bin exec-path)))
 
+;; Try and get aspell working on a Windows machine.
+(let ((aspell "C:/Program Files (x86)/Aspell/bin/"))
+  (when (and is-a-win32-p (file-exists-p aspell))
+    (push aspell exec-path)
+    (setq ispell-program-name "aspell")))
+
 ;; Enable some disabled commands
 (mapc (lambda (command)
         (put command 'disabled nil))
