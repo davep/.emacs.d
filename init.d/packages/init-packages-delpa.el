@@ -71,6 +71,8 @@
   ("C-c o i" . org-davep-open-inbox)
   ("C-c o d" . org-davep-open-dir)
   ("C-c o a" . org-agenda))
+(use-package qrencode
+  :ensure t)
 (use-package setup-compile
   :ensure t
   :config
