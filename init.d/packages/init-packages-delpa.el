@@ -55,6 +55,8 @@
   ([(super left)]  . moving-home)
   ([end]           . moving-end)
   ([(super right)] . moving-end))
+(use-package msig
+  :ensure t)
 (use-package ngn
   :ensure t)
 (use-package nuke-buffers
@@ -75,8 +77,6 @@
   (add-hook 'c-mode-hook          #'setup-compile)
   (add-hook 'c++-mode-hook        #'setup-compile)
   (add-hook 'emacs-lisp-mode-hook #'setup-compile))
-(use-package msig
-  :ensure t)
 (use-package smartsig
   :ensure t)
 (use-package unbind
