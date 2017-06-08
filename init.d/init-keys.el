@@ -30,6 +30,10 @@
 (bind-key "C-c e"         #'eshell)
 (bind-key "C-c C-f"       #'view-file)
 (bind-key "s-r"           #'ielm)
+(bind-key "C-c p l"       #'package-list-packages)
+(bind-key "C-c p r"       #'package-refresh-contents)
+(bind-key "C-c p p"       #'package-lint-current-buffer)
+(bind-key "C-c p u"       #'package-upload-buffer)
 
 ;; Things specific to macOS.
 (when is-a-macOS-window-p
