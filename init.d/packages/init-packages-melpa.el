@@ -141,6 +141,11 @@
 (use-package w3m
   :if is-a-macOS-p
   :ensure t)
+(use-package wttrin
+  :ensure t
+  :config
+  (setq wttrin-default-cities '("Edinburgh"))
+  (setq wttrin-default-accept-language '("Accept-Language" . "en-GB")))
 
 (provide 'init-packages-melpa)
 
