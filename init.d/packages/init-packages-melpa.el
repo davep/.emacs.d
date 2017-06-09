@@ -76,6 +76,15 @@
   :ensure t)
 (use-package google-maps
   :ensure t)
+(use-package highlight-chars
+  :ensure t
+  :demand
+  :commands hc-highlight-trailing-whitespace
+  :config
+  (add-hook 'after-change-major-mode-hook
+            (lambda ()
+              (when (buffer-file-name)
+                (hc-highlight-trailing-whitespace)))))
 (use-package hyde
   :ensure t
   :commands hyde)
@@ -90,6 +99,14 @@
             (lambda ()
               (auto-fill-mode)
               (flyspell-mode 1))))
+(use-package multiple-cursors
+  :ensure t
+  :bind
+  ("C-."     . mc/mark-next-like-this)
+  ("C-,"     . mc/mark-previous-like-this)
+  ("C->"     . mc/mark-all-like-this)
+  ("C-c ."   . mc/mark-all-like-this-dwim)
+  ("C-c C-." . mc/edit-lines))
 (use-package package-lint
   :ensure t)
 (use-package page-break-lines
@@ -124,23 +141,6 @@
 (use-package w3m
   :if is-a-macOS-p
   :ensure t)
-(use-package highlight-chars
-  :ensure t
-  :demand
-  :commands hc-highlight-trailing-whitespace
-  :config
-  (add-hook 'after-change-major-mode-hook
-            (lambda ()
-              (when (buffer-file-name)
-                (hc-highlight-trailing-whitespace)))))
-(use-package multiple-cursors
-  :ensure t
-  :bind
-  ("C-."     . mc/mark-next-like-this)
-  ("C-,"     . mc/mark-previous-like-this)
-  ("C->"     . mc/mark-all-like-this)
-  ("C-c ."   . mc/mark-all-like-this-dwim)
-  ("C-c C-." . mc/edit-lines))
 
 (provide 'init-packages-melpa)
 
