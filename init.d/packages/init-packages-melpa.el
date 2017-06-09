@@ -49,6 +49,9 @@
   :config
   (auto-compile-on-save-mode)
   (auto-compile-on-load-mode))
+(use-package beacon
+  :ensure t
+  :config (beacon-mode 1))
 (use-package browse-kill-ring
   :ensure t
   :bind
