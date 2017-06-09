@@ -145,7 +145,9 @@
   :ensure t
   :config
   (setq wttrin-default-cities '("Edinburgh"))
-  (setq wttrin-default-accept-language '("Accept-Language" . "en-GB")))
+  (setq wttrin-default-accept-language '("Accept-Language" . "en-GB"))
+  :bind
+  ("C-c w" . wttrin))
 
 (provide 'init-packages-melpa)
 
