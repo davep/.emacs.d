@@ -19,10 +19,6 @@
   :ensure t)
 (use-package csrclr
   :ensure t)
-(use-package cheat-sh
-  :ensure t
-  :bind
-  ("C-c ?" . cheat-sh-maybe-region))
 (use-package davep-org
   :ensure t)
 (use-package expando

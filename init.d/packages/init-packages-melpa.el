@@ -24,6 +24,10 @@
   ("C-c C-h k" . boxquote-describe-key)
   ("C-c !"     . boxquote-shell-command)
   ("C-c C-h w" . boxquote-where-is))
+(use-package cheat-sh
+  :ensure t
+  :bind
+  ("C-c ?" . cheat-sh-maybe-region))
 (use-package obfusurl
   :ensure t)
 (use-package protocols
