@@ -136,7 +136,9 @@
   :ensure t)
 (use-package sass-mode
   :ensure t
-  :mode "\\.scss$")
+  :mode "\\.scss$"
+  :config
+  (setq sass-indent-offset 4))
 (use-package slime
   :ensure t
   :config

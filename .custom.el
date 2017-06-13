@@ -116,7 +116,6 @@
             (make-local-variable
              (quote package-build-recipes-dir))
             default-directory)))))
- '(sass-indent-offset 4)
  '(savehist-file "~/.emacs.d/.history.el")
  '(savehist-mode t)
  '(scroll-conservatively 101)
