@@ -15,7 +15,8 @@
         '(c-mode-hook
           c++-mode-hook
           emacs-lisp-mode-hook
-          js-mode-hook)))
+          js-mode-hook
+          sh-mode-hook)))
 (use-package footnote
   :config
   (add-hook 'footnote-mode-hook
