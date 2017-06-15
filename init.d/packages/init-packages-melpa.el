@@ -54,6 +54,7 @@
   (auto-compile-on-save-mode)
   (auto-compile-on-load-mode))
 (use-package beacon
+  :if (display-graphic-p)
   :ensure t
   :diminish 'beacon-mode
   :config (beacon-mode 1))
