@@ -2,10 +2,12 @@
 
 My personal emacs config.
 
-It's based quite heavily around the use of `customize` in preference to
-setting values "by hand" in `init.el` and friends, and also around the use
-of packages installed from package archives, in preference to maintaining a
-local library of code. Archives currently used
+It's based quite heavily around the use
+of
+[`customize`](https://www.gnu.org/software/emacs/manual/html_node/emacs/Easy-Customization.html) in
+preference to setting values "by hand" in `init.el` and friends, and also
+around the use of packages installed from package archives, in preference to
+maintaining a local library of code. Archives currently used
 are [elpa](https://elpa.gnu.org/) and [melpa](https://melpa.org/)). Even my
 own personal packages (which make no sense being contributed to public
 package archives) live
