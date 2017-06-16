@@ -131,6 +131,7 @@
  '(tramp-persistency-file-name "~/.emacs.d/.tramp.el")
  '(truncate-lines t)
  '(url-cache-directory "~/.emacs.d/.url/cache")
+ '(url-configuration-directory "~/.emacs.d/.url/")
  '(user-mail-address "davep@davep.org")
  '(version-control t))
 (custom-set-faces
