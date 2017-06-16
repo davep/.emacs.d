@@ -1,6 +1,6 @@
 # .emacs.d
 
-My personal emacs config.
+My personal Emacs config.
 
 It's based quite heavily around the use
 of
