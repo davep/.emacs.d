@@ -18,7 +18,7 @@ of [`use-package`](https://github.com/jwiegley/use-package).
 
 The current look of my
 config
-[started life in early 2016 when I killed off my original `~/.emacs` and started using what I think is a saner approach via `~/.emacs.d`](http://blog.davep.org/2016/05/26/starting_fresh_with_gnu_emacs.html).
+[started life in early 2016 when I killed off my original `~/.emacs` and started using what I think is a cleaner approach via `~/.emacs.d`](http://blog.davep.org/2016/05/26/starting_fresh_with_gnu_emacs.html).
 About a year later I made a few more significant changes
 to
 [make things work even better](http://blog.davep.org/2017/04/01/another_revamp_of_my_emacs_config.html).
