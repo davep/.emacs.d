@@ -27,7 +27,11 @@
 (use-package cheat-sh
   :ensure t
   :bind
-  ("C-c ?" . cheat-sh-maybe-region))
+  ("C-c / /" . cheat-sh-maybe-region)
+  ("C-c / l" . cheat-sh-list)
+  ("C-c / ?" . cheat-sh-help)
+  ("C-c / s" . cheat-sh-search)
+  ("C-c / t" . cheat-sh-search-topic))
 (use-package obfusurl
   :ensure t)
 (use-package protocols
