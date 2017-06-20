@@ -104,7 +104,8 @@
 (use-package magit
   :ensure t
   :bind
-  ("C-c g" . magit-status))
+  ("C-c g s" . magit-status)
+  ("C-c g l" . magit-log-all))
 (use-package markdown-mode
   :ensure t
   :config
