@@ -45,7 +45,8 @@
 (use-package thinks
   :ensure t
   :bind
-  ("C-c C-t" . thinks-maybe-region))
+  ("C-c t t" . thinks-maybe-region)
+  ("C-c t y" . thinks-yank))
 (use-package uptimes
   :ensure t
   :bind
