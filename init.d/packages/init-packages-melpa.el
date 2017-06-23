@@ -114,6 +114,10 @@
             (lambda ()
               (auto-fill-mode)
               (flyspell-mode 1))))
+(use-package minimap
+  :ensure t
+  :config
+  (setq minimap-window-location 'right))
 (use-package multiple-cursors
   :ensure t
   :bind
