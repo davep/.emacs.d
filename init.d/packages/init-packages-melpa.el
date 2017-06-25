@@ -34,6 +34,10 @@
   ("C-c / ?" . cheat-sh-help)
   ("C-c / s" . cheat-sh-search)
   ("C-c / t" . cheat-sh-search-topic))
+(use-package dad-joke
+  :ensure t
+  :bind
+  ("C-c C-d" . dad-joke))
 (use-package obfusurl
   :ensure t)
 (use-package protocols

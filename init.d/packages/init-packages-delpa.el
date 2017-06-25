@@ -19,10 +19,6 @@
   :ensure t)
 (use-package csrclr
   :ensure t)
-(use-package dad-joke
-  :ensure t
-  :bind
-  ("C-c C-d" . dad-joke))
 (use-package davep-org
   :ensure t)
 (use-package expando
