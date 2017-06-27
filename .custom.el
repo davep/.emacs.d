@@ -132,6 +132,7 @@
  '(truncate-lines t)
  '(url-cache-directory "~/.emacs.d/.url/cache")
  '(url-configuration-directory "~/.emacs.d/.url/")
+ '(url-cookie-file "/Users/davep/.emacs.d/.url/cookies")
  '(user-mail-address "davep@davep.org")
  '(version-control t))
 (custom-set-faces
