@@ -49,6 +49,7 @@
       (if is-a-root-user-p "#" "$")
       " ")))
  '(eshell-prompt-regexp "^[^#$\\n]*[#$] ")
+ '(eww-bookmarks-directory "~/.emacs.d/.eww")
  '(fill-column 76)
  '(global-linum-mode t)
  '(gnus-default-nntp-server "news.eternal-september.org")
