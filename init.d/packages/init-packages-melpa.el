@@ -107,6 +107,7 @@
   :ensure t
   :commands hyde)
 (use-package magit
+  :if is-a-unix-p
   :ensure t
   :bind
   ("C-c g s" . magit-status)
