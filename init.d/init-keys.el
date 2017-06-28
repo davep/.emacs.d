@@ -34,6 +34,7 @@
 (bind-key "C-c p r"       #'package-refresh-contents)
 (bind-key "C-c p p"       #'package-lint-current-buffer)
 (bind-key "C-c p u"       #'package-upload-buffer)
+(bind-key "C-c C-w"       #'eww)
 
 ;; Things specific to macOS.
 (when is-a-macOS-window-p
