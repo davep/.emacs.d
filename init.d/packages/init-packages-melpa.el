@@ -165,9 +165,6 @@
   (add-hook 'slime-inferior-process-start-hook
             (lambda ()
               (require 'slime-fancy))))
-(use-package w3m
-  :if is-a-macOS-p
-  :ensure t)
 (use-package wttrin
   :ensure t
   :config
