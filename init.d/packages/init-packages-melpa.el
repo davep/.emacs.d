@@ -164,6 +164,8 @@
   (add-hook 'slime-inferior-process-start-hook
             (lambda ()
               (require 'slime-fancy))))
+(use-package suggest
+  :ensure t)
 (use-package wttrin
   :ensure t
   :config
