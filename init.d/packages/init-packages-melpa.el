@@ -80,8 +80,6 @@
   ("s-SPC" . company-complete)
   :init
   (add-hook 'after-init-hook #'global-company-mode))
-(use-package csharp-mode
-  :ensure t)
 (use-package dictionary
   :ensure t)
 (use-package emojify
