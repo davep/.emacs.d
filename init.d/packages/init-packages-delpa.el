@@ -63,6 +63,11 @@
   ([(control meta f11)] . nuke-buffers))
 (use-package nukneval
   :ensure t)
+(use-package numbers
+  :ensure t
+  :bind
+  ("C-c n m" . numbers-math)
+  ("C-c n t" . numbers-trivia))
 (use-package org-davep
   :ensure t
   :bind
