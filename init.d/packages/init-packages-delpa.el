@@ -34,7 +34,8 @@
   :bind
   ("C-RET"   . insert-line-split-keeping-fill-prefix)
   ("C-c RET" . insert-line-split-keeping-fill-prefix)
-  ("C-c f"   . insert-filename))
+  ("C-c f"   . insert-filename)
+  ("C-c s"   . insert-sexp-link))
 (use-package itch
   :ensure t
   :bind
