@@ -27,6 +27,8 @@
   ("C-c C-e" . expando-macro))
 (use-package fscroll
   :ensure t)
+(use-package graburl
+  :ensure t)
 (use-package icmp-info
   :ensure t)
 (use-package insert
