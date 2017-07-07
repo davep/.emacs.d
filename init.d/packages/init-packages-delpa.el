@@ -68,8 +68,10 @@
 (use-package numbers
   :ensure t
   :bind
-  ("C-c n m" . numbers-math)
-  ("C-c n t" . numbers-trivia))
+  ("C-c n m"   . numbers-math)
+  ("C-c n t"   . numbers-trivia)
+  ("C-c C-n m" . numbers-random-math)
+  ("C-c C-n t" . numbers-random-trivia))
 (use-package org-davep
   :ensure t
   :bind
