@@ -93,6 +93,11 @@
 (use-package paren
   :init
   (show-paren-mode t))
+(use-package savehist
+  :config
+  :init
+  (setq savehist-file "~/.emacs.d/.history.el")
+  (savehist-mode t))
 (use-package tramp
   :init
   (setq

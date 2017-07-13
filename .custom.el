@@ -64,8 +64,6 @@
             (make-local-variable
              (quote package-build-recipes-dir))
             default-directory)))))
- '(savehist-file "~/.emacs.d/.history.el")
- '(savehist-mode t)
  '(version-control t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
