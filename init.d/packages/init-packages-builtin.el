@@ -109,6 +109,10 @@
   :bind
   (:map opascal-mode-map ("RET" . newline-and-indent)))
 (use-package pascal
+  :config
+  (setq pascal-auto-newline t
+        pascal-indent-level 2
+        pascal-tab-always-indent t)
   :bind
   (:map pascal-mode-map ("RET" . newline-and-indent)))
 
