@@ -29,8 +29,6 @@
  '(kept-new-versions 10)
  '(load-prefer-newer t)
  '(mouse-avoidance-mode (quote jump) nil (avoid))
- '(ns-alternate-modifier (quote super))
- '(ns-command-modifier (quote meta))
  '(nsm-save-host-names t)
  '(nsm-settings-file "~/.emacs.d/.network-security.data")
  '(oauth2-token-file "~/.emacs.d/.oauth2.plstore")

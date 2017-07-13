@@ -38,6 +38,8 @@
 
 ;; Things specific to macOS.
 (when is-a-macOS-window-p
+  (set (intern "ns-alternate-modifier") 'super)
+  (set (intern "ns-command-modifier")   'meta)
   (bind-key [(super tab)] #'completion-at-point))
 
 ;; Things specific to Windows.
