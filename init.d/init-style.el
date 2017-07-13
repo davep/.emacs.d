@@ -7,6 +7,9 @@
 
 ;;; Code:
 
+;; No toolbar. Ever. Just.... no!
+(tool-bar-mode -1)
+
 ;; Default colour scheme.
 (load-theme (if (display-graphic-p) 'adwaita 'deeper-blue) t)
 

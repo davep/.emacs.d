@@ -96,7 +96,6 @@
  '(show-paren-mode t)
  '(smtpmail-smtp-server "smtp.gmail.com")
  '(smtpmail-smtp-service 587)
- '(tool-bar-mode nil)
  '(url-cache-directory "~/.emacs.d/.url/cache")
  '(url-configuration-directory "~/.emacs.d/.url/")
  '(url-cookie-file "/Users/davep/.emacs.d/.url/cookies")
