@@ -75,7 +75,9 @@
  ;; Only show a cursor in the focused window
  cursor-in-non-selected-windows nil
  ;; Sensible scrolling.
- scroll-conservatively 101)
+ scroll-conservatively 101
+ ;; Don't error just because we're near the bounds of a buffer.
+ scroll-error-top-bottom t)
 
 (provide 'init-style)
 
