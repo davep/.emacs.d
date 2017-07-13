@@ -43,6 +43,7 @@
       display-time-day-and-date t
       display-time-format "%F %H:%M")
 (display-time-mode t)
+(column-number-mode t)
 
 ;; If we're not on a graphical display...
 (unless (display-graphic-p)

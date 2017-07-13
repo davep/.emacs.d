@@ -19,7 +19,6 @@
      (other . "gnu"))))
  '(c-offsets-alist (quote ((inline-open . 0) (case-label . +) (inclass . ++))))
  '(case-fold-search t)
- '(column-number-mode t)
  '(delete-old-versions t)
  '(diff-switches "-u")
  '(dired-use-ls-dired nil)
