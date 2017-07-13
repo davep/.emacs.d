@@ -27,6 +27,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Load various startup things.
 (unless noninteractive
+  (require 'init-editing)
   (require 'init-tweaks)
   (require 'init-keys)
   (require 'init-style))

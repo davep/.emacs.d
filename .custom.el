@@ -24,7 +24,6 @@
  '(dired-use-ls-dired nil)
  '(eww-bookmarks-directory "~/.emacs.d/.eww")
  '(ibuffer-expert t)
- '(indent-tabs-mode nil)
  '(ispell-dictionary "british")
  '(ispell-highlight-face (quote flyspell-incorrect))
  '(js-switch-indent-offset 4)
@@ -45,37 +44,36 @@
  '(safe-local-variable-values
    (quote
     ((eval when
-           (and
-            (buffer-file-name)
-            (file-regular-p
-             (buffer-file-name))
-            (string-match-p "^[^.]"
-                            (buffer-file-name)))
-           (unless
-               (featurep
-                (quote package-build))
-             (let
-                 ((load-path
-                   (cons "../package-build" load-path)))
-               (require
-                (quote package-build))))
-           (package-build-minor-mode)
-           (set
-            (make-local-variable
-             (quote package-build-working-dir))
-            (expand-file-name "../working/"))
-           (set
-            (make-local-variable
-             (quote package-build-archive-dir))
-            (expand-file-name "../packages/"))
-           (set
-            (make-local-variable
-             (quote package-build-recipes-dir))
-            default-directory)))))
+	   (and
+	    (buffer-file-name)
+	    (file-regular-p
+	     (buffer-file-name))
+	    (string-match-p "^[^.]"
+			    (buffer-file-name)))
+	   (unless
+	       (featurep
+		(quote package-build))
+	     (let
+		 ((load-path
+		   (cons "../package-build" load-path)))
+	       (require
+		(quote package-build))))
+	   (package-build-minor-mode)
+	   (set
+	    (make-local-variable
+	     (quote package-build-working-dir))
+	    (expand-file-name "../working/"))
+	   (set
+	    (make-local-variable
+	     (quote package-build-archive-dir))
+	    (expand-file-name "../packages/"))
+	   (set
+	    (make-local-variable
+	     (quote package-build-recipes-dir))
+	    default-directory)))))
  '(savehist-file "~/.emacs.d/.history.el")
  '(savehist-mode t)
  '(send-mail-function (quote smtpmail-send-it))
- '(sentence-end-double-space nil)
  '(shift-select-mode nil)
  '(smtpmail-smtp-server "smtp.gmail.com")
  '(smtpmail-smtp-service 587)
