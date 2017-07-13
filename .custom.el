@@ -28,7 +28,6 @@
  '(js-switch-indent-offset 4)
  '(kept-new-versions 10)
  '(load-prefer-newer t)
- '(mouse-avoidance-mode (quote jump) nil (avoid))
  '(nsm-save-host-names t)
  '(nsm-settings-file "~/.emacs.d/.network-security.data")
  '(oauth2-token-file "~/.emacs.d/.oauth2.plstore")
