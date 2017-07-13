@@ -36,6 +36,9 @@
 (bind-key "C-c p u"       #'package-upload-buffer)
 (bind-key "C-c C-w"       #'eww)
 
+;; Don't do shift-selecting.
+(setq shift-select-mode nil)
+
 ;; Things specific to macOS.
 (when is-a-macOS-window-p
   (set (intern "ns-alternate-modifier") 'super)

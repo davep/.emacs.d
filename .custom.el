@@ -66,7 +66,6 @@
             default-directory)))))
  '(savehist-file "~/.emacs.d/.history.el")
  '(savehist-mode t)
- '(shift-select-mode nil)
  '(version-control t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
