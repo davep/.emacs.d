@@ -109,7 +109,6 @@
             (auto-fill-mode)
             (flyspell-mode 1)))
 
-
 (provide 'init-packages-builtin)
 
 ;;; init-packages-builtin.el ends here
