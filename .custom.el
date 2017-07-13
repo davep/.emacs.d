@@ -84,7 +84,6 @@
  '(send-mail-function (quote smtpmail-send-it))
  '(sentence-end-double-space nil)
  '(shift-select-mode nil)
- '(show-paren-mode t)
  '(smtpmail-smtp-server "smtp.gmail.com")
  '(smtpmail-smtp-service 587)
  '(url-cache-directory "~/.emacs.d/.url/cache")

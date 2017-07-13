@@ -84,6 +84,9 @@
   ("C-c u" . quickurl)
   :config
   (setq quickurl-url-file (locate-user-emacs-file ".quickurls.el")))
+(use-package paren
+  :init
+  (show-paren-mode t))
 (use-package tramp
   :init
   (setq
