@@ -41,12 +41,6 @@
  '(nsm-save-host-names t)
  '(nsm-settings-file "~/.emacs.d/.network-security.data")
  '(oauth2-token-file "~/.emacs.d/.oauth2.plstore")
- '(org-agenda-files
-   (quote
-    ("~/Dropbox/Sync/Org/elisp.org" "~/Dropbox/Sync/Org/inbox.org")))
- '(org-default-notes-file "~/Dropbox/Sync/Org/inbox.org")
- '(org-directory "~/Dropbox/Sync/Org")
- '(org-log-done (quote time))
  '(package-archive-upload-base "~/develop/elisp/delpa/")
  '(package-selected-packages
    (quote

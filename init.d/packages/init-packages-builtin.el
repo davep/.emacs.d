@@ -71,6 +71,14 @@
               (smartsig-clear)
               (smartsig-add "emacs"   "~/.sigs/emacs"   "emacs" "xemacs" "elisp" "gnu" "lbdb" "uptimes" "quickurl" "smartsig" "boxquote")
               (smartsig-add "sawfish" "~/.sigs/sawfish" "sawfish" "sawmill" "librep" "rep" "gnome"))))
+(use-package org
+  :config
+  (setq org-agenda-files
+        '("~/Dropbox/Sync/Org/elisp.org"
+          "~/Dropbox/Sync/Org/inbox.org")
+        org-default-notes-file "~/Dropbox/Sync/Org/inbox.org"
+        org-directory "~/Dropbox/Sync/Org"
+        org-log-done 'time))
 (use-package quickurl
   :bind
   ("C-c u" . quickurl)
