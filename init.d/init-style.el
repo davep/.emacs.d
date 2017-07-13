@@ -37,9 +37,12 @@
 
 ;; If we're not on a graphical display...
 (unless (display-graphic-p)
-  ;; ...get rid of the menu bar and line numbers.
-  (menu-bar-mode -1)
-  (global-linum-mode -1))
+  ;; ...get rid of the menu bar.
+  (menu-bar-mode -1))
+
+;; When we're on a graphical display...
+(when (display-graphic-p)
+  (global-linum-mode 1))
 
 (provide 'init-style)
 
