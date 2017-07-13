@@ -35,6 +35,12 @@
   (setq frame-title-format format
         icon-title-format  format))
 
+;; Mode line.
+(setq display-time-24hr-format t
+      display-time-day-and-date t
+      display-time-format "%F %H:%M")
+(display-time-mode t)
+
 ;; If we're not on a graphical display...
 (unless (display-graphic-p)
   ;; ...get rid of the menu bar.
