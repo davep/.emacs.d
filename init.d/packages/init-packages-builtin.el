@@ -38,6 +38,10 @@
 (use-package eww
   :config
   (setq eww-bookmarks-directory "~/.emacs.d/.eww"))
+(use-package ispell
+  :config
+  (setq ispell-dictionary     "british"
+        ispell-highlight-face 'flyspell-incorrect))
 (use-package flyspell
   :config
   (mapc (lambda (hook)

@@ -23,8 +23,6 @@
  '(diff-switches "-u")
  '(dired-use-ls-dired nil)
  '(ibuffer-expert t)
- '(ispell-dictionary "british")
- '(ispell-highlight-face (quote flyspell-incorrect))
  '(js-switch-indent-offset 4)
  '(kept-new-versions 10)
  '(load-prefer-newer t)
