@@ -22,7 +22,6 @@
  '(delete-old-versions t)
  '(diff-switches "-u")
  '(dired-use-ls-dired nil)
- '(electric-pair-mode t)
  '(eww-bookmarks-directory "~/.emacs.d/.eww")
  '(ibuffer-expert t)
  '(indent-tabs-mode nil)

@@ -21,6 +21,9 @@
   :config
   (setq-default dired-omit-files-p t)
   (setq dired-omit-files "^\\.[^.]"))
+(use-package elec-pair
+  :init
+  (electric-pair-mode t))
 (use-package eshell
   :config
   (setq
