@@ -16,6 +16,17 @@
    calendar-latitude      55.9
    calendar-longitude     -3.2
    calendar-location-name "Edinburgh, Scotland"))
+(use-package eshell
+  :config
+  (setq
+   eshell-directory-name  "~/.emacs.d/.eshell/"
+   eshell-prompt-regexp   "^[^#$\\n]*[#$] "
+   eshell-prompt-function (lambda ()
+                            (concat (user-login-name)
+                             ":"
+                             (abbreviate-file-name (eshell/pwd))
+                             (if is-a-root-user-p "#" "$")
+                             " "))))
 (use-package flyspell
   :config
   (mapc (lambda (hook)

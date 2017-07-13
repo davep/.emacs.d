@@ -30,17 +30,6 @@
  '(display-time-format "%F %H:%M")
  '(display-time-mode t)
  '(electric-pair-mode t)
- '(eshell-directory-name "~/.emacs.d/.eshell/")
- '(eshell-prompt-function
-   (lambda nil
-     (concat
-      (user-login-name)
-      ":"
-      (abbreviate-file-name
-       (eshell/pwd))
-      (if is-a-root-user-p "#" "$")
-      " ")))
- '(eshell-prompt-regexp "^[^#$\\n]*[#$] ")
  '(eww-bookmarks-directory "~/.emacs.d/.eww")
  '(fill-column 76)
  '(gnus-default-nntp-server "news.eternal-september.org")
