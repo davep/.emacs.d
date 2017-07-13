@@ -1,8 +1,10 @@
-;;; init-keys.el --- Personal keyboard bindings
+;;; init-keys.el --- Personal keyboard bindings and keyboard tweaks
 
 ;;; Commentary:
 ;;
-;; init-keys.el contains my personal keyboard bindings.
+;; init-keys.el contains my personal keyboard bindings as well as general
+;; keyboard tweaks and OS-specific settings. Any pack-specific bindings will
+;; be with the relevant `use-package' elsewhere in this config.
 
 ;;; Code:
 
