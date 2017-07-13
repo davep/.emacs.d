@@ -19,7 +19,11 @@
  ;; Configure the URL package.
  url-configuration-directory "~/.emacs.d/.url/"
  url-cache-directory         "~/.emacs.d/.url/cache"
- url-cookie-file             "~/.emacs.d/.url/cookies")
+ url-cookie-file             "~/.emacs.d/.url/cookies"
+ ;; Security.
+ nsm-save-host-names t
+ nsm-settings-file   "~/.emacs.d/.network-security.data"
+ oauth2-token-file   "~/.emacs.d/.oauth2.plstore")
 
 (provide 'init-net)
 

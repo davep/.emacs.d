@@ -28,9 +28,6 @@
  '(js-switch-indent-offset 4)
  '(kept-new-versions 10)
  '(load-prefer-newer t)
- '(nsm-save-host-names t)
- '(nsm-settings-file "~/.emacs.d/.network-security.data")
- '(oauth2-token-file "~/.emacs.d/.oauth2.plstore")
  '(package-selected-packages
    (quote
     (graburl numbers suggest minimap dad-joke wttrin beacon qrencode cheat-sh page-break-lines company slstats expando is-a msig signature smartsig macdob powerline google-contacts google-maps nuke-buffers longmacs magit setup-compile ngn winsplit org-davep icmp-info multiple-cursors xbase davep-org constellations boxquote itch insert become webinfo unbind nukneval moving fscroll binclock csrclr use-package handyurl services protocols obfusurl paren-face parenface uptimes thinks package-lint slime sass-mode restclient powershell markdown-mode hyde highlight-chars emojify dictionary browse-kill-ring auto-compile)))
