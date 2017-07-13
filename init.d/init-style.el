@@ -45,7 +45,7 @@
   ;; If we're on Emacs 26 or better...
   (if (> emacs-major-version 25)
       ;; ...use native line numbers. This isn't quite as nice as using
-      ;; linim-mode because this turns them on for *all* buffers. But this
+      ;; linum-mode because this turns them on for *all* buffers. But this
       ;; is also me playing with Emacs 26 before it's released, so it helps
       ;; to be a little "over the top". At some point I should set this
       ;; locally by hooks in buffers where line numbers really make sense.
