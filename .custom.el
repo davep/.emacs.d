@@ -107,8 +107,6 @@
  '(smtpmail-smtp-server "smtp.gmail.com")
  '(smtpmail-smtp-service 587)
  '(tool-bar-mode nil)
- '(tramp-default-method "ssh")
- '(tramp-persistency-file-name "~/.emacs.d/.tramp.el")
  '(truncate-lines t)
  '(url-cache-directory "~/.emacs.d/.url/cache")
  '(url-configuration-directory "~/.emacs.d/.url/")

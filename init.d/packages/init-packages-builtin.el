@@ -71,6 +71,11 @@
   ("C-c u" . quickurl)
   :config
   (setq quickurl-url-file (locate-user-emacs-file ".quickurls.el")))
+(use-package tramp
+  :init
+  (setq
+   tramp-default-method       "ssh"
+   tramp-persistency-file-name "~/.emacs.d/.tramp.el"))
 
 
 ;; Programming modes.
