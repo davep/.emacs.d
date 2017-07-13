@@ -8,6 +8,7 @@
 ;;; Code:
 
 
+;; General modes.
 (use-package calendar
   :config
   (setq
@@ -16,6 +17,10 @@
    calendar-latitude      55.9
    calendar-longitude     -3.2
    calendar-location-name "Edinburgh, Scotland"))
+(use-package dired-x
+  :config
+  (setq-default dired-omit-files-p t)
+  (setq dired-omit-files "^\\.[^.]"))
 (use-package eshell
   :config
   (setq
@@ -52,28 +57,6 @@
   (add-hook 'ibuffer-mode-hooks
             (lambda ()
               (ibuffer-auto-mode 1))))
-(use-package quickurl
-  :bind
-  ("C-c u" . quickurl)
-  :config
-  (setq quickurl-url-file (locate-user-emacs-file ".quickurls.el")))
-(use-package pascal
-  :bind
-  (:map pascal-mode-map ("RET" . newline-and-indent)))
-(use-package opascal
-  :bind
-  (:map opascal-mode-map ("RET" . newline-and-indent)))
-(use-package js
-  :bind
-  (:map js-mode-map ("RET" . newline-and-indent)))
-(use-package cc-mode
-  :bind
-  (:map c-mode-map   ("RET" . newline-and-indent))
-  (:map c++-mode-map ("RET" . newline-and-indent)))
-(use-package dired-x
-  :config
-  (setq-default dired-omit-files-p t)
-  (setq dired-omit-files "^\\.[^.]"))
 (use-package message
   :config
   (add-hook 'message-mode-hook
@@ -83,6 +66,27 @@
               (smartsig-clear)
               (smartsig-add "emacs"   "~/.sigs/emacs"   "emacs" "xemacs" "elisp" "gnu" "lbdb" "uptimes" "quickurl" "smartsig" "boxquote")
               (smartsig-add "sawfish" "~/.sigs/sawfish" "sawfish" "sawmill" "librep" "rep" "gnome"))))
+(use-package quickurl
+  :bind
+  ("C-c u" . quickurl)
+  :config
+  (setq quickurl-url-file (locate-user-emacs-file ".quickurls.el")))
+
+
+;; Programming modes.
+(use-package cc-mode
+  :bind
+  (:map c-mode-map   ("RET" . newline-and-indent))
+  (:map c++-mode-map ("RET" . newline-and-indent)))
+(use-package js
+  :bind
+  (:map js-mode-map ("RET" . newline-and-indent)))
+(use-package opascal
+  :bind
+  (:map opascal-mode-map ("RET" . newline-and-indent)))
+(use-package pascal
+  :bind
+  (:map pascal-mode-map ("RET" . newline-and-indent)))
 
 
 ;; Catch-all hooks, etc.
