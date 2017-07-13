@@ -50,6 +50,11 @@
                     footnote-section-tag "-----"
                     footnote-section-tag-regexp (regexp-quote footnote-section-tag)
                     footnote-narrow-to-footnotes-when-editing t))))
+(use-package gnus
+  :init
+  (setq
+   gnus-default-nntp-server "news.eternal-september.org"
+   gnus-select-method `(nntp ,gnus-default-nntp-server)))
 (use-package ibuffer
   :bind
   ([(meta f6)] . ibuffer)

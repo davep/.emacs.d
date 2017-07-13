@@ -29,8 +29,6 @@
  '(display-time-mode t)
  '(electric-pair-mode t)
  '(eww-bookmarks-directory "~/.emacs.d/.eww")
- '(gnus-default-nntp-server "news.eternal-september.org")
- '(gnus-nntp-server "news.eternal-september.org")
  '(ibuffer-expert t)
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
