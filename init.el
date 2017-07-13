@@ -31,6 +31,7 @@
   (require 'init-tweaks)
   (require 'init-keys)
   (require 'init-style))
+(require 'init-net)
 (require 'init-packages)
 
 ;;; init.el ends here

@@ -35,6 +35,9 @@
                              (abbreviate-file-name (eshell/pwd))
                              (if is-a-root-user-p "#" "$")
                              " "))))
+(use-package eww
+  :config
+  (setq eww-bookmarks-directory "~/.emacs.d/.eww"))
 (use-package flyspell
   :config
   (mapc (lambda (hook)

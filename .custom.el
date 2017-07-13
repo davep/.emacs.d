@@ -22,7 +22,6 @@
  '(delete-old-versions t)
  '(diff-switches "-u")
  '(dired-use-ls-dired nil)
- '(eww-bookmarks-directory "~/.emacs.d/.eww")
  '(ibuffer-expert t)
  '(ispell-dictionary "british")
  '(ispell-highlight-face (quote flyspell-incorrect))
@@ -70,14 +69,7 @@
             default-directory)))))
  '(savehist-file "~/.emacs.d/.history.el")
  '(savehist-mode t)
- '(send-mail-function (quote smtpmail-send-it))
  '(shift-select-mode nil)
- '(smtpmail-smtp-server "smtp.gmail.com")
- '(smtpmail-smtp-service 587)
- '(url-cache-directory "~/.emacs.d/.url/cache")
- '(url-configuration-directory "~/.emacs.d/.url/")
- '(url-cookie-file "/Users/davep/.emacs.d/.url/cookies")
- '(user-mail-address "davep@davep.org")
  '(version-control t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
