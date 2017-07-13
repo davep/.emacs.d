@@ -10,6 +10,11 @@
 
 (require 'is-a)
 
+;; First off, let's tweak what the final booted version of Emacs looks like
+;; when the loading of the init is over.
+(setq inhibit-startup-screen t
+      initial-scratch-message ";; Get shit done!\n\n")
+
 ;; On the Mac, local bin doesn't seem to be in the path if I run from the
 ;; dock. Fix this.
 (let ((local "/usr/local/bin"))

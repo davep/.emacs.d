@@ -25,10 +25,6 @@
  '(eww-bookmarks-directory "~/.emacs.d/.eww")
  '(ibuffer-expert t)
  '(indent-tabs-mode nil)
- '(inhibit-startup-screen t)
- '(initial-scratch-message ";; Get shit done!
-
-")
  '(ispell-dictionary "british")
  '(ispell-highlight-face (quote flyspell-incorrect))
  '(js-switch-indent-offset 4)
