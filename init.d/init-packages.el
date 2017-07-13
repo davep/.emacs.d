@@ -15,9 +15,11 @@
 (require 'use-package)
 
 ;; Given I have my own package archive, ensure I can manage that too.
-(use-package package-x
-  :config
-  (setq package-archive-upload-base "~/develop/elisp/delpa/"))
+(let ((delpa "~/develop/elisp/delpa/"))
+  (use-package package-x
+    :if (file-exists-p delpa)
+    :config
+    (setq package-archive-upload-base delpa)))
 
 ;; Add the package loading directory to the load-path.
 (push (concat user-emacs-directory "init.d/packages/") load-path)
