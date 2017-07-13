@@ -54,7 +54,7 @@
     (global-linum-mode 1)))
 
 ;; Style what happens inside a buffer/frame.
-(blink-cursor-mode nil)                 ; Don't blink the cursor.
+(blink-cursor-mode -1)                  ; Don't blink the cursor.
 (setq-default
  ;; Wrap a little further over.
  fill-column 76
