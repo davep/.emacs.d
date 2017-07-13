@@ -15,7 +15,9 @@
 (require 'use-package)
 
 ;; Given I have my own package archive, ensure I can manage that too.
-(require 'package-x)
+(use-package package-x
+  :config
+  (setq package-archive-upload-base "~/develop/elisp/delpa/"))
 
 ;; Add the package loading directory to the load-path.
 (push (concat user-emacs-directory "init.d/packages/") load-path)
