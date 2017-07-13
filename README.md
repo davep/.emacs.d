@@ -5,12 +5,14 @@ My personal Emacs config.
 It's based quite heavily around the use
 of
 [`customize`](https://www.gnu.org/software/emacs/manual/html_node/emacs/Easy-Customization.html) in
-preference to setting values "by hand" in `init.el` and friends, and also
-around the use of packages installed from package archives, in preference to
-maintaining a local library of code. Archives currently used
-are [elpa](https://elpa.gnu.org/) and [melpa](https://melpa.org/)). Even my
-own personal packages (which make no sense being contributed to public
-package archives) live
+preference to setting values "by hand" in `init.el` and friends (although
+I'm slowly reversing that approach (so going back to more "by hand" setting
+of values) for a couple of different reasons that I might write about at
+some point), and also around the use of packages installed from package
+archives, in preference to maintaining a local library of code. Archives
+currently used are [elpa](https://elpa.gnu.org/)
+and [melpa](https://melpa.org/)). Even my own personal packages (which make
+no sense being contributed to public package archives) live
 in [a personal package archive](http://blog.davep.org/delpa/).
 
 It makes heavy use
