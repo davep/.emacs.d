@@ -8,7 +8,6 @@
  '(auto-save-list-file-prefix "~/.emacs.d/.auto-save-list/saves-")
  '(backup-by-copying t)
  '(backup-directory-alist (quote ((".*" . "~/.emacs.d/.backups"))))
- '(blink-cursor-mode nil)
  '(bookmark-default-file "~/.emacs.d/.bookmarks.el")
  '(c-basic-offset 4)
  '(c-default-style
@@ -21,7 +20,6 @@
  '(c-offsets-alist (quote ((inline-open . 0) (case-label . +) (inclass . ++))))
  '(case-fold-search t)
  '(column-number-mode t)
- '(cursor-in-non-selected-windows nil)
  '(delete-old-versions t)
  '(diff-switches "-u")
  '(dired-use-ls-dired nil)
@@ -31,12 +29,10 @@
  '(display-time-mode t)
  '(electric-pair-mode t)
  '(eww-bookmarks-directory "~/.emacs.d/.eww")
- '(fill-column 76)
  '(gnus-default-nntp-server "news.eternal-september.org")
  '(gnus-nntp-server "news.eternal-september.org")
  '(ibuffer-expert t)
  '(indent-tabs-mode nil)
- '(indicate-empty-lines t)
  '(inhibit-startup-screen t)
  '(initial-scratch-message ";; Get shit done!
 
@@ -107,7 +103,6 @@
  '(smtpmail-smtp-server "smtp.gmail.com")
  '(smtpmail-smtp-service 587)
  '(tool-bar-mode nil)
- '(truncate-lines t)
  '(url-cache-directory "~/.emacs.d/.url/cache")
  '(url-configuration-directory "~/.emacs.d/.url/")
  '(url-cookie-file "/Users/davep/.emacs.d/.url/cookies")
