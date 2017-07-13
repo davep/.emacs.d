@@ -81,7 +81,6 @@
             default-directory)))))
  '(savehist-file "~/.emacs.d/.history.el")
  '(savehist-mode t)
- '(scroll-conservatively 101)
  '(scroll-error-top-bottom t)
  '(send-mail-function (quote smtpmail-send-it))
  '(sentence-end-double-space nil)

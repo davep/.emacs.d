@@ -73,7 +73,9 @@
  ;; No "soft wrapping" of lines, ever.
  truncate-lines t
  ;; Only show a cursor in the focused window
- cursor-in-non-selected-windows nil)
+ cursor-in-non-selected-windows nil
+ ;; Sensible scrolling.
+ scroll-conservatively 101)
 
 (provide 'init-style)
 
