@@ -5,6 +5,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Make sure the package system is up and running early on.
 (require 'package)
+(setq package-user-dir (concat user-emacs-directory ".packages"))
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (add-to-list 'package-archives '("delpa" . "http://blog.davep.org/delpa/"))
 (package-initialize)
