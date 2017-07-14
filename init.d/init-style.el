@@ -44,6 +44,7 @@
         icon-title-format  format))
 
 ;; Mode line.
+(require 'time)
 (setq display-time-24hr-format t
       display-time-day-and-date t
       display-time-format "%F %H:%M")
