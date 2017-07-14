@@ -7,6 +7,9 @@
 
 ;;; Code:
 
+;; Default colour scheme.
+(load-theme (if (display-graphic-p) 'adwaita 'deeper-blue) t)
+
 ;; First off, let's tweak what the final booted version of Emacs looks like
 ;; when the loading of the init is over.
 (setq inhibit-startup-screen t
@@ -17,9 +20,6 @@
 
 ;; Always visit images as images.
 (auto-image-file-mode)
-
-;; Default colour scheme.
-(load-theme (if (display-graphic-p) 'adwaita 'deeper-blue) t)
 
 ;; Window position and size.
 (when (display-graphic-p)
