@@ -6,7 +6,6 @@
  '(auto-save-list-file-prefix "~/.emacs.d/.auto-save-list/saves-")
  '(backup-by-copying t)
  '(backup-directory-alist (quote ((".*" . "~/.emacs.d/.backups"))))
- '(c-offsets-alist (quote ((inline-open . 0) (case-label . +) (inclass . ++))))
  '(delete-old-versions t)
  '(kept-new-versions 10)
  '(load-prefer-newer t)

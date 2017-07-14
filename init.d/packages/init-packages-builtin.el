@@ -125,6 +125,9 @@
 (use-package cc-mode
   :config
   (setq c-basic-offset 4
+        c-offsets-alist '((inline-open . 0)
+                          (case-label . +)
+                          (inclass . ++))
         c-default-style '((c-mode    . "BSD")
                           (c++-mode  . "BSD")
                           (java-mode . "java")
