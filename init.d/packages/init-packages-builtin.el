@@ -9,6 +9,9 @@
 
 
 ;; General modes.
+(use-package abbrev
+  :config
+  (setq abbrev-file-name "~/.emacs.d/.abbrev_defs"))
 (use-package calendar
   :config
   (setq
