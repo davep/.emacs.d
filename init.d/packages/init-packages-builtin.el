@@ -23,6 +23,9 @@
    calendar-latitude      55.9
    calendar-longitude     -3.2
    calendar-location-name "Edinburgh, Scotland"))
+(use-package dired
+  :config
+  (setq dired-use-ls-dired nil))
 (use-package dired-x
   :config
   (setq-default dired-omit-files-p t)

@@ -18,7 +18,6 @@
  '(case-fold-search t)
  '(delete-old-versions t)
  '(diff-switches "-u")
- '(dired-use-ls-dired nil)
  '(ibuffer-expert t)
  '(js-switch-indent-offset 4)
  '(kept-new-versions 10)
