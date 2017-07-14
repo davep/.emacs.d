@@ -7,6 +7,8 @@
 
 ;;; Code:
 
+(require 'is-a)
+
 
 ;; My own packages that are in melpa.
 (use-package binclock
