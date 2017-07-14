@@ -7,6 +7,8 @@
 
 ;;; Code:
 
+(require 'is-a)
+
 
 ;; General modes.
 (use-package abbrev
@@ -53,7 +55,12 @@
 (use-package ispell
   :config
   (setq ispell-dictionary     "british"
-        ispell-highlight-face 'flyspell-incorrect))
+        ispell-highlight-face 'flyspell-incorrect)
+  ;; Try and get aspell working on a Windows machine.
+  (let ((aspell "C:/Program Files (x86)/Aspell/bin/"))
+    (when (and is-a-win32-p (file-exists-p aspell))
+      (push aspell exec-path)
+      (setq ispell-program-name "aspell"))))
 (use-package flyspell
   :config
   (mapc (lambda (hook)
