@@ -10,11 +10,6 @@
 
 (require 'is-a)
 
-;; First off, let's tweak what the final booted version of Emacs looks like
-;; when the loading of the init is over.
-(setq inhibit-startup-screen t
-      initial-scratch-message ";; Get shit done!\n\n")
-
 ;; Always visit images as images.
 (auto-image-file-mode)
 
