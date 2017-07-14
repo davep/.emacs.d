@@ -150,7 +150,8 @@
 (use-package powerline
   :ensure t
   :config
-  (setq ns-use-srgb-colorspace nil)
+  (when is-a-macOS-p
+    (set (intern "ns-use-srgb-colorspace") nil))
   (set-face-background 'powerline-active1 "grey95")
   (set-face-background 'powerline-active2 "grey85")
   (set-face-background 'powerline-inactive1 "grey30")
