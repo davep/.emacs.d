@@ -6,7 +6,6 @@
  '(auto-save-list-file-prefix "~/.emacs.d/.auto-save-list/saves-")
  '(backup-by-copying t)
  '(backup-directory-alist (quote ((".*" . "~/.emacs.d/.backups"))))
- '(bookmark-default-file "~/.emacs.d/.bookmarks.el")
  '(c-basic-offset 4)
  '(c-default-style
    (quote

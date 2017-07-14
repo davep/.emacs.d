@@ -12,6 +12,9 @@
 (use-package abbrev
   :config
   (setq abbrev-file-name "~/.emacs.d/.abbrev_defs"))
+(use-package bookmark
+  :config
+  (setq bookmark-default-file "~/.emacs.d/.bookmarks.el"))
 (use-package calendar
   :config
   (setq
