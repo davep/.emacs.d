@@ -15,6 +15,9 @@
 (setq inhibit-startup-screen t
       initial-scratch-message ";; Get shit done!\n\n")
 
+;; Always visit images as images.
+(auto-image-file-mode)
+
 ;; On the Mac, local bin doesn't seem to be in the path if I run from the
 ;; dock. Fix this.
 (let ((local "/usr/local/bin"))
