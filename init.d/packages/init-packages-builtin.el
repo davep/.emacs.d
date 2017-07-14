@@ -37,6 +37,7 @@
   (electric-pair-mode t))
 (use-package eshell
   :config
+  (require 'em-dirs)
   (setq
    eshell-directory-name  "~/.emacs.d/.eshell/"
    eshell-prompt-regexp   "^[^#$\\n]*[#$] "
