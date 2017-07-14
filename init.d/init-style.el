@@ -15,6 +15,9 @@
 ;; No toolbar. Ever. Just.... no!
 (tool-bar-mode -1)
 
+;; Always visit images as images.
+(auto-image-file-mode)
+
 ;; Default colour scheme.
 (load-theme (if (display-graphic-p) 'adwaita 'deeper-blue) t)
 

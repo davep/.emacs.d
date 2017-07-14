@@ -10,9 +10,6 @@
 
 (require 'is-a)
 
-;; Always visit images as images.
-(auto-image-file-mode)
-
 ;; Ignore case when searching
 (setq-default case-fold-search t)
 
