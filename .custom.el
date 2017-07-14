@@ -16,7 +16,6 @@
      (other . "gnu"))))
  '(c-offsets-alist (quote ((inline-open . 0) (case-label . +) (inclass . ++))))
  '(delete-old-versions t)
- '(ibuffer-expert t)
  '(js-switch-indent-offset 4)
  '(kept-new-versions 10)
  '(load-prefer-newer t)

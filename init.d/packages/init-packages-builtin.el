@@ -47,6 +47,9 @@
 (use-package eww
   :config
   (setq eww-bookmarks-directory "~/.emacs.d/.eww"))
+(use-package ibuffer
+  :config
+  (setq ibuffer-expert t))
 (use-package ispell
   :config
   (setq ispell-dictionary     "british"
