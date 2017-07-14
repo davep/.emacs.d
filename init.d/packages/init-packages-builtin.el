@@ -123,6 +123,13 @@
 
 ;; Programming modes.
 (use-package cc-mode
+  :config
+  (setq c-basic-offset 4
+        c-default-style '((c-mode    . "BSD")
+                          (c++-mode  . "BSD")
+                          (java-mode . "java")
+                          (awk-mode  . "awk")
+                          (other     . "gnu")))
   :bind
   (:map c-mode-map   ("RET" . newline-and-indent))
   (:map c++-mode-map ("RET" . newline-and-indent)))

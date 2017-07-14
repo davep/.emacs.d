@@ -6,14 +6,6 @@
  '(auto-save-list-file-prefix "~/.emacs.d/.auto-save-list/saves-")
  '(backup-by-copying t)
  '(backup-directory-alist (quote ((".*" . "~/.emacs.d/.backups"))))
- '(c-basic-offset 4)
- '(c-default-style
-   (quote
-    ((c-mode . "BSD")
-     (c++-mode . "BSD")
-     (java-mode . "java")
-     (awk-mode . "awk")
-     (other . "gnu"))))
  '(c-offsets-alist (quote ((inline-open . 0) (case-label . +) (inclass . ++))))
  '(delete-old-versions t)
  '(kept-new-versions 10)
