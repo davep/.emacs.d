@@ -150,7 +150,8 @@
   :ensure t
   :demand
   :config
-  (global-paren-face-mode t))
+  (global-paren-face-mode t)
+  (set-face-foreground 'parenthesis "gray63"))
 (use-package powerline
   :ensure t
   :config

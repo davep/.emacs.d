@@ -41,7 +41,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(parenthesis ((t (:inherit shadow :foreground "gray63"))))
  '(powerline-active1 ((t (:inherit mode-line :background "grey95"))))
  '(powerline-active2 ((t (:inherit mode-line :background "grey85"))))
  '(powerline-inactive1 ((t (:inherit mode-line-inactive :background "grey30"))))
