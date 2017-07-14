@@ -13,6 +13,16 @@
 ;; Ignore case when searching
 (setq-default case-fold-search t)
 
+;; Auto-saves and backing up. Here I try and keep my work directories as
+;; clean as possible.
+(setq auto-save-list-file-prefix "~/.emacs.d/.auto-save-list/saves-"
+      backup-directory-alist     '((".*" . "~/.emacs.d/.backups"))
+      backup-by-copying          t
+      version-control            t
+      delete-old-versions        t
+      kept-new-versions          10
+      load-prefer-newer          t)
+
 ;; On the Mac, local bin doesn't seem to be in the path if I run from the
 ;; dock. Fix this.
 (let ((local "/usr/local/bin"))

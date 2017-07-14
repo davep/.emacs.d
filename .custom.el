@@ -3,12 +3,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(auto-save-list-file-prefix "~/.emacs.d/.auto-save-list/saves-")
- '(backup-by-copying t)
- '(backup-directory-alist (quote ((".*" . "~/.emacs.d/.backups"))))
- '(delete-old-versions t)
- '(kept-new-versions 10)
- '(load-prefer-newer t)
  '(package-selected-packages
    (quote
     (graburl numbers suggest minimap dad-joke wttrin beacon qrencode cheat-sh page-break-lines company slstats expando is-a msig signature smartsig macdob powerline google-contacts google-maps nuke-buffers longmacs magit setup-compile ngn winsplit org-davep icmp-info multiple-cursors xbase davep-org constellations boxquote itch insert become webinfo unbind nukneval moving fscroll binclock csrclr use-package handyurl services protocols obfusurl paren-face parenface uptimes thinks package-lint slime sass-mode restclient powershell markdown-mode hyde highlight-chars emojify dictionary browse-kill-ring auto-compile)))
@@ -41,8 +35,7 @@
            (set
             (make-local-variable
              (quote package-build-recipes-dir))
-            default-directory)))))
- '(version-control t))
+            default-directory))))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
