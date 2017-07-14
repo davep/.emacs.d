@@ -47,6 +47,7 @@
                              (abbreviate-file-name (eshell/pwd))
                              (if is-a-root-user-p "#" "$")
                              " ")))
+  (require 'em-prompt)
   (set-face-foreground 'eshell-prompt "indian red")
   (set-face-background 'eshell-prompt nil))
 (use-package eww
