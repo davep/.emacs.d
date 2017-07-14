@@ -18,9 +18,6 @@
 ;; No toolbar. Ever. Just.... no!
 (tool-bar-mode -1)
 
-;; Always visit images as images.
-(auto-image-file-mode)
-
 ;; Window position and size.
 (when (display-graphic-p)
   (let ((short-name (car (split-string (downcase (system-name)) "\\.")))
@@ -60,6 +57,8 @@
 
 ;; When we're on a graphical display...
 (when (display-graphic-p)
+  ;; Always visit images as images.
+  (auto-image-file-mode)
   ;; If we're on Emacs 26 or better...
   (if (> emacs-major-version 25)
       ;; ...use native line numbers. This isn't quite as nice as using
