@@ -156,6 +156,10 @@
   :ensure t
   :config
   (setq ns-use-srgb-colorspace nil)
+  (set-face-background 'powerline-active1 "grey95")
+  (set-face-background 'powerline-active2 "grey85")
+  (set-face-background 'powerline-inactive1 "grey30")
+  (set-face-background 'powerline-inactive2 "grey20")
   (powerline-default-theme))
 (use-package powershell
   :ensure t)
