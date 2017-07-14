@@ -17,6 +17,17 @@
   (package-install 'use-package))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Now that melpa is sorted and use-package is available, ensure that
+;; auto-compile kicks in. I like my ~/.emacs.d/ to be compiled so this is
+;; very handy when I've made lots of changes and pulled them down to a
+;; machine that had pre-existing elc files that will now be out of date.
+(use-package auto-compile
+  :ensure t
+  :config
+  (auto-compile-on-save-mode)
+  (auto-compile-on-load-mode))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; is-a.el is a bit special, as I use very early on. Load it now.
 (use-package is-a :ensure t)
 

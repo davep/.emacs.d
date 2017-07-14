@@ -67,11 +67,6 @@
 
 
 ;; Third-party packages from elpa/melpa
-(use-package auto-compile
-  :ensure t
-  :config
-  (auto-compile-on-save-mode)
-  (auto-compile-on-load-mode))
 (use-package beacon
   :if (display-graphic-p)
   :ensure t
