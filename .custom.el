@@ -15,7 +15,6 @@
      (awk-mode . "awk")
      (other . "gnu"))))
  '(c-offsets-alist (quote ((inline-open . 0) (case-label . +) (inclass . ++))))
- '(case-fold-search t)
  '(delete-old-versions t)
  '(diff-switches "-u")
  '(ibuffer-expert t)
