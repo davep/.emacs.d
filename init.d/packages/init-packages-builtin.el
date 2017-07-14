@@ -127,6 +127,8 @@
   (:map c-mode-map   ("RET" . newline-and-indent))
   (:map c++-mode-map ("RET" . newline-and-indent)))
 (use-package js
+  :config
+  (setq js-switch-indent-offset 4)
   :bind
   (:map js-mode-map ("RET" . newline-and-indent)))
 (use-package opascal
