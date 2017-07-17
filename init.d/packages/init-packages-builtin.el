@@ -129,7 +129,7 @@
   :init
   (setq
    tramp-default-method       "ssh"
-   tramp-persistency-file-name "~/.emacs.d/.tramp.el"))
+   tramp-persistency-file-name (local-emacs-directory "tramp.el")))
 
 
 ;; Programming modes.
