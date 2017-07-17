@@ -13,7 +13,7 @@
 ;; General modes.
 (use-package abbrev
   :config
-  (setq abbrev-file-name "~/.emacs.d/.abbrev_defs"))
+  (setq abbrev-file-name (local-emacs-directory "abbrev_defs.el")))
 (use-package bookmark
   :config
   (setq bookmark-default-file (local-emacs-directory "bookmarks.el")))
