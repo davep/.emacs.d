@@ -16,7 +16,7 @@
   (setq abbrev-file-name "~/.emacs.d/.abbrev_defs"))
 (use-package bookmark
   :config
-  (setq bookmark-default-file "~/.emacs.d/.bookmarks.el"))
+  (setq bookmark-default-file (local-emacs-directory "bookmarks.el")))
 (use-package calendar
   :config
   (setq
