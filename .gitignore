@@ -2,5 +2,4 @@
 .eshell/history
 .eshell/lastdir
 *.elc
-.packages/
 .DS_Store
