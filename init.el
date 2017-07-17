@@ -1,8 +1,4 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Ensure custom values go in their own file.
-(load (setq custom-file (concat user-emacs-directory ".custom.el")) t)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Add my local init directory to the load path.
 (push (concat user-emacs-directory "init.d/") load-path)
 
@@ -23,6 +19,10 @@ directory exist and, if it doesn't, it creates it."
   (unless (file-exists-p local-emacs-directory)
     (make-directory local-emacs-directory))
   (concat local-emacs-directory content))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Ensure custom values go in their own file.
+(load (setq custom-file (local-emacs-directory "custom.el")) t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Make sure the package system is up and running early on.
