@@ -15,8 +15,8 @@
 
 ;; Auto-saves and backing up. Here I try and keep my work directories as
 ;; clean as possible.
-(setq auto-save-list-file-prefix "~/.emacs.d/.auto-save-list/saves-"
-      backup-directory-alist     '((".*" . "~/.emacs.d/.backups"))
+(setq auto-save-list-file-prefix (local-emacs-directory "auto-save-list/saves-")
+      backup-directory-alist     `((".*" . ,(local-emacs-directory "backups")))
       backup-by-copying          t
       version-control            t
       delete-old-versions        t
