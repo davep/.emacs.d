@@ -7,6 +7,24 @@
 (push (concat user-emacs-directory "init.d/") load-path)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Set up things for the local Emacs directory.
+(defconst local-emacs-directory "~/.local/share/emacs/"
+  "Directory where local Emacs content lives.
+
+This is the directory where files I don't want to sync via
+github, and which I don't want to lose if I erase my ~/.emacs.d/
+directory, should live.")
+
+(defun local-emacs-directory (content)
+  "Return the local Emacs directory path for CONTENT.
+
+A side-effect of calling this function is that it ensures the
+directory exist and, if it doesn't, it creates it."
+  (unless (file-exists-p local-emacs-directory)
+    (make-directory local-emacs-directory))
+  (concat local-emacs-directory content))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Make sure the package system is up and running early on.
 ;; (package-initialize) happens in here (and it's mentioned here to stop the
 ;; package system stomping on my init file).
