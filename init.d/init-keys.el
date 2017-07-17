@@ -10,6 +10,7 @@
 
 (require 'is-a)
 (require 'bind-key)
+(require 'package-x)
 
 ;; Movement
 (bind-key "M-g"          #'goto-line)
