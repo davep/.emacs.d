@@ -1,4 +1,5 @@
 *~
+.custom.el
 .auto-save-list/
 .eshell/history
 .eshell/lastdir
