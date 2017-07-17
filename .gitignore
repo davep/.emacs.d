@@ -2,11 +2,9 @@
 .auto-save-list/
 .eshell/history
 .eshell/lastdir
-.tramp.el
 *.elc
 .packages/
 .url/
-.emojis/
 .DS_Store
 .network-security.data
 .oauth2.plstore

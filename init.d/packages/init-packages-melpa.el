@@ -92,7 +92,7 @@
 (use-package emojify
   :if is-a-unix-window-p
   :config
-  (setq emojify-emojis-dir "~/.emacs.d/.emojis")
+  (setq emojify-emojis-dir (local-emacs-directory "emojis"))
   (global-emojify-mode)
   :ensure t)
 (use-package google-contacts
