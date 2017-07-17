@@ -20,7 +20,7 @@
 (use-package calendar
   :config
   (setq
-   diary-file             "~/.emacs.d/.diary"
+   diary-file             (local-emacs-directory "diary")
    calendar-day-style     'iso
    calendar-latitude      55.9
    calendar-longitude     -3.2
