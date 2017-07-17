@@ -17,7 +17,7 @@ directory, should live.")
 A side-effect of calling this function is that it ensures the
 directory exist and, if it doesn't, it creates it."
   (unless (file-exists-p local-emacs-directory)
-    (make-directory local-emacs-directory))
+    (make-directory local-emacs-directory t))
   (concat local-emacs-directory content))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
