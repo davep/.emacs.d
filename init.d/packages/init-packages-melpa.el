@@ -63,6 +63,8 @@
   ("C-c t y" . thinks-yank))
 (use-package uptimes
   :ensure t
+  :init
+  (setq uptimes-database (local-emacs-directory "uptimes.el"))
   :bind
   ([f11]        . uptimes-current)
   ([(meta f11)] . uptimes))
