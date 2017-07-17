@@ -3,7 +3,6 @@
 .eshell/history
 .eshell/lastdir
 .tramp.el
-.uptimes.el
 .bookmarks.el
 *.elc
 .packages/
