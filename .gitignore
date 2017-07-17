@@ -5,7 +5,6 @@
 .tramp.el
 *.elc
 .packages/
-.history.el
 .url/
 .emojis/
 .DS_Store

@@ -123,7 +123,7 @@
 (use-package savehist
   :config
   :init
-  (setq savehist-file "~/.emacs.d/.history.el")
+  (setq savehist-file (local-emacs-directory "history.el"))
   (savehist-mode t))
 (use-package tramp
   :init
