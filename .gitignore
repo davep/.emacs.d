@@ -3,7 +3,4 @@
 .eshell/lastdir
 *.elc
 .packages/
-.url/
 .DS_Store
-.network-security.data
-.oauth2.plstore

@@ -17,13 +17,13 @@
  smtpmail-smtp-service 587
  send-mail-function    #'smtpmail-send-it
  ;; Configure the URL package.
- url-configuration-directory "~/.emacs.d/.url/"
- url-cache-directory         "~/.emacs.d/.url/cache"
- url-cookie-file             "~/.emacs.d/.url/cookies"
+ url-configuration-directory (local-emacs-directory "url/")
+ url-cache-directory         (local-emacs-directory "url/cache")
+ url-cookie-file             (local-emacs-directory "url/cookies")
  ;; Security.
  nsm-save-host-names t
- nsm-settings-file   "~/.emacs.d/.network-security.data"
- oauth2-token-file   "~/.emacs.d/.oauth2.plstore")
+ nsm-settings-file   (local-emacs-directory "network-security.data")
+ oauth2-token-file   (local-emacs-directory "oauth2.plstore"))
 
 (provide 'init-net)
 
