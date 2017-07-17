@@ -13,14 +13,14 @@
 ;; General modes.
 (use-package abbrev
   :config
-  (setq abbrev-file-name "~/.emacs.d/.abbrev_defs"))
+  (setq abbrev-file-name (local-emacs-directory "abbrev_defs.el")))
 (use-package bookmark
   :config
-  (setq bookmark-default-file "~/.emacs.d/.bookmarks.el"))
+  (setq bookmark-default-file (local-emacs-directory "bookmarks.el")))
 (use-package calendar
   :config
   (setq
-   diary-file             "~/.emacs.d/.diary"
+   diary-file             (local-emacs-directory "diary")
    calendar-day-style     'iso
    calendar-latitude      55.9
    calendar-longitude     -3.2
@@ -123,13 +123,13 @@
 (use-package savehist
   :config
   :init
-  (setq savehist-file "~/.emacs.d/.history.el")
+  (setq savehist-file (local-emacs-directory "history.el"))
   (savehist-mode t))
 (use-package tramp
   :init
   (setq
    tramp-default-method       "ssh"
-   tramp-persistency-file-name "~/.emacs.d/.tramp.el"))
+   tramp-persistency-file-name (local-emacs-directory "tramp.el")))
 
 
 ;; Programming modes.

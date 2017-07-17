@@ -12,7 +12,7 @@
 (require 'package)
 
 ;; Say where I want packages to live.
-(setq package-user-dir (concat user-emacs-directory ".packages"))
+(setq package-user-dir (local-emacs-directory "packages"))
 
 ;; Add melpa and delpa.
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))

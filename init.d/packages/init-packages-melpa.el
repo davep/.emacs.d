@@ -63,6 +63,8 @@
   ("C-c t y" . thinks-yank))
 (use-package uptimes
   :ensure t
+  :init
+  (setq uptimes-database (local-emacs-directory "uptimes.el"))
   :bind
   ([f11]        . uptimes-current)
   ([(meta f11)] . uptimes))
@@ -90,7 +92,7 @@
 (use-package emojify
   :if is-a-unix-window-p
   :config
-  (setq emojify-emojis-dir "~/.emacs.d/.emojis")
+  (setq emojify-emojis-dir (local-emacs-directory "emojis"))
   (global-emojify-mode)
   :ensure t)
 (use-package google-contacts

@@ -1,16 +1,4 @@
-*~
-.auto-save-list/
 .eshell/history
 .eshell/lastdir
-.tramp.el
-.uptimes.el
-.bookmarks.el
 *.elc
-.packages/
-.history.el
-.url/
-.emojis/
 .DS_Store
-.network-security.data
-.oauth2.plstore
-.abbrev_defs
