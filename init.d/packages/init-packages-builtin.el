@@ -39,7 +39,7 @@
   :config
   (require 'em-dirs)
   (setq
-   eshell-directory-name  "~/.emacs.d/.eshell/"
+   eshell-directory-name  (concat user-emacs-directory ".eshell/")
    eshell-prompt-regexp   "^[^#$\\n]*[#$] "
    eshell-prompt-function (lambda ()
                             (concat (user-login-name)
@@ -52,7 +52,7 @@
   (set-face-background 'eshell-prompt nil))
 (use-package eww
   :config
-  (setq eww-bookmarks-directory "~/.emacs.d/.eww"))
+  (setq eww-bookmarks-directory (concat user-emacs-directory ".eww")))
 (use-package ibuffer
   :config
   (setq ibuffer-expert t))
