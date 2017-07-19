@@ -110,7 +110,8 @@
   (add-hook 'ibuffer-mode-hooks
             (lambda ()
               (ibuffer-auto-mode 1)
-              (ibuffer-switch-to-saved-filter-groups "davep"))))
+              (ibuffer-switch-to-saved-filter-groups "davep")
+              (ibuffer-do-sort-by-alphabetic))))
 (use-package message
   :config
   (add-hook 'message-mode-hook
