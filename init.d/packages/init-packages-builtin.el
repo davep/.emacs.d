@@ -88,6 +88,7 @@
 (use-package ibuffer
   :bind
   ([(meta f6)] . ibuffer)
+  ("C-x C-b" . ibuffer)
   :config
   (setq ibuffer-expert t)
   (add-hook 'ibuffer-mode-hooks
