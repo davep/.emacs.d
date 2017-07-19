@@ -92,7 +92,11 @@
   :bind
   ([(meta f6)] . ibuffer)
   ("C-x C-b" . ibuffer)
-  :config
+  :functions
+  ibuffer-auto-mode
+  ibuffer-switch-to-saved-filter-groups
+  ibuffer-do-sort-by-alphabetic
+  :init
   (setq ibuffer-expert t
         ibuffer-show-empty-filter-groups nil
         ibuffer-saved-filter-groups
