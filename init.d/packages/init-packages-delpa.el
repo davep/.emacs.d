@@ -38,7 +38,8 @@
   ("C-c RET" . insert-line-split-keeping-fill-prefix)
   ("C-c f"   . insert-filename)
   ("C-c s"   . insert-sexp-link)
-  ("C-c a"   . insert-autoload-cookie))
+  ("C-c a"   . insert-autoload-cookie)
+  ("C-c C-;" . insert-break-comment))
 (use-package itch
   :ensure t
   :bind
