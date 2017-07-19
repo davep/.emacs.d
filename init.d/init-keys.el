@@ -3,8 +3,8 @@
 ;;; Commentary:
 ;;
 ;; init-keys.el contains my personal keyboard bindings as well as general
-;; keyboard tweaks and OS-specific settings. Any pack-specific bindings will
-;; be with the relevant `use-package' elsewhere in this config.
+;; keyboard tweaks and OS-specific settings. Any package-specific bindings
+;; will be with the relevant `use-package' elsewhere in this config.
 
 ;;; Code:
 
