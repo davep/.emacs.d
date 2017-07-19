@@ -98,6 +98,7 @@
         ibuffer-saved-filter-groups
         '(("davep"
            ("Magit"    (name . "\*magit"))
+           ("Org"      (mode . org-mode))
            (".emacs.d" (filename . "/.emacs.d/"))
            ("elisp"    (mode . emacs-lisp-mode))
            ("Help"     (or (name . "\*Help\*")
