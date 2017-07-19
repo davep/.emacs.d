@@ -90,10 +90,24 @@
   ([(meta f6)] . ibuffer)
   ("C-x C-b" . ibuffer)
   :config
-  (setq ibuffer-expert t)
+  (setq ibuffer-expert t
+        ibuffer-show-empty-filter-groups nil
+        ibuffer-saved-filter-groups
+        '(("davep"
+           ("Magit"    (name . "\*magit"))
+           (".emacs.d" (filename . "/.emacs.d/"))
+           ("elisp"    (mode . emacs-lisp-mode))
+           ("Help"     (or (name . "\*Help\*")
+                           (name . "\*Apropos\*")
+                           (name . "\*info\*")))
+           ("Internal" (or (name . "\*Compile-log\*")
+                           (name . "\*Buffer List\*")
+                           (name . "\*Messages\*")
+                           (name . "\*Completions\*"))))))
   (add-hook 'ibuffer-mode-hooks
             (lambda ()
-              (ibuffer-auto-mode 1))))
+              (ibuffer-auto-mode 1)
+              (ibuffer-switch-to-saved-filter-groups "davep"))))
 (use-package message
   :config
   (add-hook 'message-mode-hook
