@@ -53,9 +53,6 @@
 (use-package eww
   :config
   (setq eww-bookmarks-directory (concat user-emacs-directory ".eww")))
-(use-package ibuffer
-  :config
-  (setq ibuffer-expert t))
 (use-package ispell
   :config
   (setq ispell-dictionary     "british"
@@ -92,6 +89,7 @@
   :bind
   ([(meta f6)] . ibuffer)
   :config
+  (setq ibuffer-expert t)
   (add-hook 'ibuffer-mode-hooks
             (lambda ()
               (ibuffer-auto-mode 1))))
