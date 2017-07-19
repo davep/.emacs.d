@@ -14,8 +14,9 @@ directory, should live.")
 (defun local-emacs-directory (content)
   "Return the local Emacs directory path for CONTENT.
 
-A side-effect of calling this function is that it ensures the
-directory exist and, if it doesn't, it creates it."
+A side-effect of calling this function is that it checks if the
+directory pointed to by `local-emacs-directory' exists and, if it
+doesn't, it creates it."
   (unless (file-exists-p local-emacs-directory)
     (make-directory local-emacs-directory t))
   (concat local-emacs-directory content))
