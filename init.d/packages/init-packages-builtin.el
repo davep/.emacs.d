@@ -53,6 +53,9 @@
 (use-package eww
   :config
   (setq eww-bookmarks-directory (concat user-emacs-directory ".eww")))
+(use-package gamegrid
+  :config
+  (setq gamegrid-user-score-file-directory (local-emacs-directory "games/")))
 (use-package ispell
   :config
   (setq ispell-dictionary     "british"
