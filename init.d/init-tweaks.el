@@ -15,13 +15,17 @@
 
 ;; Auto-saves and backing up. Here I try and keep my work directories as
 ;; clean as possible.
-(setq auto-save-list-file-prefix (local-emacs-directory "auto-save-list/saves-")
-      backup-directory-alist     `((".*" . ,(local-emacs-directory "backups")))
-      backup-by-copying          t
-      version-control            t
-      delete-old-versions        t
-      kept-new-versions          10
-      load-prefer-newer          t)
+(let ((auto-saves (local-emacs-directory "auto-save-files/")))
+  (unless (file-exists-p auto-saves)
+    (make-directory auto-saves t))
+  (setq auto-save-list-file-prefix     (local-emacs-directory "auto-save-list/saves-")
+        auto-save-file-name-transforms `((".*" ,auto-saves t))
+        backup-directory-alist         `((".*" . ,(local-emacs-directory "backups")))
+        backup-by-copying              t
+        version-control                t
+        delete-old-versions            t
+        kept-new-versions              10
+        load-prefer-newer              t))
 
 ;; On the Mac, local bin doesn't seem to be in the path if I run from the
 ;; dock. Fix this.
