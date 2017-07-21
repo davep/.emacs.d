@@ -39,7 +39,7 @@
   :config
   (require 'em-dirs)
   (setq
-   eshell-directory-name  (concat user-emacs-directory ".eshell/")
+   eshell-directory-name  (locate-user-emacs-file ".eshell/")
    eshell-prompt-regexp   "^[^#$\\n]*[#$] "
    eshell-prompt-function (lambda ()
                             (concat (user-login-name)
@@ -52,7 +52,7 @@
   (set-face-background 'eshell-prompt nil))
 (use-package eww
   :config
-  (setq eww-bookmarks-directory (concat user-emacs-directory ".eww")))
+  (setq eww-bookmarks-directory (locate-user-emacs-file ".eww")))
 (use-package gamegrid
   :config
   (setq gamegrid-user-score-file-directory (local-emacs-directory "games/")))

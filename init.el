@@ -1,6 +1,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Add my local init directory to the load path.
-(push (concat user-emacs-directory "init.d/") load-path)
+(push (expand-file-name "init.d/" user-emacs-directory) load-path)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Set up things for the local Emacs directory.
@@ -19,7 +19,7 @@ directory pointed to by `local-emacs-directory' exists and, if it
 doesn't, it creates it."
   (unless (file-exists-p local-emacs-directory)
     (make-directory local-emacs-directory t))
-  (concat local-emacs-directory content))
+  (expand-file-name content local-emacs-directory))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Ensure custom values go in their own file.
