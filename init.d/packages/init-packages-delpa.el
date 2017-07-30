@@ -21,6 +21,8 @@
   :ensure t)
 (use-package davep-org
   :ensure t)
+(use-package eg
+  :ensure t)
 (use-package expando
   :ensure t
   :bind
