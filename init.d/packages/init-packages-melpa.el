@@ -40,6 +40,8 @@
   :ensure t
   :bind
   ("C-c C-d" . dad-joke))
+(use-package eg
+  :ensure t)
 (use-package numbers
   :ensure t
   :bind
