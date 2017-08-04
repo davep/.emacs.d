@@ -7,7 +7,7 @@ of [`use-package`](https://github.com/jwiegley/use-package), downloading
 required packages from [elpa](https://elpa.gnu.org/)
 and [melpa](https://melpa.org/). Even my own personal packages (which make
 no sense being contributed to public package archives) live
-in [a personal package archive](http://blog.davep.org/delpa/).
+in [a package archive](http://blog.davep.org/delpa/).
 
 The current look of my
 config
