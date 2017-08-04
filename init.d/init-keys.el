@@ -30,14 +30,14 @@
 (bind-key [f7]            #'describe-personal-keybindings)
 (bind-key [f9]            #'compile)
 (bind-key [(control f11)] #'clean-buffer-list)
-(bind-key "C-c e"         #'eshell)
+(bind-key [(f12) (h)]     #'eshell)
 (bind-key "C-c C-f"       #'view-file)
-(bind-key "s-r"           #'ielm)
+(bind-key [(f12) (r)]     #'ielm)
 (bind-key "C-c p l"       #'package-list-packages)
 (bind-key "C-c p r"       #'package-refresh-contents)
 (bind-key "C-c p p"       #'package-lint-current-buffer)
 (bind-key "C-c p u"       #'package-upload-buffer)
-(bind-key "C-c C-w"       #'eww)
+(bind-key [(f12) (w)]     #'eww)
 
 ;; Don't do shift-selecting.
 (setq shift-select-mode nil)
