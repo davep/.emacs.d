@@ -1,3 +1,11 @@
+;;; init.el --- Entry point of my Emacs configuration.
+
+;;; Commentary:
+;;
+;; See https://github.com/davep/.emacs.d#readme for details.
+
+;;; Code:
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Add my local init directory to the load path.
 (push (expand-file-name "init.d/" user-emacs-directory) load-path)
