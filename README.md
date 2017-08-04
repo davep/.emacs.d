@@ -9,13 +9,6 @@ and [melpa](https://melpa.org/). Even my own personal packages (which make
 no sense being contributed to public package archives) live
 in [a personal package archive](http://blog.davep.org/delpa/).
 
-It was originally based quite heavily around the use
-of
-[`customize`](https://www.gnu.org/software/emacs/manual/html_node/emacs/Easy-Customization.html) in
-preference to setting values "by
-hand",
-[but I then subsequently reversed that approach for a couple of reasons](http://blog.davep.org/2017/07/13/more_revamping_of_my_emacs_config.html)).
-
 The current look of my
 config
 [started life in early 2016 when I killed off my original `~/.emacs` and started using what I think is a cleaner approach via `~/.emacs.d`](http://blog.davep.org/2016/05/26/starting_fresh_with_gnu_emacs.html).
