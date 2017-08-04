@@ -22,3 +22,22 @@ As with any good development setup, it's an ongoing process and will
 continue to evolve. While I obviously am highly unlikely to accept pull
 requests for this repo, feedback and ideas for how I might improve it are
 always welcome.
+
+## Notable bindings
+
+What follows is a non-comprehensive collection of key-binding details.
+
+### Function keys
+
+| Binding | Function |
+| --- | --- |
+| <kbd>M-F6</kbd> | Show iBuffer |
+| <kbd>F7</kbd> | List personal key bindings |
+| <kbd>F11</kbd> | Show current Emacs uptime |
+| <kbd>M-F11</kbd> | Show Emacs uptimes |
+| <kbd>C-F11</kbd> | Show binary clock |
+| <kbd>C-M-F11</kbd> | Nuke buffers |
+| <kbd>F12</kbd> <kbd>h</kbd> | Open eshell |
+| <kbd>F12</kbd> <kbd>r</kbd> | Open elisp REPL (ielm) |
+| <kbd>F12</kbd> <kbd>s</kbd> | Switch to scratch buffer |
+| <kbd>F12</kbd> <kbd>w</kbd> | Open eww (web browser) |
