@@ -52,3 +52,16 @@ What follows is a non-comprehensive collection of key-binding details.
 | <kbd>C-c</kbd> <kbd>i</kbd> <kbd>s</kbd> | Insert Emacs sexp link quotes around current symbol |
 | <kbd>C-c</kbd> <kbd>i</kbd> <kbd>y</kbd> | Insert markdown code for a YouTube video preview |
 | <kbd>C-c</kbd> <kbd>i</kbd> <kbd>;</kbd> | Insert my own style of "break here" comment |
+
+### [winsplit.el](https://github.com/davep/winsplit.el)
+
+| Binding | Function |
+| --- | --- |
+| <kbd>C-c</kbd> <kbd><right></kbd> | Open window to the right of the current window |
+| <kbd>C-c</kbd> <kbd><left></kbd> | Open window to the left of the current window |
+| <kbd>C-c</kbd> <kbd><up></kbd> | Open window above current window |
+| <kbd>C-c</kbd> <kbd><down></kbd> | Open window below current window |
+| <kbd>C-c</kbd> <kbd>C-<right></kbd> | Open window to the right of the current window |
+| <kbd>C-c</kbd> <kbd>C-<left></kbd> | Open window to the left of the current window |
+| <kbd>C-c</kbd> <kbd>C-<up></kbd> | Open window above current window |
+| <kbd>C-c</kbd> <kbd>C-<down></kbd> | Open window below current window |
