@@ -14,7 +14,7 @@
 (use-package binclock
   :ensure t
   :bind
-  ([(control f11)] . binclock))
+  ("C-<f11>" . binclock))
 (use-package boxquote
   :ensure t
   :bind
@@ -68,8 +68,8 @@
   :init
   (setq uptimes-database (local-emacs-directory "uptimes.el"))
   :bind
-  ([f11]        . uptimes-current)
-  ([(meta f11)] . uptimes))
+  ("<f11>"   . uptimes-current)
+  ("M-<f11>" . uptimes))
 
 
 ;; Third-party packages from elpa/melpa

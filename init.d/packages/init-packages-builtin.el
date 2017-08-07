@@ -90,7 +90,7 @@
    gnus-select-method `(nntp ,gnus-default-nntp-server)))
 (use-package ibuffer
   :bind
-  ([(meta f6)] . ibuffer)
+  ("M-<f6>" . ibuffer)
   ("C-x C-b" . ibuffer)
   :functions
   ibuffer-auto-mode

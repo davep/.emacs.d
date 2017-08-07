@@ -14,7 +14,7 @@
   (unless noninteractive
     (add-hook 'before-save-hook #'become-free-of-trailing-whitespace))
   :bind
-  ([(control c) (control tab)] . become-freshly-indented-no-tabs))
+  ("C-c C-<tab>" . become-freshly-indented-no-tabs))
 (use-package constellations
   :ensure t)
 (use-package csrclr
@@ -65,7 +65,7 @@
 (use-package nuke-buffers
   :ensure t
   :bind
-  ([(control meta f11)] . nuke-buffers))
+  ("C-M-<f11>" . nuke-buffers))
 (use-package nukneval
   :ensure t)
 (use-package org-davep
