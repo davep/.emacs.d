@@ -64,6 +64,16 @@ What follows is a non-comprehensive collection of key-binding details.
 | <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>p</kbd> <kbd>p</kbd> | Lint the current buffer as a package |
 | <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>p</kbd> <kbd>u</kbd> | Upload current buffer as a package, to delpa |
 
+### [cheat-sh.el](https://github.com/davep/cheat-sh.el)
+
+| Binding | Function |
+| --- | --- |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>/</kbd> <kbd>/</kbd> | Search cheat-sh, using region if there is one |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>/</kbd> <kbd>l</kbd> | List sheets for a given item |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>/</kbd> <kbd>?</kbd> | Show cheat-sh help |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>/</kbd> <kbd>s</kbd> | Search cheat-sh |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>/</kbd> <kbd>t</kbd> | Search a specific topic on cheat-sh |
+
 ### [insert.el](https://github.com/davep/insert.el)
 
 | Binding | Function |
