@@ -54,10 +54,10 @@
 (use-package moving
   :ensure t
   :bind
-  ([home]          . moving-home)
-  ([(super left)]  . moving-home)
-  ([end]           . moving-end)
-  ([(super right)] . moving-end))
+  ("<home>"    . moving-home)
+  ("s-<left>"  . moving-home)
+  ("<end>"     . moving-end)
+  ("s-<right>" . moving-end))
 (use-package msig
   :ensure t)
 (use-package ngn
