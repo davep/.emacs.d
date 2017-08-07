@@ -44,7 +44,7 @@
 (when is-a-macOS-window-p
   (set (intern "ns-alternate-modifier") 'super)
   (set (intern "ns-command-modifier")   'meta)
-  (bind-key [(super tab)] #'completion-at-point))
+  (bind-key "s-<tab>" #'completion-at-point))
 
 ;; Things specific to Windows.
 (when is-a-win32-p
