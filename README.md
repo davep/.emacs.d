@@ -42,6 +42,15 @@ What follows is a non-comprehensive collection of key-binding details.
 | <kbd>F12</kbd> <kbd>s</kbd> | Switch to scratch buffer |
 | <kbd>F12</kbd> <kbd>w</kbd> | Open eww (web browser) |
 
+### Packages
+
+| Binding | Function |
+| --- | --- |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>p</kbd> <kbd>l</kbd> | List packages |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>p</kbd> <kbd>r</kbd> | Refresh package lists |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>p</kbd> <kbd>p</kbd> | Lint the current buffer as a package |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>p</kbd> <kbd>u</kbd> | Upload current buffer as a package, to delpa |
+
 ### [insert.el](https://github.com/davep/insert.el)
 
 | Binding | Function |
