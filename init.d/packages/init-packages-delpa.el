@@ -36,10 +36,10 @@
   :bind
   ("C-RET"   . insert-line-split-keeping-fill-prefix)
   ("C-c RET" . insert-line-split-keeping-fill-prefix)
-  ("C-c f"   . insert-filename)
-  ("C-c s"   . insert-sexp-link)
-  ("C-c a"   . insert-autoload-cookie)
-  ("C-c C-;" . insert-break-comment))
+  ("C-c i f" . insert-filename)
+  ("C-c i s" . insert-sexp-link)
+  ("C-c i a" . insert-autoload-cookie)
+  ("C-c i ;" . insert-break-comment))
 (use-package itch
   :ensure t
   :bind
