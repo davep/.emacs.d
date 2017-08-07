@@ -42,7 +42,7 @@ What follows is a non-comprehensive collection of key-binding details.
 | <kbd>F12</kbd> <kbd>s</kbd> | Switch to scratch buffer |
 | <kbd>F12</kbd> <kbd>w</kbd> | Open eww (web browser) |
 
-### insert.el
+### [insert.el](https://github.com/davep/insert.el)
 
 | Binding | Function |
 | --- | --- |
