@@ -81,7 +81,7 @@
 (use-package browse-kill-ring
   :ensure t
   :bind
-  ("C-c k" . browse-kill-ring))
+  ("<f12> k" . browse-kill-ring))
 (use-package company
   :ensure t
   :diminish "CM"
