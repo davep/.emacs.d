@@ -45,11 +45,11 @@
 (use-package numbers
   :ensure t
   :bind
-  ("C-c n m"   . numbers-math)
-  ("C-c n t"   . numbers-trivia)
-  ("C-c C-n m" . numbers-random-math)
-  ("C-c C-n t" . numbers-random-trivia)
-  ("C-c n n"   . numbers-random))
+  ("<f12> n m"   . numbers-math)
+  ("<f12> n t"   . numbers-trivia)
+  ("<f12> n C-m" . numbers-random-math)
+  ("<f12> n C-t" . numbers-random-trivia)
+  ("<f12> n n"   . numbers-random))
 (use-package obfusurl
   :ensure t)
 (use-package protocols
