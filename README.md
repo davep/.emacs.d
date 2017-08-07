@@ -42,6 +42,19 @@ What follows is a non-comprehensive collection of key-binding details.
 | <kbd>F12</kbd> <kbd>s</kbd> | Switch to scratch buffer |
 | <kbd>F12</kbd> <kbd>w</kbd> | Open eww (web browser) |
 
+### Moving around
+
+| Binding | Function |
+| --- | --- |
+| <kbd>home</kbd> | Context-aware "home" |
+| <kbd>end</kbd> | Context-aware "end" |
+| <kbd>Super</kbd>+<kbd>left</kbd> | Context-aware "home" |
+| <kbd>Super</kbd>+<kbd>right</kbd> | Context-aware "end" |
+| <kbd>Meta</kbd>+<kbd>left</kbd> | Backward sexp |
+| <kbd>Meta</kbd>+<kbd>right</kbd> | Forward sexp |
+| <kbd>Super</kbd>+<kbd>up</kbd> | Backward page |
+| <kbd>Super</kbd>+<kbd>down</kbd> | Forward page |
+
 ### Packages
 
 | Binding | Function |
