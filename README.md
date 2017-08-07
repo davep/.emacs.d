@@ -31,12 +31,12 @@ What follows is a non-comprehensive collection of key-binding details.
 
 | Binding | Function |
 | --- | --- |
-| <kbd>M-F6</kbd> | Show iBuffer |
+| <kbd>Meta</kbd>+<kbd>F6</kbd> | Show iBuffer |
 | <kbd>F7</kbd> | List personal key bindings |
 | <kbd>F11</kbd> | Show current Emacs uptime |
-| <kbd>M-F11</kbd> | Show Emacs uptimes |
-| <kbd>C-F11</kbd> | Show binary clock |
-| <kbd>C-M-F11</kbd> | Nuke buffers |
+| <kbd>Meta</kbd>+<kbd>F11</kbd> | Show Emacs uptimes |
+| <kbd>Ctrl</kbd>+<kbd>F11</kbd> | Show binary clock |
+| <kbd>Ctrl</kbd>+<kbd>Meta</kbd>+<kbd>F11</kbd> | Nuke buffers |
 | <kbd>F12</kbd> <kbd>h</kbd> | Open eshell |
 | <kbd>F12</kbd> <kbd>r</kbd> | Open elisp REPL (ielm) |
 | <kbd>F12</kbd> <kbd>s</kbd> | Switch to scratch buffer |
@@ -46,22 +46,22 @@ What follows is a non-comprehensive collection of key-binding details.
 
 | Binding | Function |
 | --- | --- |
-| <kbd>C-c</kbd> <kbd>i</kbd> <kbd>a</kbd> | Insert an autoload cookie for current `defun` |
-| <kbd>C-c</kbd> <kbd>i</kbd> <kbd>f</kbd> | Insert a filename |
-| <kbd>C-c</kbd> <kbd>i</kbd> <kbd>m</kbd> | Insert a melpa badge for a package |
-| <kbd>C-c</kbd> <kbd>i</kbd> <kbd>s</kbd> | Insert Emacs sexp link quotes around current symbol |
-| <kbd>C-c</kbd> <kbd>i</kbd> <kbd>y</kbd> | Insert markdown code for a YouTube video preview |
-| <kbd>C-c</kbd> <kbd>i</kbd> <kbd>;</kbd> | Insert my own style of "break here" comment |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>i</kbd> <kbd>a</kbd> | Insert an autoload cookie for current `defun` |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>i</kbd> <kbd>f</kbd> | Insert a filename |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>i</kbd> <kbd>m</kbd> | Insert a melpa badge for a package |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>i</kbd> <kbd>s</kbd> | Insert Emacs sexp link quotes around current symbol |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>i</kbd> <kbd>y</kbd> | Insert markdown code for a YouTube video preview |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>i</kbd> <kbd>;</kbd> | Insert my own style of "break here" comment |
 
 ### [winsplit.el](https://github.com/davep/winsplit.el)
 
 | Binding | Function |
 | --- | --- |
-| <kbd>C-c</kbd> <kbd><right></kbd> | Open window to the right of the current window |
-| <kbd>C-c</kbd> <kbd><left></kbd> | Open window to the left of the current window |
-| <kbd>C-c</kbd> <kbd><up></kbd> | Open window above current window |
-| <kbd>C-c</kbd> <kbd><down></kbd> | Open window below current window |
-| <kbd>C-c</kbd> <kbd>C-<right></kbd> | Open window to the right of the current window |
-| <kbd>C-c</kbd> <kbd>C-<left></kbd> | Open window to the left of the current window |
-| <kbd>C-c</kbd> <kbd>C-<up></kbd> | Open window above current window |
-| <kbd>C-c</kbd> <kbd>C-<down></kbd> | Open window below current window |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd><kbd>right</kbd> | Open window to the right of the current window |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd><kbd>left</kbd> | Open window to the left of the current window |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd><kbd>up</kbd> | Open window above current window |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd><kbd>down</kbd> | Open window below current window |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd><kbd>Ctrl</kbd>+<kbd>right</kbd> | Open window to the right of the current window |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd><kbd>Ctrl</kbd>+<kbd>left</kbd> | Open window to the left of the current window |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd><kbd>Ctrl</kbd>+<kbd>up</kbd> | Open window above current window |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd><kbd>Ctrl</kbd>+<kbd>down</kbd> | Open window below current window |
