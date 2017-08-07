@@ -39,6 +39,8 @@
   ("C-c i f" . insert-filename)
   ("C-c i s" . insert-sexp-link)
   ("C-c i a" . insert-autoload-cookie)
+  ("C-c i y" . insert-youtube-markdown)
+  ("C-c i m" . insert-melpa-badge)
   ("C-c i ;" . insert-break-comment))
 (use-package itch
   :ensure t
