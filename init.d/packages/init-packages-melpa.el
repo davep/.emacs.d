@@ -194,7 +194,7 @@
   (setq wttrin-default-cities '("Edinburgh")
         wttrin-default-accept-language '("Accept-Language" . "en-GB"))
   :bind
-  ("C-c w" . wttrin))
+  ("<f12> x" . wttrin))
 
 (provide 'init-packages-melpa)
 
