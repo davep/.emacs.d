@@ -91,14 +91,14 @@
 (use-package winsplit
   :ensure t
   :bind
-  ([(control c) (right)]         . winsplit-right)
-  ([(control c) (left)]          . winsplit-left)
-  ([(control c) (up)]            . winsplit-above)
-  ([(control c) (down)]          . winsplit-below)
-  ([(control c) (control right)] . winsplit-right-load)
-  ([(control c) (control left)]  . winsplit-left-load)
-  ([(control c) (control up)]    . winsplit-above-load)
-  ([(control c) (control down)]  . winsplit-below-load))
+  ("C-c <right>"   . winsplit-right)
+  ("C-c <left>"    . winsplit-left)
+  ("C-c <up>"      . winsplit-above)
+  ("C-c <down>"    . winsplit-below)
+  ("C-c C-<right>" . winsplit-right-load)
+  ("C-c C-<left>"  . winsplit-left-load)
+  ("C-c C-<up>"    . winsplit-above-load)
+  ("C-c C-<down>"  . winsplit-below-load))
 (use-package xbase
   :mode ("\\.\\(prg\\|ch\\|ppo\\)$" . xbase-mode)
   :ensure t)
