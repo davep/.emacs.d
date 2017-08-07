@@ -7,6 +7,7 @@
         dabbrev-expand
         electric-pair-delete-pair
         kill-region
+        markdown-outdent-or-delete
         ))
 
 (setq mc/cmds-to-run-once
