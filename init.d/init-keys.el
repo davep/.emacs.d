@@ -13,11 +13,11 @@
 (require 'package-x)
 
 ;; Movement
-(bind-key "M-g"          #'goto-line)
-(bind-key [(meta left)]  #'backward-sexp)
-(bind-key [(meta right)] #'forward-sexp)
-(bind-key [(super up)]   #'moving-backward-page)
-(bind-key [(super down)] #'moving-forward-page)
+(bind-key "M-g"       #'goto-line)
+(bind-key "M-<left>"  #'backward-sexp)
+(bind-key "M-<right>" #'forward-sexp)
+(bind-key "s-<up>"    #'moving-backward-page)
+(bind-key "s-<down>"  #'moving-forward-page)
 
 ;; Editing
 (bind-key "C-c ;"               #'comment-or-uncomment-region)
