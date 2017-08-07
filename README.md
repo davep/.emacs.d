@@ -61,7 +61,7 @@ What follows is a non-comprehensive collection of key-binding details.
 | <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>left</kbd> | Open window to the left of the current window |
 | <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>up</kbd> | Open window above current window |
 | <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>down</kbd> | Open window below current window |
-| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>Ctrl</kbd>+<kbd>right</kbd> | Open window to the right of the current window |
-| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>Ctrl</kbd>+<kbd>left</kbd> | Open window to the left of the current window |
-| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>Ctrl</kbd>+<kbd>up</kbd> | Open window above current window |
-| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>Ctrl</kbd>+<kbd>down</kbd> | Open window below current window |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>Ctrl</kbd>+<kbd>right</kbd> | Open window to the right of the current window and prompt for a file |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>Ctrl</kbd>+<kbd>left</kbd> | Open window to the left of the current window and prompt for a file |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>Ctrl</kbd>+<kbd>up</kbd> | Open window above current window and prompt for a file |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>Ctrl</kbd>+<kbd>down</kbd> | Open window below current window and prompt for a file |
