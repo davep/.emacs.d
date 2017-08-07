@@ -66,6 +66,21 @@ What follows is a non-comprehensive collection of key-binding details.
 | <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>p</kbd> <kbd>p</kbd> | Lint the current buffer as a package |
 | <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>p</kbd> <kbd>u</kbd> | Upload current buffer as a package, to delpa |
 
+### [boxquote.el](https://github.com/davep/boxquote.el)
+
+| Binding | Function |
+| --- | --- |
+| <kbd>f12</kbd> <kbd>b</kbd> <kbd>i</kbd> | `boxquote-insert-file` |
+| <kbd>f12</kbd> <kbd>b</kbd> <kbd>Meta</kbd>+<kbd>w</kbd> | `boxquote-kill-ring-save` |
+| <kbd>f12</kbd> <kbd>b</kbd> <kbd>y</kbd> | `boxquote-yank` |
+| <kbd>f12</kbd> <kbd>b</kbd> <kbd>b</kbd> | `boxquote-region` |
+| <kbd>f12</kbd> <kbd>b</kbd> <kbd>t</kbd> | `boxquote-title` |
+| <kbd>f12</kbd> <kbd>b</kbd> <kbd>h</kbd> <kbd>f</kbd> | `boxquote-describe-function` |
+| <kbd>f12</kbd> <kbd>b</kbd> <kbd>h</kbd> <kbd>v</kbd> | `boxquote-describe-variable` |
+| <kbd>f12</kbd> <kbd>b</kbd> <kbd>h</kbd> <kbd>k</kbd> | `boxquote-describe-key` |
+| <kbd>f12</kbd> <kbd>b</kbd> <kbd>h</kbd> <kbd>w</kbd> | `boxquote-where-is` |
+| <kbd>f12</kbd> <kbd>b</kbd> <kbd>!</kbd> | `boxquote-shell-command` |
+
 ### [cheat-sh.el](https://github.com/davep/cheat-sh.el)
 
 | Binding | Function |
