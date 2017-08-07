@@ -41,3 +41,14 @@ What follows is a non-comprehensive collection of key-binding details.
 | <kbd>F12</kbd> <kbd>r</kbd> | Open elisp REPL (ielm) |
 | <kbd>F12</kbd> <kbd>s</kbd> | Switch to scratch buffer |
 | <kbd>F12</kbd> <kbd>w</kbd> | Open eww (web browser) |
+
+### insert.el
+
+| Binding | Function |
+| --- | --- |
+| <kbd>C-c</kbd> <kbd>i</kbd> <kbd>a</kbd> | Insert an autoload cookie for current `defun` |
+| <kbd>C-c</kbd> <kbd>i</kbd> <kbd>f</kbd> | Insert a filename |
+| <kbd>C-c</kbd> <kbd>i</kbd> <kbd>m</kbd> | Insert a melpa badge for a package |
+| <kbd>C-c</kbd> <kbd>i</kbd> <kbd>s</kbd> | Insert Emacs sexp link quotes around current symbol |
+| <kbd>C-c</kbd> <kbd>i</kbd> <kbd>y</kbd> | Insert markdown code for a YouTube video preview |
+| <kbd>C-c</kbd> <kbd>i</kbd> <kbd>;</kbd> | Insert my own style of "break here" comment |
