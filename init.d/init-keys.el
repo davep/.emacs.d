@@ -21,7 +21,6 @@
 
 ;; Editing
 (bind-key "C-c ;"         #'comment-or-uncomment-region)
-(bind-key [delete]        #'delete-char)
 (bind-key "C-<backspace>" #'backward-kill-word)
 
 ;; Tools and "apps" and things.
