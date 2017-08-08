@@ -71,9 +71,9 @@
 (use-package org-davep
   :ensure t
   :bind
-  ("C-c o i" . org-davep-open-inbox)
-  ("C-c o d" . org-davep-open-dir)
-  ("C-c o a" . org-agenda))
+  ("<f12> o i" . org-davep-open-inbox)
+  ("<f12> o d" . org-davep-open-dir)
+  ("<f12> o a" . org-agenda))
 (use-package qrencode
   :ensure t)
 (use-package setup-compile
