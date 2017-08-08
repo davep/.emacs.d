@@ -61,10 +61,10 @@ What follows is a non-comprehensive collection of key-binding details.
 
 | Binding | Function |
 | --- | --- |
-| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>p</kbd> <kbd>l</kbd> | List packages |
-| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>p</kbd> <kbd>r</kbd> | Refresh package lists |
-| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>p</kbd> <kbd>p</kbd> | Lint the current buffer as a package |
-| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>p</kbd> <kbd>u</kbd> | Upload current buffer as a package, to delpa |
+| <kbd>F12</kbd> <kbd>p</kbd> <kbd>l</kbd> | List packages |
+| <kbd>F12</kbd> <kbd>p</kbd> <kbd>r</kbd> | Refresh package lists |
+| <kbd>F12</kbd> <kbd>p</kbd> <kbd>p</kbd> | Lint the current buffer as a package |
+| <kbd>F12</kbd> <kbd>p</kbd> <kbd>u</kbd> | Upload current buffer as a package, to delpa |
 
 ### [boxquote.el](https://github.com/davep/boxquote.el)
 

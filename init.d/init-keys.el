@@ -32,10 +32,10 @@
 (bind-key "<f12> h" #'eshell)
 (bind-key "<f12> w" #'eww)
 (bind-key "C-c C-f" #'view-file)
-(bind-key "C-c p l" #'package-list-packages)
-(bind-key "C-c p r" #'package-refresh-contents)
-(bind-key "C-c p p" #'package-lint-current-buffer)
-(bind-key "C-c p u" #'package-upload-buffer)
+(bind-key "<f12> p l" #'package-list-packages)
+(bind-key "<f12> p r" #'package-refresh-contents)
+(bind-key "<f12> p p" #'package-lint-current-buffer)
+(bind-key "<f12> p u" #'package-upload-buffer)
 
 ;; Don't do shift-selecting.
 (setq shift-select-mode nil)
