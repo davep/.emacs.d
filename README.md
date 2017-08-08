@@ -70,16 +70,16 @@ What follows is a non-comprehensive collection of key-binding details.
 
 | Binding | Function |
 | --- | --- |
-| <kbd>f12</kbd> <kbd>b</kbd> <kbd>i</kbd> | `boxquote-insert-file` |
-| <kbd>f12</kbd> <kbd>b</kbd> <kbd>Meta</kbd>+<kbd>w</kbd> | `boxquote-kill-ring-save` |
-| <kbd>f12</kbd> <kbd>b</kbd> <kbd>y</kbd> | `boxquote-yank` |
-| <kbd>f12</kbd> <kbd>b</kbd> <kbd>b</kbd> | `boxquote-region` |
-| <kbd>f12</kbd> <kbd>b</kbd> <kbd>t</kbd> | `boxquote-title` |
-| <kbd>f12</kbd> <kbd>b</kbd> <kbd>h</kbd> <kbd>f</kbd> | `boxquote-describe-function` |
-| <kbd>f12</kbd> <kbd>b</kbd> <kbd>h</kbd> <kbd>v</kbd> | `boxquote-describe-variable` |
-| <kbd>f12</kbd> <kbd>b</kbd> <kbd>h</kbd> <kbd>k</kbd> | `boxquote-describe-key` |
-| <kbd>f12</kbd> <kbd>b</kbd> <kbd>h</kbd> <kbd>w</kbd> | `boxquote-where-is` |
-| <kbd>f12</kbd> <kbd>b</kbd> <kbd>!</kbd> | `boxquote-shell-command` |
+| <kbd>F12</kbd> <kbd>b</kbd> <kbd>i</kbd> | `boxquote-insert-file` |
+| <kbd>F12</kbd> <kbd>b</kbd> <kbd>Meta</kbd>+<kbd>w</kbd> | `boxquote-kill-ring-save` |
+| <kbd>F12</kbd> <kbd>b</kbd> <kbd>y</kbd> | `boxquote-yank` |
+| <kbd>F12</kbd> <kbd>b</kbd> <kbd>b</kbd> | `boxquote-region` |
+| <kbd>F12</kbd> <kbd>b</kbd> <kbd>t</kbd> | `boxquote-title` |
+| <kbd>F12</kbd> <kbd>b</kbd> <kbd>h</kbd> <kbd>f</kbd> | `boxquote-describe-function` |
+| <kbd>F12</kbd> <kbd>b</kbd> <kbd>h</kbd> <kbd>v</kbd> | `boxquote-describe-variable` |
+| <kbd>F12</kbd> <kbd>b</kbd> <kbd>h</kbd> <kbd>k</kbd> | `boxquote-describe-key` |
+| <kbd>F12</kbd> <kbd>b</kbd> <kbd>h</kbd> <kbd>w</kbd> | `boxquote-where-is` |
+| <kbd>F12</kbd> <kbd>b</kbd> <kbd>!</kbd> | `boxquote-shell-command` |
 
 ### [cheat-sh.el](https://github.com/davep/cheat-sh.el)
 
@@ -95,12 +95,12 @@ What follows is a non-comprehensive collection of key-binding details.
 
 | Binding | Function |
 | --- | --- |
-| <kbd>f12</kbd> <kbd>i</kbd> <kbd>a</kbd> | Insert an autoload cookie for current `defun` |
-| <kbd>f12</kbd> <kbd>i</kbd> <kbd>f</kbd> | Insert a filename |
-| <kbd>f12</kbd> <kbd>i</kbd> <kbd>m</kbd> | Insert a melpa badge for a package |
-| <kbd>f12</kbd> <kbd>i</kbd> <kbd>s</kbd> | Insert Emacs sexp link quotes around current symbol |
-| <kbd>f12</kbd> <kbd>i</kbd> <kbd>y</kbd> | Insert markdown code for a YouTube video preview |
-| <kbd>f12</kbd> <kbd>i</kbd> <kbd>;</kbd> | Insert my own style of "break here" comment |
+| <kbd>F12</kbd> <kbd>i</kbd> <kbd>a</kbd> | Insert an autoload cookie for current `defun` |
+| <kbd>F12</kbd> <kbd>i</kbd> <kbd>f</kbd> | Insert a filename |
+| <kbd>F12</kbd> <kbd>i</kbd> <kbd>m</kbd> | Insert a melpa badge for a package |
+| <kbd>F12</kbd> <kbd>i</kbd> <kbd>s</kbd> | Insert Emacs sexp link quotes around current symbol |
+| <kbd>F12</kbd> <kbd>i</kbd> <kbd>y</kbd> | Insert markdown code for a YouTube video preview |
+| <kbd>F12</kbd> <kbd>i</kbd> <kbd>;</kbd> | Insert my own style of "break here" comment |
 
 ### [winsplit.el](https://github.com/davep/winsplit.el)
 
