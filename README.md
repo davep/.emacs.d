@@ -95,12 +95,12 @@ What follows is a non-comprehensive collection of key-binding details.
 
 | Binding | Function |
 | --- | --- |
-| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>i</kbd> <kbd>a</kbd> | Insert an autoload cookie for current `defun` |
-| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>i</kbd> <kbd>f</kbd> | Insert a filename |
-| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>i</kbd> <kbd>m</kbd> | Insert a melpa badge for a package |
-| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>i</kbd> <kbd>s</kbd> | Insert Emacs sexp link quotes around current symbol |
-| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>i</kbd> <kbd>y</kbd> | Insert markdown code for a YouTube video preview |
-| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>i</kbd> <kbd>;</kbd> | Insert my own style of "break here" comment |
+| <kbd>f12</kbd> <kbd>i</kbd> <kbd>a</kbd> | Insert an autoload cookie for current `defun` |
+| <kbd>f12</kbd> <kbd>i</kbd> <kbd>f</kbd> | Insert a filename |
+| <kbd>f12</kbd> <kbd>i</kbd> <kbd>m</kbd> | Insert a melpa badge for a package |
+| <kbd>f12</kbd> <kbd>i</kbd> <kbd>s</kbd> | Insert Emacs sexp link quotes around current symbol |
+| <kbd>f12</kbd> <kbd>i</kbd> <kbd>y</kbd> | Insert markdown code for a YouTube video preview |
+| <kbd>f12</kbd> <kbd>i</kbd> <kbd>;</kbd> | Insert my own style of "break here" comment |
 
 ### [winsplit.el](https://github.com/davep/winsplit.el)
 

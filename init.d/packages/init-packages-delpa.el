@@ -34,14 +34,13 @@
 (use-package insert
   :ensure t
   :bind
-  ("C-RET"   . insert-line-split-keeping-fill-prefix)
-  ("C-c RET" . insert-line-split-keeping-fill-prefix)
-  ("C-c i a" . insert-autoload-cookie)
-  ("C-c i f" . insert-filename)
-  ("C-c i m" . insert-melpa-badge)
-  ("C-c i s" . insert-sexp-link)
-  ("C-c i y" . insert-youtube-markdown)
-  ("C-c i ;" . insert-break-comment))
+  ("C-<return>" . insert-line-split-keeping-fill-prefix)
+  ("<f12> i a"  . insert-autoload-cookie)
+  ("<f12> i f"  . insert-filename)
+  ("<f12> i m"  . insert-melpa-badge)
+  ("<f12> i s"  . insert-sexp-link)
+  ("<f12> i y"  . insert-youtube-markdown)
+  ("<f12> i ;"  . insert-break-comment))
 (use-package itch
   :ensure t
   :bind
