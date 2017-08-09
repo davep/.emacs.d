@@ -124,13 +124,6 @@
   :config
   (add-hook 'markdown-mode-hook
             (lambda ()
-              ;; The "C-c <arrow>" bindings in markdown-mode clash with my
-              ;; window creation bindings. Remove them (there are
-              ;; alternatives anyway).
-              (define-key markdown-mode-map (kbd "C-c <right>") nil)
-              (define-key markdown-mode-map (kbd "C-c <left>")  nil)
-              (define-key markdown-mode-map (kbd "C-c <up>")    nil)
-              (define-key markdown-mode-map (kbd "C-c <down>")  nil)
               (auto-fill-mode)
               (flyspell-mode 1))))
 (use-package minimap
