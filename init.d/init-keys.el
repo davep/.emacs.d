@@ -34,7 +34,7 @@
 (bind-key "C-c C-f" #'view-file)
 (bind-key "<f12> p l" #'package-list-packages)
 (bind-key "<f12> p r" #'package-refresh-contents)
-(bind-key "<f12> p p" #'package-lint-current-buffer)
+(bind-key "<f12> p t" #'package-lint-current-buffer)
 (bind-key "<f12> p u" #'package-upload-buffer)
 
 ;; Don't do shift-selecting.
