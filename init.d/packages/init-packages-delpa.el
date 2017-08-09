@@ -43,8 +43,8 @@
   ("<f12> i ;"  . insert-break-comment))
 (use-package itch
   :ensure t
-  :bind
-  ("<f12> s" . itch-scratch-buffer))
+  :bind*
+  ("M-s" . itch-scratch-buffer))
 (use-package longmacs
   :ensure t)
 (use-package macdob
