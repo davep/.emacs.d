@@ -85,11 +85,11 @@ What follows is a non-comprehensive collection of key-binding details.
 
 | Binding | Function |
 | --- | --- |
-| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>/</kbd> <kbd>/</kbd> | Search cheat-sh, using region if there is one |
-| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>/</kbd> <kbd>l</kbd> | List sheets for a given item |
-| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>/</kbd> <kbd>?</kbd> | Show cheat-sh help |
-| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>/</kbd> <kbd>s</kbd> | Search cheat-sh |
-| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>/</kbd> <kbd>t</kbd> | Search a specific topic on cheat-sh |
+| <kbd>f12</kbd> <kbd>/</kbd> <kbd>/</kbd> | Search cheat-sh, using region if there is one |
+| <kbd>f12</kbd> <kbd>/</kbd> <kbd>l</kbd> | List sheets for a given item |
+| <kbd>f12</kbd> <kbd>/</kbd> <kbd>?</kbd> | Show cheat-sh help |
+| <kbd>f12</kbd> <kbd>/</kbd> <kbd>s</kbd> | Search cheat-sh |
+| <kbd>f12</kbd> <kbd>/</kbd> <kbd>t</kbd> | Search a specific topic on cheat-sh |
 
 ### [insert.el](https://github.com/davep/insert.el)
 
