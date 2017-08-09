@@ -136,7 +136,8 @@
         org-log-done 'time))
 (use-package quickurl
   :bind
-  ("C-c u" . quickurl)
+  ("<f12> u u" . quickurl)
+  ("<f12> u l" . quickurl-list)
   :config
   (setq quickurl-url-file (locate-user-emacs-file ".quickurls.el")))
 (use-package paren
