@@ -100,7 +100,7 @@ What follows is a non-comprehensive collection of key-binding details.
 | --- | --- |
 | <kbd>F12</kbd> <kbd>i</kbd> <kbd>a</kbd> | Insert an autoload cookie for current `defun` |
 | <kbd>F12</kbd> <kbd>i</kbd> <kbd>f</kbd> | Insert a filename |
-| <kbd>F12</kbd> <kbd>i</kbd> <kbd>m</kbd> | Insert a melpa badge for a package |
+| <kbd>F12</kbd> <kbd>i</kbd> <kbd>m</kbd> | Insert a [melpa](https://melpa.org/) badge for a package |
 | <kbd>F12</kbd> <kbd>i</kbd> <kbd>s</kbd> | Insert Emacs sexp link quotes around current symbol |
 | <kbd>F12</kbd> <kbd>i</kbd> <kbd>y</kbd> | Insert markdown code for a YouTube video preview |
 | <kbd>F12</kbd> <kbd>i</kbd> <kbd>;</kbd> | Insert my own style of "break here" comment |
