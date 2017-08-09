@@ -27,7 +27,7 @@ always welcome.
 
 What follows is a non-comprehensive collection of key-binding details.
 
-### Function keys
+### General/misc keys
 
 | Binding | Function |
 | --- | --- |
