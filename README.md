@@ -31,6 +31,7 @@ What follows is a non-comprehensive collection of key-binding details.
 
 | Binding | Function |
 | --- | --- |
+| <kbd>Meta</kbd>+<kbd>s</kbd> | Switch to `*scratch*` |
 | <kbd>Meta</kbd>+<kbd>F6</kbd> | Show iBuffer |
 | <kbd>F7</kbd> | List personal key bindings |
 | <kbd>F11</kbd> | Show current Emacs uptime |
