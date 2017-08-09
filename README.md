@@ -40,12 +40,12 @@ What follows is a non-comprehensive collection of key-binding details.
 | <kbd>Meta</kbd>+<kbd>F11</kbd> | Show Emacs uptimes |
 | <kbd>Ctrl</kbd>+<kbd>F11</kbd> | Show binary clock |
 | <kbd>Ctrl</kbd>+<kbd>Meta</kbd>+<kbd>F11</kbd> | Nuke buffers |
-| <kbd>F12</kbd> <kbd>h</kbd> | Open eshell |
+| <kbd>F12</kbd> <kbd>h</kbd> | Open `eshell` |
 | <kbd>F12</kbd> <kbd>k</kbd> | Browse the kill-ring |
-| <kbd>F12</kbd> <kbd>r</kbd> | Open elisp REPL (ielm) |
+| <kbd>F12</kbd> <kbd>r</kbd> | Open elisp REPL (`ielm`) |
 | <kbd>F12</kbd> <kbd>s</kbd> | Switch to scratch buffer |
-| <kbd>F12</kbd> <kbd>w</kbd> | Open eww (web browser) |
-| <kbd>F12</kbd> <kbd>x</kbd> | Open wttrin (as in "view wX") |
+| <kbd>F12</kbd> <kbd>w</kbd> | Open `eww` (web browser) |
+| <kbd>F12</kbd> <kbd>x</kbd> | Open `wttrin` (as in "view wX") |
 
 ### Moving around
 
