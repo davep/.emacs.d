@@ -174,6 +174,8 @@
   :ensure t)
 (use-package restclient
   :ensure t)
+(use-package rust-mode
+  :ensure t)
 (use-package sass-mode
   :ensure t
   :mode "\\.scss$"
