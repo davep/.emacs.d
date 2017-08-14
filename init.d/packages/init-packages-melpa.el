@@ -116,6 +116,8 @@
 (use-package magit
   :if is-a-unix-p
   :ensure t
+  :config
+  (add-hook 'after-save-hook #'magit-after-save-refresh-status)
   :bind
   ("C-c g s" . magit-status)
   ("C-c g l" . magit-log-all))
