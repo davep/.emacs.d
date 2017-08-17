@@ -119,8 +119,9 @@
   :config
   (add-hook 'after-save-hook #'magit-after-save-refresh-status)
   :bind
-  ("C-c g s" . magit-status)
-  ("C-c g l" . magit-log-all))
+  ("<f12> g s"   . magit-status)
+  ("<f12> g l a" . magit-log-all)
+  ("<f12> g l f" . magit-log-buffer-file))
 (use-package markdown-mode
   :ensure t
   :config
