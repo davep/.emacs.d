@@ -69,6 +69,14 @@ What follows is a non-comprehensive collection of key-binding details.
 | <kbd>F12</kbd> <kbd>p</kbd> <kbd>t</kbd> | Lint the current buffer as a package |
 | <kbd>F12</kbd> <kbd>p</kbd> <kbd>u</kbd> | Upload current buffer as a package, to delpa |
 
+### Magit
+
+| Binding | Function |
+| --- | --- |
+| <kbd>F12</kbd> <kbd>g</kbd> <kbd>s</kbd> | Repo status |
+| <kbd>F12</kbd> <kbd>g</kbd> <kbd>l</kbd> <kbd>a</kbd> | View log for whole repo |
+| <kbd>F12</kbd> <kbd>g</kbd> <kbd>l</kbd> <kbd>f</kbd> | View log for current file |
+
 ### [boxquote.el](https://github.com/davep/boxquote.el)
 
 | Binding | Function |
