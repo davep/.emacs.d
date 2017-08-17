@@ -75,6 +75,8 @@
   ("<f12> o a" . org-agenda))
 (use-package qrencode
   :ensure t)
+(use-package quiz
+  :ensure t)
 (use-package setup-compile
   :ensure t
   :config
