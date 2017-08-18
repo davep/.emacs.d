@@ -51,14 +51,14 @@ What follows is a non-comprehensive collection of key-binding details.
 
 | Binding | Function |
 | --- | --- |
-| <kbd>home</kbd> | Context-aware "home" |
-| <kbd>end</kbd> | Context-aware "end" |
-| <kbd>Super</kbd>+<kbd>left</kbd> | Context-aware "home" |
-| <kbd>Super</kbd>+<kbd>right</kbd> | Context-aware "end" |
-| <kbd>Meta</kbd>+<kbd>left</kbd> | Backward sexp |
-| <kbd>Meta</kbd>+<kbd>right</kbd> | Forward sexp |
-| <kbd>Super</kbd>+<kbd>up</kbd> | Backward page |
-| <kbd>Super</kbd>+<kbd>down</kbd> | Forward page |
+| <kbd>Home</kbd> | Context-aware "home" |
+| <kbd>End</kbd> | Context-aware "end" |
+| <kbd>Super</kbd>+<kbd>Left</kbd> | Context-aware "home" |
+| <kbd>Super</kbd>+<kbd>Right</kbd> | Context-aware "end" |
+| <kbd>Meta</kbd>+<kbd>Left</kbd> | Backward sexp |
+| <kbd>Meta</kbd>+<kbd>Right</kbd> | Forward sexp |
+| <kbd>Super</kbd>+<kbd>Up</kbd> | Backward page |
+| <kbd>Super</kbd>+<kbd>Down</kbd> | Forward page |
 
 ### Packages
 
@@ -117,14 +117,14 @@ What follows is a non-comprehensive collection of key-binding details.
 
 | Binding | Function |
 | --- | --- |
-| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>right</kbd> | Open window to the right of the current window |
-| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>left</kbd> | Open window to the left of the current window |
-| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>up</kbd> | Open window above current window |
-| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>down</kbd> | Open window below current window |
-| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>Ctrl</kbd>+<kbd>right</kbd> | Open window to the right of the current window and prompt for a file |
-| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>Ctrl</kbd>+<kbd>left</kbd> | Open window to the left of the current window and prompt for a file |
-| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>Ctrl</kbd>+<kbd>up</kbd> | Open window above current window and prompt for a file |
-| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>Ctrl</kbd>+<kbd>down</kbd> | Open window below current window and prompt for a file |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>Right</kbd> | Open window to the right of the current window |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>Left</kbd> | Open window to the left of the current window |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>Up</kbd> | Open window above current window |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>Down</kbd> | Open window below current window |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>Ctrl</kbd>+<kbd>Right</kbd> | Open window to the right of the current window and prompt for a file |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>Ctrl</kbd>+<kbd>Left</kbd> | Open window to the left of the current window and prompt for a file |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>Ctrl</kbd>+<kbd>Up</kbd> | Open window above current window and prompt for a file |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>Ctrl</kbd>+<kbd>Down</kbd> | Open window below current window and prompt for a file |
 
 ## Licence
 
