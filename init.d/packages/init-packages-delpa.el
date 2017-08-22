@@ -47,9 +47,9 @@
   ("M-s" . itch-scratch-buffer))
 (use-package longmacs
   :ensure t)
-(use-package macdob
-  :if is-a-macOS-p
-  :ensure t)
+(when is-a-macOS-p
+  (use-package macdob
+    :ensure t))
 (use-package moving
   :ensure t
   :bind
