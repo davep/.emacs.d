@@ -113,15 +113,15 @@
 (use-package hyde
   :ensure t
   :commands hyde)
-(use-package magit
-  :if is-a-unix-p
-  :ensure t
-  :config
-  (add-hook 'after-save-hook #'magit-after-save-refresh-status)
-  :bind
-  ("<f12> g s"   . magit-status)
-  ("<f12> g l a" . magit-log-all)
-  ("<f12> g l f" . magit-log-buffer-file))
+(when is-a-linux-p
+  (use-package magit
+    :ensure t
+    :config
+    (add-hook 'after-save-hook #'magit-after-save-refresh-status)
+    :bind
+    ("<f12> g s"   . magit-status)
+    ("<f12> g l a" . magit-log-all)
+    ("<f12> g l f" . magit-log-buffer-file)))
 (use-package markdown-mode
   :ensure t
   :config
