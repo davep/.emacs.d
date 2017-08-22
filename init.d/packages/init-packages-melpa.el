@@ -54,6 +54,8 @@
   :ensure t)
 (use-package protocols
   :ensure t)
+(use-package quiz
+  :ensure t)
 (use-package services
   :ensure t)
 (use-package slstats
