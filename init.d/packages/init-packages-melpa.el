@@ -1,4 +1,4 @@
-;;; init-packages-melpa.el -- Load and configure packages from public repos.
+hk;;; init-packages-melpa.el -- Load and configure packages from public repos.
 
 ;;; Commentary:
 ;;
@@ -63,8 +63,8 @@
 (use-package thinks
   :ensure t
   :bind
-  ("C-c t t" . thinks-maybe-region)
-  ("C-c t y" . thinks-yank))
+  ("<f12> t t" . thinks-maybe-region)
+  ("<f12> t y" . thinks-yank))
 (use-package uptimes
   :ensure t
   :init
