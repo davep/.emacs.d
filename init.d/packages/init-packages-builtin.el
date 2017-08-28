@@ -16,7 +16,11 @@
   (setq abbrev-file-name (local-emacs-directory "abbrev_defs.el")))
 (use-package bookmark
   :config
-  (setq bookmark-default-file (local-emacs-directory "bookmarks.el")))
+  (setq bookmark-default-file (local-emacs-directory "bookmarks.el"))
+  :bind
+  ("<f12> m b" . bookmark-set)
+  ("<f12> m l" . bookmark-bmenu-list)
+  ("<f12> m g" . bookmark-jump))
 (use-package calendar
   :config
   (setq

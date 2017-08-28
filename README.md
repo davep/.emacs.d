@@ -59,6 +59,9 @@ What follows is a non-comprehensive collection of key-binding details.
 | <kbd>Meta</kbd>+<kbd>Right</kbd> | Forward sexp |
 | <kbd>Super</kbd>+<kbd>Up</kbd> | Backward page |
 | <kbd>Super</kbd>+<kbd>Down</kbd> | Forward page |
+| <kbd>F12</kbd> <kbd>m</kbd> <kbd>b</kbd> | Create bookmark here |
+| <kbd>F12</kbd> <kbd>m</kbd> <kbd>l</kbd> | View bookmarks |
+| <kbd>F12</kbd> <kbd>m</kbd> <kbd>g</kbd> | Go to bookmark |
 
 ### Packages
 
