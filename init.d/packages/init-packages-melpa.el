@@ -39,7 +39,7 @@
 (use-package dad-joke
   :ensure t
   :bind
-  ("C-c C-d" . dad-joke))
+  ("<f12> d" . dad-joke))
 (use-package eg
   :ensure t)
 (use-package numbers
