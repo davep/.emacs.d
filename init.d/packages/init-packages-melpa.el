@@ -93,12 +93,13 @@
   (add-hook 'after-init-hook #'global-company-mode))
 (use-package dictionary
   :ensure t)
-(use-package emojify
-  :if is-a-unix-window-p
-  :config
-  (setq emojify-emojis-dir (local-emacs-directory "emojis"))
-  (global-emojify-mode)
-  :ensure t)
+(when is-a-unix-p
+  (use-package emojify
+    :if is-a-unix-window-p
+    :config
+    (setq emojify-emojis-dir (local-emacs-directory "emojis"))
+    (global-emojify-mode)
+    :ensure t))
 (use-package google-contacts
   :ensure t)
 (use-package google-maps
