@@ -51,6 +51,7 @@ What follows is a non-comprehensive collection of key-binding details.
 
 | Binding | Function |
 | --- | --- |
+| <kbd>Meta</kbd>+<kbd>g</kbd> | Goto line |
 | <kbd>Home</kbd> | Context-aware "home" |
 | <kbd>End</kbd> | Context-aware "end" |
 | <kbd>Super</kbd>+<kbd>Left</kbd> | Context-aware "home" |
