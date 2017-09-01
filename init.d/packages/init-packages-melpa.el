@@ -116,7 +116,7 @@
 (use-package hyde
   :ensure t
   :commands hyde)
-(when is-a-linux-p
+(when is-a-unix-p
   (use-package magit
     :ensure t
     :config
