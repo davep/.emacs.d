@@ -38,7 +38,7 @@ What follows is a non-comprehensive collection of key-binding details.
 | <kbd>F7</kbd> | List personal key bindings |
 | <kbd>F11</kbd> | Show current Emacs uptime |
 | <kbd>Meta</kbd>+<kbd>F11</kbd> | Show Emacs uptimes |
-| <kbd>Ctrl</kbd>+<kbd>F11</kbd> | Show binary clock |
+| <kbd>Ctrl</kbd>+<kbd>F11</kbd> | [Show binary clock](https://github.com/davep/binclock.el) |
 | <kbd>Ctrl</kbd>+<kbd>Meta</kbd>+<kbd>F11</kbd> | [Nuke buffers](https://github.com/davep/nuke-buffers.el) |
 | <kbd>F12</kbd> <kbd>h</kbd> | Open `eshell` |
 | <kbd>F12</kbd> <kbd>k</kbd> | Browse the kill-ring |
