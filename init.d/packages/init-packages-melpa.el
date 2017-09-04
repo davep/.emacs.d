@@ -113,6 +113,11 @@
             (lambda ()
               (when (buffer-file-name)
                 (hc-highlight-trailing-whitespace)))))
+(use-package highlight-indent-guides
+  :ensure t
+  :config
+  (setq highlight-indent-guides-method 'character)
+  (add-hook 'prog-mode-hook #'highlight-indent-guides-mode))
 (use-package hyde
   :ensure t
   :commands hyde)
