@@ -187,6 +187,11 @@
     (when (string= (buffer-string) "")
       (insert "# -*- restclient -*-\n\n"))
     (restclient-mode)))
+(when is-a-macOS-p
+  (use-package reveal-in-osx-finder
+    :ensure t
+    :bind
+    ("<f12> m r" . reveal-in-osx-finder)))
 (use-package rust-mode
   :ensure t)
 (use-package sass-mode
