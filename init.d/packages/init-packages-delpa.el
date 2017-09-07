@@ -49,6 +49,8 @@
   :ensure t)
 (when is-a-macOS-p
   (use-package macdob
+    :ensure t)
+  (use-package macinfo
     :ensure t))
 (use-package moving
   :ensure t
