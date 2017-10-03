@@ -10,7 +10,7 @@
 
 (use-package become
   :ensure t
-  :config
+  :init
   (unless noninteractive
     (add-hook 'before-save-hook #'become-free-of-trailing-whitespace))
   :bind
