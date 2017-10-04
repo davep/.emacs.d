@@ -208,6 +208,8 @@
               (require 'slime-fancy))))
 (use-package suggest
   :ensure t)
+(use-package wc-mode
+  :ensure t)
 (use-package wttrin
   :ensure t
   :config
