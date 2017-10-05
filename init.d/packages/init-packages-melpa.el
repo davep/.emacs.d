@@ -208,6 +208,10 @@
               (require 'slime-fancy))))
 (use-package suggest
   :ensure t)
+(use-package switch-window
+  :bind
+  ("C-c o" . switch-window)
+  :ensure t)
 (use-package wc-mode
   :ensure t)
 (use-package wttrin
