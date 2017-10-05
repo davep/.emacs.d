@@ -210,7 +210,7 @@
   :ensure t)
 (use-package switch-window
   :bind
-  ("C-c o" . switch-window)
+  ("C-x o" . switch-window)
   :ensure t)
 (use-package wc-mode
   :ensure t)
