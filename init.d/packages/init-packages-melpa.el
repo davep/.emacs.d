@@ -194,6 +194,8 @@
     :ensure t
     :bind
     ("<f12> m r" . reveal-in-osx-finder)))
+(use-package rjsx-mode
+  :ensure t)
 (use-package rust-mode
   :ensure t)
 (use-package sass-mode
