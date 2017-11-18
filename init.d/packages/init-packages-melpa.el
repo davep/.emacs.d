@@ -195,7 +195,9 @@
     :bind
     ("<f12> m r" . reveal-in-osx-finder)))
 (use-package rjsx-mode
-  :ensure t)
+  :ensure t
+  :bind*
+  ("<" . self-insert-command))
 (use-package rust-mode
   :ensure t)
 (use-package sass-mode
