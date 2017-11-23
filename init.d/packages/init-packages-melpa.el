@@ -152,6 +152,9 @@
   ("C->"     . mc/mark-all-like-this)
   ("C-c ."   . mc/mark-all-like-this-dwim)
   ("C-c C-." . mc/edit-lines))
+(when is-a-unix-p
+  (use-package nodejs-repl
+    :ensure t))
 (use-package package-lint
   :ensure t)
 (use-package page-break-lines
