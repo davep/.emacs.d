@@ -132,11 +132,9 @@
               (smartsig-add "sawfish" "~/.sigs/sawfish" "sawfish" "sawmill" "librep" "rep" "gnome"))))
 (use-package org
   :config
-  (setq org-agenda-files
-        '("~/Dropbox/Sync/Org/elisp.org"
-          "~/Dropbox/Sync/Org/inbox.org")
-        org-default-notes-file "~/Dropbox/Sync/Org/inbox.org"
-        org-directory "~/Dropbox/Sync/Org"
+  (setq org-directory (or (getenv "ORG_DIRECTORY") "~/notebook/")
+        org-default-notes-file (concat (file-name-as-directory org-directory) "inbox.org")
+        org-agenda-files (list org-default-notes-file)
         org-log-done 'time))
 (use-package quickurl
   :bind
