@@ -121,6 +121,8 @@
 (use-package hyde
   :ensure t
   :commands hyde)
+(use-package indium
+  :ensure t)
 (when is-a-unix-p
   (use-package magit
     :ensure t
