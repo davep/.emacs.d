@@ -70,7 +70,7 @@ What follows is a non-comprehensive collection of key-binding details.
 | <kbd>F12</kbd> <kbd>p</kbd> <kbd>l</kbd> | List packages |
 | <kbd>F12</kbd> <kbd>p</kbd> <kbd>r</kbd> | Refresh package lists |
 | <kbd>F12</kbd> <kbd>p</kbd> <kbd>t</kbd> | Lint the current buffer as a package |
-| <kbd>F12</kbd> <kbd>p</kbd> <kbd>u</kbd> | Upload current buffer as a package, to delpa |
+| <kbd>F12</kbd> <kbd>p</kbd> <kbd>u</kbd> | Upload current buffer as a package, to [delpa](http://blog.davep.org/delpa/) |
 
 ### Magit
 
