@@ -10,6 +10,7 @@
 
 (use-package become
   :ensure t
+  :commands become-free-of-trailing-whitespace
   :init
   (unless noninteractive
     (add-hook 'before-save-hook #'become-free-of-trailing-whitespace))
@@ -83,6 +84,7 @@
   :ensure t)
 (use-package setup-compile
   :ensure t
+  :commands setup-compile
   :config
   (add-hook 'c-mode-hook          #'setup-compile)
   (add-hook 'c++-mode-hook        #'setup-compile)

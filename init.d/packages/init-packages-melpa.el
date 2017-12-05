@@ -79,6 +79,7 @@
   :if (display-graphic-p)
   :ensure t
   :diminish 'beacon-mode
+  :commands beacon-mode
   :config (beacon-mode 1))
 (use-package browse-kill-ring
   :ensure t
@@ -89,6 +90,7 @@
   :diminish "CM"
   :bind
   ("s-SPC" . company-complete)
+  :commands global-company-mode
   :init
   (add-hook 'after-init-hook #'global-company-mode))
 (use-package dictionary
@@ -96,6 +98,7 @@
 (when is-a-unix-p
   (use-package emojify
     :if is-a-unix-window-p
+    :commands global-emojify-mode
     :config
     (setq emojify-emojis-dir (local-emacs-directory "emojis"))
     (global-emojify-mode)
@@ -111,6 +114,7 @@
                 (hc-highlight-trailing-whitespace)))))
 (use-package highlight-indent-guides
   :ensure t
+  :commands highlight-indent-guides-mode
   :config
   (setq highlight-indent-guides-method 'character)
   (add-hook 'prog-mode-hook #'highlight-indent-guides-mode))
@@ -158,11 +162,13 @@
 (use-package page-break-lines
   :ensure t
   :diminish 'page-break-lines-mode
+  :commands global-page-break-lines-mode
   :init
   (global-page-break-lines-mode))
 (use-package paren-face
   :ensure t
   :demand
+  :commands global-paren-face-mode
   :config
   (global-paren-face-mode t)
   (set-face-foreground 'parenthesis "gray63"))
@@ -182,6 +188,7 @@
   :ensure t)
 (use-package restclient
   :ensure t
+  :commands restclient-mode
   :config
   (defun restclient-scratch ()
     "Create a scratch buffer for use with `resctclient-mode'."

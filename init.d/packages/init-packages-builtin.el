@@ -37,6 +37,7 @@
   (setq-default dired-omit-files-p t)
   (setq dired-omit-files "^\\.[^.]"))
 (use-package elec-pair
+  :commands electric-pair-mode
   :init
   (electric-pair-mode t))
 (use-package eshell
@@ -70,6 +71,9 @@
       (push aspell exec-path)
       (setq ispell-program-name "aspell"))))
 (use-package flyspell
+  :commands
+  flyspell-mode
+  flyspell-prog-mode
   :config
   (mapc (lambda (hook)
           (add-hook hook #'flyspell-prog-mode))
@@ -79,6 +83,7 @@
           js-mode-hook
           sh-mode-hook)))
 (use-package footnote
+  :commands footnote-mode
   :config
   (add-hook 'footnote-mode-hook
             (lambda ()
@@ -144,9 +149,11 @@
   :config
   (setq quickurl-url-file (locate-user-emacs-file ".quickurls.el")))
 (use-package paren
+  :commands show-paren-mode
   :init
   (show-paren-mode t))
 (use-package savehist
+  :commands savehist-mode
   :init
   (setq savehist-file (local-emacs-directory "history.el"))
   (savehist-mode t))
