@@ -106,9 +106,6 @@
   ("C-c C-<left>"  . winsplit-left-load)
   ("C-c C-<up>"    . winsplit-above-load)
   ("C-c C-<down>"  . winsplit-below-load))
-(use-package xbase
-  :mode ("\\.\\(prg\\|ch\\|ppo\\)$" . xbase-mode)
-  :ensure t)
 
 (provide 'init-packages-delpa)
 
