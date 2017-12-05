@@ -101,7 +101,7 @@
   :bind
   ("M-<f6>" . ibuffer)
   ("C-x C-b" . ibuffer)
-  :functions
+  :commands
   ibuffer-auto-mode
   ibuffer-switch-to-saved-filter-groups
   ibuffer-do-sort-by-alphabetic

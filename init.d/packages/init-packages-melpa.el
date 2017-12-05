@@ -126,7 +126,7 @@
 (when is-a-unix-p
   (use-package magit
     :ensure t
-    :functions magit-after-save-refresh-status
+    :commands magit-after-save-refresh-status
     :config
     (add-hook 'after-save-hook #'magit-after-save-refresh-status)
     :bind
