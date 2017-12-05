@@ -23,6 +23,9 @@
   ;; the package system stomping on my init file).
   (require 'init-repos)
 
+  ;; Now that the repos are set up, ensure `use-package' is in play.
+  (require 'use-package)
+
   ;; Now that melpa is sorted and use-package is available, ensure that
   ;; auto-compile kicks in. I like my ~/.emacs.d/ to be compiled so this is
   ;; very handy when I've made lots of changes and pulled them down to a
