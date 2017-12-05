@@ -100,10 +100,6 @@
     (setq emojify-emojis-dir (local-emacs-directory "emojis"))
     (global-emojify-mode)
     :ensure t))
-(use-package google-contacts
-  :ensure t)
-(use-package google-maps
-  :ensure t)
 (use-package highlight-chars
   :ensure t
   :demand
