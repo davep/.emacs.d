@@ -147,7 +147,6 @@
   :init
   (show-paren-mode t))
 (use-package savehist
-  :config
   :init
   (setq savehist-file (local-emacs-directory "history.el"))
   (savehist-mode t))
