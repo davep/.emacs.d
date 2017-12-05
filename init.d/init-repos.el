@@ -16,7 +16,6 @@
 
 ;; Add melpa and delpa.
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
-(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/"))
 (add-to-list 'package-archives '("delpa" . "http://blog.davep.org/delpa/"))
 
 ;; Initialise the package system.
