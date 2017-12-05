@@ -135,7 +135,8 @@
   (setq org-directory (or (getenv "ORG_DIRECTORY") "~/notebook/")
         org-default-notes-file (concat (file-name-as-directory org-directory) "inbox.org")
         org-agenda-files (list org-default-notes-file)
-        org-log-done 'time))
+        org-log-done 'time
+        org-src-fontify-natively t))
 (use-package quickurl
   :bind
   ("<f12> u u" . quickurl)
