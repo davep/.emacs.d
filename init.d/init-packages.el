@@ -14,6 +14,10 @@
 ;; Ensure use-package is available.
 (require 'use-package)
 
+;; Ensure diminish is available.
+(use-package diminish
+  :ensure t)
+
 ;; Given I have my own package archive, ensure I can manage that too.
 (let ((delpa "~/develop/elisp/delpa/"))
   (when (file-exists-p delpa)
