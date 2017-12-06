@@ -31,10 +31,11 @@
 ;; dock. Fix this (in both `exec-path` and PATH).
 (when is-a-macOS-p
   (let ((local "/usr/local/bin"))
-    (unless (member local exec-path)
-      (push local exec-path))
-    (unless (string-match-p (regexp-quote local) (getenv "PATH"))
-      (setenv "PATH" (concat (getenv "PATH") ":" local)))))
+    (when (file-exists-p local)
+      (unless (member local exec-path)
+        (push local exec-path))
+      (unless (string-match-p (regexp-quote local) (getenv "PATH"))
+        (setenv "PATH" (concat (getenv "PATH") ":" local))))))
 
 ;; If we're on a Unix of some sort, add a personal bin (if it's there).
 (let ((bin "~/bin"))
