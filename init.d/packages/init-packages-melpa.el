@@ -131,6 +131,7 @@
     (add-hook 'after-save-hook #'magit-after-save-refresh-status)
     :bind
     ("<f12> g s"   . magit-status)
+    ("<f12> g b"   . magit-blame)
     ("<f12> g l a" . magit-log-all)
     ("<f12> g l f" . magit-log-buffer-file)))
 (use-package markdown-mode
