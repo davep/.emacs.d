@@ -41,7 +41,9 @@
   :bind
   ("<f12> d" . dad-joke))
 (use-package eg
-  :ensure t)
+  :ensure t
+  :bind
+  ("<f12> e" . eg))
 (use-package numbers
   :ensure t
   :bind
