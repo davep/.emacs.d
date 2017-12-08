@@ -82,6 +82,10 @@
   ("<f12> o a" . org-agenda))
 (use-package qrencode
   :ensure t)
+(use-package rate-sx
+  :ensure t
+  :bind
+  ("<f12> c" . rate-sx))
 (use-package setup-compile
   :ensure t
   :commands setup-compile
