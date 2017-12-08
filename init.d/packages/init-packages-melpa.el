@@ -124,7 +124,17 @@
   :ensure t
   :commands hyde)
 (use-package indium
-  :ensure t)
+  :ensure t
+  :init
+  (defun indium-scratch-node ()
+    (interactive)
+    (unless (get-buffer "*JS REPL*")
+      (indium-run-node "node"))
+    (unless (get-buffer "*JS scratch*")
+      (indium-scratch))
+    (switch-to-buffer "*JS scratch*"))
+  :bind
+  ("<f12> n s" . indium-scratch-node))
 (when is-a-unix-p
   (use-package magit
     :ensure t
