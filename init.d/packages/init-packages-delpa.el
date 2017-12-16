@@ -26,6 +26,12 @@
   :ensure t
   :bind
   ("C-c C-e" . expando-macro))
+(when is-a-macOS-p
+  (use-package festival
+    :ensure t
+    :config
+    (setq festival-program "/usr/local/festival/festival/bin/festival")
+    (setq festival-auto-start t)))
 (use-package fscroll
   :ensure t)
 (use-package graburl
