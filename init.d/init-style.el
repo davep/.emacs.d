@@ -13,7 +13,11 @@
 ;; First off, let's tweak what the final booted version of Emacs looks like
 ;; when the loading of the init is over.
 (setq inhibit-startup-screen t
-      initial-scratch-message ";; Get shit done!\n\n")
+      initial-scratch-message
+      (format ";; Get %s done!\n\n"
+              (if (string= (system-name) "SYN-LAP-028")
+                  "stuff"
+                "shit")))
 
 ;; No toolbar. Ever. Just.... no!
 (tool-bar-mode -1)
