@@ -15,7 +15,9 @@
 (setq inhibit-startup-screen t
       initial-scratch-message
       (format ";; Get %s done!\n\n"
-              (if (string= (system-name) "SYN-LAP-028")
+              ;; Ensure my standard scratch buffer entry isn't quite so
+              ;; "crude" when I'm at work. ;)
+              (if (file-exists-p (local-emacs-directory ".nsfw"))
                   "stuff"
                 "shit")))
 
