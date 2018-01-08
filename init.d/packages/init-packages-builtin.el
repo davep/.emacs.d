@@ -45,7 +45,7 @@
   (require 'em-dirs)
   (setq
    eshell-directory-name  (locate-user-emacs-file ".eshell/")
-   eshell-prompt-regexp   "^[^#$\\n]*[#$] "
+   eshell-prompt-regexp   "^[^#\\$]*[#\\$] "
    eshell-prompt-function (lambda ()
                             (concat (user-login-name)
                              ":"
