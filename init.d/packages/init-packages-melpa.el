@@ -233,7 +233,8 @@
 (use-package wc-mode
   :ensure t)
 (use-package web-mode
-  :ensure t)
+  :ensure t
+  :mode "\\.html$")
 (use-package wttrin
   :ensure t
   :config
