@@ -232,6 +232,8 @@
   :ensure t)
 (use-package wc-mode
   :ensure t)
+(use-package web-mode
+  :ensure t)
 (use-package wttrin
   :ensure t
   :config
