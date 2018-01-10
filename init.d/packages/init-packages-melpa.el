@@ -234,7 +234,9 @@
   :ensure t)
 (use-package web-mode
   :ensure t
-  :mode "\\.html$")
+  :mode "\\.html$"
+  :config
+  (setq-default web-mode-markup-indent-offset 2))
 (use-package wttrin
   :ensure t
   :config
