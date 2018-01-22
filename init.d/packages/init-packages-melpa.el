@@ -141,6 +141,7 @@
     :commands magit-after-save-refresh-status
     :config
     (add-hook 'after-save-hook #'magit-after-save-refresh-status)
+    (add-hook 'git-commit-setup-hook (lambda() (flyspell-mode 1)))
     :bind
     ("<f12> g s"   . magit-status)
     ("<f12> g b"   . magit-blame)
