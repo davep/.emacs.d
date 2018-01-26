@@ -196,7 +196,7 @@
 (use-package restclient
   :ensure t
   :commands restclient-mode
-  :config
+  :init
   (defun restclient-scratch ()
     "Create a scratch buffer for use with `resctclient-mode'."
     (interactive)
