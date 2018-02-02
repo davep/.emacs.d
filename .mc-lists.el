@@ -8,6 +8,7 @@
         electric-pair-delete-pair
         kill-region
         markdown-outdent-or-delete
+        moving-home
         ))
 
 (setq mc/cmds-to-run-once
