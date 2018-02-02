@@ -123,6 +123,8 @@
 (use-package hyde
   :ensure t
   :commands hyde)
+(use-package hy-mode
+  :ensure t)
 (use-package indium
   :ensure t
   :init
