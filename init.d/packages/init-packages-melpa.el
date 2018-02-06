@@ -137,6 +137,8 @@
     (switch-to-buffer "*JS scratch*"))
   :bind
   ("<f12> n s" . indium-scratch-node))
+(use-package json-mode
+  :ensure t)
 (when is-a-unix-p
   (use-package magit
     :ensure t
