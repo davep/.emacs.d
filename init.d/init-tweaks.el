@@ -47,6 +47,7 @@
         (put command 'disabled nil))
       '(downcase-region
         erase-buffer
+        scroll-left
         narrow-to-page
         narrow-to-region
         upcase-region))
