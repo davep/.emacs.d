@@ -52,6 +52,7 @@ What follows is a non-comprehensive collection of key-binding details.
 | Binding | Function |
 | --- | --- |
 | <kbd>Meta</kbd>+<kbd>g</kbd> | Goto line |
+| <kbd>Super</kbd>+<kbd>s</kbd> | Forward search symbol at point |
 | <kbd>Home</kbd> | [Context-aware "home"](https://github.com/davep/moving.el) |
 | <kbd>End</kbd> | [Context-aware "end"](https://github.com/davep/moving.el) |
 | <kbd>Super</kbd>+<kbd>Left</kbd> | [Context-aware "home"](https://github.com/davep/moving.el) |
