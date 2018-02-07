@@ -18,6 +18,7 @@
 (bind-key "M-<right>" #'forward-sexp)
 (bind-key "s-<up>"    #'moving-backward-page)
 (bind-key "s-<down>"  #'moving-forward-page)
+(bind-key "s-s"       #'isearch-forward-symbol-at-point)
 
 ;; Editing
 (bind-key "C-c ;"         #'comment-or-uncomment-region)
