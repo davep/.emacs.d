@@ -249,6 +249,8 @@
         wttrin-default-accept-language '("Accept-Language" . "en-GB"))
   :bind
   ("<f12> x" . wttrin))
+(use-package yaml-mode
+  :ensure t)
 
 (provide 'init-packages-melpa)
 
