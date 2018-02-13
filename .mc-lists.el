@@ -5,6 +5,7 @@
       '(
         company-complete
         dabbrev-expand
+        electric-newline-and-maybe-indent
         electric-pair-delete-pair
         kill-region
         markdown-outdent-or-delete
