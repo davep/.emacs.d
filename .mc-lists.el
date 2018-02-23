@@ -3,6 +3,7 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        c-electric-semi&comma
         company-complete
         dabbrev-expand
         electric-newline-and-maybe-indent
@@ -14,4 +15,5 @@
 
 (setq mc/cmds-to-run-once
       '(
+        suspend-frame
         ))
