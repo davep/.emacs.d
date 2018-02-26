@@ -75,15 +75,7 @@
   flyspell-mode
   flyspell-prog-mode
   :init
-  (mapc (lambda (hook)
-          (add-hook hook #'flyspell-prog-mode))
-        '(prog-mode-hook
-          c-mode-hook
-          c++-mode-hook
-          emacs-lisp-mode-hook
-          js-mode-hook
-          sh-mode-hook
-          python-mode-hook)))
+  (add-hook 'prog-mode-hook #'flyspell-prog-mode))
 (use-package footnote
   :commands footnote-mode
   :config
