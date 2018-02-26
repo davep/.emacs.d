@@ -77,7 +77,8 @@
   :config
   (mapc (lambda (hook)
           (add-hook hook #'flyspell-prog-mode))
-        '(c-mode-hook
+        '(prog-mode-hook
+          c-mode-hook
           c++-mode-hook
           emacs-lisp-mode-hook
           js-mode-hook
