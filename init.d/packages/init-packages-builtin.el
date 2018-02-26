@@ -82,7 +82,8 @@
           c++-mode-hook
           emacs-lisp-mode-hook
           js-mode-hook
-          sh-mode-hook)))
+          sh-mode-hook
+          python-mode-hook)))
 (use-package footnote
   :commands footnote-mode
   :config
