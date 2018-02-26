@@ -188,6 +188,9 @@
         pascal-tab-always-indent t)
   :bind
   (:map pascal-mode-map ("RET" . newline-and-indent)))
+(use-package python
+  :config
+  (setq python-indent-guess-indent-offset nil))
 
 
 ;; Catch-all hooks, etc.
