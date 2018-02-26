@@ -74,7 +74,7 @@
   :commands
   flyspell-mode
   flyspell-prog-mode
-  :config
+  :init
   (mapc (lambda (hook)
           (add-hook hook #'flyspell-prog-mode))
         '(prog-mode-hook
