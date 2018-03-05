@@ -50,11 +50,12 @@
         icon-title-format  format))
 
 ;; Mode line.
-(require 'time)
-(setq display-time-24hr-format t
-      display-time-day-and-date t
-      display-time-format "%F %H:%M")
-(display-time-mode t)
+(when is-a-unix-terminal-p
+  (require 'time)
+  (setq display-time-24hr-format t
+        display-time-day-and-date t
+        display-time-format "%F %H:%M")
+  (display-time-mode 1))
 (column-number-mode t)
 
 ;; If we're not on a graphical display...
