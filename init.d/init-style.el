@@ -52,9 +52,9 @@
 ;; Mode line.
 (when is-a-unix-terminal-p
   (require 'time)
-  (setq display-time-24hr-format t
-        display-time-day-and-date t
-        display-time-format "%F %H:%M")
+  (set (intern "display-time-24hr-format") t)
+  (set (intern "display-time-day-and-date") t)
+  (set (intern "display-time-format") "%F %H:%M")
   (display-time-mode 1))
 (column-number-mode t)
 
