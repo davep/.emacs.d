@@ -222,8 +222,6 @@
   ("<" . self-insert-command))
 (use-package rust-mode
   :ensure t)
-(use-package scss-mode
-  :ensure t)
 (use-package slime
   :ensure t
   :config
