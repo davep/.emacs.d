@@ -222,11 +222,8 @@
   ("<" . self-insert-command))
 (use-package rust-mode
   :ensure t)
-(use-package sass-mode
-  :ensure t
-  :mode "\\.scss$"
-  :config
-  (setq sass-indent-offset 4))
+(use-package scss-mode
+  :ensure t)
 (use-package slime
   :ensure t
   :config
