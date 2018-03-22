@@ -51,8 +51,8 @@
 (use-package itch
   :ensure t
   :bind*
-  ("M-s"            . itch-scratch-buffer)
-  ("<XF86HomePage>" . itch-scratch-buffer))
+  ("M-s"         . itch-scratch-buffer)
+  ("<XF86Eject>" . itch-scratch-buffer))
 (use-package longmacs
   :ensure t)
 (when is-a-macOS-p
