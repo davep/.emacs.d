@@ -23,6 +23,7 @@
 ;; Editing
 (bind-key "C-c ;"         #'comment-or-uncomment-region)
 (bind-key "C-<backspace>" #'backward-kill-word)
+(bind-key "C-c a"         #'align)
 
 ;; Tools and "apps" and things.
 (bind-key "C-<f6>"      #'list-processes)
