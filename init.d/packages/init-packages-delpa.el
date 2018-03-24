@@ -25,7 +25,7 @@
 (use-package expando
   :ensure t
   :bind
-  ("C-c C-e" . expando-macro))
+  ("C-c e" . expando-macro))
 (when is-a-macOS-p
   (use-package festival
     :ensure t
