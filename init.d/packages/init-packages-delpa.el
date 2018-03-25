@@ -25,7 +25,7 @@
 (use-package expando
   :ensure t
   :bind
-  ("C-c C-e" . expando-macro))
+  ("C-c e" . expando-macro))
 (use-package fasta
   :ensure t)
 (when is-a-macOS-p
