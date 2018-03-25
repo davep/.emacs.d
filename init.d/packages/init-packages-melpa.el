@@ -97,9 +97,6 @@
   (add-hook 'after-init-hook #'global-company-mode))
 (use-package dictionary
   :ensure t)
-(use-package dna-mode
-  :ensure t
-  :mode "\\.fasta$")
 (when is-a-unix-p
   (use-package emojify
     :if is-a-unix-window-p

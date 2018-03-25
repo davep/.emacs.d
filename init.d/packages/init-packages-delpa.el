@@ -26,6 +26,8 @@
   :ensure t
   :bind
   ("C-c C-e" . expando-macro))
+(use-package fasta
+  :ensure t)
 (when is-a-macOS-p
   (use-package festival
     :ensure t
