@@ -59,6 +59,10 @@
       '((with-current-buffer-window . 3)
         (with-temp-buffer-window    . 3)))
 
+;; Ensure that various types of scripts are executable when we create/save
+;; them. Saves having to remember to drop to the shell and chmod +x.
+(add-hook 'after-save-hook #'executable-make-buffer-file-executable-if-script-p)
+
 (provide 'init-tweaks)
 
 ;;; init-tweaks.el ends here
