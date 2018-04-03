@@ -19,6 +19,7 @@
 (bind-key "s-<up>"    #'moving-backward-page)
 (bind-key "s-<down>"  #'moving-forward-page)
 (bind-key "s-s"       #'isearch-forward-symbol-at-point)
+(bind-key "C-s-<tab>" #'other-window)
 
 ;; Editing
 (bind-key "C-c ;"         #'comment-or-uncomment-region)
