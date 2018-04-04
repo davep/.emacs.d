@@ -20,6 +20,10 @@
 (bind-key "s-<down>"  #'moving-forward-page)
 (bind-key "s-s"       #'isearch-forward-symbol-at-point)
 (bind-key "C-s-<tab>" #'other-window)
+(when is-a-linux-p
+  (bind-key "C-s-<right>" #'other-window)
+  (bind-key "C-s-<left>" (lambda ()
+                           (interactive) (other-window -1 ))))
 
 ;; Editing
 (bind-key "C-c ;"         #'comment-or-uncomment-region)
