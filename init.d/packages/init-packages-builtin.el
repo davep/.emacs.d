@@ -35,7 +35,7 @@
 (use-package dired-x
   :config
   (setq-default dired-omit-files-p t)
-  (setq dired-omit-files "^\\.[^.]"))
+  (setq dired-omit-files "^\\.[^.]\\|__pycache__"))
 (use-package elec-pair
   :commands electric-pair-mode
   :init
