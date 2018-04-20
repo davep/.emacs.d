@@ -104,6 +104,7 @@
     :config
     (setq emojify-emojis-dir (local-emacs-directory "emojis"))
     (add-to-list 'emojify-inhibit-major-modes 'restclient-mode)
+    :init
     (global-emojify-mode)
     :ensure t))
 (use-package highlight-chars
