@@ -180,7 +180,8 @@
   (:map js-mode-map ("RET" . newline-and-indent)))
 (use-package python
   :config
-  (setq python-indent-guess-indent-offset nil))
+  (setq python-indent-guess-indent-offset nil)
+  (setq python-shell-interpreter "python3"))
 
 
 ;; Catch-all hooks, etc.
