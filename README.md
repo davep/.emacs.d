@@ -29,110 +29,110 @@ What follows is a non-comprehensive collection of key-binding details.
 
 ### General/misc keys
 
-| Binding | Function |
-| --- | --- |
-| <kbd>Meta</kbd>+<kbd>s</kbd> | [Switch to `*scratch*`](https://github.com/davep/itch.el) |
-| <kbd>F6</kbd> | Switch to next buffer |
-| <kbd>Ctrl</kbd>+<kbd>F6</kbd> | Process list |
-| <kbd>Meta</kbd>+<kbd>F6</kbd> | Show iBuffer |
-| <kbd>F11</kbd> | [Show current Emacs uptime](https://github.com/davep/uptimes.el) |
-| <kbd>F12</kbd> <kbd>F11</kbd> | [Show Emacs uptimes](https://github.com/davep/uptimes.el) |
-| <kbd>Ctrl</kbd>+<kbd>F11</kbd> | [Show binary clock](https://github.com/davep/binclock.el) |
-| <kbd>Ctrl</kbd>+<kbd>Meta</kbd>+<kbd>F11</kbd> | [Nuke buffers](https://github.com/davep/nuke-buffers.el) |
-| <kbd>F12</kbd> <kbd>F12</kbd> | List personal key bindings |
-| <kbd>F12</kbd> <kbd>e</kbd> | [Open `eg`](https://github.com/davep/eg.el) |
-| <kbd>F12</kbd> <kbd>h</kbd> | Open `eshell` |
-| <kbd>F12</kbd> <kbd>k</kbd> | Browse the kill-ring |
-| <kbd>F12</kbd> <kbd>r</kbd> | Open elisp REPL (`ielm`) |
-| <kbd>F12</kbd> <kbd>s</kbd> | [Toggle through camelCase, snake-case, etc.](https://github.com/akicho8/string-inflection) |
-| <kbd>F12</kbd> <kbd>w</kbd> | Open `eww` (web browser) |
-| <kbd>F12</kbd> <kbd>x</kbd> | Open `wttrin` (as in "view wX") |
-| <kbd>F12</kbd> <kbd>o</kbd> <kbd>a</kba> | Org agenda view |
-| <kbd>F12</kbd> <kbd>o</kbd> <kbd>t</kba> | Org todo view |
+| Binding                                        | Function                                                                                   |
+| ---                                            | ---                                                                                        |
+| <kbd>Meta</kbd>+<kbd>s</kbd>                   | [Switch to `*scratch*`](https://github.com/davep/itch.el)                                  |
+| <kbd>F6</kbd>                                  | Switch to next buffer                                                                      |
+| <kbd>Ctrl</kbd>+<kbd>F6</kbd>                  | Process list                                                                               |
+| <kbd>Meta</kbd>+<kbd>F6</kbd>                  | Show iBuffer                                                                               |
+| <kbd>F11</kbd>                                 | [Show current Emacs uptime](https://github.com/davep/uptimes.el)                           |
+| <kbd>F12</kbd> <kbd>F11</kbd>                  | [Show Emacs uptimes](https://github.com/davep/uptimes.el)                                  |
+| <kbd>Ctrl</kbd>+<kbd>F11</kbd>                 | [Show binary clock](https://github.com/davep/binclock.el)                                  |
+| <kbd>Ctrl</kbd>+<kbd>Meta</kbd>+<kbd>F11</kbd> | [Nuke buffers](https://github.com/davep/nuke-buffers.el)                                   |
+| <kbd>F12</kbd> <kbd>F12</kbd>                  | List personal key bindings                                                                 |
+| <kbd>F12</kbd> <kbd>e</kbd>                    | [Open `eg`](https://github.com/davep/eg.el)                                                |
+| <kbd>F12</kbd> <kbd>h</kbd>                    | Open `eshell`                                                                              |
+| <kbd>F12</kbd> <kbd>k</kbd>                    | Browse the kill-ring                                                                       |
+| <kbd>F12</kbd> <kbd>r</kbd>                    | Open elisp REPL (`ielm`)                                                                   |
+| <kbd>F12</kbd> <kbd>s</kbd>                    | [Toggle through camelCase, snake-case, etc.](https://github.com/akicho8/string-inflection) |
+| <kbd>F12</kbd> <kbd>w</kbd>                    | Open `eww` (web browser)                                                                   |
+| <kbd>F12</kbd> <kbd>x</kbd>                    | Open `wttrin` (as in "view wX")                                                            |
+| <kbd>F12</kbd> <kbd>o</kbd> <kbd>a</kba>       | Org agenda view                                                                            |
+| <kbd>F12</kbd> <kbd>o</kbd> <kbd>t</kba>       | Org todo view                                                                              |
 
 ### Moving around
 
-| Binding | Function |
-| --- | --- |
-| <kbd>Meta</kbd>+<kbd>g</kbd> | Goto line |
-| <kbd>Super</kbd>+<kbd>s</kbd> | Forward search symbol at point |
-| <kbd>Home</kbd> | [Context-aware "home"](https://github.com/davep/moving.el) |
-| <kbd>End</kbd> | [Context-aware "end"](https://github.com/davep/moving.el) |
-| <kbd>Super</kbd>+<kbd>Left</kbd> | [Context-aware "home"](https://github.com/davep/moving.el) |
-| <kbd>Super</kbd>+<kbd>Right</kbd> | [Context-aware "end"](https://github.com/davep/moving.el) |
-| <kbd>Meta</kbd>+<kbd>Left</kbd> | Backward sexp |
-| <kbd>Meta</kbd>+<kbd>Right</kbd> | Forward sexp |
-| <kbd>Super</kbd>+<kbd>Up</kbd> | Backward page |
-| <kbd>Super</kbd>+<kbd>Down</kbd> | Forward page |
-| <kbd>F12</kbd> <kbd>m</kbd> <kbd>b</kbd> | Create bookmark here |
-| <kbd>F12</kbd> <kbd>m</kbd> <kbd>l</kbd> | View bookmarks |
-| <kbd>F12</kbd> <kbd>m</kbd> <kbd>g</kbd> | Go to bookmark |
+| Binding                                  | Function                                                   |
+| ---                                      | ---                                                        |
+| <kbd>Meta</kbd>+<kbd>g</kbd>             | Goto line                                                  |
+| <kbd>Super</kbd>+<kbd>s</kbd>            | Forward search symbol at point                             |
+| <kbd>Home</kbd>                          | [Context-aware "home"](https://github.com/davep/moving.el) |
+| <kbd>End</kbd>                           | [Context-aware "end"](https://github.com/davep/moving.el)  |
+| <kbd>Super</kbd>+<kbd>Left</kbd>         | [Context-aware "home"](https://github.com/davep/moving.el) |
+| <kbd>Super</kbd>+<kbd>Right</kbd>        | [Context-aware "end"](https://github.com/davep/moving.el)  |
+| <kbd>Meta</kbd>+<kbd>Left</kbd>          | Backward sexp                                              |
+| <kbd>Meta</kbd>+<kbd>Right</kbd>         | Forward sexp                                               |
+| <kbd>Super</kbd>+<kbd>Up</kbd>           | Backward page                                              |
+| <kbd>Super</kbd>+<kbd>Down</kbd>         | Forward page                                               |
+| <kbd>F12</kbd> <kbd>m</kbd> <kbd>b</kbd> | Create bookmark here                                       |
+| <kbd>F12</kbd> <kbd>m</kbd> <kbd>l</kbd> | View bookmarks                                             |
+| <kbd>F12</kbd> <kbd>m</kbd> <kbd>g</kbd> | Go to bookmark                                             |
 
 ### Packages
 
-| Binding | Function |
-| --- | --- |
-| <kbd>F12</kbd> <kbd>p</kbd> <kbd>l</kbd> | List packages |
-| <kbd>F12</kbd> <kbd>p</kbd> <kbd>r</kbd> | Refresh package lists |
-| <kbd>F12</kbd> <kbd>p</kbd> <kbd>t</kbd> | Lint the current buffer as a package |
+| Binding                                  | Function                                                                     |
+| ---                                      | ---                                                                          |
+| <kbd>F12</kbd> <kbd>p</kbd> <kbd>l</kbd> | List packages                                                                |
+| <kbd>F12</kbd> <kbd>p</kbd> <kbd>r</kbd> | Refresh package lists                                                        |
+| <kbd>F12</kbd> <kbd>p</kbd> <kbd>t</kbd> | Lint the current buffer as a package                                         |
 | <kbd>F12</kbd> <kbd>p</kbd> <kbd>u</kbd> | Upload current buffer as a package, to [delpa](http://blog.davep.org/delpa/) |
 
 ### Magit
 
-| Binding | Function |
-| --- | --- |
-| <kbd>F12</kbd> <kbd>g</kbd> <kbd>s</kbd> | Repo status |
-| <kbd>F12</kbd> <kbd>g</kbd> <kbd>l</kbd> <kbd>a</kbd> | View log for whole repo |
+| Binding                                               | Function                  |
+| ---                                                   | ---                       |
+| <kbd>F12</kbd> <kbd>g</kbd> <kbd>s</kbd>              | Repo status               |
+| <kbd>F12</kbd> <kbd>g</kbd> <kbd>l</kbd> <kbd>a</kbd> | View log for whole repo   |
 | <kbd>F12</kbd> <kbd>g</kbd> <kbd>l</kbd> <kbd>f</kbd> | View log for current file |
 
 ### [boxquote.el](https://github.com/davep/boxquote.el)
 
-| Binding | Function |
-| --- | --- |
-| <kbd>F12</kbd> <kbd>b</kbd> <kbd>i</kbd> | `boxquote-insert-file` |
-| <kbd>F12</kbd> <kbd>b</kbd> <kbd>Meta</kbd>+<kbd>w</kbd> | `boxquote-kill-ring-save` |
-| <kbd>F12</kbd> <kbd>b</kbd> <kbd>y</kbd> | `boxquote-yank` |
-| <kbd>F12</kbd> <kbd>b</kbd> <kbd>b</kbd> | `boxquote-region` |
-| <kbd>F12</kbd> <kbd>b</kbd> <kbd>t</kbd> | `boxquote-title` |
-| <kbd>F12</kbd> <kbd>b</kbd> <kbd>h</kbd> <kbd>f</kbd> | `boxquote-describe-function` |
-| <kbd>F12</kbd> <kbd>b</kbd> <kbd>h</kbd> <kbd>v</kbd> | `boxquote-describe-variable` |
-| <kbd>F12</kbd> <kbd>b</kbd> <kbd>h</kbd> <kbd>k</kbd> | `boxquote-describe-key` |
-| <kbd>F12</kbd> <kbd>b</kbd> <kbd>h</kbd> <kbd>w</kbd> | `boxquote-where-is` |
-| <kbd>F12</kbd> <kbd>b</kbd> <kbd>!</kbd> | `boxquote-shell-command` |
+| Binding                                                  | Function                     |
+| ---                                                      | ---                          |
+| <kbd>F12</kbd> <kbd>b</kbd> <kbd>i</kbd>                 | `boxquote-insert-file`       |
+| <kbd>F12</kbd> <kbd>b</kbd> <kbd>Meta</kbd>+<kbd>w</kbd> | `boxquote-kill-ring-save`    |
+| <kbd>F12</kbd> <kbd>b</kbd> <kbd>y</kbd>                 | `boxquote-yank`              |
+| <kbd>F12</kbd> <kbd>b</kbd> <kbd>b</kbd>                 | `boxquote-region`            |
+| <kbd>F12</kbd> <kbd>b</kbd> <kbd>t</kbd>                 | `boxquote-title`             |
+| <kbd>F12</kbd> <kbd>b</kbd> <kbd>h</kbd> <kbd>f</kbd>    | `boxquote-describe-function` |
+| <kbd>F12</kbd> <kbd>b</kbd> <kbd>h</kbd> <kbd>v</kbd>    | `boxquote-describe-variable` |
+| <kbd>F12</kbd> <kbd>b</kbd> <kbd>h</kbd> <kbd>k</kbd>    | `boxquote-describe-key`      |
+| <kbd>F12</kbd> <kbd>b</kbd> <kbd>h</kbd> <kbd>w</kbd>    | `boxquote-where-is`          |
+| <kbd>F12</kbd> <kbd>b</kbd> <kbd>!</kbd>                 | `boxquote-shell-command`     |
 
 ### [cheat-sh.el](https://github.com/davep/cheat-sh.el)
 
-| Binding | Function |
-| --- | --- |
+| Binding                                  | Function                                      |
+| ---                                      | ---                                           |
 | <kbd>F12</kbd> <kbd>/</kbd> <kbd>/</kbd> | Search cheat-sh, using region if there is one |
-| <kbd>F12</kbd> <kbd>/</kbd> <kbd>l</kbd> | List sheets for a given item |
-| <kbd>F12</kbd> <kbd>/</kbd> <kbd>?</kbd> | Show cheat-sh help |
-| <kbd>F12</kbd> <kbd>/</kbd> <kbd>s</kbd> | Search cheat-sh |
-| <kbd>F12</kbd> <kbd>/</kbd> <kbd>t</kbd> | Search a specific topic on cheat-sh |
+| <kbd>F12</kbd> <kbd>/</kbd> <kbd>l</kbd> | List sheets for a given item                  |
+| <kbd>F12</kbd> <kbd>/</kbd> <kbd>?</kbd> | Show cheat-sh help                            |
+| <kbd>F12</kbd> <kbd>/</kbd> <kbd>s</kbd> | Search cheat-sh                               |
+| <kbd>F12</kbd> <kbd>/</kbd> <kbd>t</kbd> | Search a specific topic on cheat-sh           |
 
 ### [insert.el](https://github.com/davep/insert.el)
 
-| Binding | Function |
-| --- | --- |
-| <kbd>F12</kbd> <kbd>i</kbd> <kbd>a</kbd> | Insert an autoload cookie for current `defun` |
-| <kbd>F12</kbd> <kbd>i</kbd> <kbd>f</kbd> | Insert a filename |
+| Binding                                  | Function                                                 |
+| ---                                      | ---                                                      |
+| <kbd>F12</kbd> <kbd>i</kbd> <kbd>a</kbd> | Insert an autoload cookie for current `defun`            |
+| <kbd>F12</kbd> <kbd>i</kbd> <kbd>f</kbd> | Insert a filename                                        |
 | <kbd>F12</kbd> <kbd>i</kbd> <kbd>m</kbd> | Insert a [melpa](https://melpa.org/) badge for a package |
-| <kbd>F12</kbd> <kbd>i</kbd> <kbd>s</kbd> | Insert Emacs sexp link quotes around current symbol |
-| <kbd>F12</kbd> <kbd>i</kbd> <kbd>y</kbd> | Insert markdown code for a YouTube video preview |
-| <kbd>F12</kbd> <kbd>i</kbd> <kbd>;</kbd> | Insert my own style of "break here" comment |
+| <kbd>F12</kbd> <kbd>i</kbd> <kbd>s</kbd> | Insert Emacs sexp link quotes around current symbol      |
+| <kbd>F12</kbd> <kbd>i</kbd> <kbd>y</kbd> | Insert markdown code for a YouTube video preview         |
+| <kbd>F12</kbd> <kbd>i</kbd> <kbd>;</kbd> | Insert my own style of "break here" comment              |
 
 ### [winsplit.el](https://github.com/davep/winsplit.el)
 
-| Binding | Function |
-| --- | --- |
-| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>Right</kbd> | Open window to the right of the current window |
-| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>Left</kbd> | Open window to the left of the current window |
-| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>Up</kbd> | Open window above current window |
-| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>Down</kbd> | Open window below current window |
+| Binding                                                       | Function                                                             |
+| ---                                                           | ---                                                                  |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>Right</kbd>                 | Open window to the right of the current window                       |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>Left</kbd>                  | Open window to the left of the current window                        |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>Up</kbd>                    | Open window above current window                                     |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>Down</kbd>                  | Open window below current window                                     |
 | <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>Ctrl</kbd>+<kbd>Right</kbd> | Open window to the right of the current window and prompt for a file |
-| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>Ctrl</kbd>+<kbd>Left</kbd> | Open window to the left of the current window and prompt for a file |
-| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>Ctrl</kbd>+<kbd>Up</kbd> | Open window above current window and prompt for a file |
-| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>Ctrl</kbd>+<kbd>Down</kbd> | Open window below current window and prompt for a file |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>Ctrl</kbd>+<kbd>Left</kbd>  | Open window to the left of the current window and prompt for a file  |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>Ctrl</kbd>+<kbd>Up</kbd>    | Open window above current window and prompt for a file               |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>Ctrl</kbd>+<kbd>Down</kbd>  | Open window below current window and prompt for a file               |
 
 ## Licence
 
