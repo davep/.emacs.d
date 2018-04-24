@@ -137,7 +137,9 @@
         org-link-file-path-type 'relative
         org-log-done 'time
         org-src-fontify-natively t)
-  (mapc #'load (directory-files "~/.config/org/" t "\\.el$"))
+  (let ((org-local-config "~/.config/org/"))
+    (when (file-exists-p org-local-config)
+      (mapc #'load (directory-files org-local-config t "\\.el$"))))
   :bind
   ("<f12> o a" . org-agenda)
   ("<f12> o t" . org-todo-list))
