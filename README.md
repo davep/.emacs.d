@@ -47,6 +47,8 @@ What follows is a non-comprehensive collection of key-binding details.
 | <kbd>F12</kbd> <kbd>s</kbd> | [Toggle through camelCase, snake-case, etc.](https://github.com/akicho8/string-inflection) |
 | <kbd>F12</kbd> <kbd>w</kbd> | Open `eww` (web browser) |
 | <kbd>F12</kbd> <kbd>x</kbd> | Open `wttrin` (as in "view wX") |
+| <kbd>F12</kbd> <kbd>o</kbd> <kbd>a</kba> | Org agenda view |
+| <kbd>F12</kbd> <kbd>o</kbd> <kbd>t</kba> | Org todo view |
 
 ### Moving around
 
