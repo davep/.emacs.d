@@ -93,8 +93,7 @@
   :ensure t
   :bind
   ("<f12> o i" . org-davep-open-inbox)
-  ("<f12> o d" . org-davep-open-dir)
-  ("<f12> o a" . org-agenda))
+  ("<f12> o d" . org-davep-open-dir))
 (use-package qrencode
   :ensure t)
 (use-package rate-sx

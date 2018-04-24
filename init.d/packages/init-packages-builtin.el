@@ -136,7 +136,10 @@
         org-agenda-files (list org-default-notes-file)
         org-log-done 'time
         org-src-fontify-natively t)
-  (mapcar #'load (directory-files "~/.config/org/" t "\\.el$")))
+  (mapcar #'load (directory-files "~/.config/org/" t "\\.el$"))
+  :bind
+  ("<f12> o a" . org-agenda)
+  ("<f12> o t" . org-todo-list))
 (use-package quickurl
   :bind
   ("<f12> u u" . quickurl)
