@@ -134,6 +134,7 @@
   (setq org-directory (or (getenv "ORG_DIRECTORY") "~/notebook/")
         org-default-notes-file (concat (file-name-as-directory org-directory) "inbox.org")
         org-agenda-files (list org-default-notes-file)
+        org-link-file-path-type 'relative
         org-log-done 'time
         org-src-fontify-natively t)
   (mapc #'load (directory-files "~/.config/org/" t "\\.el$"))
