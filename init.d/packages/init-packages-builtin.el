@@ -104,8 +104,11 @@
         ibuffer-show-empty-filter-groups nil
         ibuffer-saved-filter-groups
         '(("davep"
-           ("Magit"    (name . "\*magit"))
-           ("Org"      (mode . org-mode))
+           ("*Magit*"  (or (mode . magit-status-mode)
+                           (mode . magit-process-mode)
+                           (mode . magit-diff-mode)))
+           ("Org"      (or (mode . org-mode)
+                           (mode . org-agenda-mode)))
            (".emacs.d" (filename . "/.emacs.d/"))
            ("elisp"    (mode . emacs-lisp-mode))
            ("Help"     (or (name . "\*Help\*")
@@ -114,7 +117,9 @@
            ("Internal" (or (name . "\*Compile-log\*")
                            (name . "\*Buffer List\*")
                            (name . "\*Messages\*")
-                           (name . "\*Completions\*"))))))
+                           (name . "\*Completions\*")
+                           (name . "\*Calendar\*")
+                           (mode . inferior-python-mode))))))
   (add-hook 'ibuffer-mode-hooks
             (lambda ()
               (ibuffer-auto-mode 1)
