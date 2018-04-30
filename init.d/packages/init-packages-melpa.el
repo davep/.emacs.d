@@ -121,6 +121,7 @@
   :commands highlight-indent-guides-mode
   :config
   (setq highlight-indent-guides-method 'character)
+  :init
   (add-hook 'prog-mode-hook #'highlight-indent-guides-mode))
 (use-package hyde
   :ensure t
