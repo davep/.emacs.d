@@ -142,9 +142,13 @@
         org-link-file-path-type 'relative
         org-log-done 'time
         org-src-fontify-natively t)
-  (let ((org-local-config "~/.config/org/"))
-    (when (file-exists-p org-local-config)
-      (mapc #'load (directory-files org-local-config t "\\.el$"))))
+  (defun org-davep-config ()
+    "Load up the rest of my org-mode config."
+    (interactive)
+    (let ((org-local-config "~/.config/org/"))
+      (when (file-exists-p org-local-config)
+        (mapc #'load (directory-files org-local-config t "\\.el$")))))
+  (funcall 'org-davep-config)
   :bind
   ("<f12> o a" . org-agenda)
   ("<f12> o t" . org-todo-list))
