@@ -186,8 +186,6 @@
   :config
   (global-paren-face-mode t)
   (set-face-foreground 'parenthesis "gray63"))
-(use-package pony-mode
-  :ensure t)
 (use-package powerline
   :ensure t
   :config
