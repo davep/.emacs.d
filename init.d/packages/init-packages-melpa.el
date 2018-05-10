@@ -245,13 +245,7 @@
   :commands web-mode-set-engine
   :config
   (setq-default web-mode-markup-indent-offset 2)
-  (add-hook 'web-mode-hook
-            (lambda ()
-              ;; I need to make this a bit smarter. At the moment I'm nearly
-              ;; 100% django, but there will be the need to edit other
-              ;; template types over time. When that happens I should
-              ;; improve this so it works out what engine to use.
-              (web-mode-set-engine "django"))))
+  (setq web-mode-enable-engine-detection t))
 (use-package wttrin
   :ensure t
   :config
