@@ -39,7 +39,16 @@
 (use-package elec-pair
   :commands electric-pair-mode
   :init
-  (electric-pair-mode t))
+  (electric-pair-mode t)
+  :config
+  (setq electric-pair-inhibit-predicate
+        (lambda (c)
+          ;; Don't complete { when in web-mode and using the Django engine,
+          ;; as it does its own thing.
+          (and
+           (eq major-mode 'web-mode)
+           (string= web-mode-engine "django")
+           (= c ?{)))))
 (use-package eshell
   :config
   (require 'em-dirs)
