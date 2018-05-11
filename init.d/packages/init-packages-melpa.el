@@ -185,7 +185,7 @@
   :commands global-paren-face-mode
   :config
   (global-paren-face-mode t)
-  (set-face-foreground 'parenthesis "gray63"))
+  (set-face-foreground 'parenthesis "gray78"))
 (use-package powerline
   :ensure t
   :config
