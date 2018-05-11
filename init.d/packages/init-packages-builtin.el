@@ -50,20 +50,17 @@
       (string= web-mode-engine "django")
       (= c ?{)))))
 (use-package eshell
-  :config
-  (require 'em-dirs)
-  (setq
-   eshell-directory-name  (locate-user-emacs-file ".eshell/")
-   eshell-prompt-regexp   "^[^#\\$]*[#\\$] "
-   eshell-promptq-function (lambda ()
-                            (concat (user-login-name)
-                             ":"
-                             (abbreviate-file-name (eshell/pwd))
-                             (if is-a-root-user-p "#" "$")
-                             " ")))
-  (require 'em-prompt)
-  (set-face-foreground 'eshell-prompt "indian red")
-  (set-face-background 'eshell-prompt nil))
+  :custom
+  (eshell-directory-name  (locate-user-emacs-file ".eshell/"))
+  (eshell-prompt-regexp   "^[^#\\$]*[#\\$] ")
+  (eshell-promptq-function (lambda ()
+                             (concat (user-login-name)
+                                     ":"
+                                     (abbreviate-file-name (eshell/pwd))
+                                     (if is-a-root-user-p "#" "$")
+                                     " ")))
+  :custom-face
+  (eshell-prompt ((t (:foreground "indian red" :weight bold)))))
 (use-package eww
   :custom
   (eww-bookmarks-directory (locate-user-emacs-file ".eww")))
