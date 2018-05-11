@@ -12,11 +12,11 @@
 
 ;; General modes.
 (use-package abbrev
-  :config
-  (setq abbrev-file-name (local-emacs-directory "abbrev_defs.el")))
+  :custom
+  (abbrev-file-name (local-emacs-directory "abbrev_defs.el")))
 (use-package bookmark
-  :config
-  (setq bookmark-default-file (local-emacs-directory "bookmarks.el"))
+  :custom
+  (bookmark-default-file (local-emacs-directory "bookmarks.el"))
   :bind
   ("<f12> m b" . bookmark-set)
   ("<f12> m l" . bookmark-bmenu-list)
@@ -40,22 +40,22 @@
   :commands electric-pair-mode
   :init
   (electric-pair-mode t)
-  :config
-  (setq electric-pair-inhibit-predicate
-        (lambda (c)
-          ;; Don't complete { when in web-mode and using the Django engine,
-          ;; as it does its own thing.
-          (and
-           (eq major-mode 'web-mode)
-           (string= web-mode-engine "django")
-           (= c ?{)))))
+  :custom
+  (electric-pair-inhibit-predicate
+   (lambda (c)
+     ;; Don't complete { when in web-mode and using the Django engine,
+     ;; as it does its own thing.
+     (and
+      (eq major-mode 'web-mode)
+      (string= web-mode-engine "django")
+      (= c ?{)))))
 (use-package eshell
   :config
   (require 'em-dirs)
   (setq
    eshell-directory-name  (locate-user-emacs-file ".eshell/")
    eshell-prompt-regexp   "^[^#\\$]*[#\\$] "
-   eshell-prompt-function (lambda ()
+   eshell-promptq-function (lambda ()
                             (concat (user-login-name)
                              ":"
                              (abbreviate-file-name (eshell/pwd))
@@ -65,15 +65,16 @@
   (set-face-foreground 'eshell-prompt "indian red")
   (set-face-background 'eshell-prompt nil))
 (use-package eww
-  :config
-  (setq eww-bookmarks-directory (locate-user-emacs-file ".eww")))
+  :custom
+  (eww-bookmarks-directory (locate-user-emacs-file ".eww")))
 (use-package gamegrid
   :config
   (setq gamegrid-user-score-file-directory (local-emacs-directory "games/")))
 (use-package ispell
+  :custom
+  (ispell-dictionary     "british")
+  (ispell-highlight-face 'flyspell-incorrect)
   :config
-  (setq ispell-dictionary     "british"
-        ispell-highlight-face 'flyspell-incorrect)
   ;; Try and get aspell working on a Windows machine.
   (let ((aspell "C:/Program Files (x86)/Aspell/bin/"))
     (when (and is-a-win32-p (file-exists-p aspell))
@@ -95,10 +96,9 @@
                     footnote-section-tag-regexp (regexp-quote footnote-section-tag)
                     footnote-narrow-to-footnotes-when-editing t))))
 (use-package gnus
-  :init
-  (setq
-   gnus-default-nntp-server "news.eternal-september.org"
-   gnus-select-method `(nntp ,gnus-default-nntp-server)))
+  :custom
+  (gnus-default-nntp-server "news.eternal-september.org")
+  (gnus-select-method `(nntp ,gnus-default-nntp-server)))
 (use-package ibuffer
   :bind
   ("M-<f6>" . ibuffer)
@@ -143,13 +143,14 @@
               (smartsig-add "emacs"   "~/.sigs/emacs"   "emacs" "xemacs" "elisp" "gnu" "lbdb" "uptimes" "quickurl" "smartsig" "boxquote")
               (smartsig-add "sawfish" "~/.sigs/sawfish" "sawfish" "sawmill" "librep" "rep" "gnome"))))
 (use-package org
+  :custom
+  (org-directory (or (getenv "ORG_DIRECTORY") "~/notebook/"))
+  (org-default-notes-file (concat (file-name-as-directory org-directory) "inbox.org"))
+  (org-agenda-files (list org-default-notes-file))
+  (org-link-file-path-type 'relative)
+  (org-log-done 'time)
+  (org-src-fontify-natively t)
   :config
-  (setq org-directory (or (getenv "ORG_DIRECTORY") "~/notebook/")
-        org-default-notes-file (concat (file-name-as-directory org-directory) "inbox.org")
-        org-agenda-files (list org-default-notes-file)
-        org-link-file-path-type 'relative
-        org-log-done 'time
-        org-src-fontify-natively t)
   (defun org-davep-config ()
     "Load up the rest of my org-mode config."
     (interactive)
@@ -164,48 +165,48 @@
   :bind
   ("<f12> u u" . quickurl)
   ("<f12> u l" . quickurl-list)
-  :config
-  (setq quickurl-url-file (locate-user-emacs-file ".quickurls.el")))
+  :custom
+  (quickurl-url-file (locate-user-emacs-file ".quickurls.el")))
 (use-package paren
   :commands show-paren-mode
   :init
   (show-paren-mode t))
 (use-package savehist
   :commands savehist-mode
+  :custom
+  (savehist-file (local-emacs-directory "history.el"))
   :init
-  (setq savehist-file (local-emacs-directory "history.el"))
   (savehist-mode t))
 (use-package tramp
-  :init
-  (setq
-   tramp-default-method        "ssh"
-   tramp-persistency-file-name (local-emacs-directory "tramp.el")))
+  :custom
+  (tramp-default-method        "ssh")
+  (tramp-persistency-file-name (local-emacs-directory "tramp.el")))
 
 
 ;; Programming modes.
 (use-package cc-mode
-  :config
-  (setq c-basic-offset 4
-        c-offsets-alist '((inline-open . 0)
-                          (case-label . +)
-                          (inclass . ++))
-        c-default-style '((c-mode    . "BSD")
-                          (c++-mode  . "BSD")
-                          (java-mode . "java")
-                          (awk-mode  . "awk")
-                          (other     . "gnu")))
+  :custom
+  (c-basic-offset 4)
+  (c-offsets-alist '((inline-open . 0)
+                     (case-label . +)
+                     (inclass . ++)))
+  (c-default-style '((c-mode    . "BSD")
+                     (c++-mode  . "BSD")
+                     (java-mode . "java")
+                     (awk-mode  . "awk")
+                     (other     . "gnu")))
   :bind
   (:map c-mode-map   ("RET" . newline-and-indent))
   (:map c++-mode-map ("RET" . newline-and-indent)))
 (use-package js
-  :config
-  (setq js-switch-indent-offset 4)
+  :custom
+  (js-switch-indent-offset 4)
   :bind
   (:map js-mode-map ("RET" . newline-and-indent)))
 (use-package python
-  :config
-  (setq python-indent-guess-indent-offset nil)
-  (setq python-shell-interpreter "python3"))
+  :custom
+  (python-indent-guess-indent-offset nil)
+  (python-shell-interpreter "python3"))
 
 
 ;; Catch-all hooks, etc.
