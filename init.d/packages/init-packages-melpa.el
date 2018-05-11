@@ -69,8 +69,8 @@
   ("<f12> t y" . thinks-yank))
 (use-package uptimes
   :ensure t
-  :init
-  (setq uptimes-database (local-emacs-directory "uptimes.el"))
+  :custom
+  (uptimes-database (local-emacs-directory "uptimes.el"))
   :bind
   ("<f11>"       . uptimes-current)
   ("<f12> <f11>" . uptimes))
@@ -118,8 +118,8 @@
 (use-package highlight-indent-guides
   :ensure t
   :commands highlight-indent-guides-mode
-  :config
-  (setq highlight-indent-guides-method 'character)
+  :custom
+  (highlight-indent-guides-method 'character)
   :hook (prog-mode . highlight-indent-guides-mode))
 (use-package hyde
   :ensure t
@@ -246,9 +246,9 @@
   (setq web-mode-enable-engine-detection t))
 (use-package wttrin
   :ensure t
-  :config
-  (setq wttrin-default-cities '("Edinburgh")
-        wttrin-default-accept-language '("Accept-Language" . "en-GB"))
+  :custom
+  (wttrin-default-cities '("Edinburgh"))
+  (wttrin-default-accept-language '("Accept-Language" . "en-GB"))
   :bind
   ("<f12> x" . wttrin))
 (use-package yaml-mode
