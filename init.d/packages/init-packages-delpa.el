@@ -100,6 +100,10 @@
   :ensure t
   :bind
   ("<f12> c" . rate-sx))
+(use-package requote
+  :ensure t
+  :bind
+  ("<f12> q" . requote))
 (use-package setup-compile
   :ensure t
   :commands setup-compile
