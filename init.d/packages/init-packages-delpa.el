@@ -107,10 +107,7 @@
 (use-package setup-compile
   :ensure t
   :commands setup-compile
-  :config
-  (add-hook 'c-mode-hook          #'setup-compile)
-  (add-hook 'c++-mode-hook        #'setup-compile)
-  (add-hook 'emacs-lisp-mode-hook #'setup-compile))
+  :hook (c-mode c++mode emacs-lisp-mode))
 (use-package smartsig
   :ensure t)
 (use-package unbind

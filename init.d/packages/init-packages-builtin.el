@@ -83,8 +83,7 @@
   :commands
   flyspell-mode
   flyspell-prog-mode
-  :init
-  (add-hook 'prog-mode-hook #'flyspell-prog-mode))
+  :hook (prog-mode . flyspell-prog-mode))
 (use-package footnote
   :commands footnote-mode
   :config

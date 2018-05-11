@@ -93,8 +93,7 @@
   :bind
   ("s-SPC" . company-complete)
   :commands global-company-mode
-  :init
-  (add-hook 'after-init-hook #'global-company-mode))
+  :hook ((after-init . global-company-mode)))
 (use-package dictionary
   :ensure t)
 (when is-a-unix-p
@@ -121,8 +120,7 @@
   :commands highlight-indent-guides-mode
   :config
   (setq highlight-indent-guides-method 'character)
-  :init
-  (add-hook 'prog-mode-hook #'highlight-indent-guides-mode))
+  :hook (prog-mode . highlight-indent-guides-mode))
 (use-package hyde
   :ensure t
   :commands hyde)
