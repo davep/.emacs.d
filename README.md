@@ -50,7 +50,7 @@ What follows is a non-comprehensive collection of key-binding details.
 | <kbd>F12</kbd> <kbd>o</kbd> <kbd>a</kba>       | Org agenda view                                                                            |
 | <kbd>F12</kbd> <kbd>o</kbd> <kbd>t</kba>       | Org todo view                                                                              |
 | <kbd>F12</kbd> <kbd>q</kbd>                    | [requote](https://github.com/davep/requote.el)                                             |
-
+| <kbd>F8</kbd>                                  | [neotree](https://github.com/jaypei/emacs-neotree)                                         |
 
 ### Moving around
 

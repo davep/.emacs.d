@@ -169,6 +169,10 @@
   ("C->"     . mc/mark-all-like-this)
   ("C-c ."   . mc/mark-all-like-this-dwim)
   ("C-c C-." . mc/edit-lines))
+(use-package neotree
+  :ensure t
+  :bind
+  ("<f8>" . neotree))
 (use-package package-lint
   :ensure t)
 (use-package page-break-lines
