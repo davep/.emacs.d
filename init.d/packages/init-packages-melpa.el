@@ -172,7 +172,8 @@
 (use-package neotree
   :ensure t
   :bind
-  ("<f8>" . neotree))
+  ("<f8>"   . neotree)
+  ("C-<f8>" . neotree-dir))
 (use-package package-lint
   :ensure t)
 (use-package page-break-lines
