@@ -171,6 +171,8 @@
   ("C-c C-." . mc/edit-lines))
 (use-package neotree
   :ensure t
+  :config
+  (add-to-list 'neo-hidden-regexp-list "__pycache__")
   :bind
   ("<f8>"    . neotree)
   ("C-<tab>" . neotree)
