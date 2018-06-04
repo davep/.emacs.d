@@ -12,6 +12,7 @@
 
 ;; Ignore case when searching
 (setq-default case-fold-search t)
+(setq ido-case-fold case-fold-search)
 
 ;; Auto-saves and backing up. Here I try and keep my work directories as
 ;; clean as possible.
