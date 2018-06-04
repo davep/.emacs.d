@@ -12,7 +12,8 @@
 (require 'package)
 
 ;; Say where I want packages to live.
-(setq package-user-dir (local-emacs-directory "packages"))
+(setq package-user-dir (local-emacs-directory "packages")
+      package-gnupghome-dir (local-emacs-directory "gnupg"))
 
 ;; Add melpa and delpa.
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
