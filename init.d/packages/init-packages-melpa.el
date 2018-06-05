@@ -140,6 +140,12 @@
   ("<f12> n s" . indium-scratch-node))
 (use-package json-mode
   :ensure t)
+(use-package lorem-ipsum
+  :ensure t
+  :bind
+  ("<f12> l p" . lorem-ipsum-insert-paragraphs)
+  ("<f12> l s" . lorem-ipsum-insert-sentences)
+  ("<f12> l l" . lorem-ipsum-insert-list))
 (when is-a-unix-p
   (use-package magit
     :ensure t
