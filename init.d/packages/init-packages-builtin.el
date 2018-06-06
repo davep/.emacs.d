@@ -209,12 +209,9 @@
 ;; Catch-all hooks, etc.
 (add-hook 'text-mode-hook
           (lambda()
+            (auto-fill-mode 1)
             (flyspell-mode 1)
             (footnote-mode 1)))
-(add-hook 'org-mode-hook
-          (lambda ()
-            (auto-fill-mode)
-            (flyspell-mode 1)))
 
 (provide 'init-packages-builtin)
 
