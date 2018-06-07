@@ -208,7 +208,7 @@
 
 ;; Catch-all hooks, etc.
 (add-hook 'text-mode-hook
-          (lambda()
+          (lambda ()
             (auto-fill-mode 1)
             (flyspell-mode 1)
             (footnote-mode 1)))
