@@ -212,6 +212,11 @@
             (auto-fill-mode 1)
             (flyspell-mode 1)
             (footnote-mode 1)))
+(add-hook 'prog-mode-hook
+          (lambda ()
+            ;; Set up for auto-filling comments.
+            (setq-local comment-auto-fill-only-comments t)
+            (auto-fill-mode 1)))
 
 (provide 'init-packages-builtin)
 
