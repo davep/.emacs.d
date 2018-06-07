@@ -162,11 +162,7 @@
   :ensure t
   :config
   (when (executable-find "pandoc")
-    (setq markdown-command "pandoc"))
-  (add-hook 'markdown-mode-hook
-            (lambda ()
-              (auto-fill-mode)
-              (flyspell-mode 1))))
+    (setq markdown-command "pandoc")))
 (use-package multiple-cursors
   :ensure t
   :bind
