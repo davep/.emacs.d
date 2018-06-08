@@ -175,6 +175,7 @@
   :ensure t
   :config
   (add-to-list 'neo-hidden-regexp-list "__pycache__")
+  (add-to-list 'neo-hidden-regexp-list ".*\\.egg-info")
   :bind
   ("<f8>"    . neotree)
   ("C-<tab>" . neotree)
