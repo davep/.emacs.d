@@ -28,20 +28,20 @@
         kept-new-versions              10
         load-prefer-newer              t))
 
-;; On the Mac, local bin doesn't seem to be in the path if I run from the
-;; dock. Fix this (in both `exec-path` and PATH).
-(when is-a-macOS-p
-  (let ((local "/usr/local/bin"))
-    (when (file-exists-p local)
-      (unless (member local exec-path)
-        (push local exec-path))
-      (unless (string-match-p (regexp-quote local) (getenv "PATH"))
-        (setenv "PATH" (concat (getenv "PATH") ":" local))))))
-
-;; If we're on a Unix of some sort, add a personal bin (if it's there).
-(let ((bin "~/bin"))
-  (when (and is-a-unix-p (file-exists-p bin))
-    (push bin exec-path)))
+;; Sort out ensuring that some "local" bin directories are in the exec-path.
+;; There seems to be an issue on macOS, and on some forms of GNU/Linux,
+;; where the PATH isn't inherited if we're run from the dock.
+(when is-a-unix-p
+  (mapc (lambda (prefix)
+          (let ((bin (concat prefix "bin")))
+            (when (file-exists-p bin)
+              ;; Update Emacs' exec-path.
+              (unless (member bin exec-path)
+                (push bin exec-path))
+              ;; Also ensure PATH for this process matches.
+              (unless (string-match-p (regexp-quote bin) (getenv "PATH"))
+                (setenv "PATH" (concat (expand-file-name bin) ":" (getenv "PATH")))))))
+        '("~/" "~/.local/" "/usr/local/")))
 
 ;; Enable some disabled commands
 (mapc (lambda (command)
