@@ -195,11 +195,10 @@
   :bind
   (:map c-mode-map   ("RET" . newline-and-indent))
   (:map c++-mode-map ("RET" . newline-and-indent)))
-(use-package js
+(use-package js2-mode
+  :mode "\\.js"
   :custom
-  (js-switch-indent-offset 4)
-  :bind
-  (:map js-mode-map ("RET" . newline-and-indent)))
+  (js-switch-indent-offset 4))
 (use-package python
   :custom
   (python-indent-guess-indent-offset nil)
