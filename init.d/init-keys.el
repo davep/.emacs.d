@@ -43,6 +43,7 @@
 (bind-key "<f12> p r"   #'package-refresh-contents)
 (bind-key "<f12> p t"   #'package-lint-current-buffer)
 (bind-key "<f12> p u"   #'package-upload-buffer)
+(bind-key "<f12> ? w"   #'woman)
 
 ;; Don't do shift-selecting.
 (setq shift-select-mode nil)
