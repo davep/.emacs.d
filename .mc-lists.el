@@ -12,6 +12,7 @@
         dabbrev-expand
         electric-newline-and-maybe-indent
         electric-pair-delete-pair
+        forward-sexp
         indent-for-tab-command
         kill-region
         markdown-outdent-or-delete
