@@ -24,6 +24,10 @@
   (bind-key "C-s-<right>" #'other-window)
   (bind-key "C-s-<left>" (lambda ()
                            (interactive) (other-window -1 ))))
+(when is-a-macOS-window-p
+  (bind-key "M-s-<right>" #'other-window)
+  (bind-key "M-s-<left>" (lambda ()
+                           (interactive) (other-window -1 ))))
 
 ;; Editing
 (bind-key "C-c ;"         #'comment-or-uncomment-region)
