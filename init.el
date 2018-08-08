@@ -46,6 +46,10 @@
     (require 'init-keys)
     (require 'init-style))
   (require 'init-net)
-  (require 'init-packages))
+  (require 'init-packages)
+
+  ;; Finally, load any local config. This is for things I don't want to be
+  ;; tracking via my ~/.init.d repo code (things local to a machine, etc).
+  (load (local-emacs-directory "local-init.el") t))
 
 ;;; init.el ends here
