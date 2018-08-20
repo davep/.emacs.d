@@ -109,9 +109,7 @@
         ibuffer-show-empty-filter-groups nil
         ibuffer-saved-filter-groups
         '(("davep"
-           ("*Magit*"  (or (mode . magit-status-mode)
-                           (mode . magit-process-mode)
-                           (mode . magit-diff-mode)))
+           ("*Magit*"      (derived-mode . magit-mode))
            ("Org"      (or (mode . org-mode)
                            (mode . org-agenda-mode)))
            (".emacs.d"     (filename . "/.emacs.d/"))
