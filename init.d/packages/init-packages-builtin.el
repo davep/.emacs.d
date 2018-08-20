@@ -114,6 +114,7 @@
                            (mode . org-agenda-mode)))
            (".emacs.d"     (filename . "/.emacs.d/"))
            ("elisp"        (mode . emacs-lisp-mode))
+           ("Makefile"     (derived-mode . makefile-mode))
            ("python"       (mode . python-mode))
            ("web"          (mode . web-mode))
            ("directories"  (mode . dired-mode))
