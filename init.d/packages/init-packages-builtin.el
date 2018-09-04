@@ -116,6 +116,7 @@
            ("elisp"        (mode . emacs-lisp-mode))
            ("Makefile"     (derived-mode . makefile-mode))
            ("python"       (mode . python-mode))
+           ("JavaScript"   (mode . js2-mode))
            ("web"      (or (mode . web-mode)
                            (mode . scss-mode)))
            ("directories"  (mode . dired-mode))
