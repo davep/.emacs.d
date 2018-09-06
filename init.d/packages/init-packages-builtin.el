@@ -126,6 +126,7 @@
                            (name . "\*info\*")))
            ("Internal" (or (name . "\*Compile-log\*")
                            (name . "\*Buffer List\*")
+                           (name . "\*Backtrace\*")
                            (name . "\*Messages\*")
                            (name . "\*Completions\*")
                            (name . "\*Calendar\*")
