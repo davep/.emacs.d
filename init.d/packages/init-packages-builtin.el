@@ -113,6 +113,7 @@
            ("Org"      (or (mode . org-mode)
                            (mode . org-agenda-mode)))
            (".emacs.d"     (filename . "/.emacs.d/"))
+           ("shell"        (mode . sh-mode))
            ("elisp"        (mode . emacs-lisp-mode))
            ("Makefile"     (derived-mode . makefile-mode))
            ("python"       (mode . python-mode))
