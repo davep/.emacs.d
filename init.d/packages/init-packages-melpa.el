@@ -77,6 +77,8 @@
 
 
 ;; Third-party packages from elpa/melpa
+(use-package apache-mode
+  :ensure t)
 (use-package beacon
   :if (display-graphic-p)
   :ensure t
