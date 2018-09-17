@@ -130,6 +130,8 @@
                            (name . "\*Messages\*")
                            (name . "\*Completions\*")
                            (name . "\*Calendar\*")
+                           (name . "\*tramp/sudo")
+                           (name . "\*Packages\*")
                            (mode . inferior-python-mode))))))
   (add-hook 'ibuffer-mode-hooks
             (lambda ()
