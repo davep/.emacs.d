@@ -120,6 +120,7 @@
            ("JavaScript"   (mode . js2-mode))
            ("web"      (or (mode . web-mode)
                            (mode . scss-mode)))
+           ("text files"   (derived-mode . text-mode))
            ("directories"  (mode . dired-mode))
            ("Help"     (or (name . "\*Help\*")
                            (name . "\*Apropos\*")
