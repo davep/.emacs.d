@@ -22,7 +22,10 @@
 (bind-key "C-s-<tab>" #'other-window)
 (when is-a-linux-p
   (bind-key "C-s-<right>" #'other-window)
+  (bind-key "C-s-<down>" #'other-window)
   (bind-key "C-s-<left>" (lambda ()
+                           (interactive) (other-window -1 )))
+  (bind-key "C-s-<up>" (lambda ()
                            (interactive) (other-window -1 ))))
 (when is-a-macOS-window-p
   (bind-key "M-s-<right>" #'other-window)
