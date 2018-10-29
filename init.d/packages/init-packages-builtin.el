@@ -217,7 +217,8 @@
 (use-package python
   :custom
   (python-indent-guess-indent-offset nil)
-  (python-shell-interpreter "python3"))
+  (python-shell-interpreter "python3")
+  (python-fill-docstring-style 'pep-257-nn))
 
 
 ;; Catch-all hooks, etc.
