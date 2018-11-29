@@ -65,6 +65,10 @@
   ("<XF86Eject>" . itch-scratch-buffer))
 (use-package longmacs
   :ensure t)
+(use-package make-phony
+  :ensure t
+  :bind
+  ("<f12> i p" . make-phony))
 (when is-a-macOS-p
   (use-package macdob
     :ensure t)
