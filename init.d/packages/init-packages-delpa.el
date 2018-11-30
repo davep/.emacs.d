@@ -133,6 +133,8 @@
   ("C-c C-<left>"  . winsplit-left-load)
   ("C-c C-<up>"    . winsplit-above-load)
   ("C-c C-<down>"  . winsplit-below-load))
+(use-package wordcloud
+  :ensure t)
 
 (provide 'init-packages-delpa)
 
