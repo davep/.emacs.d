@@ -43,6 +43,9 @@
                 (setenv "PATH" (concat (expand-file-name bin) ":" (getenv "PATH")))))))
         '("~/" "~/.local/" "/usr/local/")))
 
+;; Enable mouse avoidance mode.
+(mouse-avoidance-mode 'animate)
+
 ;; Enable some disabled commands
 (mapc (lambda (command)
         (put command 'disabled nil))
