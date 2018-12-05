@@ -148,6 +148,8 @@
   ("<f12> l p" . lorem-ipsum-insert-paragraphs)
   ("<f12> l s" . lorem-ipsum-insert-sentences)
   ("<f12> l l" . lorem-ipsum-insert-list))
+(use-package itail
+  :ensure t)
 (when is-a-unix-p
   (use-package magit
     :ensure t
