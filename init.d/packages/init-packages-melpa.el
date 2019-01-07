@@ -171,7 +171,9 @@
                 "gitlab.synpromics.com/api/v4"
                 "gitlab.synpromics.com"
                 forge-gitlab-repository)
-          forge-alist)))
+          forge-alist)
+    :bind
+    ("<f12> g i" . forge-list-issues)))
 (use-package markdown-mode
   :ensure t
   :config

@@ -88,6 +88,7 @@ What follows is a non-comprehensive collection of key-binding details.
 | <kbd>F12</kbd> <kbd>g</kbd> <kbd>s</kbd>              | Repo status               |
 | <kbd>F12</kbd> <kbd>g</kbd> <kbd>l</kbd> <kbd>a</kbd> | View log for whole repo   |
 | <kbd>F12</kbd> <kbd>g</kbd> <kbd>l</kbd> <kbd>f</kbd> | View log for current file |
+| <kbd>F12</kbd> <kbd>g</kbd> <kbd>i</kbd>              | View issues (via Forge)   |
 
 ### [boxquote.el](https://github.com/davep/boxquote.el)
 
