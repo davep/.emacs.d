@@ -211,7 +211,7 @@
   (:map c-mode-map   ("RET" . newline-and-indent))
   (:map c++-mode-map ("RET" . newline-and-indent)))
 (use-package js2-mode
-  :mode "\\.js"
+  :mode "\\.js$"
   :custom
   (js-switch-indent-offset 4))
 (use-package python
