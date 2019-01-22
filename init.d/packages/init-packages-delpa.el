@@ -44,6 +44,10 @@
     (setq festival-auto-start t)))
 (use-package fscroll
   :ensure t)
+(use-package funhead
+  :ensure t
+  :bind
+  ("<f12> i h" . funhead))
 (use-package graburl
   :ensure t)
 (use-package icmp-info
