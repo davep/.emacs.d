@@ -108,6 +108,8 @@
     :init
     (global-emojify-mode)
     :ensure t))
+(use-package dockerfile-mode
+  :ensure t)
 (use-package highlight-chars
   :ensure t
   :demand
