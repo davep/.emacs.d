@@ -172,10 +172,8 @@
     (push (list "gitlab.synpromics.com"
                 "gitlab.synpromics.com/api/v4"
                 "gitlab.synpromics.com"
-                forge-gitlab-repository)
-          forge-alist)
-    :bind
-    ("<f12> g i" . forge-list-issues)))
+                'forge-gitlab-repository)
+          forge-alist)))
 (use-package markdown-mode
   :ensure t
   :config
