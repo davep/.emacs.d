@@ -173,7 +173,11 @@
                 "gitlab.synpromics.com/api/v4"
                 "gitlab.synpromics.com"
                 'forge-gitlab-repository)
-          forge-alist)))
+          forge-alist))
+  (use-package transient
+    :ensure t
+    :custom
+    (transient-history-file (local-emacs-directory "transient-history.el"))))
 (use-package markdown-mode
   :ensure t
   :config
