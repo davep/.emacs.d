@@ -42,7 +42,7 @@ What follows is a non-comprehensive collection of key-binding details.
 | <kbd>F12</kbd> <kbd>F12</kbd>                  | List personal key bindings                                                                 |
 | <kbd>F12</kbd> <kbd>e</kbd>                    | [Open `eg`](https://github.com/davep/eg.el)                                                |
 | <kbd>F12</kbd> <kbd>h</kbd>                    | Open `eshell`                                                                              |
-| <kbd>F12</kbd> <kbd>k</kbd>                    | Browse the kill-ring                                                                       |
+| <kbd>C</kbd>+<kbd>x</kbd> <kbd>y</kbd>         | Browse the kill-ring                                                                       |
 | <kbd>F12</kbd> <kbd>r</kbd>                    | Open elisp REPL (`ielm`)                                                                   |
 | <kbd>F12</kbd> <kbd>s</kbd>                    | [Toggle through camelCase, snake-case, etc.](https://github.com/akicho8/string-inflection) |
 | <kbd>F12</kbd> <kbd>w</kbd>                    | Open `eww` (web browser)                                                                   |
