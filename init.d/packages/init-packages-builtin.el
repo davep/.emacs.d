@@ -200,8 +200,7 @@
   :custom
   (c-basic-offset 4)
   (c-offsets-alist '((inline-open . 0)
-                     (case-label . +)
-                     (inclass . ++)))
+                     (case-label . +)))
   (c-default-style '((c-mode    . "BSD")
                      (c++-mode  . "BSD")
                      (java-mode . "java")
