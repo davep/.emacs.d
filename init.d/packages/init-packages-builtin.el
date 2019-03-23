@@ -183,6 +183,9 @@
   :commands show-paren-mode
   :init
   (show-paren-mode t))
+(use-package recentf
+  :custom
+  (recentf-save-file (local-emacs-directory "recentf")))
 (use-package savehist
   :commands savehist-mode
   :custom
