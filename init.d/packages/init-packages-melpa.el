@@ -98,6 +98,7 @@
   :hook ((after-init . global-company-mode)))
 (use-package counsel
   :ensure t
+  :after ivy
   :commands counsel-mode
   :init
   (counsel-mode 1))
@@ -156,7 +157,8 @@
   :init
   (ivy-mode 1))
 (use-package ivy-hydra
-  :ensure t)
+  :ensure t
+  :after ivy)
 (use-package json-mode
   :ensure t)
 (use-package lorem-ipsum
@@ -280,6 +282,7 @@
   ("<f12> s" . string-inflection-all-cycle))
 (use-package swiper
   :ensure t
+  :after ivy
   :bind
   ("C-s" . swiper))
 (use-package switch-window
