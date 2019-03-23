@@ -97,7 +97,9 @@
   :commands global-company-mode
   :hook ((after-init . global-company-mode)))
 (use-package counsel
-  :ensure t)
+  :ensure t
+  :bind
+  ("M-x" . counsel-M-x))
 (use-package dictionary
   :ensure t)
 (when is-a-unix-p
@@ -273,6 +275,10 @@
   :ensure t
   :bind
   ("<f12> s" . string-inflection-all-cycle))
+(use-package swiper
+  :ensure t
+  :bind
+  ("C-s" . swiper))
 (use-package switch-window
   :bind
   ("C-x o" . switch-window)
