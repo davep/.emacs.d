@@ -98,8 +98,9 @@
   :hook ((after-init . global-company-mode)))
 (use-package counsel
   :ensure t
-  :bind
-  ("M-x" . counsel-M-x))
+  :commands counsel-mode
+  :init
+  (counsel-mode 1))
 (use-package dictionary
   :ensure t)
 (when is-a-unix-p
