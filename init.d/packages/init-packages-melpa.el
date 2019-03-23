@@ -159,6 +159,15 @@
 (use-package ivy-hydra
   :ensure t
   :after ivy)
+(use-package ivy-rich
+  :ensure t
+  :after ivy
+  :commands
+  ivy-rich-mode
+  ivy-format-function-line
+  :init
+  (ivy-rich-mode 1)
+  (setq ivy-format-function #'ivy-format-function-line))
 (use-package json-mode
   :ensure t)
 (use-package lorem-ipsum
