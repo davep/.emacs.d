@@ -96,6 +96,8 @@
   ("s-SPC" . company-complete)
   :commands global-company-mode
   :hook ((after-init . global-company-mode)))
+(use-package counsel
+  :ensure t)
 (use-package dictionary
   :ensure t)
 (when is-a-unix-p
@@ -142,6 +144,14 @@
     (switch-to-buffer "*JS scratch*"))
   :bind
   ("<f12> n s" . indium-scratch-node))
+(use-package ivy
+  :ensure t
+  :commands ivy-mode
+  :custom
+  (ivy-use-virtual-buffers t)
+  (ivy-count-format "%d/%d ")
+  :init
+  (ivy-mode 1))
 (use-package json-mode
   :ensure t)
 (use-package lorem-ipsum
