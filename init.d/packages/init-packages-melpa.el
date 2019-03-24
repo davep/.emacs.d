@@ -99,6 +99,7 @@
 (use-package counsel
   :ensure t
   :after ivy
+  :diminish counsel-mode
   :commands counsel-mode
   :custom
   (counsel-find-file-ignore-regexp
@@ -165,6 +166,7 @@
   ("<f12> n s" . indium-scratch-node))
 (use-package ivy
   :ensure t
+  :diminish ivy-mode
   :commands
   ivy-mode
   ivy-resume
