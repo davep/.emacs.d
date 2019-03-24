@@ -150,12 +150,16 @@
   ("<f12> n s" . indium-scratch-node))
 (use-package ivy
   :ensure t
-  :commands ivy-mode
+  :commands
+  ivy-mode
+  ivy-resume
   :custom
   (ivy-use-virtual-buffers t)
   (ivy-count-format "%d/%d ")
   :init
-  (ivy-mode 1))
+  (ivy-mode 1)
+  :bind
+  ("C-c C-r" . ivy-resume))
 (use-package ivy-hydra
   :ensure t
   :after ivy)
