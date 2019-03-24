@@ -36,6 +36,8 @@
   :config
   (setq-default dired-omit-files-p t)
   (setq dired-omit-files "^\\.[^.]\\|__pycache__"))
+(use-package eldoc
+  :diminish eldoc-mode)
 (use-package elec-pair
   :commands electric-pair-mode
   :init
