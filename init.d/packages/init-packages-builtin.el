@@ -78,6 +78,7 @@
       (push aspell exec-path)
       (setq ispell-program-name "aspell"))))
 (use-package flyspell
+  :diminish flyspell-mode
   :commands
   flyspell-mode
   flyspell-prog-mode
