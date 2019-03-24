@@ -91,7 +91,7 @@
   ("C-x y" . browse-kill-ring))
 (use-package company
   :ensure t
-  :diminish "CM"
+  :diminish ""
   :bind
   ("s-SPC" . company-complete)
   :commands global-company-mode
