@@ -143,6 +143,7 @@
                 (hc-highlight-trailing-whitespace)))))
 (use-package highlight-indent-guides
   :ensure t
+  :diminish highlight-indent-guides-mode
   :commands highlight-indent-guides-mode
   :custom
   (highlight-indent-guides-method 'character)
