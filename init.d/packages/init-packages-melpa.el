@@ -100,6 +100,9 @@
   :ensure t
   :after ivy
   :commands counsel-mode
+  :custom
+  (counsel-find-file-ignore-regexp
+   "\\(^\\.\\|\\.\\(elc\\|pyc\\)$\\)")
   :init
   (counsel-mode 1))
 (use-package dictionary
@@ -156,7 +159,7 @@
   :custom
   (ivy-use-virtual-buffers t)
   (ivy-count-format "%d/%d ")
-  :init
+ :init
   (ivy-mode 1)
   :bind
   ("C-c C-r" . ivy-resume))
