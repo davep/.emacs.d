@@ -107,6 +107,7 @@
   :bind
   ("<f12> f f" . counsel-rg)
   ("<f12> f l" . counsel-locate)
+  ("<f12> f r" . counsel-recentf)
   ("<f12> f M-x" . counsel-command-history)
   ("<f12> f c w" . counsel-colors-web)
   ("<f12> f c e" . counsel-colors-emacs))
