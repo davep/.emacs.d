@@ -37,7 +37,6 @@ What follows is a non-comprehensive collection of key-binding details.
 | <kbd>Meta</kbd>+<kbd>F6</kbd>                  | Show iBuffer                                                                               |
 | <kbd>F11</kbd>                                 | [Show current Emacs uptime](https://github.com/davep/uptimes.el)                           |
 | <kbd>F12</kbd> <kbd>F11</kbd>                  | [Show Emacs uptimes](https://github.com/davep/uptimes.el)                                  |
-| <kbd>Ctrl</kbd>+<kbd>F11</kbd>                 | [Show binary clock](https://github.com/davep/binclock.el)                                  |
 | <kbd>Ctrl</kbd>+<kbd>Meta</kbd>+<kbd>F11</kbd> | [Nuke buffers](https://github.com/davep/nuke-buffers.el)                                   |
 | <kbd>F12</kbd> <kbd>F12</kbd>                  | List personal key bindings                                                                 |
 | <kbd>F12</kbd> <kbd>e</kbd>                    | [Open `eg`](https://github.com/davep/eg.el)                                                |
