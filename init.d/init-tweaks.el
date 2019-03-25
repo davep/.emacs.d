@@ -10,7 +10,7 @@
 
 (require 'is-a)
 
-;; Ignore case when searching
+;; Ignore case when searching.
 (setq-default case-fold-search t)
 (setq ido-case-fold case-fold-search)
 
@@ -50,7 +50,7 @@
 ;; Enable mouse avoidance mode.
 (mouse-avoidance-mode 'animate)
 
-;; Enable some disabled commands
+;; Enable some disabled commands.
 (mapc (lambda (command)
         (put command 'disabled nil))
       '(downcase-region
