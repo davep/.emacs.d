@@ -172,7 +172,7 @@
   ivy-resume
   :custom
   (ivy-use-virtual-buffers t)
-  (ivy-count-format "%d/%d ")
+  (ivy-count-format "[%d/%d] ")
   (ivy-height 15)
  :init
   (ivy-mode 1)
