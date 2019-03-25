@@ -39,7 +39,7 @@
   (setq-default dired-omit-files-p t)
   (setq dired-omit-files "^\\.[^.]\\|__pycache__"))
 (use-package eldoc
-  :diminish eldoc-mode)
+  :diminish)
 (use-package elec-pair
   :commands electric-pair-mode
   :init
@@ -98,7 +98,7 @@
       (push aspell exec-path)
       (setq ispell-program-name "aspell"))))
 (use-package flyspell
-  :diminish flyspell-mode
+  :diminish
   :commands
   flyspell-mode
   flyspell-prog-mode

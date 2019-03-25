@@ -80,7 +80,7 @@
 (use-package beacon
   :if (display-graphic-p)
   :ensure t
-  :diminish 'beacon-mode
+  :diminish
   :commands beacon-mode
   :config (beacon-mode 1))
 (use-package browse-kill-ring
@@ -89,7 +89,7 @@
   ("C-x y" . browse-kill-ring))
 (use-package company
   :ensure t
-  :diminish ""
+  :diminish
   :bind
   ("s-SPC" . company-complete)
   :commands global-company-mode
@@ -97,7 +97,7 @@
 (use-package counsel
   :ensure t
   :after ivy
-  :diminish counsel-mode
+  :diminish
   :commands counsel-mode
   :custom
   (counsel-find-file-ignore-regexp
@@ -153,7 +153,7 @@
                 (hc-highlight-trailing-whitespace)))))
 (use-package highlight-indent-guides
   :ensure t
-  :diminish highlight-indent-guides-mode
+  :diminish
   :commands highlight-indent-guides-mode
   :custom
   (highlight-indent-guides-method 'character)
@@ -165,7 +165,7 @@
   :ensure t)
 (use-package ivy
   :ensure t
-  :diminish ivy-mode
+  :diminish
   :commands
   ivy-mode
   ivy-resume
@@ -252,7 +252,7 @@
   :ensure t)
 (use-package page-break-lines
   :ensure t
-  :diminish 'page-break-lines-mode
+  :diminish
   :commands global-page-break-lines-mode
   :init
   (global-page-break-lines-mode))
