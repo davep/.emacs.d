@@ -12,9 +12,7 @@
 
 ;; My own packages that are in melpa.
 (use-package binclock
-  :ensure t
-  :bind
-  ("C-<f11>" . binclock))
+  :ensure t)
 (use-package boxquote
   :ensure t
   :bind
