@@ -23,6 +23,8 @@
 
 ;; No toolbar. Ever. Just.... no!
 (tool-bar-mode -1)
+;; Let's not bother with the menu either.
+(menu-bar-mode -1)
 
 ;; Window position and size.
 (when (display-graphic-p)
@@ -57,11 +59,6 @@
   (set (intern "display-time-format") "%F %H:%M")
   (display-time-mode 1))
 (column-number-mode t)
-
-;; If we're not on a graphical display...
-(unless (display-graphic-p)
-  ;; ...get rid of the menu bar.
-  (menu-bar-mode -1))
 
 ;; When we're on a graphical display...
 (when (display-graphic-p)
