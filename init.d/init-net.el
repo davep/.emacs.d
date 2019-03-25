@@ -21,8 +21,6 @@
  url-configuration-directory (local-emacs-directory "url/")
  url-cache-directory         (local-emacs-directory "url/cache")
  url-cookie-file             (local-emacs-directory "url/cookies")
- ;; Browse inside Emacs by default.
- browse-url-browser-function #'eww-browse-url
  ;; Security.
  nsm-save-host-names t
  nsm-settings-file   (local-emacs-directory "network-security.data")
