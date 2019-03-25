@@ -14,6 +14,10 @@
 (setq-default case-fold-search t)
 (setq ido-case-fold case-fold-search)
 
+;; Allow minibufferception.
+(setq enable-recursive-minibuffers t)
+(minibuffer-depth-indicate-mode 1)
+
 ;; Auto-saves and backing up. Here I try and keep my work directories as
 ;; clean as possible.
 (let ((auto-saves (local-emacs-directory "auto-save-files/")))
