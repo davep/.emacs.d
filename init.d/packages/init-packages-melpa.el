@@ -105,7 +105,9 @@
   (counsel-find-file-ignore-regexp
    "\\(^\\.\\|\\.\\(elc\\|pyc\\)$\\)")
   :init
-  (counsel-mode 1))
+  (counsel-mode 1)
+  :bind
+  ("<f12> f" . counsel-rg))
 (use-package dictionary
   :ensure t)
 (when is-a-unix-p
