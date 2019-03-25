@@ -107,7 +107,9 @@
   :init
   (counsel-mode 1)
   :bind
-  ("<f12> f" . counsel-rg))
+  ("<f12> f f" . counsel-rg)
+  ("<f12> f c w" . counsel-colors-web)
+  ("<f12> f c e" . counsel-colors-emacs))
 (use-package dictionary
   :ensure t)
 (when is-a-unix-p
