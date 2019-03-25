@@ -26,7 +26,10 @@
   (bind-key "C-s-<left>" (lambda ()
                            (interactive) (other-window -1 )))
   (bind-key "C-s-<up>" (lambda ()
-                           (interactive) (other-window -1 ))))
+                         (interactive) (other-window -1 )))
+  (bind-key "M-s-<right>" #'other-frame)
+  (bind-key "M-s-<left>" (lambda ()
+                           (interactive) (other-frame -1))))
 (when is-a-macOS-window-p
   (bind-key "M-s-<right>" #'other-window)
   (bind-key "M-s-<down>" #'other-window)
