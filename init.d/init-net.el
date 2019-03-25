@@ -4,8 +4,9 @@
 ;;
 ;; init-net.el configures things like Email sending and the url package.
 ;; Note that any package-based config will always be done via `use-package'
-;; in the relevant init-package-* file, as a preference. This file is only
-;; used for those changes that don't directly relate to a package.
+;; in the "relevant packages/init-package-*.el" file, as a preference. This
+;; file is only used for those changes that don't directly relate to a
+;; package.
 
 ;;; Code:
 
