@@ -53,6 +53,17 @@ What follows is a non-comprehensive collection of key-binding details.
 | <kbd>F12</kbd> <kbd>i</kbd> <kbd>e</kbd>       | [Add an end-of-file marker](https://github.com/davep/end-it.el)                            |
 | <kbd>F12</kbd> <kbd>?</kbd> <kbd>w</kbd>       | [woman](https://www.gnu.org/software/emacs/manual/html_mono/woman.html)                    |
 
+### [Finding things](https://github.com/abo-abo/swiper)
+
+| Binding                                                  | Function                     |
+| ---                                                      | ---                          |
+| <kbd>F12</kbd> <kbd>f</kbd> <kbd>g</kbd>                 | Find files with `ripgrep`    |
+| <kbd>F12</kbd> <kbd>f</kbd> <kbd>l</kbd>                 | Find files with `locate`     |
+| <kbd>F12</kbd> <kbd>f</kbd> <kbd>r</kbd>                 | Open a recent file           |
+| <kbd>F12</kbd> <kbd>f</kbd> <kbd>Meta</kbd>+<kbd>x</kbd> | Find a recently-used command |
+| <kbd>F12</kbd> <kbd>f</kbd> <kbd>c</kbd> <kbd>w</kbd>    | Find a web colour            |
+| <kbd>F12</kbd> <kbd>f</kbd> <kbd>c</kbd> <kbd>e</kbd>    | Find an Emacs colour         |
+
 ### Moving around
 
 | Binding                                  | Function                                                   |
