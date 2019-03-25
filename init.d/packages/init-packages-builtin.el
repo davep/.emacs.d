@@ -205,8 +205,12 @@
   :init
   (show-paren-mode t))
 (use-package recentf
+  :commands recentf-save-list
   :custom
-  (recentf-save-file (local-emacs-directory "recentf")))
+  (recentf-save-file (local-emacs-directory "recentf"))
+  :init
+  ;; Auto-save the list every 30 minutes.
+  (run-at-time nil (* 30 60) #'recentf-save-list))
 (use-package savehist
   :commands savehist-mode
   :custom
