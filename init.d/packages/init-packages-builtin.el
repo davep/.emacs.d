@@ -65,6 +65,9 @@
                                      " ")))
   :custom-face
   (eshell-prompt ((t (:foreground "indian red" :weight bold))))
+  :custom
+  (eshell-visual-options
+   '(("git" "commit" "log")))
   :config
   (add-hook 'eshell-mode-hook
             (lambda ()
