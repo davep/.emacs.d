@@ -155,18 +155,6 @@
   :commands hyde)
 (use-package hy-mode
   :ensure t)
-(use-package indium
-  :ensure t
-  :init
-  (defun indium-scratch-node ()
-    (interactive)
-    (unless (get-buffer "*JS REPL*")
-      (indium-run-node "node"))
-    (unless (get-buffer "*JS scratch*")
-      (indium-scratch))
-    (switch-to-buffer "*JS scratch*"))
-  :bind
-  ("<f12> n s" . indium-scratch-node))
 (use-package ivy
   :ensure t
   :diminish ivy-mode
