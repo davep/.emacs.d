@@ -101,7 +101,12 @@
   :commands counsel-mode
   :custom
   (counsel-find-file-ignore-regexp
-   "\\(^\\.\\|\\.\\(elc\\|pyc\\)$\\)")
+   (rx
+    (or
+     ;; Ignore hidden files.
+     (group bol ".")
+     ;; Ignore compiled files.
+     (group "." (or "pyc" "elc") eol))))
   :init
   (counsel-mode 1)
   :bind
