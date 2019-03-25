@@ -66,6 +66,7 @@
   :custom-face
   (eshell-prompt ((t (:foreground "indian red" :weight bold))))
   :custom
+  (eshell-destroy-buffer-when-process-dies t)
   (eshell-visual-options
    '(("git" "commit" "log")))
   :config
