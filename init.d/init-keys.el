@@ -50,7 +50,6 @@
 (bind-key "<f12> r"     #'ielm)
 (bind-key "<f12> h"     #'eshell)
 (bind-key "<f12> w"     #'eww)
-(bind-key "C-c C-f"     #'view-file)
 (bind-key "<f12> <f12>" #'describe-personal-keybindings)
 (bind-key "<f12> p l"   #'package-list-packages)
 (bind-key "<f12> p r"   #'package-refresh-contents)
