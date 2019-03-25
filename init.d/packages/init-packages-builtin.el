@@ -68,7 +68,7 @@
   :config
   (add-hook 'eshell-mode-hook
             (lambda ()
-                    (add-to-list 'eshell-visual-commands "htop"))))
+              (add-to-list 'eshell-visual-commands "htop"))))
 (use-package eww
   :custom
   (eww-bookmarks-directory (locate-user-emacs-file ".eww")))
