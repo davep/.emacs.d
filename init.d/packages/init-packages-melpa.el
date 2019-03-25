@@ -110,7 +110,7 @@
   :init
   (counsel-mode 1)
   :bind
-  ("<f12> f f" . counsel-rg)
+  ("<f12> f g" . counsel-rg)
   ("<f12> f l" . counsel-locate)
   ("<f12> f r" . counsel-recentf)
   ("<f12> f M-x" . counsel-command-history)
