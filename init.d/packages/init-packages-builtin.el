@@ -62,7 +62,7 @@
       (eq major-mode 'minibuffer-inactive-mode)
       (and
        (eq major-mode 'web-mode)
-       (string= web-mode-engine "django")
+       (string= (symbol-value 'web-mode-engine) "django")
        (= c ?{))))))
 (use-package eshell
   :custom
