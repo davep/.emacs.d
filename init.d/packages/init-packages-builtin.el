@@ -38,6 +38,9 @@
   :config
   (setq-default dired-omit-files-p t)
   (setq dired-omit-files "^\\.[^.]\\|__pycache__"))
+(use-package dictionary
+  :bind
+  ("<f12> ? d" . dictionary-lookup-definition))
 (use-package eldoc
   :diminish)
 (use-package elec-pair
