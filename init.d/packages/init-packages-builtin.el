@@ -186,6 +186,7 @@
   (org-link-file-path-type 'relative)
   (org-log-done 'time)
   (org-src-fontify-natively t)
+  (org-cycle-separator-lines 1)
   :config
   (defun org-davep-config ()
     "Load up the rest of my org-mode config."
