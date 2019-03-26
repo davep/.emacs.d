@@ -214,7 +214,10 @@
   (recentf-save-file (local-emacs-directory "recentf"))
   :init
   ;; Auto-save the list every 30 minutes.
-  (run-at-time nil (* 30 60) #'recentf-save-list))
+  (run-at-time nil (* 30 60)
+               (lambda ()
+                 (let ((inhibit-message t))
+                   (recentf-save-list)))))
 (use-package savehist
   :commands savehist-mode
   :custom
