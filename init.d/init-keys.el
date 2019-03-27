@@ -13,13 +13,14 @@
 (require 'package-x)
 
 ;; Movement
-(bind-key "M-g"       #'goto-line)
-(bind-key "M-<left>"  #'backward-sexp)
-(bind-key "M-<right>" #'forward-sexp)
-(bind-key "s-<up>"    #'moving-backward-page)
-(bind-key "s-<down>"  #'moving-forward-page)
-(bind-key "s-s"       #'isearch-forward-symbol-at-point)
-(bind-key "C-s-<tab>" #'other-window)
+(bind-keys
+ ("M-g"       . goto-line)
+ ("M-<left>"  . backward-sexp)
+ ("M-<right>" . forward-sexp)
+ ("s-<up>"    . moving-backward-page)
+ ("s-<down>"  . moving-forward-page)
+ ("s-s"       . isearch-forward-symbol-at-point)
+ ("C-s-<tab>" . other-window))
 (when is-a-linux-p
   (bind-keys
    ("C-s-<right>" . windmove-right)
@@ -34,23 +35,25 @@
    ("M-s-<up>"    . windmove-up)))
 
 ;; Editing
-(bind-key "C-c ;"         #'comment-or-uncomment-region)
-(bind-key "C-<backspace>" #'backward-kill-word)
-(bind-key "C-c a"         #'align)
+(bind-keys
+ ("C-c ;"         . comment-or-uncomment-region)
+ ("C-<backspace>" . backward-kill-word)
+ ("C-c a"         . align))
 
 ;; Tools and "apps" and things.
-(bind-key "C-<f6>"      #'list-processes)
-(bind-key "<f6>"        #'bury-buffer)
-(bind-key "<f9>"        #'compile)
-(bind-key "<f12> r"     #'ielm)
-(bind-key "<f12> h"     #'eshell)
-(bind-key "<f12> w"     #'eww)
-(bind-key "<f12> <f12>" #'describe-personal-keybindings)
-(bind-key "<f12> p l"   #'package-list-packages)
-(bind-key "<f12> p r"   #'package-refresh-contents)
-(bind-key "<f12> p t"   #'package-lint-current-buffer)
-(bind-key "<f12> p u"   #'package-upload-buffer)
-(bind-key "<f12> ? w"   #'woman)
+(bind-keys
+ ("C-<f6>"      . list-processes)
+ ("<f6>"        . bury-buffer)
+ ("<f9>"        . compile)
+ ("<f12> r"     . ielm)
+ ("<f12> h"     . eshell)
+ ("<f12> w"     . eww)
+ ("<f12> <f12>" . describe-personal-keybindings)
+ ("<f12> p l"   . package-list-packages)
+ ("<f12> p r"   . package-refresh-contents)
+ ("<f12> p t"   . package-lint-current-buffer)
+ ("<f12> p u"   . package-upload-buffer)
+ ("<f12> ? w"   . woman))
 
 ;; Don't do shift-selecting.
 (setq shift-select-mode nil)
