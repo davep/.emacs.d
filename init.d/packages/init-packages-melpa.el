@@ -119,6 +119,8 @@
   ("<f12> f c e" . counsel-colors-emacs))
 (use-package dictionary
   :ensure t)
+(use-package dockerfile-mode
+  :ensure t)
 (when is-a-unix-p
   (use-package emojify
     :if is-a-unix-window-p
@@ -129,8 +131,6 @@
     :init
     (global-emojify-mode)
     :ensure t))
-(use-package dockerfile-mode
-  :ensure t)
 (use-package eshell-git-prompt
   :ensure t
   :custom-face
