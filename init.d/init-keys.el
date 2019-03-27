@@ -22,17 +22,20 @@
  ("s-s"       . isearch-forward-symbol-at-point)
  ("C-s-<tab>" . other-window))
 (when is-a-linux-p
+  ;; These combinations are more comfortable on my main work machine.
   (bind-keys
    ("C-s-<right>" . windmove-right)
    ("C-s-<down>"  . windmove-down)
    ("C-s-<left>"  . windmove-left)
    ("C-s-<up>"    . windmove-up)))
-(when is-a-macOS-window-p
-  (bind-keys
-   ("M-s-<right>" . windmove-right)
-   ("M-s-<down>"  . windmove-down)
-   ("M-s-<left>"  . windmove-left)
-   ("M-s-<up>"    . windmove-up)))
+;; These are more comfortable on my Macbook and iMac, and sometimes I have
+;; muscle memory for them when on my work machine. So while we only use the
+;; above on a GNU/Linux, we use the below everywhere.
+(bind-keys
+ ("M-s-<right>" . windmove-right)
+ ("M-s-<down>"  . windmove-down)
+ ("M-s-<left>"  . windmove-left)
+ ("M-s-<up>"    . windmove-up)))
 
 ;; Editing
 (bind-keys
