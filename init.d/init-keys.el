@@ -23,15 +23,15 @@
 (when is-a-linux-p
   (bind-keys
    ("C-s-<right>" . windmove-right)
-   ("C-s-<down>" . windmove-down)
-   ("C-s-<left>" . windmove-left)
-   ("C-s-<up>" . windmove-up)))
+   ("C-s-<down>"  . windmove-down)
+   ("C-s-<left>"  . windmove-left)
+   ("C-s-<up>"    . windmove-up)))
 (when is-a-macOS-window-p
   (bind-keys
    ("M-s-<right>" . windmove-right)
-   ("M-s-<down>" . windmove-down)
-   ("M-s-<left>" . windmove-left)
-   ("M-s-<up>" . windmove-up)))
+   ("M-s-<down>"  . windmove-down)
+   ("M-s-<left>"  . windmove-left)
+   ("M-s-<up>"    . windmove-up)))
 
 ;; Editing
 (bind-key "C-c ;"         #'comment-or-uncomment-region)
