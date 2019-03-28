@@ -18,11 +18,7 @@
   :diminish auto-revert-mode)
 (use-package bookmark
   :custom
-  (bookmark-default-file (local-emacs-directory "bookmarks.el"))
-  :bind
-  ("<f12> m b" . bookmark-set)
-  ("<f12> m l" . bookmark-bmenu-list)
-  ("<f12> m g" . bookmark-jump))
+  (bookmark-default-file (local-emacs-directory "bookmarks.el")))
 (use-package calendar
   :config
   (setq

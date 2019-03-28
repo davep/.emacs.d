@@ -67,21 +67,18 @@ What follows is a non-comprehensive collection of key-binding details.
 
 ### Moving around
 
-| Binding                                  | Function                                                   |
-| ---                                      | ---                                                        |
-| <kbd>Meta</kbd>+<kbd>g</kbd>             | Goto line                                                  |
-| <kbd>Super</kbd>+<kbd>s</kbd>            | Forward search symbol at point                             |
-| <kbd>Home</kbd>                          | [Context-aware "home"](https://github.com/davep/moving.el) |
-| <kbd>End</kbd>                           | [Context-aware "end"](https://github.com/davep/moving.el)  |
-| <kbd>Super</kbd>+<kbd>Left</kbd>         | [Context-aware "home"](https://github.com/davep/moving.el) |
-| <kbd>Super</kbd>+<kbd>Right</kbd>        | [Context-aware "end"](https://github.com/davep/moving.el)  |
-| <kbd>Meta</kbd>+<kbd>Left</kbd>          | Backward sexp                                              |
-| <kbd>Meta</kbd>+<kbd>Right</kbd>         | Forward sexp                                               |
-| <kbd>Super</kbd>+<kbd>Up</kbd>           | Backward page                                              |
-| <kbd>Super</kbd>+<kbd>Down</kbd>         | Forward page                                               |
-| <kbd>F12</kbd> <kbd>m</kbd> <kbd>b</kbd> | Create bookmark here                                       |
-| <kbd>F12</kbd> <kbd>m</kbd> <kbd>l</kbd> | View bookmarks                                             |
-| <kbd>F12</kbd> <kbd>m</kbd> <kbd>g</kbd> | Go to bookmark                                             |
+| Binding                           | Function                                                   |
+| ---                               | ---                                                        |
+| <kbd>Meta</kbd>+<kbd>g</kbd>      | Goto line                                                  |
+| <kbd>Super</kbd>+<kbd>s</kbd>     | Forward search symbol at point                             |
+| <kbd>Home</kbd>                   | [Context-aware "home"](https://github.com/davep/moving.el) |
+| <kbd>End</kbd>                    | [Context-aware "end"](https://github.com/davep/moving.el)  |
+| <kbd>Super</kbd>+<kbd>Left</kbd>  | [Context-aware "home"](https://github.com/davep/moving.el) |
+| <kbd>Super</kbd>+<kbd>Right</kbd> | [Context-aware "end"](https://github.com/davep/moving.el)  |
+| <kbd>Meta</kbd>+<kbd>Left</kbd>   | Backward sexp                                              |
+| <kbd>Meta</kbd>+<kbd>Right</kbd>  | Forward sexp                                               |
+| <kbd>Super</kbd>+<kbd>Up</kbd>    | Backward page                                              |
+| <kbd>Super</kbd>+<kbd>Down</kbd>  | Forward page                                               |
 
 ### Packages
 
