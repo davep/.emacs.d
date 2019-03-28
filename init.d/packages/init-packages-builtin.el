@@ -46,8 +46,6 @@
   :custom
   (electric-pair-inhibit-predicate
    (lambda (c)
-     ;; Don't complete { when in web-mode and using the Django engine,
-     ;; as it does its own thing.
      (or
       ;; This isn't ideal. I often don't want pair completion inside the
       ;; minibuffer, but there are times when I might (`eval-expression'
@@ -56,6 +54,8 @@
       ;; turning this off for some things, let's turn it off any time we're
       ;; in the minibuffer.
       (eq major-mode 'minibuffer-inactive-mode)
+      ;; Don't complete { when in web-mode and using the Django engine, as
+      ;; it does its own thing.
       (and
        (eq major-mode 'web-mode)
        (string= (symbol-value 'web-mode-engine) "django")
