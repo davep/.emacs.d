@@ -35,7 +35,7 @@
  ("M-s-<right>" . windmove-right)
  ("M-s-<down>"  . windmove-down)
  ("M-s-<left>"  . windmove-left)
- ("M-s-<up>"    . windmove-up)))
+ ("M-s-<up>"    . windmove-up))
 
 ;; Editing
 (bind-keys
