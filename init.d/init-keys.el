@@ -63,8 +63,14 @@
 
 ;; Things specific to macOS.
 (when is-a-macOS-window-p
+  ;; Have "alt" be "super".
   (set (intern "ns-alternate-modifier") 'super)
-  (set (intern "ns-command-modifier")   'meta)
+  ;; Have "cmd" be "meta"
+  (set (intern "ns-command-modifier") 'meta)
+  ;; Have "fn" double up as "control". I keep "control" as "control" too,
+  ;; but on my iMac and Macbook I often find my fingers creeps to "fn" when
+  ;; I want "ctrl". This solves that issue.
+  (set (intern "ns-function-modifier") 'control)
   (bind-key "s-<tab>" #'completion-at-point))
 
 ;; Things specific to Windows.
