@@ -93,7 +93,7 @@
   :bind
   ("s-SPC" . company-complete)
   :commands global-company-mode
-  :hook ((after-init . global-company-mode)))
+  :hook (after-init . global-company-mode))
 (use-package counsel
   :ensure t
   :after ivy
