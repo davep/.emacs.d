@@ -319,7 +319,7 @@
   :ensure t)
 (use-package web-mode
   :ensure t
-  :mode "\\.html$"
+  :mode (rx ".html" eol)
   :commands web-mode-set-engine
   :config
   (setq-default web-mode-markup-indent-offset 2)
