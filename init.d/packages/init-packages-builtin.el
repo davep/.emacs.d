@@ -100,7 +100,9 @@
   :commands
   flyspell-mode
   flyspell-prog-mode
-  :hook (prog-mode . flyspell-prog-mode))
+  :hook
+  (prog-mode . flyspell-prog-mode)
+  (text-mode . flyspell-mode))
 (use-package footnote
   :commands footnote-mode
   :config
@@ -110,7 +112,8 @@
                     footnote-spaced-footnotes nil
                     footnote-section-tag "-----"
                     footnote-section-tag-regexp (regexp-quote footnote-section-tag)
-                    footnote-narrow-to-footnotes-when-editing t))))
+                    footnote-narrow-to-footnotes-when-editing t)))
+  :hook (text-mode . footnote-mode))
 (use-package gnus
   :custom
   (gnus-default-nntp-server "news.eternal-september.org")
@@ -253,9 +256,7 @@
 ;; Catch-all hooks, etc.
 (add-hook 'text-mode-hook
           (lambda ()
-            (auto-fill-mode 1)
-            (flyspell-mode 1)
-            (footnote-mode 1)))
+            (auto-fill-mode 1)))
 (add-hook 'prog-mode-hook
           (lambda ()
             ;; Set up for auto-filling comments.
