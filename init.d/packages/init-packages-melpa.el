@@ -333,15 +333,6 @@
   ("<f12> x x" . wttrin))
 (use-package yaml-mode
   :ensure t)
-(use-package xkcd
-  :ensure t
-  :bind
-  ("<f12> x k" . xkcd)
-  :custom
-  (xkcd-cache-dir (let ((dir (local-emacs-directory "xkcd/")))
-                    (make-directory dir :parents)
-                    dir))
-  (xkcd-cache-latest (concat xkcd-cache-dir "latest")))
 
 (provide 'init-packages-melpa)
 
