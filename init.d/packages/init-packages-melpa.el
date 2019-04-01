@@ -174,7 +174,7 @@
   (ivy-use-virtual-buffers t)
   (ivy-count-format "[%d/%d] ")
   (ivy-height 15)
- :init
+  :init
   (ivy-mode 1)
   :bind
   ("C-c C-r" . ivy-resume))
