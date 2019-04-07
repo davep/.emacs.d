@@ -144,7 +144,9 @@
   :init
   (eshell-git-prompt-use-theme 'powerline))
 (use-package haskell-mode
-  :ensure t)
+  :ensure t
+  :bind
+  ("C-c C-c" . haskell-process-load-file))
 (use-package highlight-chars
   :ensure t
   :demand
