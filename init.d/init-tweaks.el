@@ -12,7 +12,6 @@
 
 ;; Ignore case when searching.
 (setq-default case-fold-search t)
-(setq ido-case-fold case-fold-search)
 
 ;; Allow minibufferception.
 (setq enable-recursive-minibuffers t)
