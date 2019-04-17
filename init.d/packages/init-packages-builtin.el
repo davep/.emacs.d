@@ -61,6 +61,8 @@
        (string= (symbol-value 'web-mode-engine) "django")
        (= c ?{))))))
 (use-package eshell
+  :defines eshell-visual-commands
+  :functions eshell/pwd
   :custom
   (eshell-directory-name  (locate-user-emacs-file ".eshell/"))
   (eshell-prompt-regexp   "^[^#\\$]*[#\\$] ")
