@@ -180,7 +180,7 @@
   (ivy-height 15)
   :init
   (ivy-mode 1)
-  :bind
+  :bind*
   ("C-c C-r" . ivy-resume))
 (use-package ivy-hydra
   :ensure t
