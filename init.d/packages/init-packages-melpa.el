@@ -143,6 +143,8 @@
   :commands eshell-git-prompt-use-theme
   :init
   (eshell-git-prompt-use-theme 'powerline))
+(use-package go-mode
+  :ensure t)
 (use-package haskell-mode
   :ensure t
   :bind
