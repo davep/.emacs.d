@@ -210,6 +210,8 @@
   ("<f12> l l" . lorem-ipsum-insert-list))
 (use-package itail
   :ensure t)
+(use-package julia-mode
+  :ensure t)
 (when is-a-unix-p
   (use-package magit
     :ensure t
