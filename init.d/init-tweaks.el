@@ -44,7 +44,7 @@
               ;; Also ensure PATH for this process matches.
               (unless (string-match-p (regexp-quote bin) (getenv "PATH"))
                 (setenv "PATH" (concat (expand-file-name bin) ":" (getenv "PATH")))))))
-        '("~/" "~/.local/" "/usr/local/")))
+        '("~/" "~/.local/" "~/.cargo/" "/usr/local/")))
 
 ;; Enable mouse avoidance mode.
 (mouse-avoidance-mode 'animate)
