@@ -105,6 +105,8 @@
     (or
      ;; Ignore hidden files.
      (group bol ".")
+     ;; I never want to edit the desktop.
+     (group "Desktop/" eol)
      ;; Ignore compiled files.
      (group "." (or "pyc" "elc") eol))))
   :init
