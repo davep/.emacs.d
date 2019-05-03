@@ -211,7 +211,8 @@
 (use-package itail
   :ensure t)
 (use-package julia-mode
-  :ensure t)
+  :ensure t
+  :interpreter "julia")
 (when is-a-unix-p
   (use-package magit
     :ensure t
