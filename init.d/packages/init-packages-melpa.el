@@ -34,6 +34,8 @@
   ("<f12> / ?" . cheat-sh-help)
   ("<f12> / s" . cheat-sh-search)
   ("<f12> / t" . cheat-sh-search-topic))
+(use-package cider
+  :ensure t)
 (use-package dad-joke
   :ensure t
   :bind
