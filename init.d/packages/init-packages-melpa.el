@@ -145,6 +145,8 @@
   :commands eshell-git-prompt-use-theme
   :init
   (eshell-git-prompt-use-theme 'powerline))
+(use-package fish-mode
+  :ensure t)
 (use-package gitconfig-mode
   :ensure t)
 (use-package go-mode
