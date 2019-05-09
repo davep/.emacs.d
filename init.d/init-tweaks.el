@@ -10,6 +10,11 @@
 
 (require 'is-a)
 
+;; Ensure that /bin/sh is used when running external stuff. This helps solve
+;; issues when I'm using novel shells. More to the point, this gets round a
+;; number of issues I had when moving to fish as my shell.
+(setq shell-file-name "/bin/sh")
+
 ;; Ignore case when searching.
 (setq-default case-fold-search t)
 
