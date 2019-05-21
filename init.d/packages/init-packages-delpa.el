@@ -107,7 +107,9 @@
   ("<f12> o i" . org-davep-open-inbox)
   ("<f12> o d" . org-davep-open-dir))
 (use-package pinboard
-  :ensure t)
+  :ensure t
+  :bind
+  ("<f12> `" . pinboard))
 (use-package qrencode
   :ensure t)
 (use-package rate-sx
