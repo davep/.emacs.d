@@ -143,6 +143,7 @@
            ("Makefile"     (derived-mode . makefile-mode))
            ("python"       (mode . python-mode))
            ("JavaScript"   (mode . js2-mode))
+           ("Clojure"      (mode . clojure-mode))
            ("web"          (or
                             (mode . web-mode)
                             (mode . scss-mode)))

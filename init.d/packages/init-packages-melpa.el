@@ -110,7 +110,8 @@
      ;; I never want to edit the desktop.
      (group "Desktop/" eol)
      ;; Ignore compiled files.
-     (group "." (or "pyc" "elc") eol))))
+     (group "." (or "pyc" "elc") eol)
+     (group ".egg-info/" eol))))
   :init
   (counsel-mode 1)
   :bind
