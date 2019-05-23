@@ -351,6 +351,8 @@
   ("<f12> x x" . wttrin))
 (use-package yaml-mode
   :ensure t)
+(use-package zig-mode
+  :ensure t)
 
 (provide 'init-packages-melpa)
 
