@@ -239,8 +239,7 @@
                 "gitlab.synpromics.com/api/v4"
                 "gitlab.synpromics.com"
                 'forge-gitlab-repository)
-          forge-alist)
-    (setq ghub-use-workaround-for-emacs-bug nil))
+          forge-alist))
   (use-package transient
     :ensure t
     :custom
