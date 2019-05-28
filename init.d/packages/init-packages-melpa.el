@@ -123,7 +123,9 @@
   ("<f12> f c w" . counsel-colors-web)
   ("<f12> f c e" . counsel-colors-emacs))
 (use-package dictionary
-  :ensure t)
+  :ensure t
+  :bind
+  ("<f12> f d" . dictionary-lookup-definition))
 (use-package dockerfile-mode
   :ensure t)
 (when is-a-unix-p
