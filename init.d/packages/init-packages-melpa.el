@@ -114,7 +114,7 @@
      (group ".egg-info/" eol))))
   :init
   (counsel-mode 1)
-  :bind
+  :bind*
   ("<f12> f g" . counsel-rg)
   ("<f12> f l" . counsel-locate)
   ("C-c C-f" . counsel-recentf)
