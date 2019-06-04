@@ -310,7 +310,10 @@
       (insert "# -*- restclient -*-\n\n"))
     (restclient-mode)))
 (use-package rg
-  :ensure t)
+  :ensure t
+  :bind
+  ("<f12> = =" . rg)
+  ("<f12> = +" . rg-dwim))
 (use-package rjsx-mode
   :ensure t
   :bind*
