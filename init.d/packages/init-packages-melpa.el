@@ -309,6 +309,8 @@
     (when (string= (buffer-string) "")
       (insert "# -*- restclient -*-\n\n"))
     (restclient-mode)))
+(use-package rg
+  :ensure t)
 (use-package rjsx-mode
   :ensure t
   :bind*
