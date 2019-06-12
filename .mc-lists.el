@@ -18,6 +18,7 @@
         markdown-outdent-or-delete
         moving-home
         org-end-of-line
+        org-force-cycle-archived
         org-self-insert-command
         ))
 
