@@ -13,7 +13,9 @@
  ;; https://stackoverflow.blog/2017/06/15/developers-use-spaces-make-money-use-tabs/
  indent-tabs-mode nil
  ;; Never been a fan of double spaces after a full stop.
- sentence-end-double-space nil)
+ sentence-end-double-space nil
+ ;; Have sorting be case-insensitive.
+ sort-fold-case t)
 
 (provide 'init-editing)
 
