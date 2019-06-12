@@ -141,6 +141,7 @@
            ("python"       (mode . python-mode))
            ("JavaScript"   (mode . js2-mode))
            ("Clojure"      (mode . clojure-mode))
+           ("Doc-View"     (mode . doc-view-mode))
            ("web"          (or
                             (mode . web-mode)
                             (mode . scss-mode)))
