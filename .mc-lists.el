@@ -17,6 +17,7 @@
         kill-region
         markdown-outdent-or-delete
         moving-home
+        org-end-of-line
         org-self-insert-command
         ))
 
