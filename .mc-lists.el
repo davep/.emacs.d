@@ -20,6 +20,7 @@
         org-beginning-of-line
         org-end-of-line
         org-force-cycle-archived
+        org-kill-line
         org-self-insert-command
         ))
 
