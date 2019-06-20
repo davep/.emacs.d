@@ -14,7 +14,6 @@
 
 ;; Movement
 (bind-keys
- ("M-g"       . goto-line)
  ("M-<left>"  . backward-sexp)
  ("M-<right>" . forward-sexp)
  ("s-<up>"    . moving-backward-page)

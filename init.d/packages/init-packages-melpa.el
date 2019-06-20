@@ -156,6 +156,10 @@
   :ensure t)
 (use-package go-mode
   :ensure t)
+(use-package goto-line-preview
+  :ensure t
+  :bind
+  ("M-g" . goto-line-preview))
 (use-package haskell-mode
   :ensure t
   :bind
