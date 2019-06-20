@@ -71,7 +71,8 @@
       ;; ...only show line numbers in certain types of modes.
       (progn
         (add-hook 'prog-mode-hook (lambda () (display-line-numbers-mode 1)))
-        (add-hook 'text-mode-hook (lambda () (display-line-numbers-mode 1))))
+        (add-hook 'text-mode-hook (lambda () (display-line-numbers-mode 1)))
+        (add-hook 'restclient-mode-hook (lambda () (display-line-numbers-mode 1))))
     ;; ...otherwise use linum-mode.
     (global-linum-mode 1)))
 
