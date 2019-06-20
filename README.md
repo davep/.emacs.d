@@ -165,3 +165,5 @@ own use. However, on the off chance that someone wants to derive from this:
 >
 > You should have received a copy of the GNU General Public License along
 > with this program. If not, see <http://www.gnu.org/licenses/>.
+
+[//]: # (README.md ends here)
