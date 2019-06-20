@@ -207,10 +207,8 @@
   :after ivy
   :commands
   ivy-rich-mode
-  ivy-format-function-line
   :init
-  (ivy-rich-mode 1)
-  (setq ivy-format-function #'ivy-format-function-line))
+  (ivy-rich-mode 1))
 (use-package json-mode
   :ensure t)
 (use-package lorem-ipsum
