@@ -54,6 +54,10 @@
   ("<f12> n n"   . numbers-random))
 (use-package obfusurl
   :ensure t)
+(use-package pinboard
+  :ensure t
+  :bind
+  ("<f12> `" . pinboard))
 (use-package protocols
   :ensure t)
 (use-package quiz
