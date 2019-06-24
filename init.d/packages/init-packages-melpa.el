@@ -274,7 +274,11 @@
   ("<f8>"    . neotree)
   ("C-<tab>" . neotree)
   ("C-<f8>"  . neotree-dir)
-  ("s-<f8>"  . neotree-dir))
+  ("s-<f8>"  . neotree-dir)
+  :custom
+  (neo-theme 'arrow)
+  (neo-hide-cursor t)
+  (neo-autorefresh t))
 (use-package package-lint
   :ensure t)
 (use-package page-break-lines
