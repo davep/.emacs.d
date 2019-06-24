@@ -276,9 +276,7 @@
   ("C-<f8>"  . neotree-dir)
   ("s-<f8>"  . neotree-dir)
   :custom
-  (neo-theme 'arrow)
-  (neo-hide-cursor t)
-  (neo-autorefresh t))
+  (neo-theme 'arrow))
 (use-package package-lint
   :ensure t)
 (use-package page-break-lines
