@@ -3,7 +3,8 @@
 ;;; Commentary:
 ;;
 ;; init-packages-builtin.el loads and configures various packages that are
-;; part of GNU Emacs itself.
+;; part of GNU Emacs itself. Note that being in Elpa is considered to be
+;; "built in."
 
 ;;; Code:
 
