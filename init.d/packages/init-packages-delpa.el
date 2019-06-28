@@ -106,6 +106,8 @@
   :bind
   ("<f12> o i" . org-davep-open-inbox)
   ("<f12> o d" . org-davep-open-dir))
+(use-package pypath
+  :ensure t)
 (use-package qrencode
   :ensure t)
 (use-package rate-sx
