@@ -193,7 +193,7 @@
     (interactive)
     (let ((org-local-config "~/.config/org/"))
       (when (file-exists-p org-local-config)
-        (mapc #'load (directory-files org-local-config t "\\.el$")))))
+        (mapc #'load (directory-files org-local-config t (rx ".el" eol))))))
   (funcall 'org-davep-config)
   :bind
   ("<f12> o a" . org-agenda)
