@@ -120,6 +120,7 @@
   (counsel-mode 1)
   :bind*
   ("<f12> f g" . counsel-rg)
+  ("<f12> f b" . counsel-bookmark)
   ("<f12> f l" . counsel-locate)
   ("C-c C-f" . counsel-recentf)
   ("<f12> f r" . counsel-recentf)
