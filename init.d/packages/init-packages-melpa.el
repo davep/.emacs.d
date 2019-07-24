@@ -159,7 +159,10 @@
   :ensure t)
 (use-package flycheck
   :ensure t
-  :init (global-flycheck-mode))
+  :init (global-flycheck-mode)
+  :hook
+  (python-mode . (lambda ()
+                   (add-to-list 'flycheck-disabled-checkers 'python-flake8))))
 (use-package gitconfig-mode
   :ensure t)
 (use-package go-mode
