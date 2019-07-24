@@ -157,6 +157,9 @@
   (eshell-git-prompt-use-theme 'powerline))
 (use-package fish-mode
   :ensure t)
+(use-package flycheck
+  :ensure t
+  :init (global-flycheck-mode))
 (use-package gitconfig-mode
   :ensure t)
 (use-package go-mode
@@ -294,6 +297,9 @@
   :config
   (global-paren-face-mode t)
   (set-face-foreground 'parenthesis "gray78"))
+(use-package pipenv
+  :ensure t
+  :hook (python-mode . pipenv-mode))
 (use-package powerline
   :ensure t
   :config
