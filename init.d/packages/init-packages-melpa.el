@@ -302,6 +302,7 @@
   (set-face-foreground 'parenthesis "gray78"))
 (use-package pipenv
   :ensure t
+  :diminish "PE"
   :hook (python-mode . pipenv-mode))
 (use-package powerline
   :ensure t
