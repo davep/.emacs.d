@@ -303,7 +303,10 @@
 (use-package pipenv
   :ensure t
   :diminish "PE"
-  :hook (python-mode . pipenv-mode))
+  :hook (python-mode . pipenv-mode)
+  :bind
+  ("<f12> p a" . pipenv-activate)
+  ("<f12> p d" . pipenv-deactivate))
 (use-package powerline
   :ensure t
   :config
