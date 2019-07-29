@@ -9,6 +9,7 @@
 ;;; Code:
 
 (require 'is-a)
+(require 'solar)
 
 
 ;; General modes.
