@@ -127,6 +127,17 @@
   ("<f12> f M-x" . counsel-command-history)
   ("<f12> f c w" . counsel-colors-web)
   ("<f12> f c e" . counsel-colors-emacs))
+(use-package dashboard
+  :ensure t
+  :config
+  (dashboard-setup-startup-hook)
+  :bind
+  ("<f7>" . (lambda ()
+              (interactive)
+              (when (get-buffer dashboard-buffer-name)
+                (kill-buffer dashboard-buffer-name))
+              (dashboard-insert-startupify-lists)
+              (switch-to-buffer dashboard-buffer-name))))
 (use-package dictionary
   :ensure t
   :bind
