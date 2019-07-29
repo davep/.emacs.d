@@ -346,6 +346,7 @@
   :ensure t
   :custom
   (projectile-known-projects-file (local-emacs-directory "projectile-bookmarks.eld"))
+  (projectile-mode-line-prefix " P")
   :config
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
   (projectile-mode 1))
