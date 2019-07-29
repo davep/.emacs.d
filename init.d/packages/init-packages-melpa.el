@@ -127,6 +127,11 @@
   ("<f12> f M-x" . counsel-command-history)
   ("<f12> f c w" . counsel-colors-web)
   ("<f12> f c e" . counsel-colors-emacs))
+(use-package counsel-projectile
+  :ensure t
+  :after projectile
+  :init
+  (counsel-projectile-mode))
 (use-package dashboard
   :ensure t
   :config
@@ -334,6 +339,13 @@
   (powerline-default-theme))
 (use-package powershell
   :ensure t)
+(use-package projectile
+  :ensure t
+  :custom
+  (projectile-known-projects-file (local-emacs-directory "projectile-bookmarks.eld"))
+  :config
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+  (projectile-mode 1))
 (use-package restclient
   :ensure t
   :commands restclient-mode
