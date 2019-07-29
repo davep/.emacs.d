@@ -136,7 +136,10 @@
   :ensure t
   :config
   (setq dashboard-startup-banner 'logo
-        dashboard-set-footer     nil)
+        dashboard-set-footer     nil
+        dashboard-items          '((projects  . 10)
+                                   (recents   . 10)
+                                   (bookmarks . 10)))
   (dashboard-setup-startup-hook)
   :bind
   ("<f7>" . (lambda ()
