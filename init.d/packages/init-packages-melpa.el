@@ -131,7 +131,9 @@
   :ensure t
   :after projectile
   :init
-  (counsel-projectile-mode))
+  (counsel-projectile-mode)
+  :custom
+  (counsel-projectile-switch-project-action 'neotree-dir))
 (use-package dashboard
   :ensure t
   :config
@@ -347,6 +349,7 @@
   :custom
   (projectile-known-projects-file (local-emacs-directory "projectile-bookmarks.eld"))
   (projectile-mode-line-prefix " P")
+  (projectile-switch-project-action 'neotree-projectile-action)
   :config
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
   (projectile-mode 1))
