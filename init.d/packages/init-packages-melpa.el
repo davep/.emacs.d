@@ -130,6 +130,8 @@
 (use-package dashboard
   :ensure t
   :config
+  (setq dashboard-startup-banner 'logo
+        dashboard-set-footer     nil)
   (dashboard-setup-startup-hook)
   :bind
   ("<f7>" . (lambda ()
