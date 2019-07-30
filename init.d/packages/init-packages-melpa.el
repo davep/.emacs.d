@@ -352,6 +352,7 @@
   (projectile-switch-project-action 'neotree-projectile-action)
   (projectile-completion-system 'ivy)
   (projectile-project-root-files '(".projectile" "Pipfile"))
+  (projectile-project-root-files-functions '(projectile-root-top-down))
   :config
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
   (projectile-mode 1))
