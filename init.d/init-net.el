@@ -10,6 +10,10 @@
 
 ;;; Code:
 
+(require 'nsm)
+(require 'url)
+(require 'smtpmail)
+
 (setq
  ;; Who I am.
  user-mail-address "davep@davep.org"
