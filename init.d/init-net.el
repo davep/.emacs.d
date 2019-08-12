@@ -32,4 +32,4 @@
 
 (provide 'init-net)
 
-;;; init-editing.el ends here
+;;; init-net.el ends here
