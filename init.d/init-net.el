@@ -28,7 +28,6 @@
  ;; Security.
  nsm-save-host-names t
  nsm-settings-file   (local-emacs-directory "network-security.data")
- oauth2-token-file   (local-emacs-directory "oauth2.plstore"))
 
 (provide 'init-net)
 
