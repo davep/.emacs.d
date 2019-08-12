@@ -13,6 +13,7 @@
 (require 'nsm)
 (require 'url)
 (require 'smtpmail)
+(require 'url-cache)
 
 (setq
  ;; Who I am.
@@ -27,7 +28,7 @@
  url-cookie-file             (local-emacs-directory "url/cookies")
  ;; Security.
  nsm-save-host-names t
- nsm-settings-file   (local-emacs-directory "network-security.data")
+ nsm-settings-file   (local-emacs-directory "network-security.data"))
 
 (provide 'init-net)
 
