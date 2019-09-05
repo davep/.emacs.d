@@ -18,8 +18,6 @@
  ("M-<right>" . forward-sexp)
  ("M-<up>"    . scroll-down-line)
  ("M-<down>"  . scroll-up-line)
- ("s-<up>"    . moving-backward-page)
- ("s-<down>"  . moving-forward-page)
  ("s-s"       . isearch-forward-symbol-at-point)
  ("C-s-<tab>" . other-window))
 (when is-a-linux-p
