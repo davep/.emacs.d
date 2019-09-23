@@ -40,7 +40,8 @@
 (bind-keys
  ("C-c ;"         . comment-or-uncomment-region)
  ("C-<backspace>" . backward-kill-word)
- ("C-c a"         . align))
+ ("C-c a"         . align)
+ ("s-<tab>"       . completion-at-point))
 
 ;; Tools and "apps" and things.
 (bind-keys
@@ -69,8 +70,7 @@
   ;; Have "fn" double up as "control". I keep "control" as "control" too,
   ;; but on my iMac and Macbook I often find my finger creeps to "fn" when I
   ;; want "ctrl". This solves that issue.
-  (set (intern "ns-function-modifier") 'control)
-  (bind-key "s-<tab>" #'completion-at-point))
+  (set (intern "ns-function-modifier") 'control))
 
 ;; Things specific to Windows.
 (when is-a-win32-p
