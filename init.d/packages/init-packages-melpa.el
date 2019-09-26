@@ -180,6 +180,9 @@
   :commands eshell-git-prompt-use-theme
   :init
   (eshell-git-prompt-use-theme 'powerline))
+(use-package fish-completion
+  :ensure t
+  :init (global-fish-completion-mode))
 (use-package fish-mode
   :ensure t)
 (use-package flycheck
