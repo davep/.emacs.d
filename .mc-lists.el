@@ -15,6 +15,7 @@
         forward-sexp
         indent-for-tab-command
         kill-region
+        markdown-cycle
         markdown-outdent-or-delete
         moving-home
         org-beginning-of-line
