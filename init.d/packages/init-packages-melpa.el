@@ -266,6 +266,7 @@
     :config
     (add-hook 'after-save-hook #'magit-after-save-refresh-status)
     (add-hook 'git-commit-setup-hook (lambda() (flyspell-mode 1)))
+    (setq ghub-use-workaround-for-emacs-bug 'force)
     :bind
     ("<f12> g s"   . magit-status)
     ("<f12> g b"   . magit-blame)
