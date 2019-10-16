@@ -51,6 +51,11 @@
                 (setenv "PATH" (concat (expand-file-name bin) ":" (getenv "PATH")))))))
         '("~/" "~/.local/" "~/.cargo/" "/usr/local/")))
 
+;; WoMan is my preference for man-page viewing, but it doesn't seem to be
+;; doing terribly well on macOS. So, for now...
+(when is-a-macOS-p
+  (fset 'woman 'man))
+
 ;; Enable mouse avoidance mode.
 (mouse-avoidance-mode 'animate)
 
