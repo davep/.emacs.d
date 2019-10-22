@@ -31,10 +31,14 @@
 ;; muscle memory for them when on my work machine. So while we only use the
 ;; above on a GNU/Linux, we use the below everywhere.
 (bind-keys
- ("M-s-<right>" . windmove-right)
+ ("M-s-<right>" . windmove-right)       ; Nicer on small Magic keyboard.
  ("M-s-<down>"  . windmove-down)
  ("M-s-<left>"  . windmove-left)
- ("M-s-<up>"    . windmove-up))
+ ("M-s-<up>"    . windmove-up)
+ ("C-S-<right>" . windmove-right)       ; Nicer on full-size keyboard.
+ ("C-S-<down>"  . windmove-down)
+ ("C-S-<left>"  . windmove-left)
+ ("C-S-<up>"    . windmove-up))
 
 ;; Editing
 (bind-keys
