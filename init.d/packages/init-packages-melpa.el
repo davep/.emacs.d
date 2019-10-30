@@ -93,8 +93,6 @@
   :ensure t
   :bind
   ("C-x y" . browse-kill-ring))
-(use-package circe
-  :ensure t)
 (use-package company
   :ensure t
   :diminish
