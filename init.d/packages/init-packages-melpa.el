@@ -93,6 +93,11 @@
   :ensure t
   :bind
   ("C-x y" . browse-kill-ring))
+(use-package cl-lib-highlight
+  :ensure t
+  :init
+  (cl-lib-highlight-initialize)
+  (cl-lib-highlight-warn-cl-initialize))
 (use-package company
   :ensure t
   :diminish
