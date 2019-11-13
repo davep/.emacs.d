@@ -95,6 +95,9 @@
   ("C-x y" . browse-kill-ring))
 (use-package cl-lib-highlight
   :ensure t
+  :commands
+  cl-lib-highlight-initialize
+  cl-lib-highlight-warn-cl-initialize
   :init
   (cl-lib-highlight-initialize)
   (cl-lib-highlight-warn-cl-initialize))
@@ -148,6 +151,8 @@
                                    (recents   . 10)
                                    (bookmarks . 10)))
   (dashboard-setup-startup-hook)
+  :commands
+  dashboard-insert-startupify-lists
   :bind
   ("<f7>" . (lambda ()
               (interactive)
