@@ -127,7 +127,10 @@
   ibuffer-auto-mode
   ibuffer-switch-to-saved-filter-groups
   ibuffer-do-sort-by-alphabetic
-  :init
+  :defines
+  ibuffer-show-empty-filter-groups
+  ibuffer-saved-filter-groups
+  :config
   (setq ibuffer-expert t
         ibuffer-show-empty-filter-groups nil
         ibuffer-saved-filter-groups
