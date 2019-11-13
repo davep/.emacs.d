@@ -142,6 +142,7 @@
            ("Makefile"     (derived-mode . makefile-mode))
            ("python"       (mode . python-mode))
            ("JavaScript"   (mode . js2-mode))
+           ("Julia"        (mode . julia-mode))
            ("Clojure"      (mode . clojure-mode))
            ("Doc-View"     (mode . doc-view-mode))
            ("web"          (or
