@@ -1,4 +1,5 @@
-alias e find-file $1
-alias v ls -l
-alias d ls
+alias up ..
 alias c clear t
+alias d ls
+alias v ls -l
+alias e find-file $1
