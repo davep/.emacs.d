@@ -319,6 +319,9 @@
   ("s-<f8>"  . neotree-dir)
   :custom
   (neo-theme 'arrow))
+(use-package org-bullets
+  :ensure t
+  :hook (org-mode . org-bullets-mode))
 (use-package package-lint
   :ensure t)
 (use-package page-break-lines
