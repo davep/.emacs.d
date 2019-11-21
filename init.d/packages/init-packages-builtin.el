@@ -202,6 +202,10 @@
       (when (file-exists-p org-local-config)
         (mapc #'load (directory-files org-local-config t (rx ".el" eol))))))
   (funcall 'org-davep-config)
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((emacs-lisp . t)
+     (python . t)))
   :bind
   ("<f12> o a" . org-agenda)
   ("<f12> o t" . org-todo-list))
