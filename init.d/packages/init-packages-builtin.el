@@ -25,7 +25,6 @@
   :config
   (setq
    diary-file             (local-emacs-directory "diary")
-   calendar-day-style     'iso
    calendar-latitude      55.9
    calendar-longitude     -3.2
    calendar-location-name "Edinburgh, Scotland"))
