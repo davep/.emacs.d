@@ -321,6 +321,7 @@
   (neo-theme 'arrow))
 (use-package org-bullets
   :ensure t
+  :after org
   :hook (org-mode . org-bullets-mode))
 (use-package package-lint
   :ensure t)
