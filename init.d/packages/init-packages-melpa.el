@@ -230,6 +230,9 @@
   :commands hyde)
 (use-package hy-mode
   :ensure t)
+(use-package ini-mode
+  :ensure t
+  :mode (rx "Pipfile" eol))
 (use-package ivy
   :ensure t
   :diminish
