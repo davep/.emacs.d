@@ -144,6 +144,7 @@
   (counsel-projectile-switch-project-action 'neotree-dir))
 (use-package dashboard
   :ensure t
+  :demand
   :config
   (setq dashboard-startup-banner 'logo
         dashboard-set-footer     nil
