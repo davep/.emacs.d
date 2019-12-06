@@ -10,6 +10,9 @@
 ;; Default colour scheme.
 (load-theme (if (display-graphic-p) 'adwaita 'deeper-blue) t)
 
+;; Have comments always be in italic.
+(set-face-attribute 'font-lock-comment-face nil :italic t)
+
 ;; First off, let's tweak what the final booted version of Emacs looks like
 ;; when the loading of the init is over.
 (setq inhibit-startup-screen t
