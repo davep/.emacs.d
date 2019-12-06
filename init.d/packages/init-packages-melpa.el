@@ -330,6 +330,13 @@
 (use-package org-present
   :ensure t
   :after org
+  :commands
+  org-present-big
+  org-present-hide-cursor
+  org-present-read-only
+  org-present-read-write
+  org-present-small
+  org-present-show-cursor
   :init
   (progn
   (add-hook 'org-present-mode-hook
