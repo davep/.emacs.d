@@ -148,6 +148,9 @@
            ("JavaScript"   (mode . js2-mode))
            ("Julia"        (mode . julia-mode))
            ("Clojure"      (mode . clojure-mode))
+           ("C/C++"        (or
+                            (derived-mode . c-mode)
+                            (derived-mode . c++-mode)))
            ("Doc-View"     (mode . doc-view-mode))
            ("web"          (or
                             (mode . web-mode)
