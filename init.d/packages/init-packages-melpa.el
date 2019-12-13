@@ -233,7 +233,10 @@
   :ensure t)
 (use-package ini-mode
   :ensure t
-  :mode (rx "Pipfile" eol))
+  :mode (rx (or
+             "Pipfile"
+             ".pylintrc")
+            eol))
 (use-package ivy
   :ensure t
   :diminish
