@@ -14,6 +14,7 @@
 (require 'url)
 (require 'smtpmail)
 (require 'url-cache)
+(require 'init-local)
 
 (setq
  ;; Who I am.

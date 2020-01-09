@@ -8,6 +8,7 @@
 ;;; Code:
 
 (require 'is-a)
+(require 'init-local)
 
 
 ;; My own packages that are in melpa.
@@ -342,6 +343,8 @@
   org-present-read-write
   org-present-small
   org-present-show-cursor
+  org-display-inline-images
+  org-remove-inline-images
   :init
   (progn
   (add-hook 'org-present-mode-hook

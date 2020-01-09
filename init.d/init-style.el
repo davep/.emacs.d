@@ -7,6 +7,8 @@
 
 ;;; Code:
 
+(require 'init-local)
+
 ;; Default colour scheme.
 (load-theme (if (display-graphic-p) 'adwaita 'deeper-blue) t)
 

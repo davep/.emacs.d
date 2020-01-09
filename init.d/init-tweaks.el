@@ -9,6 +9,7 @@
 ;;; Code:
 
 (require 'is-a)
+(require 'init-local)
 
 ;; Ensure that /bin/sh is used when running external stuff. This helps solve
 ;; issues when I'm using novel shells. More to the point, this gets round a

@@ -10,6 +10,7 @@
 ;;; Code:
 
 (require 'package)
+(require 'init-local)
 
 ;; Say where I want packages to live.
 (setq package-user-dir (local-emacs-directory "packages")
