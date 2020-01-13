@@ -26,6 +26,10 @@
   :ensure t)
 (use-package davep-org
   :ensure t)
+(use-package dnote
+  :ensure t
+  :bind
+  ("<f12> i d" . dnote-add))
 (use-package end-it
   :ensure t
   :bind
