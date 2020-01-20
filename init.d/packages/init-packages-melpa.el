@@ -168,6 +168,13 @@
   ("<f12> f d" . dictionary-lookup-definition))
 (use-package dockerfile-mode
   :ensure t)
+(use-package dumb-jump
+  :ensure t
+  :custom
+  (dumb-jump-selector 'ivy)
+  :bind
+  ("<f12> f f" . dumb-jump-go)
+  ("<f12> f C-f" . dumb-jump-go-prompt))
 (when is-a-unix-p
   (use-package emojify
     :if is-a-unix-window-p
