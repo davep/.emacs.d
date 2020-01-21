@@ -82,6 +82,8 @@
 
 
 ;; Third-party packages from elpa/melpa
+(use-package all-the-icons
+  :ensure t)
 (use-package apache-mode
   :ensure t)
 (use-package beacon
