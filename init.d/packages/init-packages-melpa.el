@@ -330,7 +330,7 @@
   ("C-<f8>"  . neotree-dir)
   ("s-<f8>"  . neotree-dir)
   :custom
-  (neo-theme 'arrow))
+  (neo-theme 'icons))
 (use-package org-bullets
   :ensure t
   :after org
