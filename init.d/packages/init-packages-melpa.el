@@ -334,7 +334,8 @@
   ("C-<f8>"  . neotree-dir)
   ("s-<f8>"  . neotree-dir)
   :custom
-  (neo-theme 'icons))
+  (neo-theme 'icons)
+  (neo-window-width 30))
 (use-package org-bullets
   :ensure t
   :after org
