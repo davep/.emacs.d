@@ -35,7 +35,12 @@
 (use-package dired-x
   :config
   (setq-default dired-omit-files-p t)
-  (setq dired-omit-files "^\\.[^.]\\|__pycache__"))
+  (setq dired-omit-files
+        (rx (or
+             ;; Any file whose name starts with a "."
+             (group bol "." (not (any ".")))
+             ;; Any sort of Python cache.
+             "__pycache__"))))
 (use-package eldoc
   :diminish)
 (use-package elec-pair
