@@ -10,6 +10,7 @@
 
 (require 'is-a)
 (require 'solar)
+(require 'init-local)
 
 
 ;; General modes.
