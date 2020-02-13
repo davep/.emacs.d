@@ -71,6 +71,10 @@
 (when (display-graphic-p)
   ;; Always visit images as images.
   (auto-image-file-mode)
+  ;; Blink the cursor after we've been idle for a good while. Helps with
+  ;; finding the cursor again.
+  (setq blink-cursor-delay 60.0)
+  (blink-cursor-mode 1)
   ;; If we're on Emacs 26 or better...
   (if (> emacs-major-version 25)
       ;; ...only show line numbers in certain types of modes.
