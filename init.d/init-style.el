@@ -33,22 +33,6 @@
 (unless is-a-macOS-window-p
   (menu-bar-mode -1))
 
-;; Window position and size.
-(when (display-graphic-p)
-  (let ((short-name (car (split-string (downcase (system-name)) "\\.")))
-        (gndn (lambda () nil))
-        (styles
-         '(
-           ("bellerophon" .
-            (lambda ()
-              (set-frame-size (selected-frame) 90 50)
-              (set-frame-position (selected-frame) 230 60)))
-           ("ariel" .
-            (lambda ()
-              (set-frame-size (selected-frame) 90 50)
-              (set-frame-position (selected-frame) 300 80))))))
-    (funcall (or (cdr (assoc short-name styles)) gndn))))
-
 ;; Window titles.
 (let ((format (list (user-login-name) "@" (downcase (system-name))
                     " - "
