@@ -92,6 +92,9 @@
   :ensure t
   :after all-the-icons
   :init (all-the-icons-ibuffer-mode 1))
+(use-package all-the-icons-ivy-rich
+  :ensure t
+  :init (all-the-icons-ivy-rich-mode 1))
 (use-package apache-mode
   :ensure t)
 (use-package beacon
