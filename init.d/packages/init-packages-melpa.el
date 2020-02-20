@@ -225,15 +225,6 @@
   :ensure t
   :bind
   ("C-c C-c" . haskell-process-load-file))
-(use-package highlight-chars
-  :ensure t
-  :demand
-  :commands hc-highlight-trailing-whitespace
-  :config
-  (add-hook 'after-change-major-mode-hook
-            (lambda ()
-              (when (buffer-file-name)
-                (hc-highlight-trailing-whitespace)))))
 (use-package highlight-indent-guides
   :ensure t
   :diminish

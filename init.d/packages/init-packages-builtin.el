@@ -247,6 +247,14 @@
   :custom
   (tramp-default-method        "ssh")
   (tramp-persistency-file-name (local-emacs-directory "tramp.el")))
+(use-package whitespace
+  :custom
+  (whitespace-style '(face trailing empty))
+  :config
+  (add-hook 'after-change-major-mode-hook
+            (lambda ()
+              (when (buffer-file-name)
+                (whitespace-mode)))))
 
 
 ;; Programming modes.
