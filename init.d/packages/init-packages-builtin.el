@@ -249,7 +249,7 @@
   (tramp-persistency-file-name (local-emacs-directory "tramp.el")))
 (use-package whitespace
   :custom
-  (whitespace-style '(face trailing empty))
+  (whitespace-style '(face trailing empty tabs tab-mark))
   :config
   (add-hook
    'after-change-major-mode-hook
