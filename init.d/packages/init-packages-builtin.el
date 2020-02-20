@@ -251,10 +251,10 @@
   :custom
   (whitespace-style '(face trailing empty))
   :config
-  (add-hook 'after-change-major-mode-hook
-            (lambda ()
-              (when (buffer-file-name)
-                (whitespace-mode)))))
+  (add-hook
+   'after-change-major-mode-hook
+   (lambda ()
+     (whitespace-mode (if (buffer-file-name) 1 -1)))))
 
 
 ;; Programming modes.
