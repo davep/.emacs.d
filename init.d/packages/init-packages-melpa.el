@@ -232,7 +232,9 @@
   :custom
   (highlight-indent-guides-method 'character)
   (highlight-indent-guides-responsive 'top)
-  :hook (prog-mode . highlight-indent-guides-mode))
+  :hook (prog-mode . (lambda ()
+                       (unless (derived-mode-p 'makefile-mode)
+                         (highlight-indent-guides-mode 1)))))
 (use-package hyde
   :ensure t
   :commands hyde)
