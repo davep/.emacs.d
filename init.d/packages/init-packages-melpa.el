@@ -383,6 +383,8 @@
   :config
   (global-paren-face-mode t)
   (set-face-foreground 'parenthesis "gray78"))
+(use-package pdf-tools
+  :ensure t)
 (use-package pipenv
   :ensure t
   :diminish "PE"
