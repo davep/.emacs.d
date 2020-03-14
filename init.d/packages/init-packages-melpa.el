@@ -179,6 +179,11 @@
   :ensure t
   :bind
   ("<f12> f d" . dictionary-lookup-definition))
+(use-package dimmer
+  :ensure t
+  :init
+  (dimmer-configure-magit)
+  (dimmer-mode 1))
 (use-package dockerfile-mode
   :ensure t)
 (when is-a-unix-p
