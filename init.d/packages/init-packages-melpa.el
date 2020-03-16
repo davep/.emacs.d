@@ -181,6 +181,8 @@
   ("<f12> f d" . dictionary-lookup-definition))
 (use-package dimmer
   :ensure t
+  :custom
+  (dimmer-watch-frame-focus-events nil)
   :config
   (add-to-list 'dimmer-buffer-exclusion-regexps (rx bol " *NeoTree*" eol))
   :init
