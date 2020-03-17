@@ -284,9 +284,9 @@
 (use-package lorem-ipsum
   :ensure t
   :bind
-  ("<f12> l p" . lorem-ipsum-insert-paragraphs)
-  ("<f12> l s" . lorem-ipsum-insert-sentences)
-  ("<f12> l l" . lorem-ipsum-insert-list))
+  ("<f12> i l p" . lorem-ipsum-insert-paragraphs)
+  ("<f12> i l s" . lorem-ipsum-insert-sentences)
+  ("<f12> i l l" . lorem-ipsum-insert-list))
 (use-package itail
   :ensure t)
 (use-package julia-mode
