@@ -432,6 +432,10 @@
   :config
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
   (projectile-mode 1))
+(use-package quelpa
+  :ensure t)
+(use-package quelpa-use-package
+  :ensure t)
 (use-package restclient
   :ensure t
   :commands restclient-mode
