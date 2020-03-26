@@ -26,7 +26,8 @@
 (use-package quelpa
   :ensure t
   :custom
-  (quelpa-dir (local-emacs-directory "quelpa")))
+  (quelpa-dir (local-emacs-directory "quelpa"))
+  (quelpa-checkout-melpa-p nil))
 (use-package quelpa-use-package
   :ensure t
   :after quelpa)
