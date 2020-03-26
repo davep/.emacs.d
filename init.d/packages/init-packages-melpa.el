@@ -180,6 +180,10 @@
   :bind
   ("<f12> f d" . dictionary-lookup-definition))
 (use-package dimmer
+  :quelpa (dimmer
+           :fetcher github
+           :repo "gonewest818/dimmer.el"
+           :branch "focus-fix")
   :ensure t
   :custom
   (dimmer-watch-frame-focus-events nil)
