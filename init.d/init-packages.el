@@ -11,11 +11,22 @@
 
 ;;; Code:
 
+;; Ensure local-emacs-directory is available.
+(require 'init-local)
+
 ;; Ensure use-package is available.
 (require 'use-package)
 
 ;; Ensure diminish is available.
 (use-package diminish :ensure t)
+
+;; Throw quelpa into the mix.
+(use-package quelpa
+  :ensure t
+  :custom
+  (quelpa-dir (local-emacs-directory "quelpa")))
+(use-package quelpa-use-package
+  :ensure t)
 
 ;; Given I have my own package archive, ensure I can manage that too.
 (let ((delpa "~/develop/elisp/delpa/"))
