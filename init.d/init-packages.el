@@ -28,7 +28,8 @@
   :custom
   (quelpa-dir (local-emacs-directory "quelpa")))
 (use-package quelpa-use-package
-  :ensure t)
+  :ensure t
+  :after quelpa)
 
 ;; Given I have my own package archive, ensure I can manage that too.
 (let ((delpa "~/develop/elisp/delpa/"))
