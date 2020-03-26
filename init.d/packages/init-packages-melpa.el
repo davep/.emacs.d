@@ -185,8 +185,6 @@
            :repo "gonewest818/dimmer.el"
            :branch "focus-fix")
   :ensure t
-  :custom
-  (dimmer-watch-frame-focus-events nil)
   :config
   (add-to-list 'dimmer-buffer-exclusion-regexps (rx bol " *NeoTree*" eol))
   :init
