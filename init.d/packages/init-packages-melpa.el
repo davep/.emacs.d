@@ -180,10 +180,6 @@
   :bind
   ("<f12> f d" . dictionary-lookup-definition))
 (use-package dimmer
-  :quelpa (dimmer
-           :fetcher github
-           :repo "gonewest818/dimmer.el"
-           :branch "focus-fix")
   :ensure t
   :config
   (add-to-list 'dimmer-buffer-exclusion-regexps (rx bol " *NeoTree*" eol))
