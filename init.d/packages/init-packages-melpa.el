@@ -416,6 +416,10 @@
   (set-face-background 'powerline-inactive1 "grey95")
   (set-face-background 'powerline-inactive2 "grey85")
   (powerline-default-theme))
+(use-package pretty-mode
+  :ensure t
+  :config
+  (global-pretty-mode 1))
 (use-package powershell
   :ensure t)
 (use-package projectile
