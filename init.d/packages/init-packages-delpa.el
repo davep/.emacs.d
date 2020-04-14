@@ -111,8 +111,6 @@
   :ensure t)
 (use-package unbind
   :ensure t)
-(use-package webinfo
-  :ensure t)
 (use-package winsplit
   :ensure t
   :bind*
