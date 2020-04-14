@@ -47,6 +47,16 @@
 (require 'init-packages-delpa)          ; My personal archive.
 (require 'init-packages-melpa)          ; Melpa.
 
+;; Load in all the packages declared in the "use" hierarchy.
+(let ((source (expand-file-name "init.d/packages/use" user-emacs-directory)))
+  (when (file-exists-p source)
+    (cl-loop for use in (directory-files-recursively
+                         (expand-file-name
+                          "init.d/packages/use"
+                          user-emacs-directory)
+                         (rx ".el" eol))
+             do (load (file-name-sans-extension use)))))
+
 (provide 'init-packages)
 
 ;;; init-packages.el ends here
