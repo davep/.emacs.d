@@ -50,11 +50,7 @@
 ;; Load in all the packages declared in the "use" hierarchy.
 (let ((source (expand-file-name "init.d/packages/use" user-emacs-directory)))
   (when (file-exists-p source)
-    (cl-loop for use in (directory-files-recursively
-                         (expand-file-name
-                          "init.d/packages/use"
-                          user-emacs-directory)
-                         (rx ".el" eol))
+    (cl-loop for use in (directory-files-recursively source (rx ".el" eol))
              do (load (file-name-sans-extension use)))))
 
 (provide 'init-packages)
