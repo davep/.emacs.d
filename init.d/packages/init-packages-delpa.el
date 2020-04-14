@@ -8,10 +8,6 @@
 
 ;;; Code:
 
-(use-package commoji
-  :ensure t
-  :bind
-  ("<f12> g e" . commoji))
 (use-package constellations
   :ensure t)
 (use-package csrclr
