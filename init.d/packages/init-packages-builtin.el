@@ -178,7 +178,8 @@
                             (name . "\*Calendar\*")
                             (name . "\*tramp/sudo")
                             (name . "\*Packages\*")
-                            (mode . inferior-python-mode))))))
+                            (mode . inferior-python-mode)
+                            (mode . compilation-mode))))))
   (add-hook 'ibuffer-mode-hooks
             (lambda ()
               (ibuffer-auto-mode 1)
