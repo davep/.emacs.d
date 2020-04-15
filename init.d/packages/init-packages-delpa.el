@@ -8,8 +8,6 @@
 
 ;;; Code:
 
-(use-package qrencode
-  :ensure t)
 (use-package rate-sx
   :ensure t
   :bind
