@@ -12,10 +12,6 @@
 
 
 ;; My own packages that are in melpa.
-(use-package pinboard
-  :ensure t
-  :bind
-  ("<f12> `" . pinboard))
 (use-package protocols
   :ensure t)
 (use-package quiz
