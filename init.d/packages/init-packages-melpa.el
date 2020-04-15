@@ -12,10 +12,6 @@
 
 
 ;; My own packages that are in melpa.
-(use-package dad-joke
-  :ensure t
-  :bind
-  ("<f12> d" . dad-joke))
 (use-package eg
   :ensure t
   :bind
