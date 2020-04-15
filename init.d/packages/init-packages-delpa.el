@@ -8,10 +8,6 @@
 
 ;;; Code:
 
-(use-package requote
-  :ensure t
-  :bind
-  ("<f12> q" . requote))
 (use-package setup-compile
   :ensure t
   :commands setup-compile
