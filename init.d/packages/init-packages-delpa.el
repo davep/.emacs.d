@@ -8,10 +8,6 @@
 
 ;;; Code:
 
-(use-package funhead
-  :ensure t
-  :bind
-  ("<f12> i h" . funhead))
 (use-package gitweb
   :ensure t
   :bind
