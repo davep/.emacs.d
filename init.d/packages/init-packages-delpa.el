@@ -8,8 +8,6 @@
 
 ;;; Code:
 
-(use-package unbind
-  :ensure t)
 (use-package winsplit
   :ensure t
   :bind*
