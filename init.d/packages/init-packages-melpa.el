@@ -12,8 +12,6 @@
 
 
 ;; My own packages that are in melpa.
-(use-package slstats
-  :ensure t)
 (use-package thinks
   :ensure t
   :bind
