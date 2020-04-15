@@ -44,7 +44,6 @@
 
 ;; Use all the packages.
 (require 'init-packages-builtin)        ; Things built into Emacs.
-(require 'init-packages-delpa)          ; My personal archive.
 (require 'init-packages-melpa)          ; Melpa.
 
 ;; Load in all the packages declared in the "use" hierarchy.
