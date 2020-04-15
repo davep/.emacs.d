@@ -8,8 +8,6 @@
 
 ;;; Code:
 
-(use-package graburl
-  :ensure t)
 (use-package icmp-info
   :ensure t)
 (use-package itch
