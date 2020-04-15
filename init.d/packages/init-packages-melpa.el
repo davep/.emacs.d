@@ -12,8 +12,6 @@
 
 
 ;; My own packages that are in melpa.
-(use-package binclock
-  :ensure t)
 (use-package boxquote
   :ensure t
   :bind
