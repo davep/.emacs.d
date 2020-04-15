@@ -8,10 +8,6 @@
 
 ;;; Code:
 
-(use-package rate-sx
-  :ensure t
-  :bind
-  ("<f12> c" . rate-sx))
 (use-package requote
   :ensure t
   :bind
