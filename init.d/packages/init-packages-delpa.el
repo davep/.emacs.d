@@ -8,10 +8,6 @@
 
 ;;; Code:
 
-(use-package end-it
-  :ensure t
-  :bind
-  ("<f12> i e" . end-it))
 (use-package expando
   :ensure t
   :bind
