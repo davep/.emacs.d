@@ -12,8 +12,6 @@
 
 
 ;; My own packages that are in melpa.
-(use-package quiz
-  :ensure t)
 (use-package services
   :ensure t)
 (use-package slstats
