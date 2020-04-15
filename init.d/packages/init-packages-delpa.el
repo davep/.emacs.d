@@ -8,8 +8,6 @@
 
 ;;; Code:
 
-(use-package icmp-info
-  :ensure t)
 (use-package itch
   :ensure t
   :bind*
