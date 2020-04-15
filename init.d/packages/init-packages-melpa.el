@@ -12,8 +12,6 @@
 
 
 ;; My own packages that are in melpa.
-(use-package obfusurl
-  :ensure t)
 (use-package pinboard
   :ensure t
   :bind
