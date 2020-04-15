@@ -8,8 +8,6 @@
 
 ;;; Code:
 
-(use-package davep-org
-  :ensure t)
 (use-package dnote
   :ensure t
   :bind
