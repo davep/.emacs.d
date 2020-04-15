@@ -8,10 +8,6 @@
 
 ;;; Code:
 
-(use-package gitweb
-  :ensure t
-  :bind
-  ("<f12> g w" . gitweb))
 (use-package graburl
   :ensure t)
 (use-package icmp-info
