@@ -12,10 +12,6 @@
 
 
 ;; My own packages that are in melpa.
-(use-package eg
-  :ensure t
-  :bind
-  ("<f12> e" . eg))
 (use-package numbers
   :ensure t
   :bind
