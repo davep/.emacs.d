@@ -8,8 +8,6 @@
 
 ;;; Code:
 
-(use-package fscroll
-  :ensure t)
 (use-package funhead
   :ensure t
   :bind
