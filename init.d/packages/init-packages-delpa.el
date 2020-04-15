@@ -8,8 +8,6 @@
 
 ;;; Code:
 
-(use-package constellations
-  :ensure t)
 (use-package csrclr
   :ensure t)
 (use-package davep-org
