@@ -8,10 +8,6 @@
 
 ;;; Code:
 
-(use-package setup-compile
-  :ensure t
-  :commands setup-compile
-  :hook (c-mode c++mode emacs-lisp-mode))
 (use-package smartsig
   :ensure t)
 (use-package unbind
