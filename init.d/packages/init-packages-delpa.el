@@ -8,8 +8,6 @@
 
 ;;; Code:
 
-(use-package pypath
-  :ensure t)
 (use-package qrencode
   :ensure t)
 (use-package rate-sx
