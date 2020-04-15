@@ -23,8 +23,6 @@
   ("s-<down>"  . moving-forward-page))
 (use-package msig
   :ensure t)
-(use-package ngn
-  :ensure t)
 (use-package nuke-buffers
   :ensure t
   :config
