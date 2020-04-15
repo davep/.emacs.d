@@ -8,8 +8,6 @@
 
 ;;; Code:
 
-(use-package nukneval
-  :ensure t)
 (use-package org-davep
   :ensure t
   :bind
