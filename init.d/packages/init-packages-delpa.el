@@ -8,8 +8,6 @@
 
 ;;; Code:
 
-(use-package longmacs
-  :ensure t)
 (use-package make-phony
   :ensure t
   :bind
