@@ -8,8 +8,6 @@
 
 ;;; Code:
 
-(use-package msig
-  :ensure t)
 (use-package nuke-buffers
   :ensure t
   :config
