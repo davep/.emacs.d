@@ -12,8 +12,6 @@
 
 
 ;; My own packages that are in melpa.
-(use-package protocols
-  :ensure t)
 (use-package quiz
   :ensure t)
 (use-package services
