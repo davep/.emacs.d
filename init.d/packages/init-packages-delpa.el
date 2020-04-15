@@ -8,8 +8,6 @@
 
 ;;; Code:
 
-(use-package smartsig
-  :ensure t)
 (use-package unbind
   :ensure t)
 (use-package winsplit
