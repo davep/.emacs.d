@@ -12,12 +12,6 @@
 
 
 ;; Third-party packages from elpa/melpa
-(use-package lorem-ipsum
-  :ensure t
-  :bind
-  ("<f12> i l p" . lorem-ipsum-insert-paragraphs)
-  ("<f12> i l s" . lorem-ipsum-insert-sentences)
-  ("<f12> i l l" . lorem-ipsum-insert-list))
 (use-package itail
   :ensure t)
 (when is-a-unix-p
