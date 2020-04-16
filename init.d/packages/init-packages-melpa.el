@@ -67,9 +67,6 @@
   :hook (prog-mode . (lambda ()
                        (unless (derived-mode-p 'makefile-mode)
                          (highlight-indent-guides-mode 1)))))
-(use-package hyde
-  :ensure t
-  :commands hyde)
 (use-package lorem-ipsum
   :ensure t
   :bind
