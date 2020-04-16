@@ -12,10 +12,6 @@
 
 
 ;; Third-party packages from elpa/melpa
-(use-package browse-kill-ring
-  :ensure t
-  :bind
-  ("C-x y" . browse-kill-ring))
 (use-package cider
   :ensure t)
 (use-package cl-lib-highlight
