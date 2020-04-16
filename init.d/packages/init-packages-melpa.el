@@ -12,10 +12,6 @@
 
 
 ;; Third-party packages from elpa/melpa
-(use-package dictionary
-  :ensure t
-  :bind
-  ("<f12> f d" . dictionary-lookup-definition))
 (use-package dimmer
   :ensure t
   :config
