@@ -12,12 +12,6 @@
 
 
 ;; Third-party packages from elpa/melpa
-(use-package beacon
-  :if (display-graphic-p)
-  :ensure t
-  :diminish
-  :commands beacon-mode
-  :config (beacon-mode 1))
 (use-package browse-kill-ring
   :ensure t
   :bind
