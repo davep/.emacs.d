@@ -12,8 +12,6 @@
 
 
 ;; Third-party packages from elpa/melpa
-(use-package cider
-  :ensure t)
 (use-package cl-lib-highlight
   :ensure t
   :commands
