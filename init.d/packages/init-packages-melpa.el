@@ -12,8 +12,6 @@
 
 
 ;; Third-party packages from elpa/melpa
-(use-package itail
-  :ensure t)
 (when is-a-unix-p
   (use-package magit
     :ensure t
