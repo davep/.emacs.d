@@ -12,40 +12,6 @@
 
 
 ;; Third-party packages from elpa/melpa
-(use-package counsel
-  :ensure t
-  :after ivy
-  :diminish
-  :commands counsel-mode
-  :custom
-  (counsel-find-file-ignore-regexp
-   (rx
-    (or
-     ;; Ignore hidden files.
-     (group bol ".")
-     ;; I never want to edit the desktop.
-     (group "Desktop/" eol)
-     ;; Ignore compiled files.
-     (group "." (or "pyc" "elc") eol)
-     (group ".egg-info/" eol))))
-  :init
-  (counsel-mode 1)
-  :bind*
-  ("<f12> f g" . counsel-rg)
-  ("<f12> f b" . counsel-bookmark)
-  ("<f12> f l" . counsel-locate)
-  ("C-c C-f" . counsel-recentf)
-  ("<f12> f r" . counsel-recentf)
-  ("<f12> f M-x" . counsel-command-history)
-  ("<f12> f c w" . counsel-colors-web)
-  ("<f12> f c e" . counsel-colors-emacs))
-(use-package counsel-projectile
-  :ensure t
-  :after projectile
-  :init
-  (counsel-projectile-mode)
-  :custom
-  (counsel-projectile-switch-project-action 'neotree-dir))
 (use-package dashboard
   :ensure t
   :demand
@@ -143,30 +109,6 @@
              "Pipfile"
              ".pylintrc")
             eol))
-(use-package ivy
-  :ensure t
-  :diminish
-  :commands
-  ivy-mode
-  ivy-resume
-  :custom
-  (ivy-use-virtual-buffers t)
-  (ivy-count-format "[%d/%d] ")
-  (ivy-height 15)
-  :init
-  (ivy-mode 1)
-  :bind*
-  ("C-c C-r" . ivy-resume))
-(use-package ivy-hydra
-  :ensure t
-  :after ivy)
-(use-package ivy-rich
-  :ensure t
-  :after ivy
-  :commands
-  ivy-rich-mode
-  :init
-  (ivy-rich-mode 1))
 (use-package json-mode
   :ensure t)
 (use-package lorem-ipsum
@@ -357,11 +299,6 @@
   :ensure t
   :bind
   ("<f12> s" . string-inflection-all-cycle))
-(use-package swiper
-  :ensure t
-  :after ivy
-  :bind
-  ("C-s" . swiper))
 (use-package switch-window
   :bind
   ("C-x o" . switch-window)
