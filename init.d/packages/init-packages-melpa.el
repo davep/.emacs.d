@@ -42,8 +42,6 @@
   :init
   (dimmer-configure-magit)
   (dimmer-mode 1))
-(use-package dockerfile-mode
-  :ensure t)
 (when is-a-unix-p
   (use-package emojify
     :if is-a-unix-window-p
@@ -66,8 +64,6 @@
   :commands eshell-git-prompt-use-theme
   :init
   (eshell-git-prompt-use-theme 'powerline))
-(use-package fish-mode
-  :ensure t)
 (use-package flycheck
   :ensure t
   :init
@@ -76,18 +72,10 @@
   :hook
   (python-mode . (lambda ()
                    (add-to-list 'flycheck-disabled-checkers 'python-flake8))))
-(use-package gitconfig-mode
-  :ensure t)
-(use-package go-mode
-  :ensure t)
 (use-package goto-line-preview
   :ensure t
   :bind
   ("M-g" . goto-line-preview))
-(use-package haskell-mode
-  :ensure t
-  :bind
-  ("C-c C-c" . haskell-process-load-file))
 (use-package highlight-indent-guides
   :ensure t
   :diminish
@@ -101,16 +89,6 @@
 (use-package hyde
   :ensure t
   :commands hyde)
-(use-package hy-mode
-  :ensure t)
-(use-package ini-mode
-  :ensure t
-  :mode (rx (or
-             "Pipfile"
-             ".pylintrc")
-            eol))
-(use-package json-mode
-  :ensure t)
 (use-package lorem-ipsum
   :ensure t
   :bind
@@ -119,9 +97,6 @@
   ("<f12> i l l" . lorem-ipsum-insert-list))
 (use-package itail
   :ensure t)
-(use-package julia-mode
-  :ensure t
-  :interpreter "julia")
 (when is-a-unix-p
   (use-package magit
     :ensure t
@@ -252,8 +227,6 @@
   :ensure t
   :config
   (global-pretty-mode 1))
-(use-package powershell
-  :ensure t)
 (use-package projectile
   :ensure t
   :custom
@@ -282,12 +255,6 @@
   :bind
   ("<f12> = =" . rg)
   ("<f12> = +" . rg-dwim))
-(use-package rjsx-mode
-  :ensure t
-  :bind*
-  ("<" . self-insert-command))
-(use-package rust-mode
-  :ensure t)
 (use-package slime
   :ensure t
   :config
@@ -305,13 +272,6 @@
   :ensure t)
 (use-package wc-mode
   :ensure t)
-(use-package web-mode
-  :ensure t
-  :mode (rx ".html" eol)
-  :commands web-mode-set-engine
-  :config
-  (setq-default web-mode-markup-indent-offset 2)
-  (setq web-mode-enable-engine-detection t))
 (use-package wttrin
   :ensure t
   :custom
@@ -319,10 +279,6 @@
   (wttrin-default-accept-language '("Accept-Language" . "en-GB"))
   :bind
   ("<f12> x x" . wttrin))
-(use-package yaml-mode
-  :ensure t)
-(use-package zig-mode
-  :ensure t)
 
 (provide 'init-packages-melpa)
 
