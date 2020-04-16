@@ -12,10 +12,6 @@
 
 
 ;; Third-party packages from elpa/melpa
-(use-package goto-line-preview
-  :ensure t
-  :bind
-  ("M-g" . goto-line-preview))
 (use-package highlight-indent-guides
   :ensure t
   :diminish
