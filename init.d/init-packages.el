@@ -44,7 +44,6 @@
 
 ;; Use all the packages.
 (require 'init-packages-builtin)        ; Things built into Emacs.
-(require 'init-packages-melpa)          ; Melpa.
 
 ;; Load in all the packages declared in the "use" hierarchy.
 (let ((source (expand-file-name "init.d/packages/use" user-emacs-directory)))
