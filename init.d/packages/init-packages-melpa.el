@@ -12,8 +12,6 @@
 
 
 ;; Third-party packages from elpa/melpa
-(use-package package-lint
-  :ensure t)
 (use-package page-break-lines
   :ensure t
   :diminish
