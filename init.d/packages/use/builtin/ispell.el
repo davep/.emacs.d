@@ -10,3 +10,12 @@
     (when (and is-a-win32-p (file-exists-p aspell))
       (push aspell exec-path)
       (setq ispell-program-name "aspell"))))
+
+(use-package flyspell
+  :diminish
+  :commands
+  flyspell-mode
+  flyspell-prog-mode
+  :hook
+  (prog-mode . flyspell-prog-mode)
+  (text-mode . flyspell-mode))

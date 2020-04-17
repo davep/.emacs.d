@@ -14,14 +14,6 @@
 
 
 ;; General modes.
-(use-package flyspell
-  :diminish
-  :commands
-  flyspell-mode
-  flyspell-prog-mode
-  :hook
-  (prog-mode . flyspell-prog-mode)
-  (text-mode . flyspell-mode))
 (use-package footnote
   :commands footnote-mode
   :config
