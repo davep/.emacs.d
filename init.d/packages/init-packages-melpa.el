@@ -12,8 +12,6 @@
 
 
 ;; Third-party packages from elpa/melpa
-(use-package wc-mode
-  :ensure t)
 (use-package wttrin
   :ensure t
   :custom
