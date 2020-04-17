@@ -12,12 +12,6 @@
 
 
 ;; Third-party packages from elpa/melpa
-(use-package page-break-lines
-  :ensure t
-  :diminish
-  :commands global-page-break-lines-mode
-  :init
-  (global-page-break-lines-mode))
 (use-package paren-face
   :ensure t
   :demand
