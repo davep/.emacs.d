@@ -14,9 +14,6 @@
 
 
 ;; General modes.
-(use-package eww
-  :custom
-  (eww-bookmarks-directory (locate-user-emacs-file ".eww")))
 (use-package gamegrid
   :config
   (setq gamegrid-user-score-file-directory (local-emacs-directory "games/")))
