@@ -45,7 +45,6 @@ What follows is a non-comprehensive collection of key-binding details.
 | <kbd>F12</kbd> <kbd>r</kbd>                    | Open elisp REPL (`ielm`)                                                                   |
 | <kbd>F12</kbd> <kbd>s</kbd>                    | [Toggle through camelCase, snake-case, etc.](https://github.com/akicho8/string-inflection) |
 | <kbd>F12</kbd> <kbd>w</kbd>                    | Open `eww` (web browser)                                                                   |
-| <kbd>F12</kbd> <kbd>x</kbd>                    | Open `wttrin` (as in "view wX")                                                            |
 | <kbd>F12</kbd> <kbd>o</kbd> <kbd>a</kba>       | Org agenda view                                                                            |
 | <kbd>F12</kbd> <kbd>o</kbd> <kbd>t</kba>       | Org todo view                                                                              |
 | <kbd>F12</kbd> <kbd>q</kbd>                    | [requote](https://github.com/davep/requote.el)                                             |
