@@ -12,10 +12,6 @@
 
 
 ;; Third-party packages from elpa/melpa
-(use-package string-inflection
-  :ensure t
-  :bind
-  ("<f12> s" . string-inflection-all-cycle))
 (use-package switch-window
   :bind
   ("C-x o" . switch-window)
