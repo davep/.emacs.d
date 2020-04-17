@@ -1,3 +1,5 @@
+(require 'is-a)
+
 ;; Only bother with this if we're on macOS.
 (when is-a-macOS-p
 
