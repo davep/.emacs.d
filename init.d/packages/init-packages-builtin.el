@@ -14,9 +14,6 @@
 
 
 ;; General modes.
-(use-package bookmark
-  :custom
-  (bookmark-default-file (local-emacs-directory "bookmarks.el")))
 (use-package calendar
   :config
   (setq
