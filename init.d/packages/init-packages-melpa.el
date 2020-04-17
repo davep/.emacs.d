@@ -12,10 +12,6 @@
 
 
 ;; Third-party packages from elpa/melpa
-(use-package pretty-mode
-  :ensure t
-  :config
-  (global-pretty-mode 1))
 (use-package projectile
   :ensure t
   :custom
