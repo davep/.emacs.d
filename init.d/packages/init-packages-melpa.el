@@ -12,10 +12,6 @@
 
 
 ;; Third-party packages from elpa/melpa
-(use-package switch-window
-  :bind
-  ("C-x o" . switch-window)
-  :ensure t)
 (use-package wc-mode
   :ensure t)
 (use-package wttrin
