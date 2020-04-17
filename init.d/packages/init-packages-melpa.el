@@ -12,8 +12,6 @@
 
 
 ;; Third-party packages from elpa/melpa
-(use-package pdf-tools
-  :ensure t)
 (use-package pipenv
   :ensure t
   :diminish "PE"
