@@ -14,8 +14,6 @@
 
 
 ;; General modes.
-(use-package eldoc
-  :diminish)
 (use-package elec-pair
   :commands electric-pair-mode
   :init
