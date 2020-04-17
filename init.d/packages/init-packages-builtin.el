@@ -14,9 +14,6 @@
 
 
 ;; General modes.
-(use-package gamegrid
-  :config
-  (setq gamegrid-user-score-file-directory (local-emacs-directory "games/")))
 (use-package ispell
   :custom
   (ispell-dictionary     "british")
