@@ -14,9 +14,6 @@
 
 
 ;; General modes.
-(use-package abbrev
-  :custom
-  (abbrev-file-name (local-emacs-directory "abbrev_defs.el")))
 (use-package autorevert
   :diminish auto-revert-mode)
 (use-package bookmark
