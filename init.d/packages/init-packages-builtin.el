@@ -14,10 +14,6 @@
 
 
 ;; General modes.
-(use-package paren
-  :commands show-paren-mode
-  :init
-  (show-paren-mode t))
 (use-package recentf
   :commands recentf-save-list
   :custom
