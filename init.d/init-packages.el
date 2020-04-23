@@ -39,12 +39,6 @@
       :config
       (setq package-archive-upload-base delpa))))
 
-;; Add the package loading directory to the load-path.
-(push (locate-user-emacs-file "init.d/packages/") load-path)
-
-;; Use all the packages.
-(require 'init-packages-builtin)        ; Things built into Emacs.
-
 ;; Load in all the packages declared in the "use" hierarchy.
 (let ((source (expand-file-name "init.d/packages/use" user-emacs-directory)))
   (when (file-exists-p source)
