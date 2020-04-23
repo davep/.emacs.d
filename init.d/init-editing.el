@@ -17,6 +17,11 @@
  ;; Have sorting be case-insensitive.
  sort-fold-case t)
 
+;; Always auto-fill in text-mode and derived modes.
+(add-hook 'text-mode-hook
+          (lambda ()
+            (auto-fill-mode 1)))
+
 (provide 'init-editing)
 
 ;;; init-editing.el ends here

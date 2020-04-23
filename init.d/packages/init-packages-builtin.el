@@ -12,12 +12,6 @@
 (require 'solar)
 (require 'init-local)
 
-
-;; Catch-all hooks, etc.
-(add-hook 'text-mode-hook
-          (lambda ()
-            (auto-fill-mode 1)))
-
 (provide 'init-packages-builtin)
 
 ;;; init-packages-builtin.el ends here
