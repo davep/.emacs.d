@@ -14,12 +14,6 @@
 
 
 ;; General modes.
-(use-package savehist
-  :commands savehist-mode
-  :custom
-  (savehist-file (local-emacs-directory "history.el"))
-  :init
-  (savehist-mode t))
 (use-package tramp
   :custom
   (tramp-default-method        "ssh")
