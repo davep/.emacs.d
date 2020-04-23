@@ -14,10 +14,6 @@
 
 
 ;; General modes.
-(use-package tramp
-  :custom
-  (tramp-default-method        "ssh")
-  (tramp-persistency-file-name (local-emacs-directory "tramp.el")))
 (use-package whitespace
   :custom
   (whitespace-style '(face trailing empty tabs tab-mark))
