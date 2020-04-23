@@ -40,7 +40,7 @@
       (setq package-archive-upload-base delpa))))
 
 ;; Load in all the packages declared in the "use" hierarchy.
-(let ((source (expand-file-name "init.d/packages/use" user-emacs-directory)))
+(let ((source (expand-file-name "init.d/packages.d/" user-emacs-directory)))
   (when (file-exists-p source)
     (cl-loop for use in (directory-files-recursively source (rx ".el" eol))
              do (load (file-name-sans-extension use)))))
