@@ -2,6 +2,7 @@
 
 (use-package all-the-icons-dired
   :ensure t
+  :diminish
   :after all-the-icons
   :hook (dired-mode . all-the-icons-dired-mode))
 
