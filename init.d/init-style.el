@@ -12,6 +12,10 @@
 ;; Default colour scheme.
 (load-theme (if (display-graphic-p) 'adwaita 'deeper-blue) t)
 
+;; Ensure I have the same base font no matter which macOS Emacs I'm using.
+(when is-a-macOS-window-p
+  (add-to-list 'default-frame-alist '(font . "menlo")))
+
 ;; Have comments always be in italic.
 (set-face-attribute 'font-lock-comment-face nil :italic t)
 

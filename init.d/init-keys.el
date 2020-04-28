@@ -67,14 +67,14 @@
 
 ;; Things specific to macOS.
 (when is-a-macOS-window-p
-  ;; Have "alt" be "super".
-  (set (intern "ns-alternate-modifier") 'super)
+  ;; Have "option" be "super".
+  (set (intern "mac-option-modifier") 'super)
   ;; Have "cmd" be "meta"
-  (set (intern "ns-command-modifier") 'meta)
+  (set (intern "mac-command-modifier") 'meta)
   ;; Have "fn" double up as "control". I keep "control" as "control" too,
   ;; but on my iMac and Macbook I often find my finger creeps to "fn" when I
   ;; want "ctrl". This solves that issue.
-  (set (intern "ns-function-modifier") 'control))
+  (set (intern "mac-function-modifier") 'control))
 
 ;; Things specific to Windows.
 (when is-a-win32-p
