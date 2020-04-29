@@ -49,18 +49,19 @@
 
 ;; Tools and "apps" and things.
 (bind-keys
- ("C-<f6>"      . list-processes)
- ("<f6>"        . bury-buffer)
- ("<f9>"        . compile)
- ("<f12> r"     . ielm)
- ("<f12> h"     . eshell)
- ("<f12> w"     . eww)
- ("<f12> <f12>" . describe-personal-keybindings)
- ("<f12> p l"   . package-list-packages)
- ("<f12> p r"   . package-refresh-contents)
- ("<f12> p t"   . package-lint-current-buffer)
- ("<f12> p u"   . package-upload-buffer)
- ("<f12> ? w"   . woman))
+ ("C-<f6>"        . list-processes)
+ ("<f6>"          . bury-buffer)
+ ("<f9>"          . compile)
+ ("<f12> r"       . ielm)
+ ("<f12> h"       . eshell)
+ ("<f12> w"       . eww)
+ ("<f12> <f12>"   . describe-personal-keybindings)
+ ("<f12> C-<f12>" . describe-bindings)
+ ("<f12> p l"     . package-list-packages)
+ ("<f12> p r"     . package-refresh-contents)
+ ("<f12> p t"     . package-lint-current-buffer)
+ ("<f12> p u"     . package-upload-buffer)
+ ("<f12> ? w"     . woman))
 
 ;; Don't do shift-selecting.
 (setq shift-select-mode nil)
