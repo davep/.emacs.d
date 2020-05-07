@@ -38,6 +38,11 @@
 (unless is-a-macOS-window-p
   (menu-bar-mode -1))
 
+;; When in graphical mode on macOS, don't use application tabs when opening
+;; a new frame.
+(when is-a-macOS-window-p
+  (set (intern "mac-frame-tabbing") nil))
+
 ;; Window titles.
 (let ((format (list (user-login-name) "@" (downcase (system-name))
                     " - "
