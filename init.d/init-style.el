@@ -7,17 +7,19 @@
 
 ;;; Code:
 
+(require 'is-a)
 (require 'csrclr)
 (require 'init-local)
 
-;; If we're in a terminal...
-(if (not (display-graphic-p))
-    ;; ...be a not Borland-a-like.
-    (load-theme 'deeper-blue t)
-  ;; graphical terminal, let's go full-on-dark-mode.
-  (use-package color-theme-sanityinc-tomorrow :ensure t)
-  (color-theme-sanityinc-tomorrow-eighties)
-  (setq csrclr-default "#666"))
+;; Decide how best to theme things.
+(cond ((not (display-graphic-p))        ; CHUI.
+       (load-theme 'deeper-blue t))
+      (is-a-macOS-dark-mode-window-p    ; macOS dark mode GUI.
+       (use-package color-theme-sanityinc-tomorrow :ensure t)
+       (color-theme-sanityinc-tomorrow-night)
+       (setq csrclr-default "#666"))
+      (t                                ; Any other GUI.
+       (load-theme 'adwaita t)))
 
 ;; Ensure I have the same base font no matter which macOS Emacs I'm using.
 (when is-a-macOS-window-p
