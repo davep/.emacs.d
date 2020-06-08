@@ -17,7 +17,7 @@
       (is-a-macOS-dark-mode-window-p    ; macOS dark mode GUI.
        (use-package color-theme-sanityinc-tomorrow :ensure t)
        (color-theme-sanityinc-tomorrow-night)
-       (setq csrclr-default "#666"))
+       (setq csrclr-default "grey"))
       (t                                ; Any other GUI.
        (load-theme 'adwaita t)))
 
