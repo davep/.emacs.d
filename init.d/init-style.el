@@ -43,6 +43,8 @@
 
 ;; No toolbar. Ever. Just.... no!
 (tool-bar-mode -1)
+;; Do away with the scroll bars too.
+(scroll-bar-mode -1)
 
 ;; Let's not bother with the menu either, except if we're on a Mac, where it
 ;; costs nothing to have one.
