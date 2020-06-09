@@ -88,8 +88,11 @@
     ;; ...otherwise use linum-mode.
     (global-linum-mode 1)))
 
-;; Style what happens inside a buffer/frame.
-(blink-cursor-mode -1)                  ; Don't blink the cursor.
+;; Style the cursor.
+(setq-default blink-cursor-blinks 0)
+(blink-cursor-mode 1)
+
+;; Various window-level defaults.
 (setq-default
  ;; Wrap a little further over.
  fill-column 76
