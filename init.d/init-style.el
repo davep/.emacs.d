@@ -92,9 +92,6 @@
 (setq-default blink-cursor-blinks 0)
 (blink-cursor-mode 1)
 
-;; Make it more obvious where the cursor is.
-(global-hl-line-mode 1)
-
 ;; Various window-level defaults.
 (setq-default
  ;; Wrap a little further over.
