@@ -3,3 +3,4 @@ alias c clear t
 alias d ls
 alias v ls -l
 alias e find-file $1
+alias upall brew update; brew upgrade; brew cleanup
