@@ -77,16 +77,7 @@
 ;; When we're on a graphical display...
 (when (display-graphic-p)
   ;; Always visit images as images.
-  (auto-image-file-mode)
-  ;; If we're on Emacs 26 or better...
-  (if (> emacs-major-version 25)
-      ;; ...only show line numbers in certain types of modes.
-      (progn
-        (add-hook 'prog-mode-hook (lambda () (display-line-numbers-mode 1)))
-        (add-hook 'text-mode-hook (lambda () (display-line-numbers-mode 1)))
-        (add-hook 'restclient-mode-hook (lambda () (display-line-numbers-mode 1))))
-    ;; ...otherwise use linum-mode.
-    (global-linum-mode 1)))
+  (auto-image-file-mode))
 
 ;; Style the cursor.
 (setq-default blink-cursor-blinks 0)
