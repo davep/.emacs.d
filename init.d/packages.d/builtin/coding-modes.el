@@ -25,6 +25,8 @@
 
 (add-hook 'prog-mode-hook
           (lambda ()
+            ;; Make it clear where the empty lines are
+            (setq-local indicate-empty-lines t)
             ;; Set up for auto-filling comments.
             (setq-local comment-auto-fill-only-comments t)
             (auto-fill-mode 1)))

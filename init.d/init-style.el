@@ -87,8 +87,6 @@
 (setq-default
  ;; Wrap a little further over.
  fill-column 76
- ;; Make empty lines after the last line more obvious.
- indicate-empty-lines t
  ;; No "soft wrapping" of lines, ever.
  truncate-lines t
  ;; Only show a cursor in the focused window

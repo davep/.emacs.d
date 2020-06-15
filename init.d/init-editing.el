@@ -20,6 +20,9 @@
 ;; Always auto-fill in text-mode and derived modes.
 (add-hook 'text-mode-hook
           (lambda ()
+            ;; Make it clear where the empty lines are
+            (setq-local indicate-empty-lines t)
+            ;; Word-wrap by default.
             (auto-fill-mode 1)))
 
 (provide 'init-editing)
