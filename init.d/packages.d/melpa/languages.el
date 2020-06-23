@@ -33,6 +33,8 @@
 
 (use-package rust-mode :ensure t)
 
+(use-package swift-mode :ensure t)
+
 (use-package web-mode :ensure t
   :mode (rx ".html" eol)
   :commands web-mode-set-engine
