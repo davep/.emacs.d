@@ -28,6 +28,7 @@
            ("JavaScript"   (mode . js2-mode))
            ("Julia"        (mode . julia-mode))
            ("Clojure"      (mode . clojure-mode))
+           ("Swift"        (mode . swift-mode))
            ("C/C++"        (or
                             (derived-mode . c-mode)
                             (derived-mode . c++-mode)))
