@@ -37,13 +37,13 @@
 (use-package is-a :ensure t)
 
 ;; Load various startup things.
+(require 'init-net)
+(require 'init-packages)
 (unless noninteractive
   (require 'init-editing)
   (require 'init-tweaks)
   (require 'init-keys)
   (require 'init-style))
-(require 'init-net)
-(require 'init-packages)
 
 ;; Finally, load any local config. This is for things I don't want to be
 ;; tracking via my ~/.init.d repo code (things local to a machine, etc).
