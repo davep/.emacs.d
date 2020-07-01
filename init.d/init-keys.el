@@ -21,6 +21,7 @@
  ("s-s"       . isearch-forward-symbol-at-point)
  ("C-s-<tab>" . other-window)
  ("M-g"       . goto-line))
+
 ;; Window swapping key combinations. The choices here reflect the fact that
 ;; I spend most of my time in a GUI Emacs on macOS. I double up here because
 ;; sometimes I'm using a full keyboard, sometimes I might be using a smaller
