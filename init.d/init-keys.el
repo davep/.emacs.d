@@ -20,16 +20,11 @@
  ("M-<down>"  . scroll-up-line)
  ("s-s"       . isearch-forward-symbol-at-point)
  ("C-s-<tab>" . other-window))
-(when is-a-linux-p
-  ;; These combinations are more comfortable on my main work machine.
-  (bind-keys
-   ("C-s-<right>" . windmove-right)
-   ("C-s-<down>"  . windmove-down)
-   ("C-s-<left>"  . windmove-left)
-   ("C-s-<up>"    . windmove-up)))
-;; These are more comfortable on my Macbook and iMac, and sometimes I have
-;; muscle memory for them when on my work machine. So while we only use the
-;; above on a GNU/Linux, we use the below everywhere.
+;; Window swapping key combinations. The choices here reflect the fact that
+;; I spend most of my time in a GUI Emacs on macOS. I double up here because
+;; sometimes I'm using a full keyboard, sometimes I might be using a smaller
+;; keyboard (small Magic keyboard, or a Macbook keyboard), and these
+;; combinations seem to fall into just the right spot for muscle memory.
 (bind-keys
  ("M-s-<right>" . windmove-right)       ; Nicer on small Magic keyboard.
  ("M-s-<down>"  . windmove-down)
