@@ -41,6 +41,7 @@
 (bind-keys
  ("C-c ;"         . comment-or-uncomment-region)
  ("C-<backspace>" . backward-kill-word)
+ ("s-<backspace>" . backward-kill-word)
  ("C-c a"         . align)
  ("s-<tab>"       . completion-at-point))
 
