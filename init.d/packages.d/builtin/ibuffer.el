@@ -55,7 +55,7 @@
                             (name . "\*Packages\*")
                             (mode . inferior-python-mode)
                             (mode . compilation-mode))))))
-  (add-hook 'ibuffer-mode-hooks
+  (add-hook 'ibuffer-mode-hook
             (lambda ()
               (ibuffer-auto-mode 1)
               (ibuffer-switch-to-saved-filter-groups "davep")
