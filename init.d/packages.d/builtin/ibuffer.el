@@ -22,6 +22,9 @@
            ("shell"        (or
                             (mode . sh-mode)
                             (mode . fish-mode)))
+           ("Lisp"         (or
+                            (mode . lisp-mode)
+                            (mode . slime-repl-mode)))
            ("elisp"        (mode . emacs-lisp-mode))
            ("Makefile"     (derived-mode . makefile-mode))
            ("python"       (mode . python-mode))
