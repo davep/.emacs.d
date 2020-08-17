@@ -22,6 +22,9 @@
            ("shell"        (or
                             (mode . sh-mode)
                             (mode . fish-mode)))
+           ("Lisp"         (or
+                            (mode . lisp-mode)
+                            (mode . slime-repl-mode)))
            ("elisp"        (mode . emacs-lisp-mode))
            ("Makefile"     (derived-mode . makefile-mode))
            ("python"       (mode . python-mode))
@@ -55,7 +58,7 @@
                             (name . "\*Packages\*")
                             (mode . inferior-python-mode)
                             (mode . compilation-mode))))))
-  (add-hook 'ibuffer-mode-hooks
+  (add-hook 'ibuffer-mode-hook
             (lambda ()
               (ibuffer-auto-mode 1)
               (ibuffer-switch-to-saved-filter-groups "davep")
