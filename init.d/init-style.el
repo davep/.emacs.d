@@ -8,20 +8,12 @@
 ;;; Code:
 
 (require 'is-a)
-(require 'csrclr)
-(require 'beacon)
 (require 'init-local)
 
-;; Decide how best to theme things.
-(cond ((not (display-graphic-p))        ; CHUI.
-       (load-theme 'deeper-blue t))
-      (is-a-macOS-dark-mode-window-p    ; macOS dark mode GUI.
-       (use-package color-theme-sanityinc-tomorrow :ensure t)
-       (color-theme-sanityinc-tomorrow-night)
-       (setq csrclr-default "grey"
-             beacon-color   "darkred"))
-      (t                                ; Any other GUI.
-       (load-theme 'adwaita t)))
+;; Use a nice dark theme everywhere.
+;; https://github.com/purcell/color-theme-sanityinc-tomorrow
+(use-package color-theme-sanityinc-tomorrow :ensure t)
+(color-theme-sanityinc-tomorrow-night)
 
 ;; Ensure I have the same base font no matter which macOS Emacs I'm using.
 (when is-a-macOS-window-p

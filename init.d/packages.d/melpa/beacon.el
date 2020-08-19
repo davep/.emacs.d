@@ -5,4 +5,6 @@
   :commands beacon-mode
   :config (beacon-mode 1)
   :custom
-  (beacon-size 80))
+  (beacon-size 80)
+  (beacon-color "darkred"))
+
