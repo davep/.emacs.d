@@ -6,7 +6,7 @@
   (python-mode . lsp)
   :custom
   ;; The following is an attempt to try and convince lsp-mode and/or pyls to
-  ;; use pylint and nothing else to lint my code. Right now it doesn't see
+  ;; use pylint and nothing else to lint my code. Right now it doesn't seem
   ;; to be making much difference. Despite everything else being disabled it
   ;; seems to still be falling back to using pydocstyle. :-/
   (lsp-pyls-configuration-sources ["pylint"])
