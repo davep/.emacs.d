@@ -2,17 +2,11 @@
 (use-package lsp-mode
   :ensure t
   :commands lsp
-  ;; I mainly added this to use with Python, but with the projects I want to
-  ;; use this with, I'm having a lot of problems getting pyls to either
-  ;; install (likely really a pipenv problem) or, when it does, I can't seem
-  ;; to configure the linting so that it uses pylint (which is kind of
-  ;; important to how I do things). So, for now, as daft as it seems, I'm
-  ;; going to have lsp-mode installed but not configured for any language
-  ;; just yet.
-  ;;
-  ;; :hook
-  ;; (python-mode . lsp)
-  )
+  :hook
+  (python-mode . lsp)
+  :custom
+  (lsp-pyls-configuration-sources ["pylint"])
+  (lsp-session-file (local-emacs-directory ".lsp-session-v1")))
 
 (use-package lsp-ui
   :ensure t
