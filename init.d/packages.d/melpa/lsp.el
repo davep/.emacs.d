@@ -6,7 +6,12 @@
   (python-mode . lsp)
   :custom
   (lsp-pyls-configuration-sources ["pylint"])
-  (lsp-session-file (local-emacs-directory ".lsp-session-v1")))
+  (lsp-pyls-plugins-pydocstyle-enabled nil)
+  (lsp-pyls-plugins-pyflakes-enabled nil)
+  (lsp-pyls-plugins-flake8-enabled nil)
+  (lsp-pyls-plugins-pylint-enabled t)
+  (lsp-session-file (local-emacs-directory ".lsp-session-v1"))
+  (lsp-enable-snippet nil))
 
 (use-package lsp-ui
   :ensure t
