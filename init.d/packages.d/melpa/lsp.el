@@ -19,11 +19,11 @@
   ;; lines and not being so damn upset about whitespace.
   (lsp-pyls-plugins-pycodestyle-max-line-length 120) ; This isn't a punched card.
   (lsp-pyls-plugins-pycodestyle-ignore
-   ["E221" "E251" "E272"                ; I like to line things up.
-    "E201" "E202"                       ; I like space inside parens.
-    "E302"                              ; I don't need double vertical spacing.
-    "E266"                              ; Emacs-like end of file markers is
-                                        ; a hill I will die on.
+   ["E221" "E251" "E272"             ; I like to line things up.
+    "E201" "E202"                    ; I like space inside parens.
+    "E302" "E305"                    ; I don't need double vertical spacing.
+    "E266"                           ; Emacs-like end of file markers is a
+                                     ; hill I will die on.
     ])
   ;; Don't dump files in my Emacs config directory.
   (lsp-session-file (local-emacs-directory ".lsp-session-v1"))
