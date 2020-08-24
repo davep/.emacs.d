@@ -19,8 +19,7 @@
  ("M-<up>"    . scroll-down-line)
  ("M-<down>"  . scroll-up-line)
  ("s-s"       . isearch-forward-symbol-at-point)
- ("C-s-<tab>" . other-window)
- ("M-g"       . goto-line))
+ ("C-s-<tab>" . other-window))
 
 ;; Window swapping key combinations. The choices here reflect the fact that
 ;; I spend most of my time in a GUI Emacs on macOS. I double up here because
