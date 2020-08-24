@@ -11,6 +11,7 @@
 (require 'is-a)
 (require 'bind-key)
 (require 'package-x)
+(require 'use-package)
 
 ;; Movement
 (bind-keys
@@ -20,6 +21,9 @@
  ("M-<down>"  . scroll-up-line)
  ("s-s"       . isearch-forward-symbol-at-point)
  ("C-s-<tab>" . other-window))
+
+;; Also movement: set up all the faster goto-line keys.
+(use-package goto-line-faster :ensure t)
 
 ;; Window swapping key combinations. The choices here reflect the fact that
 ;; I spend most of my time in a GUI Emacs on macOS. I double up here because
