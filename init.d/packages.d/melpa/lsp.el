@@ -21,6 +21,7 @@
   (lsp-pyls-plugins-pycodestyle-ignore
    ["E221" "E241" "E251" "E272"      ; I like to line things up.
     "E201" "E202"                    ; I like space inside parens.
+    "E261"                           ; Sometimes just one space before a comment.
     "E302" "E305"                    ; I don't need double vertical spacing.
     "E266"                           ; Emacs-like end of file markers is a
                                      ; hill I will die on.
