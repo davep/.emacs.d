@@ -25,8 +25,6 @@
 
 (use-package julia-mode :ensure t :interpreter "julia")
 
-(use-package powershell :ensure t)
-
 (use-package rjsx-mode :ensure t
   :bind*
   ("<" . self-insert-command))
