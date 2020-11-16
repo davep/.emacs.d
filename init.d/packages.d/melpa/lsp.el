@@ -30,6 +30,10 @@
     "E302" "E305"
     ;; Emacs-like end of file markers is a hill I will die on.
     "E266"
+    ;; W503 and W504 are kind of mutually exclusive, and looking at the docs
+    ;; (https://www.flake8rules.com/rules/W503.html) W503 is deprecated
+    ;; anyway. So let's ignore W503.
+    "W503"
     ])
   ;; Don't dump files in my Emacs config directory.
   (lsp-session-file (local-emacs-directory ".lsp-session-v1"))
