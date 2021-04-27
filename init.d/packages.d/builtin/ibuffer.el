@@ -25,7 +25,7 @@
            ("Lisp"         (or
                             (mode . lisp-mode)
                             (mode . slime-repl-mode)))
-           ("elisp"        (mode . emacs-lisp-mode))
+           ("elisp"        (derived-mode . emacs-lisp-mode))
            ("Makefile"     (derived-mode . makefile-mode))
            ("python"       (mode . python-mode))
            ("JavaScript"   (mode . js2-mode))
