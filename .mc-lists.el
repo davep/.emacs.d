@@ -8,6 +8,7 @@
         c-electric-semi&comma
         c-electric-slash
         c-indent-line-or-region
+        comment-dwim
         company-complete
         dabbrev-expand
         electric-newline-and-maybe-indent
@@ -15,6 +16,7 @@
         forward-sexp
         indent-for-tab-command
         kill-region
+        lsp-ui-doc--handle-mouse-movement
         markdown-cycle
         markdown-outdent-or-delete
         moving-home
