@@ -28,6 +28,8 @@
     "E261"
     ; I don't need double vertical spacing.
     "E302" "E305"
+    ;; I don't like space around parameter equals.
+    "E252"
     ;; Emacs-like end of file markers is a hill I will die on.
     "E266"
     ;; W503 and W504 are kind of mutually exclusive, and looking at the docs
