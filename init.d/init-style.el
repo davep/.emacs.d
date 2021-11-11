@@ -12,7 +12,10 @@
 
 ;; Use a nice dark theme everywhere.
 ;; https://github.com/purcell/color-theme-sanityinc-tomorrow
-(use-package color-theme-sanityinc-tomorrow :ensure t)
+(use-package color-theme-sanityinc-tomorrow
+  :ensure t
+  :config
+  (set-face-attribute 'highlight nil :background "#484a4e" ))
 (color-theme-sanityinc-tomorrow-night)
 
 ;; Ensure I have the same base font no matter which macOS Emacs I'm using.
