@@ -70,5 +70,6 @@
 
 (use-package ivy-posframe
   :ensure t
+  :diminish
   :init
   (ivy-posframe-mode 1))
