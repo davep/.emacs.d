@@ -69,4 +69,6 @@
   ("C-s" . swiper))
 
 (use-package ivy-posframe
-  :ensure t)
+  :ensure t
+  :init
+  (ivy-posframe-mode 1))
