@@ -67,3 +67,6 @@
   :after ivy
   :bind
   ("C-s" . swiper))
+
+(use-package ivy-posframe
+  :ensure t)
