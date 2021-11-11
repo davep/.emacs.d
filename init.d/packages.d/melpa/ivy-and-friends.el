@@ -45,6 +45,7 @@
   (ivy-count-format "[%d/%d] ")
   (ivy-height 15)
   :init
+  (setcdr (assoc t ivy-format-functions-alist) #'ivy-format-function-line)
   (ivy-mode 1)
   :bind*
   ("C-c C-r" . ivy-resume))
