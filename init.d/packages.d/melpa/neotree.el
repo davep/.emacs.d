@@ -9,5 +9,6 @@
   ("C-<f8>"  . neotree-dir)
   ("s-<f8>"  . neotree-dir)
   :custom
+  (neo-hide-cursor t)
   (neo-theme 'icons)
   (neo-window-width 30))
