@@ -22,6 +22,7 @@
   ("<f12> f l" . counsel-locate)
   ("C-c C-f" . counsel-recentf)
   ("<f12> f r" . counsel-recentf)
+  ("<f12> i c" . counsel-unicode-char)
   ("<f12> f M-x" . counsel-command-history)
   ("<f12> f c w" . counsel-colors-web)
   ("<f12> f c e" . counsel-colors-emacs))
