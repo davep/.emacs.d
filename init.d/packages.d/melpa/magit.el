@@ -30,4 +30,14 @@
   (use-package transient
     :ensure t
     :custom
-    (transient-history-file (local-emacs-directory "transient-history.el"))))
+    (transient-history-file (local-emacs-directory "transient-history.el")))
+
+  (use-package transient-posframe
+    :ensure t
+    :custom
+    (transient-posframe-border-width 3)
+    (transient-posframe-parameters
+     '((left-fringe . 8)
+       (right-fringe . 8)))
+    :init (transient-posframe-mode 1)))
+
