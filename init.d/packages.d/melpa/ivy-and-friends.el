@@ -71,5 +71,10 @@
 (use-package ivy-posframe
   :ensure t
   :diminish
+  :custom
+  (ivy-posframe-border-width 3)
+  (ivy-posframe-parameters
+   '((left-fringe . 8)
+     (right-fringe . 8)))
   :init
   (ivy-posframe-mode 1))
