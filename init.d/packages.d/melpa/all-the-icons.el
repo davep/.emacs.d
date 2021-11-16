@@ -4,6 +4,7 @@
   :ensure t
   :diminish
   :after all-the-icons
+  :custom (all-the-icons-dired-monochrome nil)
   :hook (dired-mode . all-the-icons-dired-mode))
 
 (use-package all-the-icons-ibuffer
