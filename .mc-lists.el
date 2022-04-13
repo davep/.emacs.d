@@ -4,6 +4,7 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        backward-sexp
         c-electric-paren
         c-electric-semi&comma
         c-electric-slash
@@ -25,6 +26,7 @@
         org-force-cycle-archived
         org-kill-line
         org-self-insert-command
+        swiper
         ))
 
 (setq mc/cmds-to-run-once
