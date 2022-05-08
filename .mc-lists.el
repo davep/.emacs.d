@@ -4,6 +4,7 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        backward-sexp
         c-electric-paren
         c-electric-semi&comma
         c-electric-slash
@@ -28,6 +29,7 @@
         org-self-insert-command
         wdired--self-insert
         wdired-finish-edit
+        swiper
         ))
 
 (setq mc/cmds-to-run-once
