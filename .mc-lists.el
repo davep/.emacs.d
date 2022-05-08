@@ -11,6 +11,7 @@
         comment-dwim
         company-complete
         dabbrev-expand
+        dired-unmark-backward
         electric-newline-and-maybe-indent
         electric-pair-delete-pair
         forward-sexp
@@ -25,6 +26,8 @@
         org-force-cycle-archived
         org-kill-line
         org-self-insert-command
+        wdired--self-insert
+        wdired-finish-edit
         ))
 
 (setq mc/cmds-to-run-once
