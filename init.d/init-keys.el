@@ -78,6 +78,11 @@
 (when is-a-win32-p
   (set (intern "w32-lwindow-modifier") 'meta))
 
+;; Give https://www.masteringemacs.org/article/text-expansion-hippie-expand
+;; a try. I've been using dabbrev-expand since forever, and never thought to
+;; look at this.
+(global-set-key [remap dabbrev-expand] 'hippie-expand)
+
 (provide 'init-keys)
 
 ;;; init-keys.el ends here
