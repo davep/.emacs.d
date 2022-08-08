@@ -1,6 +1,6 @@
 (use-package winsplit
   :ensure t
-  :bind*
+  :bind
   ("C-c <right>"   . winsplit-right)
   ("C-c <left>"    . winsplit-left)
   ("C-c <up>"      . winsplit-above)

@@ -16,7 +16,7 @@
      (group ".egg-info/" eol))))
   :init
   (counsel-mode 1)
-  :bind*
+  :bind
   ("<f12> f g" . counsel-rg)
   ("<f12> f b" . counsel-bookmark)
   ("<f12> f l" . counsel-locate)
@@ -48,7 +48,7 @@
   :init
   (setcdr (assoc t ivy-format-functions-alist) #'ivy-format-function-line)
   (ivy-mode 1)
-  :bind*
+  :bind
   ("C-c C-r" . ivy-resume))
 
 (use-package ivy-hydra
