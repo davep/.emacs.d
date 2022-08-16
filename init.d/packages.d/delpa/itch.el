@@ -1,5 +1,5 @@
 (use-package itch
   :ensure t
-  :bind
+  :bind*
   ("M-s"         . itch-scratch-buffer)
   ("<XF86Eject>" . itch-scratch-buffer))
