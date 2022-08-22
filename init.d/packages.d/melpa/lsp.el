@@ -3,6 +3,7 @@
   :ensure t
   :commands lsp)
 
+;; <URL:https://emacs-lsp.github.io/lsp-pyright/>
 (use-package lsp-pyright
   :ensure t
   :hook
