@@ -12,7 +12,9 @@
                    (lsp)))
   :custom
   ;; Don't dump files in my Emacs config directory.
-  (lsp-session-file (local-emacs-directory ".lsp-session-v1")))
+  (lsp-session-file (local-emacs-directory ".lsp-session-v1"))
+  ;; Encourage strict type checking.
+  (lsp-pyright-typechecking-mode "strict"))
 
 ;; :hook
 ;; (python-mode . lsp)
