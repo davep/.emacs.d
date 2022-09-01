@@ -6,6 +6,7 @@
 ;; <URL:https://emacs-lsp.github.io/lsp-pyright/>
 (use-package lsp-pyright
   :ensure t
+  :after lsp-mode
   :hook
   (python-mode . (lambda ()
                    (require 'lsp-pyright)
