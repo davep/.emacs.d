@@ -9,11 +9,6 @@
                                    (bookmarks . 10)))
   (dashboard-setup-startup-hook)
   :commands
-  dashboard-insert-startupify-lists
+  dashboard-refresh-buffer
   :bind
-  ("<f7>" . (lambda ()
-              (interactive)
-              (when (get-buffer dashboard-buffer-name)
-                (kill-buffer dashboard-buffer-name))
-              (dashboard-insert-startupify-lists)
-              (switch-to-buffer dashboard-buffer-name))))
+  ("<f7>" . dashboard-refresh-buffer))
