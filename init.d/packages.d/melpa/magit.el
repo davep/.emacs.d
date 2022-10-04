@@ -30,7 +30,8 @@
   (use-package transient
     :ensure t
     :custom
-    (transient-history-file (local-emacs-directory "transient-history.el")))
+    (transient-history-file (local-emacs-directory "transient-history.el"))
+    (transient-levels-file (local-emacs-directory "transient-levels.el")))
 
   (use-package transient-posframe
     :ensure t
