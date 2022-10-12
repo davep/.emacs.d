@@ -3,18 +3,17 @@
   :ensure t
   :commands lsp)
 
-;; <URL:https://emacs-lsp.github.io/lsp-pyright/>
-(use-package lsp-pyright
+;; https://emacs-lsp.github.io/lsp-python-ms/
+(use-package lsp-python-ms
   :ensure t
-  :hook
-  (python-mode . (lambda ()
-                   (require 'lsp-pyright)
-                   (lsp)))
+  :hook (python-mode . (lambda ()
+                         (require 'lsp-python-ms)
+                         (lsp)))
+  :init
+  (setq lsp-python-ms-executable (executable-find "python-language-server"))
   :custom
   ;; Don't dump files in my Emacs config directory.
-  (lsp-session-file (local-emacs-directory ".lsp-session-v1"))
-  ;; Encourage strict type checking.
-  (lsp-pyright-typechecking-mode "strict"))
+  (lsp-session-file (local-emacs-directory ".lsp-session-v1")))
 
 (use-package lsp-ui
   :ensure t
