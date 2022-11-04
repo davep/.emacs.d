@@ -50,7 +50,7 @@
               ;; Also ensure PATH for this process matches.
               (unless (string-match-p (regexp-quote bin) (getenv "PATH"))
                 (setenv "PATH" (concat (expand-file-name bin) ":" (getenv "PATH")))))))
-        '("~/" "~/.local/" "~/.cargo/" "/usr/local/" "~/.local/share/gems/")))
+        '("~/" "~/.local/" "~/.cargo/" "/usr/local/" "~/.local/share/gems/" "/opt/homebrew/")))
 
 ;; WoMan is my preference for man-page viewing, but it doesn't seem to be
 ;; doing terribly well on macOS. So, for now...
