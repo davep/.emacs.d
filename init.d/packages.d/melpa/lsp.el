@@ -1,7 +1,9 @@
 ;; <URL:https://emacs-lsp.github.io/lsp-mode/page/installation/#use-package>
 (use-package lsp-mode
   :ensure t
-  :commands lsp)
+  :commands lsp
+  :custom
+  (lsp-enable-snippet nil))
 
 ;; <URL:https://emacs-lsp.github.io/lsp-pyright/>
 (use-package lsp-pyright
