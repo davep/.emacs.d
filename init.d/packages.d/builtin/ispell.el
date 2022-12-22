@@ -4,7 +4,7 @@
   :custom
   (ispell-dictionary     "british")
   (ispell-highlight-face 'flyspell-incorrect)
-  (ispell-program-name   "aspell"))
+  (ispell-program-name   (if is-a-win32-p "hunspell" "aspell")))
 
 (use-package flyspell
   :diminish
