@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: textual-boilerplate
-# key: <textual
+# key: /textual
 # expand-env: ((yas-indent-line 'fixed))
 # --
 
