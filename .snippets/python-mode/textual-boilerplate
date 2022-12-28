@@ -1,0 +1,19 @@
+# -*- mode: snippet -*-
+# name: textual-boilerplate
+# key: <textual
+# expand-env: ((yas-indent-line 'fixed))
+# --
+
+from textual.app        import App, ComposeResult
+from textual.containers import ${1:containers}
+from textual.widgets    import Header, Footer, ${2:widgets}
+
+class ${3:app}( App[ None ] ):
+
+    def compose( self ) -> ComposeResult:
+        yield Header()
+        yield $0
+        yield Footer()
+
+if __name__ == "__main__":
+    $3().run()
