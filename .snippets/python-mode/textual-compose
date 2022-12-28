@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: textual-compose
+# key: <tc
+# --
+
+def compose( self ) -> ComposeResult:
+    """Compose the child widgets."""
+    yield $0
