@@ -5,3 +5,7 @@
   :config
   (yas-global-mode 1))
 
+(use-package ivy-yasnippet
+  :ensure t
+  :bind
+  ("<f12> y" . ivy-yasnippet))
