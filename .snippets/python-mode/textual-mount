@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: textual-on-mount
+# key: onm
+# --
+
+def on_mount( self ) -> None:
+    """$1"""
+    $2

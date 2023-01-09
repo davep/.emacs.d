@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: textual-query-one
+# key: q1
+# --
+
+self.query_one( $1 ).$2
