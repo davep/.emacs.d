@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: textual-compose
-# key: /tc
+# key: comp
 # --
 
 def compose( self ) -> ComposeResult:

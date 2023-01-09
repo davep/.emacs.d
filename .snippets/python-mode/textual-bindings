@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: textual-bindings
-# key: /tb
+# key: bind
 # --
 
 BINDINGS = [
