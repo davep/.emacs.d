@@ -11,6 +11,8 @@
   :hook
   (python-mode . (lambda ()
                    (require 'lsp-pyright)
+                   (setq lsp-completion-provider :none)
+                   (setq-local company-backends '((company-capf :with company-yasnippet)))
                    (lsp)))
   :custom
   ;; Don't dump files in my Emacs config directory.
