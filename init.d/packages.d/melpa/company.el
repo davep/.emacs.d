@@ -7,4 +7,5 @@
   :bind
   ("s-SPC" . company-complete)
   :commands global-company-mode
-  :hook (after-init . global-company-mode))
+  :hook (after-init . global-company-mode)
+  :config (push 'company-yasnippet company-backends))
