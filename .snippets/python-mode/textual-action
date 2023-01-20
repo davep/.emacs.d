@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: textual-action
+# key: act
+# --
+
+def action_$1( self ) -> None:
+    """$2"""
+    $3
