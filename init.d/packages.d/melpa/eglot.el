@@ -3,4 +3,3 @@
   :defer t
   :after company
   :hook (python-mode . eglot-ensure))
-
