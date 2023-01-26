@@ -62,7 +62,8 @@
  ("<f12> p r"     . package-refresh-contents)
  ("<f12> p t"     . package-lint-current-buffer)
  ("<f12> p u"     . package-upload-buffer)
- ("<f12> ? w"     . woman))
+ ("<f12> ? w"     . woman)
+ ("<f12> f x"     . xref-find-references))
 
 ;; Don't do shift-selecting.
 (setq shift-select-mode nil)

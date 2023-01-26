@@ -57,14 +57,15 @@ What follows is a non-comprehensive collection of key-binding details.
 
 ### [Finding things](https://github.com/abo-abo/swiper)
 
-| Binding                                                  | Function                     |
-| ---                                                      | ---                          |
-| <kbd>F12</kbd> <kbd>f</kbd> <kbd>g</kbd>                 | Find files with `ripgrep`    |
-| <kbd>F12</kbd> <kbd>f</kbd> <kbd>l</kbd>                 | Find files with `locate`     |
-| <kbd>F12</kbd> <kbd>f</kbd> <kbd>r</kbd>                 | Open a recent file           |
-| <kbd>F12</kbd> <kbd>f</kbd> <kbd>Meta</kbd>+<kbd>x</kbd> | Find a recently-used command |
-| <kbd>F12</kbd> <kbd>f</kbd> <kbd>c</kbd> <kbd>w</kbd>    | Find a web colour            |
-| <kbd>F12</kbd> <kbd>f</kbd> <kbd>c</kbd> <kbd>e</kbd>    | Find an Emacs colour         |
+| Binding                                                  | Function                           |
+|----------------------------------------------------------|------------------------------------|
+| <kbd>F12</kbd> <kbd>f</kbd> <kbd>g</kbd>                 | Find files with `ripgrep`          |
+| <kbd>F12</kbd> <kbd>f</kbd> <kbd>l</kbd>                 | Find files with `locate`           |
+| <kbd>F12</kbd> <kbd>f</kbd> <kbd>r</kbd>                 | Open a recent file                 |
+| <kbd>F12</kbd> <kbd>f</kbd> <kbd>x</kbd>                 | Cross reference thing under cursor |
+| <kbd>F12</kbd> <kbd>f</kbd> <kbd>Meta</kbd>+<kbd>x</kbd> | Find a recently-used command       |
+| <kbd>F12</kbd> <kbd>f</kbd> <kbd>c</kbd> <kbd>w</kbd>    | Find a web colour                  |
+| <kbd>F12</kbd> <kbd>f</kbd> <kbd>c</kbd> <kbd>e</kbd>    | Find an Emacs colour               |
 
 ### Moving around
 
