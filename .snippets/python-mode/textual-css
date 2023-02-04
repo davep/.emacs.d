@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: textual-css
+# key: css
+# expand-env: ((yas-indent-line 'fixed))
+# --
+
+CSS = """
+${1:*} {
+    ${2:property}: ${3:value};
+    $0
+}
+"""
