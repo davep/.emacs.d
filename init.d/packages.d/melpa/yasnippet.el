@@ -3,6 +3,7 @@
   :diminish yas-minor-mode
   :custom
   (yas-snippet-dirs (list (locate-user-emacs-file ".snippets")))
+  (yas-buffer-local-condition yas-not-string-or-comment-condition)
   :hook (eglot-managed-mode . (lambda () (setq-local company-backends '((company-capf :with company-yasnippet)))))
   :config
   (yas-global-mode 1))
