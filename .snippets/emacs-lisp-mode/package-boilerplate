@@ -8,7 +8,7 @@
 
 ;; Author: Dave Pearson <davep@davep.org>
 ;; Version: 0.01
-;; Keywords: {{keywords}}
+;; Keywords: ${3:keywords}
 ;; URL: https://github.com/davep/$1
 ;; Package-Requires: ((emacs "24"))
 
@@ -27,7 +27,7 @@
 
 ;;; Commentary:
 ;;
-;; $1 ${3:commentary}
+;; $1 ${4:commentary}
 
 ;;; Code:
 
