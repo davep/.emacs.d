@@ -1,0 +1,38 @@
+# -*- mode: snippet -*-
+# name: elisp-boilerplate
+# key: <p
+# --
+
+;;; ${1:`(file-name-nondirectory (or (buffer-file-name) "{{package.el}}"))`} --- ${2:description} -*- lexical-binding: t -*-
+;; Copyright `(format-time-string "%Y")` by Dave Pearson <davep@davep.org>
+
+;; Author: Dave Pearson <davep@davep.org>
+;; Version: 0.01
+;; Keywords: {{keywords}}
+;; URL: https://github.com/davep/$1
+;; Package-Requires: ((emacs "24"))
+
+;; This program is free software: you can redistribute it and/or modify it
+;; under the terms of the GNU General Public License as published by the
+;; Free Software Foundation, either version 3 of the License, or (at your
+;; option) any later version.
+;;
+;; This program is distributed in the hope that it will be useful, but
+;; WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
+;; Public License for more details.
+;;
+;; You should have received a copy of the GNU General Public License along
+;; with this program. If not, see <http://www.gnu.org/licenses/>.
+
+;;; Commentary:
+;;
+;; $1 ${3:commentary}
+
+;;; Code:
+
+$0
+
+(provide '${1:$(file-name-sans-extension yas-text)})
+
+;;; $1 ends here
