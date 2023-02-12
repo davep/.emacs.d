@@ -3,7 +3,7 @@
 # key: <p
 # --
 
-;;; ${1:`(file-name-nondirectory (or (buffer-file-name) "{{package.el}}"))`} --- ${2:description} -*- lexical-binding: t -*-
+;;; ${1:`(file-name-nondirectory (or (buffer-file-name) "unknown.el"))`} --- ${2:description} -*- lexical-binding: t -*-
 ;; Copyright `(format-time-string "%Y")` by Dave Pearson <davep@davep.org>
 
 ;; Author: Dave Pearson <davep@davep.org>
