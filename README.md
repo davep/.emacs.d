@@ -39,7 +39,6 @@ What follows is a non-comprehensive collection of key-binding details.
 | <kbd>F12</kbd> <kbd>F11</kbd>                  | [Show Emacs uptimes](https://github.com/davep/uptimes.el)                                  |
 | <kbd>Ctrl</kbd>+<kbd>Meta</kbd>+<kbd>F11</kbd> | [Nuke buffers](https://github.com/davep/nuke-buffers.el)                                   |
 | <kbd>F12</kbd> <kbd>F12</kbd>                  | List personal key bindings                                                                 |
-| <kbd>F12</kbd> <kbd>e</kbd>                    | [Open `eg`](https://github.com/davep/eg.el)                                                |
 | <kbd>F12</kbd> <kbd>h</kbd>                    | Open `eshell`                                                                              |
 | <kbd>C</kbd>+<kbd>x</kbd> <kbd>y</kbd>         | Browse the kill-ring                                                                       |
 | <kbd>F12</kbd> <kbd>r</kbd>                    | Open elisp REPL (`ielm`)                                                                   |
@@ -98,6 +97,16 @@ What follows is a non-comprehensive collection of key-binding details.
 | <kbd>F12</kbd> <kbd>g</kbd> <kbd>l</kbd> <kbd>a</kbd> | View log for whole repo   |
 | <kbd>F12</kbd> <kbd>g</kbd> <kbd>l</kbd> <kbd>f</kbd> | View log for current file |
 | <kbd>F12</kbd> <kbd>g</kbd> <kbd>i</kbd>              | View issues (via Forge)   |
+
+### Eglot
+
+| Binding                                               | Function                                  |
+|-------------------------------------------------------|-------------------------------------------|
+| <kbd>F12</kbd> <kbd>e</kbd> <kbd>r</kbd>              | Rename symbol under point                 |
+| <kbd>F12</kbd> <kbd>e</kbd> <kbd>f</kbd> <kbd>d</kbd> | Find declaration of symbol under point    |
+| <kbd>F12</kbd> <kbd>e</kbd> <kbd>f</kbd> <kbd>i</kbd> | Find implementation of symbol under point |
+| <kbd>F12</kbd> <kbd>e</kbd> <kbd>f</kbd> <kbd>r</kbd> | Find references of symbol under point     |
+| <kbd>F12</kbd> <kbd>e</kbd> <kbd>f</kbd> <kbd>t</kbd> | Find type defnition of symbol under point |
 
 ### [boxquote.el](https://github.com/davep/boxquote.el)
 
