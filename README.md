@@ -30,7 +30,7 @@ What follows is a non-comprehensive collection of key-binding details.
 ### General/misc keys
 
 | Binding                                        | Function                                                                                   |
-| ---                                            | ---                                                                                        |
+|------------------------------------------------|--------------------------------------------------------------------------------------------|
 | <kbd>Meta</kbd>+<kbd>s</kbd>                   | [Switch to `*scratch*`](https://github.com/davep/itch.el)                                  |
 | <kbd>F6</kbd>                                  | Switch to next buffer                                                                      |
 | <kbd>Ctrl</kbd>+<kbd>F6</kbd>                  | Process list                                                                               |
