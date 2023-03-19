@@ -52,7 +52,6 @@ What follows is a non-comprehensive collection of key-binding details.
 | <kbd>F12</kbd> <kbd>?</kbd> <kbd>w</kbd>       | [woman](https://www.gnu.org/software/emacs/manual/html_mono/woman.html)                    |
 | <kbd>F12</kbd> <kbd>?</kbd> <kbd>d</kbd>       | Lookup dictionary definition of word                                                       |
 | <kbd>F12</kbd> <kbd>`</kbd>                    | [pinboard](https://github.com/davep/pinboard.el)                                           |
-| <kbd>F12</kbd> <kbd>i</kbd> <kbd>d</kbd>       | Add a note to [dnote](https://github.com/davep/dnote.el)                                   |
 
 ### [Finding things](https://github.com/abo-abo/swiper)
 
