@@ -123,16 +123,6 @@ What follows is a non-comprehensive collection of key-binding details.
 | <kbd>F12</kbd> <kbd>b</kbd> <kbd>h</kbd> <kbd>w</kbd>    | `boxquote-where-is`          |
 | <kbd>F12</kbd> <kbd>b</kbd> <kbd>!</kbd>                 | `boxquote-shell-command`     |
 
-### [cheat-sh.el](https://github.com/davep/cheat-sh.el)
-
-| Binding                                  | Function                                      |
-| ---                                      | ---                                           |
-| <kbd>F12</kbd> <kbd>/</kbd> <kbd>/</kbd> | Search cheat-sh, using region if there is one |
-| <kbd>F12</kbd> <kbd>/</kbd> <kbd>l</kbd> | List sheets for a given item                  |
-| <kbd>F12</kbd> <kbd>/</kbd> <kbd>?</kbd> | Show cheat-sh help                            |
-| <kbd>F12</kbd> <kbd>/</kbd> <kbd>s</kbd> | Search cheat-sh                               |
-| <kbd>F12</kbd> <kbd>/</kbd> <kbd>t</kbd> | Search a specific topic on cheat-sh           |
-
 ### [insert.el](https://github.com/davep/insert.el)
 
 | Binding                                  | Function                                                 |
