@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: textual-widget-init-docstring
+# key: winit
+# condition: 'force-in-comment
+# expand-env: ((yas-indent-line 'fixed))
+# --
+
+name: The name of the ${1:widget description}.
+id: The ID of the $1 in the DOM.
+classes: The CSS classes of the $1.
+disabled: Whether the $1 is disabled or not.
+$0
