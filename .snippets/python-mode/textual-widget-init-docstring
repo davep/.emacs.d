@@ -1,7 +1,7 @@
 # -*- mode: snippet -*-
 # name: textual-widget-init-docstring
 # key: winit
-# condition: 'force-in-comment
+# condition: (when (and (derived-mode-p 'python-mode) (string-match "__init__$" (python-info-current-defun))) 'force-in-comment)
 # expand-env: ((yas-indent-line 'fixed))
 # --
 
