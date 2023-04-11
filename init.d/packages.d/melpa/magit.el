@@ -19,13 +19,7 @@
   (use-package forge
     :ensure t
     :custom
-    (forge-database-file (local-emacs-directory "forge-database.sqlite"))
-    :config
-    (push (list "gitlab.synpromics.com"
-                "gitlab.synpromics.com/api/v4"
-                "gitlab.synpromics.com"
-                'forge-gitlab-repository)
-          forge-alist))
+    (forge-database-file (local-emacs-directory "forge-database.sqlite")))
 
   (use-package transient
     :ensure t
