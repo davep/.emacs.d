@@ -37,21 +37,6 @@
         kept-new-versions              10
         load-prefer-newer              t))
 
-;; Sort out ensuring that some "local" bin directories are in the exec-path.
-;; There seems to be an issue on macOS, and on some forms of GNU/Linux,
-;; where the PATH isn't inherited if we're run from the dock.
-(when is-a-unix-p
-  (mapc (lambda (prefix)
-          (let ((bin (concat prefix "bin")))
-            (when (file-exists-p bin)
-              ;; Update Emacs' exec-path.
-              (unless (member bin exec-path)
-                (push bin exec-path))
-              ;; Also ensure PATH for this process matches.
-              (unless (string-match-p (regexp-quote bin) (getenv "PATH"))
-                (setenv "PATH" (concat (expand-file-name bin) ":" (getenv "PATH")))))))
-        '("~/" "~/.local/" "~/.cargo/" "/usr/local/" "~/.local/share/gems/" "/opt/homebrew/")))
-
 ;; WoMan is my preference for man-page viewing, but it doesn't seem to be
 ;; doing terribly well on macOS. So, for now...
 (when is-a-macOS-p

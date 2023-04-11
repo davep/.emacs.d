@@ -6,6 +6,20 @@
 
 ;;; Code:
 
+;; Sort out ensuring that some "local" bin directories are in the exec-path.
+;; There seems to be an issue on macOS, and on some forms of GNU/Linux,
+;; where the PATH isn't inherited if we're run from the dock.
+(mapc (lambda (prefix)
+        (let ((bin (concat prefix "bin")))
+          (when (file-exists-p bin)
+            ;; Update Emacs' exec-path.
+            (unless (member bin exec-path)
+              (push bin exec-path))
+            ;; Also ensure PATH for this process matches.
+            (unless (string-match-p (regexp-quote bin) (getenv "PATH"))
+              (setenv "PATH" (concat (expand-file-name bin) ":" (getenv "PATH")))))))
+      '("~/" "~/.local/" "~/.cargo/" "/usr/local/" "~/.local/share/gems/" "/opt/homebrew/"))
+
 ;; Add my local init directory to the load path.
 (push (expand-file-name "init.d/" user-emacs-directory) load-path)
 
