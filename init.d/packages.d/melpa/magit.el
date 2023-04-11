@@ -16,10 +16,10 @@
     ("<f12> g l a" . magit-log-all)
     ("<f12> g l f" . magit-log-buffer-file))
 
-  (use-package forge
-    :ensure t
-    :custom
-    (forge-database-file (local-emacs-directory "forge-database.sqlite")))
+  ;; (use-package forge
+  ;;   :ensure t
+  ;;   :custom
+  ;;   (forge-database-file (local-emacs-directory "forge-database.sqlite")))
 
   (use-package transient
     :ensure t
