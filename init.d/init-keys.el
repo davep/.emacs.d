@@ -50,6 +50,7 @@
 
 ;; Tools and "apps" and things.
 (bind-keys
+ ("M-RET"         . toggle-frame-fullscreen)
  ("C-<f6>"        . list-processes)
  ("<f6>"          . bury-buffer)
  ("<f9>"          . compile)
