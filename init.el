@@ -26,6 +26,10 @@
 ;; Ensure local storage is defined and set up.
 (require 'init-local)
 
+;; I know where my local stuff is, so let's get the eln-cache to live there.
+(when (boundp 'native-comp-eln-load-path)
+  (setcar native-comp-eln-load-path (local-emacs-directory "eln-cache")))
+
 ;; Ensure custom values go in their own file.
 (load (setq custom-file (local-emacs-directory "custom.el")) t)
 
