@@ -1,3 +1,8 @@
+(use-package shell-maker
+  :ensure t
+  :custom
+  (shell-maker-history-path local-emacs-directory))
+
 (use-package chatgpt-shell
   :ensure t
   :custom
