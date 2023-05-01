@@ -7,3 +7,8 @@
   :ensure t
   :custom
   (chatgpt-shell-openai-key (lambda () (auth-source-pick-first-password :host "api.openai.com"))))
+
+(use-package dall-e-shell
+  :ensure t
+  :custom
+  (dall-e-shell-openai-key (lambda () (auth-source-pick-first-password :host "api.openai.com"))))
