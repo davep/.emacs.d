@@ -2,7 +2,9 @@
   :ensure t
   :defer t
   :after company
-  :hook (python-mode . eglot-ensure)
+  :hook
+  (python-mode . eglot-ensure)
+  (rust-mode . eglot-ensure)
   :bind
   ;; Some of these obviously aren't actual eglot things, but they're things
   ;; that I find most useful when working via eglot.
