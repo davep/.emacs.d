@@ -3,4 +3,4 @@
 # key: q1
 # --
 
-self.query_one( $1 ).$2
+self.query_one($1).$2

@@ -4,5 +4,5 @@
 # --
 
 BINDINGS = [
-    Binding( "${1:keys}", "${2:action}", "${3:help}" ),
+    Binding("${1:keys}", "${2:action}", "${3:help}"),
 ]

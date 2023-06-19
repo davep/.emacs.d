@@ -4,16 +4,14 @@
 # expand-env: ((yas-indent-line 'fixed))
 # --
 
-from textual.app        import App, ComposeResult
+from textual.app import App, ComposeResult
 from textual.containers import ${1:containers}
-from textual.widgets    import Header, Footer, ${2:widgets}
+from textual.widgets import ${2:widgets}
 
-class ${3:app}( App[ None ] ):
+class ${3:app}(App[None]):
 
-    def compose( self ) -> ComposeResult:
-        yield Header()
+    def compose(self) -> ComposeResult:
         yield $0
-        yield Footer()
 
 if __name__ == "__main__":
     $3().run()

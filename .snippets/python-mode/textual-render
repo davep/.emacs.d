@@ -3,6 +3,6 @@
 # key: rend
 # --
 
-def render( self ) -> RenderResult:
+def render(self) -> RenderResult:
     """Render the content of the widget."""
     return $0

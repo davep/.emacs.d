@@ -3,6 +3,6 @@
 # key: comp
 # --
 
-def compose( self ) -> ComposeResult:
+def compose(self) -> ComposeResult:
     """Compose the child widgets."""
     yield $0

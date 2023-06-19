@@ -3,6 +3,6 @@
 # key: onm
 # --
 
-def on_mount( self ) -> None:
+def on_mount(self) -> None:
     """$1"""
     $2
