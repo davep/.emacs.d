@@ -20,6 +20,10 @@
 (when is-a-macOS-window-p
   (add-to-list 'default-frame-alist '(font . "menlo")))
 
+;; Remove the title bar when on a Mac.
+(when is-a-macOS-window-p
+  (add-to-list 'default-frame-alist '(undecorated-round . t)))
+
 ;; Have comments always be in italic.
 (set-face-attribute 'font-lock-comment-face nil :italic t)
 
