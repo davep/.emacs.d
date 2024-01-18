@@ -30,3 +30,5 @@
             ;; Set up for auto-filling comments.
             (setq-local comment-auto-fill-only-comments t)
             (auto-fill-mode 1)))
+
+(add-to-list 'auto-mode-alist '("\\.tcss$" . scss-mode))
