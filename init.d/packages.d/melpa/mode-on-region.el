@@ -1,6 +1,6 @@
 ;;; https://github.com/quelpa/quelpa-use-package
 (use-package mode-on-region
-  :quelpa (mode-on-region :fetcher github :repo "miketz/mor")
+  :quelpa (mode-on-region :fetcher github :repo "davep/mor")
   :bind
   ("<f12> RET" . mor-mode-on-region)
   ("<f12> C-<return>" . mor-prev-mode-on-region)
