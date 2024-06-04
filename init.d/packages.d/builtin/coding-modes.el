@@ -33,6 +33,8 @@
 
 (add-to-list 'auto-mode-alist '("\\.tcss$" . scss-mode))
 
+(add-to-list 'auto-mode-alist '("\\.ts$" . typescript-ts-mode))
+
 ;; https://www.masteringemacs.org/article/how-to-get-started-tree-sitter
 (setq treesit-language-source-alist
       '((bash "https://github.com/tree-sitter/tree-sitter-bash")
