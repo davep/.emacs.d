@@ -76,8 +76,8 @@
   (set (intern "mac-option-modifier") 'super)
   ;; Have "cmd" be "meta"
   (set (intern "mac-command-modifier") 'meta)
-  ;; Have left "cmd" be "hyper"
-  (set (intern "mac-left-command-modifier") 'hyper))
+  ;; Have right "cmd" be "hyper"
+  (set (intern "mac-right-command-modifier") 'hyper))
 
 ;; Things specific to Windows.
 (when is-a-win32-p
