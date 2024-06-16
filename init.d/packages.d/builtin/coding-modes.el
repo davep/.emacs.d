@@ -17,6 +17,11 @@
   :custom
   (js-switch-indent-offset 4))
 
+(use-package typescript-ts-mode
+  :mode "\\.ts$"
+  :custom
+  (typescript-ts-mode-indent-offset 4))
+
 (use-package python
   :custom
   (python-indent-guess-indent-offset nil)
@@ -32,8 +37,6 @@
             (auto-fill-mode 1)))
 
 (add-to-list 'auto-mode-alist '("\\.tcss$" . scss-mode))
-
-(add-to-list 'auto-mode-alist '("\\.ts$" . typescript-ts-mode))
 
 ;; https://www.masteringemacs.org/article/how-to-get-started-tree-sitter
 (setq treesit-language-source-alist
