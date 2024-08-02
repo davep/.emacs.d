@@ -19,6 +19,8 @@
  ("M-<right>" . forward-sexp)
  ("M-<up>"    . scroll-down-line)
  ("M-<down>"  . scroll-up-line)
+ ("s-<up>"    . scroll-down-command)
+ ("s-<down>"  . scroll-up-command)
  ("s-s"       . isearch-forward-symbol-at-point)
  ("C-s-<tab>" . other-window))
 
