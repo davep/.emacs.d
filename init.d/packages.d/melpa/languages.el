@@ -23,8 +23,6 @@
 
 (use-package json-mode :ensure t)
 
-(use-package julia-mode :ensure t :interpreter "julia")
-
 (use-package rjsx-mode :ensure t
   :bind*
   ("<" . self-insert-command))
