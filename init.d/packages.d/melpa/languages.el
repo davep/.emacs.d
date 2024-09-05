@@ -40,8 +40,6 @@
 
 (use-package yaml-mode :ensure t)
 
-(use-package zig-mode :ensure t)
-
 (use-package terraform-mode :ensure t)
 
 (use-package feature-mode :ensure t)
