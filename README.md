@@ -50,7 +50,8 @@ What follows is a non-comprehensive collection of key-binding details.
 | <kbd>F8</kbd>                                  | [neotree](https://github.com/jaypei/emacs-neotree)                                         |
 | <kbd>F12</kbd> <kbd>i</kbd> <kbd>e</kbd>       | [Add an end-of-file marker](https://github.com/davep/end-it.el)                            |
 | <kbd>F12</kbd> <kbd>?</kbd> <kbd>w</kbd>       | [woman](https://www.gnu.org/software/emacs/manual/html_mono/woman.html)                    |
-| <kbd>F12</kbd> <kbd>?</kbd> <kbd>d</kbd>       | Lookup dictionary definition of word                                                       |
+| <kbd>F12</kbd> <kbd>f</kbd> <kbd>d</kbd>       | Lookup dictionary definition of word under cursor                                          |
+| <kbd>F12</kbd> <kbd>/</kbd> <kbd>d</kbd>       | Lookup dictionary definition of word                                                       |
 | <kbd>F12</kbd> <kbd>`</kbd>                    | [pinboard](https://github.com/davep/pinboard.el)                                           |
 
 ### [Finding things](https://github.com/abo-abo/swiper)
