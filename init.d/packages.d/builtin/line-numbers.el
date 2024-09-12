@@ -3,5 +3,4 @@
   :commands (display-line-numbers-mode)
   :hook
   (prog-mode . display-line-numbers-mode)
-  (text-mode . display-line-numbers-mode)
-  (restclient-mode . display-line-numbers-mode))
+  (text-mode . display-line-numbers-mode))
