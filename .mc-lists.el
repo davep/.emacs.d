@@ -19,7 +19,9 @@
         indent-for-tab-command
         kill-region
         lsp-ui-doc--handle-mouse-movement
+        markdown-beginning-of-line
         markdown-cycle
+        markdown-end-of-line
         markdown-outdent-or-delete
         moving-home
         org-beginning-of-line
@@ -27,9 +29,10 @@
         org-force-cycle-archived
         org-kill-line
         org-self-insert-command
+        swiper
         wdired--self-insert
         wdired-finish-edit
-        swiper
+        yaml-electric-backspace
         ))
 
 (setq mc/cmds-to-run-once
