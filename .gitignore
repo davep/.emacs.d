@@ -3,3 +3,4 @@
 *.elc
 .DS_Store
 tree-sitter/
+tramp
