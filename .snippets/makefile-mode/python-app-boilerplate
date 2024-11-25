@@ -80,6 +80,10 @@ dist: package			# Upload to pypi
 repl:				# Start a Python REPL in the venv.
 	$(python)
 
+.PHONY: updatedeps
+updatedeps:			# Update all dependencies
+	rye sync --update-all
+
 .PHONY: delint
 delint:			# Fix linting issues.
 	$(lint) --fix $(src)
