@@ -22,6 +22,11 @@
   :custom
   (typescript-ts-mode-indent-offset 4))
 
+(use-package tsx-ts-mode
+  :mode "\\.tsx$"
+  :custom
+  (typescript-ts-mode-indent-offset 2))
+
 (use-package python
   :custom
   (python-indent-guess-indent-offset nil)
