@@ -6,6 +6,7 @@
   (python-mode . eglot-ensure)
   (rust-mode . eglot-ensure)
   (markdown-mode . eglot-ensure)
+  (typescript-ts-mode . eglot-ensure)
   :bind
   ;; Some of these obviously aren't actual eglot things, but they're things
   ;; that I find most useful when working via eglot.
