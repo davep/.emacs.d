@@ -43,3 +43,5 @@
 (use-package terraform-mode :ensure t)
 
 (use-package feature-mode :ensure t)
+
+(use-package ponylang-mode :ensure t)
