@@ -18,7 +18,7 @@
             ;; Also ensure PATH for this process matches.
             (unless (string-match-p (regexp-quote bin) (getenv "PATH"))
               (setenv "PATH" (concat (expand-file-name bin) ":" (getenv "PATH")))))))
-      '("~/" "~/.local/" "~/.cargo/" "/usr/local/" "~/.local/share/gems/" "/opt/homebrew/"))
+      '("~/" "~/.local/" "~/.cargo/" "/usr/local/" "~/.local/share/gems/" "/opt/homebrew/" "~/.go/"))
 
 ;; Add my local init directory to the load path.
 (push (expand-file-name "init.d/" user-emacs-directory) load-path)
