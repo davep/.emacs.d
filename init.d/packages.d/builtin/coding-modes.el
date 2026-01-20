@@ -27,6 +27,13 @@
   :custom
   (typescript-ts-mode-indent-offset 2))
 
+(use-package go-mode
+  :init
+  (add-hook 'go-mode-hook
+            (lambda ()
+              (setq-local tab-width 4)
+              (setq-local indent-tabs-mode nil)))
+
 (use-package python
   :custom
   (python-indent-guess-indent-offset nil)
