@@ -32,7 +32,7 @@
   (add-hook 'go-mode-hook
             (lambda ()
               (setq-local tab-width 4)
-              (setq-local indent-tabs-mode nil)))
+              (setq-local indent-tabs-mode nil))))
 
 (use-package python
   :custom
