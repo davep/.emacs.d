@@ -1,4 +1,5 @@
 (use-package geturl
   :ensure t
+  :vc (:url "https://github.com/davep/geturl.el" :rev :newest)
   :bind
   ("<f12> i u" . geturl-insert))
