@@ -1,7 +1,3 @@
-(use-package apache-mode :ensure t)
-
-(use-package cider :ensure t)
-
 (use-package dockerfile-mode :ensure t)
 
 (use-package fish-mode :ensure t)
@@ -12,8 +8,6 @@
 
 (use-package haskell-mode :ensure t
   :bind ("C-c C-c" . haskell-process-load-file))
-
-(use-package hy-mode :ensure t)
 
 (use-package ini-mode :ensure t
   :mode (rx (or
@@ -43,5 +37,3 @@
 (use-package terraform-mode :ensure t)
 
 (use-package feature-mode :ensure t)
-
-(use-package ponylang-mode :ensure t)
