@@ -3,8 +3,8 @@
   :init (add-hook 'blogmore-new-post-hook #'end-it)
   :custom
   (blogmore-blogs
-   '(("blog.davep.org" . ("~/write/davep.github.com/content/posts/"))
-     ("seen-by.davep.org" . ("~/write/seen-by/content/posts/"))))
+   '(("blog.davep.org" "~/write/davep.github.com/content/posts/")
+     ("seen-by.davep.dev" "~/write/seen-by/content/posts/")))
   :bind
   ("<f12> m b" . blogmore-work-on)
   ("<f12> m p n" . blogmore-new)
