@@ -2,6 +2,7 @@
 
 (use-package become
   :ensure t
+  :defer t
   :vc (:url "https://github.com/davep/become.el" :rev :newest)
   :commands become-free-of-trailing-whitespace
   :init

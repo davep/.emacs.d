@@ -2,6 +2,7 @@
 
 (use-package winsplit
   :ensure t
+  :defer t
   :vc (:url "https://github.com/davep/winsplit.el" :rev :newest)
   :bind*
   ("C-c <right>"   . winsplit-right)
