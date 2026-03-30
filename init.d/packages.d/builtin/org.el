@@ -18,7 +18,4 @@
   (org-babel-do-load-languages
    'org-babel-load-languages
    '((emacs-lisp . t)
-     (python . t)))
-  :bind
-  ("<f12> o a" . org-agenda)
-  ("<f12> o t" . org-todo-list))
+     (python . t))))
