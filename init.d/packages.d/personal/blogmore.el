@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (use-package blogmore
   :ensure t
   :vc (:url "https://github.com/davep/blogmore.el" :rev :newest)
@@ -19,3 +21,5 @@
   ("<f12> b l p" . blogmore-link-post)
   ("<f12> b l c" . blogmore-link-category)
   ("<f12> b l t" . blogmore-link-tag))
+
+;;; blogmore.el ends here
