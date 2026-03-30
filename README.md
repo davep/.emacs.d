@@ -40,7 +40,6 @@ What follows is a non-comprehensive collection of key-binding details.
 | <kbd>Ctrl</kbd>+<kbd>Meta</kbd>+<kbd>F11</kbd> | [Nuke buffers](https://github.com/davep/nuke-buffers.el)                                   |
 | <kbd>F12</kbd> <kbd>F12</kbd>                  | List personal key bindings                                                                 |
 | <kbd>F12</kbd> <kbd>h</kbd>                    | Open `eshell`                                                                              |
-| <kbd>C</kbd>+<kbd>x</kbd> <kbd>y</kbd>         | Browse the kill-ring                                                                       |
 | <kbd>F12</kbd> <kbd>r</kbd>                    | Open elisp REPL (`ielm`)                                                                   |
 | <kbd>F12</kbd> <kbd>s</kbd>                    | [Toggle through camelCase, snake-case, etc.](https://github.com/akicho8/string-inflection) |
 | <kbd>F12</kbd> <kbd>q</kbd>                    | [requote](https://github.com/davep/requote.el)                                             |
@@ -64,26 +63,25 @@ What follows is a non-comprehensive collection of key-binding details.
 
 ### Moving around
 
-| Binding                           | Function                                                                 |
-| ---                               | ---                                                                      |
-| <kbd>Super</kbd>+<kbd>s</kbd>     | Forward search symbol at point                                           |
-| <kbd>Home</kbd>                   | [Context-aware "home"](https://github.com/davep/moving.el)               |
-| <kbd>End</kbd>                    | [Context-aware "end"](https://github.com/davep/moving.el)                |
-| <kbd>Super</kbd>+<kbd>Left</kbd>  | [Context-aware "home"](https://github.com/davep/moving.el)               |
-| <kbd>Super</kbd>+<kbd>Right</kbd> | [Context-aware "end"](https://github.com/davep/moving.el)                |
-| <kbd>Meta</kbd>+<kbd>Left</kbd>   | Backward sexp                                                            |
-| <kbd>Meta</kbd>+<kbd>Right</kbd>  | Forward sexp                                                             |
-| <kbd>Super</kbd>+<kbd>Up</kbd>    | Backward page                                                            |
-| <kbd>Super</kbd>+<kbd>Down</kbd>  | Forward page                                                             |
+| Binding                           | Function                                                   |
+|-----------------------------------|------------------------------------------------------------|
+| <kbd>Super</kbd>+<kbd>s</kbd>     | Forward search symbol at point                             |
+| <kbd>Home</kbd>                   | [Context-aware "home"](https://github.com/davep/moving.el) |
+| <kbd>End</kbd>                    | [Context-aware "end"](https://github.com/davep/moving.el)  |
+| <kbd>Super</kbd>+<kbd>Left</kbd>  | [Context-aware "home"](https://github.com/davep/moving.el) |
+| <kbd>Super</kbd>+<kbd>Right</kbd> | [Context-aware "end"](https://github.com/davep/moving.el)  |
+| <kbd>Meta</kbd>+<kbd>Left</kbd>   | Backward sexp                                              |
+| <kbd>Meta</kbd>+<kbd>Right</kbd>  | Forward sexp                                               |
+| <kbd>Super</kbd>+<kbd>Up</kbd>    | Backward page                                              |
+| <kbd>Super</kbd>+<kbd>Down</kbd>  | Forward page                                               |
 
 ### Packages
 
-| Binding                                  | Function                                                                     |
-| ---                                      | ---                                                                          |
-| <kbd>F12</kbd> <kbd>p</kbd> <kbd>l</kbd> | List packages                                                                |
-| <kbd>F12</kbd> <kbd>p</kbd> <kbd>r</kbd> | Refresh package lists                                                        |
-| <kbd>F12</kbd> <kbd>p</kbd> <kbd>t</kbd> | Lint the current buffer as a package                                         |
-| <kbd>F12</kbd> <kbd>p</kbd> <kbd>u</kbd> | Upload current buffer as a package, to [delpa](http://blog.davep.org/delpa/) |
+| Binding                                  | Function                             |
+|------------------------------------------|--------------------------------------|
+| <kbd>F12</kbd> <kbd>p</kbd> <kbd>l</kbd> | List packages                        |
+| <kbd>F12</kbd> <kbd>p</kbd> <kbd>r</kbd> | Refresh package lists                |
+| <kbd>F12</kbd> <kbd>p</kbd> <kbd>t</kbd> | Lint the current buffer as a package |
 
 ### Magit
 
