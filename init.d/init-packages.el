@@ -20,13 +20,6 @@
 ;; Ensure diminish is available.
 (use-package diminish :ensure t)
 
-;; Given I have my own package archive, ensure I can manage that too.
-(let ((delpa "~/develop/elisp/delpa/"))
-  (when (file-exists-p delpa)
-    (use-package package-x
-      :config
-      (setq package-archive-upload-base delpa))))
-
 ;; Load in all the packages declared in the "use" hierarchy.
 (let ((source (expand-file-name "init.d/packages.d/" user-emacs-directory)))
   (when (file-exists-p source)
