@@ -20,18 +20,6 @@
 ;; Ensure diminish is available.
 (use-package diminish :ensure t)
 
-;; Throw quelpa into the mix. This is potentially handy if I want to pull in
-;; packages that haven't made it to melpa yet. Also, I could finally retire
-;; delpa in favour of using this. Perhaps at some point...
-(use-package quelpa
-  :ensure t
-  :custom
-  (quelpa-dir (local-emacs-directory "quelpa"))
-  (quelpa-checkout-melpa-p nil))
-(use-package quelpa-use-package
-  :ensure t
-  :after quelpa)
-
 ;; Given I have my own package archive, ensure I can manage that too.
 (let ((delpa "~/develop/elisp/delpa/"))
   (when (file-exists-p delpa)
