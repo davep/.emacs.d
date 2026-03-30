@@ -1,5 +1,9 @@
+;; -*- lexical-binding: t; -*-
+
 (use-package insert
   :ensure t
+  :defer t
+  :vc (:url "https://github.com/davep/insert.el" :rev :newest)
   :bind
   ("C-<return>" . insert-line-split-keeping-fill-prefix)
   ("<f12> i a"  . insert-autoload-cookie)
@@ -7,3 +11,5 @@
   ("<f12> i m"  . insert-melpa-badge)
   ("<f12> i s"  . insert-sexp-link)
   ("<f12> i y"  . insert-youtube-markdown))
+
+;;; insert.el ends here
