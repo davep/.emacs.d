@@ -1,6 +1,8 @@
 (use-package blogmore
   :vc (:url "https://github.com/davep/blogmore.el" :rev :newest)
-  :init (add-hook 'blogmore-new-post-hook #'end-it)
+  :init
+  (add-hook 'blogmore-new-post-hook #'end-it)
+  (blogmore-work-on "blog.davep.org")
   :custom
   (blogmore-blogs
    '(("blog.davep.org" "~/write/davep.github.com/content/posts/")
