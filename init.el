@@ -30,9 +30,6 @@
 (when (boundp 'native-comp-eln-load-path)
   (setcar native-comp-eln-load-path (local-emacs-directory "eln-cache")))
 
-;; Ensure custom values go in their own file.
-(load (setq custom-file (local-emacs-directory "custom.el")) t)
-
 ;; Make sure the package system is up and running early on.
 ;; (package-initialize) happens in here (and it's mentioned here to stop
 ;; the package system stomping on my init file).
@@ -40,6 +37,13 @@
 
 ;; Now that the repos are set up, ensure `use-package' is in play.
 (require 'use-package)
+
+;; Ensure my theme of choice is loaded up. I would ideally be loading this
+;; inside init-style, but it needs to be available because of custom.el.
+(use-package color-theme-sanityinc-tomorrow :ensure t)
+
+;; Ensure custom values go in their own file.
+(load (setq custom-file (local-emacs-directory "custom.el")) t)
 
 ;; Now that melpa is sorted and use-package is available, ensure that
 ;; auto-compile kicks in. I like my ~/.emacs.d/ to be compiled so this is

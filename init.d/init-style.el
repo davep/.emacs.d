@@ -1,4 +1,4 @@
-;;; init-style.el --- Style Emacs to my taste
+;;; init-style.el --- Style Emacs to my taste  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;;
@@ -9,10 +9,10 @@
 
 (require 'is-a)
 (require 'init-local)
+(require 'color-theme-sanityinc-tomorrow)
 
-;; Use a nice dark theme everywhere.
-;; https://github.com/purcell/color-theme-sanityinc-tomorrow
-(use-package color-theme-sanityinc-tomorrow :ensure t)
+;; Use a nice dark theme everywhere. Note that the theme is initially loaded
+;; in up in init.el.
 (color-theme-sanityinc-tomorrow-night)
 (set-face-attribute 'highlight nil :background "#484a4e" )
 
