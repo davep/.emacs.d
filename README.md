@@ -43,7 +43,6 @@ What follows is a non-comprehensive collection of key-binding details.
 | <kbd>C</kbd>+<kbd>x</kbd> <kbd>y</kbd>         | Browse the kill-ring                                                                       |
 | <kbd>F12</kbd> <kbd>r</kbd>                    | Open elisp REPL (`ielm`)                                                                   |
 | <kbd>F12</kbd> <kbd>s</kbd>                    | [Toggle through camelCase, snake-case, etc.](https://github.com/akicho8/string-inflection) |
-| <kbd>F12</kbd> <kbd>w</kbd>                    | Open `eww` (web browser)                                                                   |
 | <kbd>F12</kbd> <kbd>q</kbd>                    | [requote](https://github.com/davep/requote.el)                                             |
 | <kbd>F8</kbd>                                  | [neotree](https://github.com/jaypei/emacs-neotree)                                         |
 | <kbd>F12</kbd> <kbd>i</kbd> <kbd>e</kbd>       | [Add an end-of-file marker](https://github.com/davep/end-it.el)                            |

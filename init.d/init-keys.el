@@ -55,7 +55,6 @@
  ("<f9>"          . compile)
  ("<f12> r"       . ielm)
  ("<f12> h"       . eshell)
- ("<f12> w"       . eww)
  ("<f12> <f12>"   . describe-personal-keybindings)
  ("<f12> C-<f12>" . describe-bindings)
  ("<f12> p l"     . package-list-packages)
