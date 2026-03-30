@@ -44,15 +44,12 @@ What follows is a non-comprehensive collection of key-binding details.
 | <kbd>F12</kbd> <kbd>r</kbd>                    | Open elisp REPL (`ielm`)                                                                   |
 | <kbd>F12</kbd> <kbd>s</kbd>                    | [Toggle through camelCase, snake-case, etc.](https://github.com/akicho8/string-inflection) |
 | <kbd>F12</kbd> <kbd>w</kbd>                    | Open `eww` (web browser)                                                                   |
-| <kbd>F12</kbd> <kbd>o</kbd> <kbd>a</kba>       | Org agenda view                                                                            |
-| <kbd>F12</kbd> <kbd>o</kbd> <kbd>t</kba>       | Org todo view                                                                              |
 | <kbd>F12</kbd> <kbd>q</kbd>                    | [requote](https://github.com/davep/requote.el)                                             |
 | <kbd>F8</kbd>                                  | [neotree](https://github.com/jaypei/emacs-neotree)                                         |
 | <kbd>F12</kbd> <kbd>i</kbd> <kbd>e</kbd>       | [Add an end-of-file marker](https://github.com/davep/end-it.el)                            |
 | <kbd>F12</kbd> <kbd>?</kbd> <kbd>w</kbd>       | [woman](https://www.gnu.org/software/emacs/manual/html_mono/woman.html)                    |
 | <kbd>F12</kbd> <kbd>f</kbd> <kbd>d</kbd>       | Lookup dictionary definition of word under cursor                                          |
 | <kbd>F12</kbd> <kbd>/</kbd> <kbd>d</kbd>       | Lookup dictionary definition of word                                                       |
-| <kbd>F12</kbd> <kbd>`</kbd>                    | [pinboard](https://github.com/davep/pinboard.el)                                           |
 
 ### [Finding things](https://github.com/abo-abo/swiper)
 
@@ -112,16 +109,16 @@ What follows is a non-comprehensive collection of key-binding details.
 
 | Binding                                                  | Function                     |
 | ---                                                      | ---                          |
-| <kbd>F12</kbd> <kbd>b</kbd> <kbd>i</kbd>                 | `boxquote-insert-file`       |
-| <kbd>F12</kbd> <kbd>b</kbd> <kbd>Meta</kbd>+<kbd>w</kbd> | `boxquote-kill-ring-save`    |
-| <kbd>F12</kbd> <kbd>b</kbd> <kbd>y</kbd>                 | `boxquote-yank`              |
-| <kbd>F12</kbd> <kbd>b</kbd> <kbd>b</kbd>                 | `boxquote-region`            |
-| <kbd>F12</kbd> <kbd>b</kbd> <kbd>t</kbd>                 | `boxquote-title`             |
-| <kbd>F12</kbd> <kbd>b</kbd> <kbd>h</kbd> <kbd>f</kbd>    | `boxquote-describe-function` |
-| <kbd>F12</kbd> <kbd>b</kbd> <kbd>h</kbd> <kbd>v</kbd>    | `boxquote-describe-variable` |
-| <kbd>F12</kbd> <kbd>b</kbd> <kbd>h</kbd> <kbd>k</kbd>    | `boxquote-describe-key`      |
-| <kbd>F12</kbd> <kbd>b</kbd> <kbd>h</kbd> <kbd>w</kbd>    | `boxquote-where-is`          |
-| <kbd>F12</kbd> <kbd>b</kbd> <kbd>!</kbd>                 | `boxquote-shell-command`     |
+| <kbd>F12</kbd> <kbd>x</kbd> <kbd>i</kbd>                 | `boxquote-insert-file`       |
+| <kbd>F12</kbd> <kbd>x</kbd> <kbd>Meta</kbd>+<kbd>w</kbd> | `boxquote-kill-ring-save`    |
+| <kbd>F12</kbd> <kbd>x</kbd> <kbd>y</kbd>                 | `boxquote-yank`              |
+| <kbd>F12</kbd> <kbd>x</kbd> <kbd>b</kbd>                 | `boxquote-region`            |
+| <kbd>F12</kbd> <kbd>x</kbd> <kbd>t</kbd>                 | `boxquote-title`             |
+| <kbd>F12</kbd> <kbd>x</kbd> <kbd>h</kbd> <kbd>f</kbd>    | `boxquote-describe-function` |
+| <kbd>F12</kbd> <kbd>x</kbd> <kbd>h</kbd> <kbd>v</kbd>    | `boxquote-describe-variable` |
+| <kbd>F12</kbd> <kbd>x</kbd> <kbd>h</kbd> <kbd>k</kbd>    | `boxquote-describe-key`      |
+| <kbd>F12</kbd> <kbd>x</kbd> <kbd>h</kbd> <kbd>w</kbd>    | `boxquote-where-is`          |
+| <kbd>F12</kbd> <kbd>x</kbd> <kbd>!</kbd>                 | `boxquote-shell-command`     |
 
 ### [insert.el](https://github.com/davep/insert.el)
 
