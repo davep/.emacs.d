@@ -59,6 +59,7 @@
  ("<f12> C-<f12>" . describe-bindings)
  ("<f12> p l"     . package-list-packages)
  ("<f12> p r"     . package-refresh-contents)
+ ("<f12> p t"     . package-lint-current-buffer)
  ("<f12> p v"     . package-vc-upgrade-all)
  ("<f12> ? w"     . woman)
  ("<f12> f x"     . xref-find-references)
