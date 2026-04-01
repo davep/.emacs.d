@@ -1,8 +1,8 @@
 .PHONY: all
 all:
-	cd delpa; make
 	cd melpa/davep; make
 	cd melpa; make
 	cd builtin; make
+	cd personal; make
 
 ### Makefile ends here

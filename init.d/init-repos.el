@@ -16,9 +16,8 @@
 (setq package-user-dir (local-emacs-directory "packages")
       package-gnupghome-dir (local-emacs-directory "gnupg"))
 
-;; Add melpa and delpa.
+;; Add melpa.
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
-(add-to-list 'package-archives '("delpa" . "http://blog.davep.org/delpa/"))
 
 ;; Initialise the package system.
 (package-initialize)
