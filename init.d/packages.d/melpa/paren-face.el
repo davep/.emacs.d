@@ -4,4 +4,4 @@
   :commands global-paren-face-mode
   :config
   (global-paren-face-mode t)
-  (set-face-foreground 'parenthesis "gray78"))
+  (set-face-foreground 'parenthesis "gray45"))
