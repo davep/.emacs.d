@@ -9,8 +9,14 @@
   (blogmore-work-on "blog.davep.org")
   :custom
   (blogmore-blogs
-   '(("blog.davep.org" "~/write/davep.github.com/content/posts/")
-     ("seen-by.davep.dev" "~/write/seen-by/content/posts/")))
+   '(("blog.davep.org"
+      ;; Root directory for posts.
+      "~/write/davep.github.com/content/posts/"
+      ;; Subdirectory for new posts, relative to the root.
+      (lambda () (format-time-string "%Y/%m/")))
+     ("seen-by.davep.dev"
+      ;; Root directory for posts.
+      "~/write/seen-by/content/posts/")))
   :bind
   ("<f12> b" . blogmore))
 
