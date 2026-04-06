@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (use-package copilot
   :ensure t
   :hook (prog-mode . copilot-mode)
@@ -11,3 +13,5 @@
   :custom
   (copilot-indent-offset-warning-disable t)
   (copilot-max-char-warning-disable t))
+
+;;; copilot.el ends here
