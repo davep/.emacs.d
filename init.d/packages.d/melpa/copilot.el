@@ -7,4 +7,7 @@
               ("C-<tab>" . copilot-accept-completion-by-word)
               ("C-TAB" . copilot-accept-completion-by-word)
               ("C-n" . copilot-next-completion)
-              ("C-p" . copilot-previous-completion)))
+              ("C-p" . copilot-previous-completion))
+  :custom
+  (copilot-indent-offset-warning-disable t)
+  (copilot-max-char-warning-disable t))
