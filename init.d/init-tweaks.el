@@ -66,6 +66,10 @@
 ;; them. Saves having to remember to drop to the shell and chmod +x.
 (add-hook 'after-save-hook #'executable-make-buffer-file-executable-if-script-p)
 
+;; Reduce the clutter when doing M-x.
+;; https://emacsredux.com/blog/2026/04/04/read-extended-command-predicate/
+(setq read-extended-command-predicate #'command-completion-default-include-p)
+
 (provide 'init-tweaks)
 
 ;;; init-tweaks.el ends here
