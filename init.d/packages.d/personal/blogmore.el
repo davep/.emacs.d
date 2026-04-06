@@ -9,7 +9,7 @@
   (add-hook 'blogmore-new-post-hook #'end-it)
   ;; Always start out working on my personal blog.
   (blogmore-work-on "blog.davep.org")
-  ;; Add some useful abbrevs for inserting links commonly-used into my blog
+  ;; Add some useful abbrevs for inserting commonly-used links into my blog
   ;; posts.
   (define-abbrev-table 'markdown-mode-abbrev-table
     '(("bm" "[BlogMore](https://blogmore.davep.dev/)")
