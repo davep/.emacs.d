@@ -29,6 +29,7 @@
            ("Makefile"     (derived-mode . makefile-mode))
            ("python"       (mode . python-mode))
            ("JavaScript"   (mode . js2-mode))
+           ("TypeScript"   (mode . typescript-mode))
            ("Julia"        (mode . julia-mode))
            ("Clojure"      (mode . clojure-mode))
            ("Swift"        (mode . swift-mode))
