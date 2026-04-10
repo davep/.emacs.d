@@ -27,7 +27,10 @@
                             (mode . slime-repl-mode)))
            ("elisp"        (derived-mode . emacs-lisp-mode))
            ("Makefile"     (derived-mode . makefile-mode))
-           ("python"       (mode . python-mode))
+           ("python"       (or
+                            (mode . python-mode)
+                            (filename . "pyproject.toml")
+                            (filename . "uv.lock")))
            ("JavaScript"   (mode . js2-mode))
            ("TypeScript"   (mode . typescript-mode))
            ("Julia"        (mode . julia-mode))
@@ -44,6 +47,7 @@
                             (derived-mode . text-mode)
                             (mode . fasta-mode)))
            ("directories"  (mode . dired-mode))
+           ("Copilot"      (name . "\*copilot"))
            ("Help"         (or
                             (name . "\*Help\*")
                             (name . "\*Apropos\*")
@@ -57,6 +61,7 @@
                             (name . "\*Calendar\*")
                             (name . "\*tramp/sudo")
                             (name . "\*Packages\*")
+                            (name . "\*EGLOT")
                             (mode . inferior-python-mode)
                             (mode . compilation-mode))))))
   (add-hook 'ibuffer-mode-hook
