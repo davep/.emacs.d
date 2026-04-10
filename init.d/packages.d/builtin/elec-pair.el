@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (use-package elec-pair
   :commands electric-pair-mode
   :init
@@ -12,10 +14,12 @@
       ;; common than the latter, and I can't really see a good way of only
       ;; turning this off for some things, let's turn it off any time we're
       ;; in the minibuffer.
-      (eq major-mode 'minibuffer-inactive-mode)
+      (eq major-mode 'minibuffer-mode)
       ;; Don't complete { when in web-mode and using the Django engine, as
       ;; it does its own thing.
       (and
        (eq major-mode 'web-mode)
        (string= (symbol-value 'web-mode-engine) "django")
        (= c ?{))))))
+
+;;; elec-pair.el ends here
