@@ -3,6 +3,7 @@
 (use-package copilot
   :ensure t
   :defer t
+  :diminish "O_o"
   :hook (prog-mode . copilot-mode)
   :bind (:map copilot-completion-map
               ("<tab>" . copilot-accept-completion)
