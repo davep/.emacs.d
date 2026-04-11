@@ -32,7 +32,7 @@
                             (filename . "pyproject.toml")
                             (filename . "uv.lock")))
            ("JavaScript"   (mode . js2-mode))
-           ("TypeScript"   (mode . typescript-mode))
+           ("TypeScript"   (derived-mode . typescript-mode))
            ("Julia"        (mode . julia-mode))
            ("Clojure"      (mode . clojure-mode))
            ("Swift"        (mode . swift-mode))
