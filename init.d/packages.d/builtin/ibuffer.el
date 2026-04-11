@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (use-package ibuffer
   :bind
   ("M-<f6>" . ibuffer)
@@ -70,3 +72,5 @@
               (ibuffer-auto-mode 1)
               (ibuffer-switch-to-saved-filter-groups "davep")
               (ibuffer-do-sort-by-alphabetic))))
+
+;;; ibuffer.el ends here
