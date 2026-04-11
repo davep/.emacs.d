@@ -62,6 +62,7 @@
                             (name . "\*tramp/sudo")
                             (name . "\*Packages\*")
                             (name . "\*EGLOT")
+                            (name . "\*Async-native-compile-log\*")
                             (mode . inferior-python-mode)
                             (mode . compilation-mode))))))
   (add-hook 'ibuffer-mode-hook
