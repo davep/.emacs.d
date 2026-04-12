@@ -1,4 +1,4 @@
-;;; init-net.el --- Configuration that affects Net-base comms.
+;;; init-net.el --- Configuration that affects Net-base comms.  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;;

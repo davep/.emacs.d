@@ -1,4 +1,4 @@
-;;; init-local.el --- Set up local config storage.
+;;; init-local.el --- Set up local config storage.  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;;

@@ -1,4 +1,4 @@
-;;; init-repos.el --- Set up package loading and repos we'll load from.
+;;; init-repos.el --- Set up package loading and repos we'll load from.  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;;

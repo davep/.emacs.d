@@ -1,4 +1,4 @@
-;;; init-packages.el --- Package loading
+;;; init-packages.el --- Package loading  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;;

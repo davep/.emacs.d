@@ -1,4 +1,4 @@
-;;; init-tweaks.el --- Miscellaneous "tweaks" to my Emacs environment
+;;; init-tweaks.el --- Miscellaneous "tweaks" to my Emacs environment  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;;
