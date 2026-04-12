@@ -15,7 +15,9 @@
              ".pylintrc")
             eol))
 
-(use-package json-mode :ensure t)
+(use-package json-mode :ensure t
+  :config
+  (setq-local js-indent-level 2))
 
 (use-package rjsx-mode :ensure t
   :bind*
