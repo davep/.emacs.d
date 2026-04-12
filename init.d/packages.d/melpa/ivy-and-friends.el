@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (use-package counsel
   :ensure t
   :after ivy
@@ -79,3 +81,5 @@
      (right-fringe . 8)))
   :init
   (ivy-posframe-mode 1))
+
+;;; ivy-and-friends.el ends here

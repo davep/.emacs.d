@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (use-package dockerfile-mode :ensure t)
 
 (use-package fish-mode :ensure t)
@@ -39,3 +41,5 @@
 (use-package terraform-mode :ensure t)
 
 (use-package feature-mode :ensure t)
+
+;;; languages.el ends here

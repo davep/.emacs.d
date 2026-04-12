@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (use-package dimmer
   :ensure t
   :config
@@ -5,3 +7,5 @@
   :init
   (dimmer-configure-magit)
   (dimmer-mode 1))
+
+;;; dimmer.el ends here

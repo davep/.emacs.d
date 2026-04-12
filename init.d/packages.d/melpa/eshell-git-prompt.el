@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (use-package eshell-git-prompt
   :ensure t
   :custom-face
@@ -10,3 +12,5 @@
   :commands eshell-git-prompt-use-theme
   :init
   (eshell-git-prompt-use-theme 'powerline))
+
+;;; eshell-git-prompt.el ends here

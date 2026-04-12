@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (use-package slime
   :ensure t
   :config
@@ -5,3 +7,5 @@
   (add-hook 'slime-inferior-process-start-hook
             (lambda ()
               (require 'slime-fancy))))
+
+;;; slime.el ends here

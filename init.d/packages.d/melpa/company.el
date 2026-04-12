@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (use-package company
   :ensure t
   :diminish
@@ -8,3 +10,5 @@
   ("s-SPC" . company-complete)
   :commands global-company-mode
   :hook (after-init . global-company-mode))
+
+;;; company.el ends here

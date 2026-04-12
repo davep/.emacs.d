@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (use-package all-the-icons :ensure t)
 
 (use-package all-the-icons-dired
@@ -15,3 +17,5 @@
 (use-package all-the-icons-ivy-rich
   :ensure t
   :init (all-the-icons-ivy-rich-mode 1))
+
+;;; all-the-icons.el ends here

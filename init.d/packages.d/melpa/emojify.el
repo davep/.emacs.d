@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (when is-a-unix-p
   (use-package emojify
     :if is-a-unix-window-p
@@ -10,3 +12,5 @@
     :init
     (global-emojify-mode)
     :ensure t))
+
+;;; emojify.el ends here

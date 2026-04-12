@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (use-package yasnippet
   :ensure t
   :diminish yas-minor-mode
@@ -12,3 +14,5 @@
   :ensure t
   :bind
   ("<f12> y" . ivy-yasnippet))
+
+;;; yasnippet.el ends here

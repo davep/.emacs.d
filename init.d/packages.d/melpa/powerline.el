@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (use-package powerline
   :ensure t
   :custom
@@ -8,3 +10,5 @@
   (when is-a-macOS-p
     (set (intern "ns-use-srgb-colorspace") nil))
   (powerline-default-theme))
+
+;;; powerline.el ends here

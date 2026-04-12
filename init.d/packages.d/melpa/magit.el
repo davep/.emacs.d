@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (require 'is-a)
 (require 'init-local)
 
@@ -16,11 +18,6 @@
     ("<f12> g l a" . magit-log-all)
     ("<f12> g l f" . magit-log-buffer-file))
 
-  ;; (use-package forge
-  ;;   :ensure t
-  ;;   :custom
-  ;;   (forge-database-file (local-emacs-directory "forge-database.sqlite")))
-
   (use-package transient
     :ensure t
     :custom
@@ -36,3 +33,4 @@
        (right-fringe . 8)))
     :init (transient-posframe-mode 1)))
 
+;;; magit.el ends here

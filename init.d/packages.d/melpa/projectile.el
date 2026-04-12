@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (use-package projectile
   :ensure t
   :custom
@@ -10,3 +12,5 @@
   :config
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
   (projectile-mode 1))
+
+;;; projectile.el ends here

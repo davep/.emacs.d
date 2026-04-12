@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (use-package neotree
   :ensure t
   :config
@@ -13,3 +15,5 @@
   (neo-autorefresh t)
   (neo-theme 'icons)
   (neo-window-width 30))
+
+;;; neotree.el ends here

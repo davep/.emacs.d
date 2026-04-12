@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (use-package paren-face
   :ensure t
   :demand
@@ -5,3 +7,5 @@
   :config
   (global-paren-face-mode t)
   (set-face-foreground 'parenthesis "gray45"))
+
+;;; paren-face.el ends here
