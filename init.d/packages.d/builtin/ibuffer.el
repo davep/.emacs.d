@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (use-package ibuffer
   :bind
   ("M-<f6>" . ibuffer)
@@ -32,7 +34,7 @@
                             (filename . "pyproject.toml")
                             (filename . "uv.lock")))
            ("JavaScript"   (mode . js2-mode))
-           ("TypeScript"   (mode . typescript-mode))
+           ("TypeScript"   (derived-mode . typescript-mode))
            ("Julia"        (mode . julia-mode))
            ("Clojure"      (mode . clojure-mode))
            ("Swift"        (mode . swift-mode))
@@ -62,6 +64,7 @@
                             (name . "\*tramp/sudo")
                             (name . "\*Packages\*")
                             (name . "\*EGLOT")
+                            (name . "\*Async-native-compile-log\*")
                             (mode . inferior-python-mode)
                             (mode . compilation-mode))))))
   (add-hook 'ibuffer-mode-hook
@@ -69,3 +72,5 @@
               (ibuffer-auto-mode 1)
               (ibuffer-switch-to-saved-filter-groups "davep")
               (ibuffer-do-sort-by-alphabetic))))
+
+;;; ibuffer.el ends here
