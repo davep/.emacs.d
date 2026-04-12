@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (use-package eshell
   :defines eshell-visual-commands
   :functions eshell/pwd
@@ -19,3 +21,5 @@
   (add-hook 'eshell-mode-hook
             (lambda ()
               (add-to-list 'eshell-visual-commands "htop"))))
+
+;;; eshell.el ends here

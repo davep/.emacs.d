@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (use-package eglot
   :ensure t
   :defer t
@@ -19,3 +21,5 @@
   ("<f12> e f i" . eglot-find-implementation)
   ("<f12> e f t" . eglot-find-typeDefinition)
   ("<f12> e f r" . xref-find-references))
+
+;;; eglot.el ends here

@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (use-package dired
   :config
   (setq dired-use-ls-dired nil))
@@ -13,3 +15,5 @@
              "__pycache__")))
   (add-hook 'dired-mode-hook (lambda ()
                                (dired-omit-mode 1))))
+
+;;; dired.el ends here

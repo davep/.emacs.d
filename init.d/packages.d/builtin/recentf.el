@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (use-package recentf
   :commands recentf-save-list
   :custom
@@ -10,3 +12,5 @@
                (lambda ()
                  (let ((inhibit-message t))
                    (recentf-save-list)))))
+
+;;; recentf.el ends here

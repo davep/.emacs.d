@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (require 'is-a)
 
 (use-package ispell
@@ -14,3 +16,5 @@
   :hook
   (prog-mode . flyspell-prog-mode)
   (text-mode . flyspell-mode))
+
+;;; ispell.el ends here

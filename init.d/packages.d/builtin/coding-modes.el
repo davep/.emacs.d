@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (use-package cc-mode
   :custom
   (c-basic-offset 4)
@@ -67,3 +69,5 @@
         (tsx "https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src")
         (typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src")
         (yaml "https://github.com/ikatyang/tree-sitter-yaml")))
+
+;;; coding-modes.el ends here

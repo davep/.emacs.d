@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (use-package whitespace
   :custom
   (whitespace-style '(face trailing empty tabs tab-mark))
@@ -6,3 +8,5 @@
    'after-change-major-mode-hook
    (lambda ()
      (whitespace-mode (if (buffer-file-name) 1 -1)))))
+
+;;; whitespace.el ends here

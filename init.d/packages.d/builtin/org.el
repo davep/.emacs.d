@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (use-package org
   :custom
   (org-directory (or (getenv "ORG_DIRECTORY") "~/notebook/"))
@@ -19,3 +21,5 @@
    'org-babel-load-languages
    '((emacs-lisp . t)
      (python . t))))
+
+;;; org.el ends here
