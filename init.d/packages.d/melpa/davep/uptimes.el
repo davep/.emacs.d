@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (require 'init-local)
 
 (use-package uptimes
@@ -7,3 +9,5 @@
   :bind
   ("<f11>"       . uptimes-current)
   ("<f12> <f11>" . uptimes))
+
+;;; uptimes.el ends here

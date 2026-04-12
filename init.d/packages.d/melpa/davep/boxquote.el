@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (use-package boxquote
   :ensure t
   :bind
@@ -11,3 +13,5 @@
   ("<f12> x h k" . boxquote-describe-key)
   ("<f12> x h w" . boxquote-where-is)
   ("<f12> x !"   . boxquote-shell-command))
+
+;;; boxquote.el ends here
