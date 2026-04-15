@@ -48,6 +48,7 @@ What follows is a non-comprehensive collection of key-binding details.
 | <kbd>F12</kbd> <kbd>?</kbd> <kbd>w</kbd>       | [woman](https://www.gnu.org/software/emacs/manual/html_mono/woman.html)                    |
 | <kbd>F12</kbd> <kbd>f</kbd> <kbd>d</kbd>       | Lookup dictionary definition of word under cursor                                          |
 | <kbd>F12</kbd> <kbd>/</kbd> <kbd>d</kbd>       | Lookup dictionary definition of word                                                       |
+| <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>b</kbd>      | [boxquote](https://github.com/davep/boxquote.el)                                           |
 
 ### [Finding things](https://github.com/abo-abo/swiper)
 
@@ -100,21 +101,6 @@ What follows is a non-comprehensive collection of key-binding details.
 | <kbd>F12</kbd> <kbd>e</kbd> <kbd>f</kbd> <kbd>i</kbd> | Find implementation of symbol under point |
 | <kbd>F12</kbd> <kbd>e</kbd> <kbd>f</kbd> <kbd>r</kbd> | Find references of symbol under point     |
 | <kbd>F12</kbd> <kbd>e</kbd> <kbd>f</kbd> <kbd>t</kbd> | Find type defnition of symbol under point |
-
-### [boxquote.el](https://github.com/davep/boxquote.el)
-
-| Binding                                                  | Function                     |
-| ---                                                      | ---                          |
-| <kbd>F12</kbd> <kbd>x</kbd> <kbd>i</kbd>                 | `boxquote-insert-file`       |
-| <kbd>F12</kbd> <kbd>x</kbd> <kbd>Meta</kbd>+<kbd>w</kbd> | `boxquote-kill-ring-save`    |
-| <kbd>F12</kbd> <kbd>x</kbd> <kbd>y</kbd>                 | `boxquote-yank`              |
-| <kbd>F12</kbd> <kbd>x</kbd> <kbd>b</kbd>                 | `boxquote-region`            |
-| <kbd>F12</kbd> <kbd>x</kbd> <kbd>t</kbd>                 | `boxquote-title`             |
-| <kbd>F12</kbd> <kbd>x</kbd> <kbd>h</kbd> <kbd>f</kbd>    | `boxquote-describe-function` |
-| <kbd>F12</kbd> <kbd>x</kbd> <kbd>h</kbd> <kbd>v</kbd>    | `boxquote-describe-variable` |
-| <kbd>F12</kbd> <kbd>x</kbd> <kbd>h</kbd> <kbd>k</kbd>    | `boxquote-describe-key`      |
-| <kbd>F12</kbd> <kbd>x</kbd> <kbd>h</kbd> <kbd>w</kbd>    | `boxquote-where-is`          |
-| <kbd>F12</kbd> <kbd>x</kbd> <kbd>!</kbd>                 | `boxquote-shell-command`     |
 
 ### [insert.el](https://github.com/davep/insert.el)
 
