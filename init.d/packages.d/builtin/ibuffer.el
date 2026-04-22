@@ -16,57 +16,62 @@
         ibuffer-show-empty-filter-groups nil
         ibuffer-saved-filter-groups
         '(("davep"
-           ("*Magit*"      (derived-mode . magit-mode))
-           ("Org"          (or
-                            (mode . org-mode)
-                            (mode . org-agenda-mode)))
-           (".emacs.d"     (filename . "/.emacs.d/"))
-           ("shell"        (or
-                            (mode . sh-mode)
-                            (mode . fish-mode)))
-           ("Lisp"         (or
-                            (mode . lisp-mode)
-                            (mode . slime-repl-mode)))
-           ("elisp"        (derived-mode . emacs-lisp-mode))
-           ("Makefile"     (derived-mode . makefile-mode))
-           ("python"       (or
-                            (mode . python-mode)
-                            (filename . "pyproject.toml")
-                            (filename . "uv.lock")))
-           ("JavaScript"   (mode . js2-mode))
-           ("TypeScript"   (derived-mode . typescript-mode))
-           ("Julia"        (mode . julia-mode))
-           ("Clojure"      (mode . clojure-mode))
-           ("Swift"        (mode . swift-mode))
-           ("C/C++"        (or
-                            (derived-mode . c-mode)
-                            (derived-mode . c++-mode)))
-           ("Doc-View"     (mode . doc-view-mode))
-           ("web"          (or
-                            (mode . web-mode)
-                            (mode . scss-mode)))
-           ("text files"   (or
-                            (derived-mode . text-mode)
-                            (mode . fasta-mode)))
-           ("directories"  (mode . dired-mode))
-           ("Copilot"      (name . "\*copilot"))
-           ("Help"         (or
-                            (name . "\*Help\*")
-                            (name . "\*Apropos\*")
-                            (name . "\*info\*")))
-           ("Internal"     (or
-                            (name . "\*Compile-log\*")
-                            (name . "\*Buffer List\*")
-                            (name . "\*Backtrace\*")
-                            (name . "\*Messages\*")
-                            (name . "\*Completions\*")
-                            (name . "\*Calendar\*")
-                            (name . "\*tramp/sudo")
-                            (name . "\*Packages\*")
-                            (name . "\*EGLOT")
-                            (name . "\*Async-native-compile-log\*")
-                            (mode . inferior-python-mode)
-                            (mode . compilation-mode))))))
+           ("*Magit*"       (derived-mode . magit-mode))
+           ("*Eglot*"       (name . "\*EGLOT "))
+           ("*use-package*" (name . "\*vc-git :"))
+           ("Org"           (or
+                             (mode . org-mode)
+                             (mode . org-agenda-mode)))
+           (".emacs.d"      (filename . "/.emacs.d/"))
+           ("shell"         (or
+                             (mode . sh-mode)
+                             (mode . fish-mode)))
+           ("Lisp"          (or
+                             (mode . lisp-mode)
+                             (mode . slime-repl-mode)))
+           ("elisp"         (derived-mode . emacs-lisp-mode))
+           ("Makefile"      (derived-mode . makefile-mode))
+           ("python"        (or
+                             (mode . python-mode)
+                             (filename . "pyproject.toml")
+                             (filename . "uv.lock")))
+           ("JavaScript"    (mode . js2-mode))
+           ("TypeScript"    (or
+                             (derived-mode . typescript-mode)
+                             (derived-mode . tsx-mode)))
+           ("Julia"         (mode . julia-mode))
+           ("Clojure"       (mode . clojure-mode))
+           ("Swift"         (mode . swift-mode))
+           ("C/C++"         (or
+                             (derived-mode . c-mode)
+                             (derived-mode . c++-mode)))
+           ("Doc-View"      (mode . doc-view-mode))
+           ("web"           (or
+                             (mode . web-mode)
+                             (mode . css-mode)
+                             (mode . scss-mode)))
+           ("text files"    (or
+                             (derived-mode . text-mode)
+                             (mode . fasta-mode)))
+           ("directories"   (mode . dired-mode))
+           ("Copilot"       (name . "\*copilot"))
+           ("Help"          (or
+                             (name . "\*Help\*")
+                             (name . "\*Apropos\*")
+                             (name . "\*info\*")))
+           ("Internal"      (or
+                             (name . "\*Compile-log\*")
+                             (name . "\*Buffer List\*")
+                             (name . "\*Backtrace\*")
+                             (name . "\*Messages\*")
+                             (name . "\*Completions\*")
+                             (name . "\*Calendar\*")
+                             (name . "\*tramp/sudo")
+                             (name . "\*Packages\*")
+                             (name . "\*EGLOT")
+                             (name . "\*Async-native-compile-log\*")
+                             (mode . inferior-python-mode)
+                             (mode . compilation-mode))))))
   (add-hook 'ibuffer-mode-hook
             (lambda ()
               (ibuffer-auto-mode 1)
