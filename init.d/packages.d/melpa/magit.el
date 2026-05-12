@@ -12,6 +12,11 @@
     (add-hook 'after-save-hook #'magit-after-save-refresh-status)
     (add-hook 'git-commit-setup-hook (lambda() (flyspell-mode 1)))
     (setq ghub-use-workaround-for-emacs-bug 'force)
+    ;; For when I use https://github.com/davep/setup-forge-sync I don't want
+    ;; to accidentally pick `backups` as the remote to push to.
+    (advice-add
+     'magit-list-remotes
+     :filter-return (lambda (remotes) (delete "backups" remotes)))
     :bind
     ("<f12> g s"   . magit-status)
     ("<f12> g b"   . magit-blame)
