@@ -16,6 +16,7 @@
       ("bme" "[`blogmore.el`](https://github.com/davep/blogmore.el)")
       ("pblog" "[photoblog](https://seen-by.davep.dev/)")))
   :custom
+  (blogmore-command "~/.local/bin/blogmore")
   (blogmore-blogs
    (list
     (blogmore-blog
