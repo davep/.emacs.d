@@ -40,7 +40,7 @@
 
 ;; Ensure my theme of choice is loaded up. I would ideally be loading this
 ;; inside init-style, but it needs to be available because of custom.el.
-(use-package color-theme-sanityinc-tomorrow :ensure t)
+(use-package modus-themes :ensure t)
 
 ;; Ensure custom values go in their own file.
 (load (setq custom-file (local-emacs-directory "custom.el")) t)

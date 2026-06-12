@@ -9,12 +9,14 @@
 
 (require 'is-a)
 (require 'init-local)
-(require 'color-theme-sanityinc-tomorrow)
+(require 'modus-themes)
 
 ;; Use a nice dark theme everywhere. Note that the theme is initially loaded
 ;; in up in init.el.
-(color-theme-sanityinc-tomorrow-night)
-(set-face-attribute 'highlight nil :background "#484a4e" )
+(setq modus-themes-common-palette-overrides
+      '((border-mode-line-active bg-mode-line-active)
+        (border-mode-line-inactive bg-mode-line-inactive)))
+(modus-themes-load-theme 'modus-vivendi)
 
 ;; Ensure I have the same base font no matter which macOS Emacs I'm using.
 (when is-a-macOS-window-p
