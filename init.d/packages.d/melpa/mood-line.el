@@ -7,11 +7,14 @@
   (setq mood-line-format
         (mood-line-defformat
          :left
-         (((mood-line-segment-buffer-status) . " ")
-          ((mood-line-segment-buffer-name) . " : ")
+         ((mood-line-segment-buffer-name)
+          " "
+          (or (mood-line-segment-buffer-status) ":")
+          " "
           (mood-line-segment-major-mode))
          :right
-         (((mood-line-segment-vc) . "  ")
+         ((mood-line-segment-vc)
+          " "
           (mood-line-segment-cursor-position))))
   (mood-line-mode 1))
 
