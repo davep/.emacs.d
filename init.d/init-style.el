@@ -16,6 +16,9 @@
 (setq modus-themes-common-palette-overrides
       '((border-mode-line-active bg-mode-line-active)
         (border-mode-line-inactive bg-mode-line-inactive)))
+(when is-a-unix-terminal-p
+  (set-face-attribute 'mode-line-active nil :underline nil)
+  (set-face-attribute 'mode-line-inactive nil :underline nil))
 (modus-themes-load-theme 'modus-vivendi)
 
 ;; Ensure I have the same base font no matter which macOS Emacs I'm using.
