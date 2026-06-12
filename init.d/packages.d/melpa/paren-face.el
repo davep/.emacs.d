@@ -6,6 +6,6 @@
   :commands global-paren-face-mode
   :config
   (global-paren-face-mode t)
-  (set-face-foreground 'parenthesis "gray45"))
+  (set-face-foreground 'parenthesis "gray35"))
 
 ;;; paren-face.el ends here
