@@ -41,7 +41,7 @@
             'face 'my/mood-line-good-status))
           " "
           (mood-line-segment-buffer-name)
-          " : "
+          " "
           (mood-line-segment-major-mode))
          :right
          ((my/mood-line-segment-vc)
