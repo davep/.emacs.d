@@ -68,9 +68,9 @@
                           :foreground slate
                           :weight 'bold)
 
-      ;; VC / Version Control Glyph (neutral/clean repo state styled in soft rust)
+      ;; VC / Version Control Glyph (neutral/clean repo state styled in soft green)
       (set-face-attribute 'mood-line-status-neutral nil
-                          :foreground rust
+                          :foreground green-faint
                           :weight 'normal)
 
       ;; VC Branch Name (subtle blue-purple / indigo)
