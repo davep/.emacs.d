@@ -11,6 +11,7 @@
   (projectile-project-root-files '(".projectile" "Pipfile"))
   :config
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+  (projectile-load-known-projects)
   (projectile-mode 1))
 
 ;;; projectile.el ends here
