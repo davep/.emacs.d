@@ -31,6 +31,12 @@
                                str))
         str)))
 
+  (defun my/mood-line-segment-project ()
+    "Return the project name segment, if available."
+    (when-let ((project-name (projectile-project-name)))
+      (unless (string= project-name "-")
+        (propertize (format " {%s}" project-name) 'face 'my/mood-line-vc-branch))))
+
   (setq mood-line-format
         (mood-line-defformat
          :left
@@ -41,6 +47,7 @@
             'face 'my/mood-line-good-status))
           " "
           (mood-line-segment-buffer-name)
+          (my/mood-line-segment-project)
           " "
           (mood-line-segment-major-mode))
          :right
