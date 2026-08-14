@@ -14,7 +14,8 @@
   (define-abbrev-table 'markdown-mode-abbrev-table
     '(("bm" "[BlogMore](https://blogmore.davep.dev/)")
       ("bme" "[`blogmore.el`](https://github.com/davep/blogmore.el)")
-      ("pblog" "[photoblog](https://seen-by.davep.dev/)")))
+      ("pblog" "[photoblog](https://seen-by.davep.dev/)")
+      ("rog" "[Rogallo](https://rogallo.davep.dev/)")))
   :custom
   (blogmore-command "~/.local/bin/blogmore")
   (blogmore-blogs
