@@ -4,6 +4,7 @@
   :ensure t
   :custom
   (projectile-known-projects-file (local-emacs-directory "projectile-bookmarks.eld"))
+  (projectile-frecency-file (local-emacs-directory "projectile-frecency.eld"))
   (projectile-cache-file (local-emacs-directory "projectile.cache"))
   (projectile-mode-line-prefix " P")
   (projectile-switch-project-action 'neotree-projectile-action)
