@@ -56,7 +56,9 @@
   (auto-compile-on-load-mode))
 
 ;; is-a.el is a bit special, as I use very early on. Load it now.
-(use-package is-a :ensure t)
+(use-package is-a
+  :ensure t
+  :vc (:url "https://github.com/davep/is-a.el.git" :rev :newest))
 
 ;; Load various startup things.
 (require 'init-net)
