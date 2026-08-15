@@ -30,6 +30,9 @@
 (when (boundp 'native-comp-eln-load-path)
   (setcar native-comp-eln-load-path (local-emacs-directory "eln-cache")))
 
+;; Configure networking and URL settings before repository operations.
+(require 'init-net)
+
 ;; Make sure the package system is up and running early on.
 ;; (package-initialize) happens in here (and it's mentioned here to stop
 ;; the package system stomping on my init file).
@@ -61,7 +64,6 @@
   :vc (:url "https://github.com/davep/is-a.el.git" :rev :newest))
 
 ;; Load various startup things.
-(require 'init-net)
 (require 'init-packages)
 (unless noninteractive
   (require 'init-editing)

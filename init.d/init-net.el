@@ -30,11 +30,7 @@
  url-cookie-file             (local-emacs-directory "url/cookies")
  ;; Security.
  nsm-save-host-names t
- nsm-settings-file   (local-emacs-directory "network-security.data")
- ;; I can't seem to get elpa to load from the office network,
- ;; https://emacs.stackexchange.com/a/56067/15763 seems to help solve the
- ;; problem.
- gnutls-algorithm-priority "normal:-vers-tls1.3")
+ nsm-settings-file   (local-emacs-directory "network-security.data"))
 
 (provide 'init-net)
 
