@@ -17,14 +17,17 @@
       package-gnupghome-dir (local-emacs-directory "gnupg"))
 
 ;; Add melpa.
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 
 ;; Initialise the package system.
 (package-initialize)
 
+;; Ensure package contents are refreshed on first start.
+(unless package-archive-contents
+  (package-refresh-contents))
+
 ;; Bootstrap `use-package'
 (unless (package-installed-p 'use-package)
-  (package-refresh-contents)
   (package-install 'use-package))
 
 (provide 'init-repos)
