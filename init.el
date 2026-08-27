@@ -1,4 +1,4 @@
-;;; init.el --- Entry point of my Emacs configuration.
+;;; init.el --- Entry point of my Emacs configuration.  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;;
@@ -20,8 +20,12 @@
               (setenv "PATH" (concat (expand-file-name bin) ":" (getenv "PATH")))))))
       '("~/" "~/.local/" "~/.cargo/" "/usr/local/" "~/.local/share/gems/" "/opt/homebrew/" "~/.go/"))
 
-;; Add my local init directory to the load path.
-(push (expand-file-name "init.d/" user-emacs-directory) load-path)
+;; early-init.el sets up the load path, and everything else that needs to be
+;; in place before any other Lisp is loaded or compiled. Emacs loads it for
+;; me when starting normally, but not under -batch, which is how the
+;; Makefiles byte-compile things; so pick it up here if it's been skipped.
+(unless early-init-file
+  (load (expand-file-name "early-init" user-emacs-directory) nil t))
 
 ;; Ensure local storage is defined and set up.
 (require 'init-local)

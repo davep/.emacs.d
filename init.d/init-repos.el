@@ -3,18 +3,13 @@
 ;;; Commentary:
 ;;
 ;; init-repos.el takes care of setting up which package repos I use, and
-;; ensures that the packages that get pulled down are held in the right
-;; place. It's also responsible for ensuring that `use-package' gets
-;; installed and used.
+;; brings the package system up. Where the packages themselves live is
+;; settled earlier than this, in early-init.el, because startup needs to
+;; know before init.el gets a look in.
 
 ;;; Code:
 
 (require 'package)
-(require 'init-local)
-
-;; Say where I want packages to live.
-(setq package-user-dir (local-emacs-directory "packages")
-      package-gnupghome-dir (local-emacs-directory "gnupg"))
 
 ;; Add melpa.
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
@@ -25,10 +20,6 @@
 ;; Ensure package contents are refreshed on first start.
 (unless package-archive-contents
   (package-refresh-contents))
-
-;; Bootstrap `use-package'
-(unless (package-installed-p 'use-package)
-  (package-install 'use-package))
 
 (provide 'init-repos)
 
