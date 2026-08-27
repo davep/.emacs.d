@@ -10,7 +10,6 @@
 
 (require 'is-a)
 (require 'bind-key)
-(require 'package-x)
 (require 'use-package)
 
 ;; Movement

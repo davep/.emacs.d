@@ -23,9 +23,9 @@
 
   (defun my/mood-line-segment-vc ()
     "Return the VC segment with the branch name propertized with `my/mood-line-vc-branch'."
-    (when-let ((vc-text (mood-line-segment-vc)))
+    (when-let* ((vc-text (mood-line-segment-vc)))
       (let ((str (copy-sequence vc-text)))
-        (when-let ((space-pos (string-match " " str)))
+        (when-let* ((space-pos (string-match " " str)))
           (add-text-properties (1+ space-pos) (length str)
                                '(face my/mood-line-vc-branch)
                                str))
