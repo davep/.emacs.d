@@ -5,6 +5,7 @@
 (use-package treemacs
   :ensure t
   :defer t
+  :hook (emacs-startup . treemacs-start-on-boot)
   :custom
   (treemacs-git-mode 'deferred)
   (treemacs-persist-file (local-emacs-directory "treemacs-persist"))
