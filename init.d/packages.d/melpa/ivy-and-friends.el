@@ -35,7 +35,7 @@
   :init
   (counsel-projectile-mode)
   :custom
-  (counsel-projectile-switch-project-action 'neotree-dir))
+  (counsel-projectile-switch-project-action 'treemacs-projectile-action))
 
 (use-package ivy
   :ensure t
