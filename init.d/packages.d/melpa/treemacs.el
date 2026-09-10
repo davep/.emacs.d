@@ -22,6 +22,18 @@
                (lambda (file _)
                  (or (string= file "__pycache__")
                      (string-suffix-p ".egg-info" file))))
+  (defun my/treemacs-switch-workspace-for-current-buffer (&optional _frame-or-window)
+    "Switch the active workspace if the selected buffer belongs to a different one."
+    (when-let* ((file (buffer-file-name (buffer-base-buffer)))
+                ((file-exists-p file))
+                (current-ws (treemacs-current-workspace)))
+      (unless (treemacs-is-path file :in-workspace current-ws)
+        (cl-loop for ws in (treemacs-workspaces)
+                 thereis (when (treemacs-is-path file :in-workspace ws)
+                           (treemacs-do-switch-workspace ws)
+                           t)))))
+  ;; Run whenever the active window changes or a new buffer is displayed
+  (add-hook 'window-selection-change-functions #'my/treemacs-switch-workspace-for-current-buffer)
   :bind
   (:map global-map
         ("C-<tab>"   . treemacs-select-window)
