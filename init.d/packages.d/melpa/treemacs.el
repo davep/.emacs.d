@@ -31,7 +31,11 @@
         ("M-0"       . treemacs-select-window)
         ("C-x t t"   . treemacs)
         ("C-x t d"   . treemacs-select-directory)
-        ("C-x t C-t" . treemacs-find-file)))
+        ("C-x t C-t" . treemacs-find-file))
+  (:map treemacs-mode-map
+        ("<home>"    . treemacs-goto-parent-node)
+        ("<next>"    . treemacs-next-project)
+        ("<prior>"   . treemacs-previous-project)))
 
 (use-package treemacs-all-the-icons
   :ensure t
