@@ -7,7 +7,7 @@
   (projectile-frecency-file (local-emacs-directory "projectile-frecency.eld"))
   (projectile-cache-file (local-emacs-directory "projectile.cache"))
   (projectile-mode-line-prefix " P")
-  (projectile-switch-project-action 'neotree-projectile-action)
+  (projectile-switch-project-action 'treemacs-projectile-action)
   (projectile-completion-system 'ivy)
   (projectile-project-root-files '(".projectile" "Pipfile"))
   :config
