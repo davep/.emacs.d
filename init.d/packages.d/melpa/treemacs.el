@@ -10,7 +10,6 @@
   (treemacs-git-mode 'deferred)
   (treemacs-persist-file (local-emacs-directory "treemacs-persist"))
   (treemacs-select-when-already-in-treemacs 'move-back)
-  (treemacs-show-cursor t)
   (treemacs-show-hidden-files nil)
   (treemacs-space-between-root-nodes nil)
   (treemacs-width 30)
