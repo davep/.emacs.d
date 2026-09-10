@@ -17,6 +17,7 @@
   (treemacs-follow-mode 1)
   (treemacs-filewatch-mode 1)
   (treemacs-fringe-indicator-mode 'always)
+  (treemacs-hide-gitignored-files-mode 1)
   (when (executable-find "git")
     (treemacs-git-mode (if (executable-find "python3") 'deferred 'simple)))
   (add-to-list 'treemacs-ignored-file-predicates
