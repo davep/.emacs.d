@@ -16,6 +16,7 @@
   :config
   (treemacs-follow-mode 1)
   (treemacs-filewatch-mode 1)
+  (treemacs-git-commit-diff-mode 'deferred)
   (treemacs-fringe-indicator-mode 'always)
   (treemacs-hide-gitignored-files-mode 1)
   (when (executable-find "git")
