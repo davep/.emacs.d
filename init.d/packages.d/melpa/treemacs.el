@@ -21,6 +21,11 @@
   (treemacs-hide-gitignored-files-mode 1)
   (when (executable-find "git")
     (treemacs-git-mode (if (executable-find "python3") 'deferred 'simple)))
+  ;; Open nodes in the most recently focused window instead of the adjacent one
+  (treemacs-define-RET-action 'file-node-closed #'treemacs-visit-node-in-most-recently-used-window)
+  (treemacs-define-RET-action 'file-node-open   #'treemacs-visit-node-in-most-recently-used-window)
+  (treemacs-define-RET-action 'tag-node-closed  #'treemacs-visit-node-in-most-recently-used-window)
+  (treemacs-define-RET-action 'tag-node-open    #'treemacs-visit-node-in-most-recently-used-window)
   (add-to-list 'treemacs-ignored-file-predicates
                (lambda (file _)
                  (or (string= file "__pycache__")
