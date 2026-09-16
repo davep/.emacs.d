@@ -125,6 +125,15 @@ What follows is a non-comprehensive collection of key-binding details.
 | <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>Ctrl</kbd>+<kbd>Up</kbd>    | Open window above current window and prompt for a file               |
 | <kbd>Ctrl</kbd>+<kbd>c</kbd> <kbd>Ctrl</kbd>+<kbd>Down</kbd>  | Open window below current window and prompt for a file               |
 
+### [Workspace management (treemacs)](https://github.com/Alexander-Miller/treemacs)
+
+| Binding                                  | Function              |
+|------------------------------------------|-----------------------|
+| <kbd>F12</kbd> <kbd>w</kbd> <kbd>s</kbd> | Switch to a workspace |
+| <kbd>F12</kbd> <kbd>w</kbd> <kbd>n</kbd> | Create a workspace    |
+| <kbd>F12</kbd> <kbd>w</kbd> <kbd>r</kbd> | Rename a workspace    |
+| <kbd>F12</kbd> <kbd>w</kbd> <kbd>d</kbd> | Remove a workspace    |
+
 ## Licence
 
 It hardly seems worth having a licence on something that's intended for my
