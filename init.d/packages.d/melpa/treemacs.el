@@ -51,7 +51,11 @@
         ("M-0"       . treemacs-select-window)
         ("C-x t t"   . treemacs)
         ("C-x t d"   . treemacs-select-directory)
-        ("C-x t C-t" . treemacs-find-file))
+        ("C-x t C-t" . treemacs-find-file)
+        ("<f12> w s" . treemacs-switch-workspace)
+        ("<f12> w n" . treemacs-create-workspace)
+        ("<f12> w r" . treemacs-rename-workspace)
+        ("<f12> w d" . treemacs-remove-workspace))
   (:map treemacs-mode-map
         ("<home>"    . treemacs-goto-parent-node)
         ("<next>"    . treemacs-next-project)
